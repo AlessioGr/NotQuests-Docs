@@ -47,3 +47,23 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
   transform: scale(1.05);
   -webkit-transform: scale(1.05);
 }
+
+
+@media (min-width: 769px) {
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+}
+*{
+  scrollbar-color: #1985ff #ffffff;
+  scrollbar-width: thin;
+}
+::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+::-webkit-scrollbar-thumb {
+  background: #1985ff;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #393d46;
+}
