@@ -18,10 +18,10 @@ First, we'll list the objectives which are always available:
 
 **Command Arguments:**
 
-- `<material>` The material of the block which the player has to break. Use 'hand' to specify the item which you are currently holding in your hand. You can also specify items made in the NotQuests item system.
-- `<amount>` - The amount of blocks the player needs to break
-- `(flags)` - Optional flags
-  - **--doNotDeductIfBlockIsPlaced** - By default, if you place a block which is specified in the BreakBlocks objective, it will be deducted from your progress. Otherwise, players would be able to simply cheat by placing and then breaking the block. Setting this flag will **disable** that safety mechanism.
+- **`<material>`** The material of the block which the player has to break. Use 'hand' to specify the item which you are currently holding in your hand. You can also specify items made in the NotQuests item system.
+- **`<amount>`** - The amount of blocks the player needs to break
+- **`(flags)`** - Optional flags
+  - `--doNotDeductIfBlockIsPlaced` - By default, if you place a block which is specified in the BreakBlocks objective, it will be deducted from your progress. Otherwise, players would be able to simply cheat by placing and then breaking the block. Setting this flag will **disable** that safety mechanism.
 
 **Example command:** `/qa edit questname objectives add BreakBlocks grass_block 4`
 
@@ -35,8 +35,8 @@ First, we'll list the objectives which are always available:
 
 **Command Arguments:**
 
-- `<entityType>` The mob type which the player needs to breed. Use 'any' if any mob type should count.
-- `<amount>` - The amount of mobs the player needs to breed
+- **`<entityType>`** The mob type which the player needs to breed. Use 'any' if any mob type should count.
+- **`<amount>`** - The amount of mobs the player needs to breed
 
 **Example command:** `/qa edit questname objectives add BreedMobs cow 4`
 
@@ -50,10 +50,10 @@ First, we'll list the objectives which are always available:
 
 **Command Arguments:**
 
-- `<material>` The material of the block which the player has to break. Use 'hand' to specify the item which you are currently holding in your hand. Use 'any' so any item counts. You can also specify items made in the NotQuests item system.
-- `<amount>` - The amount of items the player needs to collect
-- `(flags)` - Optional flags
-  - **--doNotDeductIfItemIsDropped** - By default, if you drop an item which is specified in the CollectItems objective, it will be deducted from your progress. Otherwise, players would be able to simply cheat by dropping and then picking up the item. Setting this flag will **disable** that safety mechanism.
+- **`<material>`** The material of the block which the player has to break. Use 'hand' to specify the item which you are currently holding in your hand. Use 'any' so any item counts. You can also specify items made in the NotQuests item system.
+- **`<amount>`** - The amount of items the player needs to collect
+- **`(flags)`** - Optional flags
+  - `--doNotDeductIfItemIsDropped` - By default, if you drop an item which is specified in the CollectItems objective, it will be deducted from your progress. Otherwise, players would be able to simply cheat by dropping and then picking up the item. Setting this flag will **disable** that safety mechanism.
 
 **Example command:** `/qa edit questname objectives add CollectItems dirt 12`
 
@@ -67,9 +67,9 @@ First, we'll list the objectives which are always available:
 
 **Command Arguments:**
 
-- `<condition name>` This is the name of the condition it should check. Conditions can be created using `/qa conditions`.
-- `(flags)` - Optional flags
-  - **--checkOnlyWhenCorrespondingVariableValueChanged** - If you set this flag, the condition will only be checked if the corresponding action for the variable has been executed. (For example the Money action for the Money condition). The plugin will stop checking the condition periodically. Thus, this will also be more performant.
+- **`<condition name>`** This is the name of the condition it should check. Conditions can be created using `/qa conditions`.
+- **`(flags)`** - Optional flags
+  - `--checkOnlyWhenCorrespondingVariableValueChanged` - If you set this flag, the condition will only be checked if the corresponding action for the variable has been executed. (For example the Money action for the Money condition). The plugin will stop checking the condition periodically. Thus, this will also be more performant.
 
 **Example command:** `/qa edit questname objectives add Condition myCondition`
 
@@ -83,8 +83,8 @@ First, we'll list the objectives which are always available:
 
 **Command Arguments:**
 
-- `<material>` The material of the item which the player has to consume. Use 'hand' to specify the item which you are currently holding in your hand. Use 'any' so any item counts. You can also specify items made in the NotQuests item system.
-- `<amount>` - The amount of items the player needs to consume
+- **`<material>`** The material of the item which the player has to consume. Use 'hand' to specify the item which you are currently holding in your hand. Use 'any' so any item counts. You can also specify items made in the NotQuests item system.
+- **`<amount>`** - The amount of items the player needs to consume
 
 **Example command:** `/qa edit questname objectives add ConsumeItems apple 5`
 
@@ -98,8 +98,8 @@ First, we'll list the objectives which are always available:
 
 **Command Arguments:**
 
-- `<material>` The material of the item which the player has to craft. Use 'hand' to specify the item which you are currently holding in your hand. Use 'any' so any item counts. You can also specify items made in the NotQuests item system.
-- `<amount>` - The amount of items the player needs to craft
+- **`<material>`** The material of the item which the player has to craft. Use 'hand' to specify the item which you are currently holding in your hand. Use 'any' so any item counts. You can also specify items made in the NotQuests item system.
+- **`<amount>`** - The amount of items the player needs to craft
 
 **Example command:** `/qa edit questname objectives add CraftItems enchanting_table 1`
 
@@ -113,8 +113,8 @@ First, we'll list the objectives which are always available:
 
 **Command Arguments:**
 
-- `<material>` The material of the item which the player has to craft. Use 'hand' to specify the item which you are currently holding in your hand. Use 'any' so any item counts. You can also specify items made in the NotQuests item system.
-- `<amount>` - The amount of items the player needs to craft
+- **`<material>`** The material of the item which the player has to craft. Use 'hand' to specify the item which you are currently holding in your hand. Use 'any' so any item counts. You can also specify items made in the NotQuests item system.
+- **`<amount>`** - The amount of items the player needs to craft
 
 **Example command:** `/qa edit questname objectives add CraftItems enchanting_table 1`
 
@@ -122,9 +122,57 @@ First, we'll list the objectives which are always available:
 
 ### 🚚 DeliverItems
 
+:::info Description
+
+**Completed when:** Player delivers an Item to an NPC (Both Citizen NPCs and Armorstands work). Delivering means that the item will be removed from the player's inventory.
+
+**Command Arguments:**
+
+- **`<material>`** The material of the item which the player has to deliver. Use 'hand' to specify the item which you are currently holding in your hand. Use 'any' so any item counts. You can also specify items made in the NotQuests item system.
+- **`<amount>`** - The amount of items the player needs to deliver
+- **`<NPC ID or Armorstand>`** - Either enter the Citizens NPC ID, or 'armorstand' to receive an item with which you can easily attach this objective to an armorstand.
+
+**Example command:** `/qa edit questname objectives add DeliverItems coal 20 armorstand`
+
+:::
+
 ### 👉 Interact
 
+:::info Description
+
+**Completed when:** Player interacts with a specific location by either left-clicking, right-clicking or both.
+
+**Command Arguments:**
+
+- **`<amount>`** - Amount of times the player needs to interact
+- **`<world>`** - World name of the location with which the player has to interact
+- **`<x>`** - X-coordinate location with which the player has to interact
+- **`<y>`** - Y-coordinate of the location with which the player has to interact
+- **`<z>`** - Z-coordinate of the location with which the player has to interact
+- **`(flags)`** - Optional flags
+  - `--leftClick` - If you set this flag, then interactions by left-clicking the location will count.
+  - `--rightClick` - If you set this flag, then interactions by right-clicking the location will count.
+  - `--cancelInteractions` - If you set this flag, then the interact event of the interaction will be cancelled. If, for example, the location is a chest and the player has to right-click the chest, the chest will open unless you set this flag. This also prevents breaking blocks.
+  - `--taskDescription <task description>` - With this flag you can specify the description of what the player has to do. It will be displayed in the objective.
+  - `--maxDistance <radius in blocks>` - This is the maximum radius in blocks around the specified location in which the interaction will count.
+
+**Example command:** `/qa edit questname objectives add Interact 2 world 1453 71 -2451 --rightClick --maxDistance 2 --cancelInteraction --taskDescription "Find Trents fishing rod"`
+
+:::
+
 ### 🤸 Jump
+
+:::info Description
+
+**Completed when:** Player jumps a certain amount of times
+
+**Command Arguments:**
+
+- **`<amount>`** - The amount of items the player has to jump
+
+**Example command:** `/qa edit questname objectives add Jump 10`
+
+:::
 
 ### 🩸 KillMobs
 
