@@ -12,6 +12,8 @@ First, we'll list the objectives which are always available:
 
 ### ⛏️ BreakBlocks
 
+:::info Description
+
 **Completed when:** Player breaks a specific amount of blocks.
 
 **Command Arguments:**
@@ -23,7 +25,11 @@ First, we'll list the objectives which are always available:
 
 **Example command:** `/qa edit questname objectives add BreakBlocks grass_block 4`
 
+:::
+
 ### ❣️ Breed
+
+:::info Description
 
 **Completed when:** Player breeds a specific mob
 
@@ -34,7 +40,11 @@ First, we'll list the objectives which are always available:
 
 **Example command:** `/qa edit questname objectives add BreedMobs cow 4`
 
+:::
+
 ### 🚮 CollectItems
+
+:::info Description
 
 **Completed when:** Player collects a specific item by picking it up from the ground into his inventory.
 
@@ -47,7 +57,11 @@ First, we'll list the objectives which are always available:
 
 **Example command:** `/qa edit questname objectives add CollectItems dirt 12`
 
+:::
+
 ### ❓ Condition
+
+:::info Description
 
 **Completed when:** Player fulfills a certain condition (Created using `/qa conditions`). The plugin checks if the condition has been fulfilled every second or if the corresponding action to that condition has been executed (for example the *Money* action for the *Money* condition). This basically adds countless more objectives. For example, you can even use PlaceholderAPI Placeholders to create objectives.
 
@@ -59,7 +73,11 @@ First, we'll list the objectives which are always available:
 
 **Example command:** `/qa edit questname objectives add Condition myCondition`
 
+:::
+
 ### 🥗 ConsumeItems
+
+:::info Description
 
 **Completed when:** Player consumes an item. Consuming usually means eating or drinking - for example an apple.
 
@@ -70,7 +88,11 @@ First, we'll list the objectives which are always available:
 
 **Example command:** `/qa edit questname objectives add ConsumeItems apple 5`
 
-### ⚒️ CraftItems
+:::
+
+### ⚒️ Craft Items
+
+:::info Description
 
 **Completed when:** Player consumes an item. Consuming usually means eating or drinking - for example an apple.
 
@@ -80,6 +102,23 @@ First, we'll list the objectives which are always available:
 - `<amount>` - The amount of items the player needs to craft
 
 **Example command:** `/qa edit questname objectives add CraftItems enchanting_table 1`
+
+:::
+
+### ⚒️ CraftItems
+
+:::info Description
+
+**Completed when:** Player consumes an item. Consuming usually means eating or drinking - for example an apple.
+
+**Command Arguments:**
+
+- `<material>` The material of the item which the player has to craft. Use 'hand' to specify the item which you are currently holding in your hand. Use 'any' so any item counts. You can also specify items made in the NotQuests item system.
+- `<amount>` - The amount of items the player needs to craft
+
+**Example command:** `/qa edit questname objectives add CraftItems enchanting_table 1`
+
+:::
 
 ### 🚚 DeliverItems
 
