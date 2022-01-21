@@ -15,6 +15,7 @@ const config = {
   favicon: 'img/favicon.ico',
   organizationName: 'alessiogr', // Usually your GitHub org/user name.
   projectName: 'notquests', // Usually your repo name.
+
   presets: [
     [
       'classic',
@@ -34,7 +35,7 @@ const config = {
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
-        sitemap: true,
+        sitemap: {},
       }),
     ],
   ],
