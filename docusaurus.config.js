@@ -77,7 +77,7 @@ const config = {
             items: [
               {
                 label: 'Getting Started',
-                to: '/docs/tutorial/getting-started',
+                to: '/docs/tutorials/getting-started',
               },
             ],
           },
