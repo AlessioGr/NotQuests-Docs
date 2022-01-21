@@ -86,7 +86,7 @@ const config = {
             items: [
               {
                 label: 'Discord',
-                href: 'https://github.com/AlessioGr/NotQuests/wiki/Getting-Started',
+                href: 'https://discord.gg/7br638S5Ex',
               },
             ],
           },
