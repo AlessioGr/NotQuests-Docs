@@ -192,6 +192,35 @@ First, we'll list the objectives which are always available:
 
 ### ❗ TriggerCommand
 
+:::info Description
+
+> Please note that TriggerCommand Objectives and Triggers are two entirely different things.
+
+**TriggerCommand** is a type of objective which is **completed once a special command is run (usually from console)**.
+
+This can be used to integrate NotQuests with many different plugins.
+
+## Example use-case
+
+An objective _“vote for us”_ which should be completed once the player votes. In your vote plugin, you could then add the trigger command to the vote reward.
+
+Then, once that command is run from the console by the vote plugin (so once the player votes), the TriggerCommand Objective for that player is completed.
+
+> This is also very useful if you want to make special quests integrated with the “Interactions” plugin. That plugin can be used if you want to make more detailed, scripted conversations with NPCs. Be warned: that plugin has a steep learning curve. Also note: Newer versions of NotQuests now have an integrated conversation system.
+
+***
+
+### Example on how to add a trigger command to fictional quest named “1”
+
+![](https://i.imgur.com/MAioIq8.png)
+
+For that, the trigger command would be `/qa triggerObjective playervoted NoeX` - NoeX being my username.
+
+In our vote example, if you set that command as a vote reward (in your vote plugin) and the player votes, it would complete the objective.
+![](https://i.imgur.com/NOUSIl0.png)
+
+:::
+
 ## [Citizens](https://ci.citizensnpcs.co/job/Citizens2/) Integration Objectives
 
 ### ℹ️ EscortNPC
