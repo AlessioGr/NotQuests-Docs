@@ -224,3 +224,7 @@ Files for the finished TheVirus Quest (if you want them for some reason. They ar
 - [actions.yml](https://github.com/AlessioGr/NotQuests/blob/main/Demo%20Quests/Deadly%20Virus/actions.yml)
 
 The quest is saved in the `plugins/NotQuests/default/quests.yml` and `plugins/NotQuests/default/actions.yml` files.
+
+## What next?
+
+Now, start making Quests! On this website, you can find further information about NotQuests and help if you check out the [Documentation](/docs/documentation/docs/) tab on the top of this page. If you need any help, feel free to join our [Discord](https://discord.gg/7br638S5Ex).
