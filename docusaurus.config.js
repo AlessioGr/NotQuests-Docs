@@ -61,6 +61,16 @@ const config = {
             position: 'left',
             label: 'Documentation',
           },
+          {
+            href: 'https://discord.gg/7br638S5Ex',
+            label: 'Discord',
+            position: 'right',
+          },
+          {
+            href: 'https://github.com/AlessioGr/NotQuests',
+            label: 'GitHub',
+            position: 'right',
+          },
           /*{to: '/blog', label: 'Blog', position: 'left'},
           {
             href: 'https://github.com/AlessioGr/NotQuests',
