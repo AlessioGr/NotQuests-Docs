@@ -8,7 +8,7 @@ sidebar_position: 1
 
 This guide was designed with version **4.x** and **[Paper](https://papermc.io/)** in mind.
 
-Older versions, or the Spigot versions, will have less features and different commands.
+Older versions or Spigot servers, will have less features and different commands.
 If you're using an older version or Spigot, please do your own research as the commands will be different.
 
 :::
