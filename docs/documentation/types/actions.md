@@ -8,12 +8,12 @@ Raw actions can be created using `/qa actions`. Those will be saved in the `plug
 
 To "test" an action created via `/qa actions`, you can use `/qa actions edit actionname execute <Player Name(optional)>`. It can have the optional flag `--ignoreConditions` if you want to ignore any conditions attached to this action.
 
-**Command Arguments for every condition:**
+**Command Arguments for every action:**
 
 - **`(flags)`** - Optional flags
   - `--category <categoryName>` - If this is a raw, actions.yml action, you are able to set its category here
 
-## Default Variable Conditions
+## Default Variable Actions
 
 These actions act as "vessels" for variables. What does that mean?
 
