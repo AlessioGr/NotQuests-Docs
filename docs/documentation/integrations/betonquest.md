@@ -24,13 +24,15 @@ Example: `/qa edit questname objectives add BetonQuestObjectiveStateChange defau
 
 ## 💛 NotQuests Actions you can use in BetonQuest Events
 
-- `nq_action <action type> <inline arguments specific to that NotQuests action>`
-- `nq_triggerobjective <trigger name>`
-- `nq_startquest <quest name> (optional: -force -silent -notriggers)`
-- `nq_failquest <quest name>`
-- `nq_abortquest <quest name>` (Just removes the quest from the player if it's active. Does not fail the quest)
-- `nq_questpoints <set/add/remove> <amount> (optional: -silent)`
+- **`nq_action <action type> <inline arguments specific to that NotQuests action>`** - Inline arguments will be documented later in their respective type pages.
+  - Example 1: `nq_action Beam test world -15140 85 2234`
+  - Example 2: `nq_action Beam test -15140;85;2234;world`
+- **`nq_triggerobjective <trigger name>`**
+- **`nq_startquest <quest name> (optional: -force -silent -notriggers)`**
+- **`nq_failquest <quest name>`**
+- **`nq_abortquest <quest name>`** - This just removes the quest from the player if it's active. Does not fail the quest
+- **`nq_questpoints <set/add/remove> <amount> (optional: -silent)`**
 
 ## 💛 NotQuests Conditions you can use in BetonQuest Conditions
 
-- `nq_condition <condition type> <inline arguments specific to that NotQuests condition>`
+- **`nq_condition <condition type> <inline arguments specific to that NotQuests condition>`**
