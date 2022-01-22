@@ -90,21 +90,6 @@ First, we'll list the objectives which are always available:
 
 :::
 
-### ⚒️ Craft Items
-
-:::info Description
-
-**Completed when:** Player consumes an item. Consuming usually means eating or drinking - for example an apple.
-
-**Command Arguments:**
-
-- **`<material>`** The material of the item which the player has to craft. Use 'hand' to specify the item which you are currently holding in your hand. Use 'any' so any item counts. You can also specify items made in the NotQuests item system.
-- **`<amount>`** - The amount of items the player needs to craft
-
-**Example command:** `/qa edit questname objectives add CraftItems enchanting_table 1`
-
-:::
-
 ### ⚒️ CraftItems
 
 :::info Description
