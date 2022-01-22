@@ -26,8 +26,8 @@ const FeatureList: FeatureItem[] = [
     description: (
       <>
         Being able to do a lot doesn't mean it has to be complicated! I designed
-        NotQuests to be opinionated and easy-to-use, while also enabling very
-        complex Quests if you want it to.
+        NotQuests to be  easy-to-use, while also enabling very complex Quests
+        if you want it to.
       </>
     ),
   },
