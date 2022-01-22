@@ -4,11 +4,11 @@ sidebar_position: 1
 
 # 🪨 BetonQuest
 
-You can use the following Events and Conditions inside of BetonQuest. Only [BetonQuest 2.x and higher](https://betonquest.org/) is supported. I won't add BetonQuest 1.x support. You need minimum NotQuests version 1.5.3 to be able to use all the events and conditions.
+You can use ANY conditions and actions of NotQuests in BetonQuest. At the same time, you can use any actions, conditions & objectives of BetonQuest in NotQuests. Only [BetonQuest 2.x and higher](https://betonquest.org/) is supported.
 
 ## Events you can use in BetonQuest
 
-_notquests_triggerobjective triggername_
+`_nq_action_actionname <inline arguments specific to that NotQuests action></inline>`
 
 **Triggers a TriggerObjective for a player**
 
