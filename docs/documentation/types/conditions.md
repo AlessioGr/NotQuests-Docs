@@ -142,7 +142,7 @@ These are the default, "standalone" conditions and don't depend on variables.
 
 ## Special Default Conditions
 
-### 🤓 CompletedObjective Condition
+### 🎖️ CompletedObjective Condition
 
 :::info Description
 
