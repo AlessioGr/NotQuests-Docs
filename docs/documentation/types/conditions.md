@@ -24,11 +24,11 @@ Please consult the [Variables Section](/docs/documentation/types/variables) for 
 
 :::info Description
 
-**Fulfilled when:** The boolean variable equals the expression.
+**Fulfilled when:** The Boolean variable equals the expression. Booleans simply means true or false. Or, in easy words: Yes or No
 
 **Command Arguments:**
 
-- **`<variable type>`** Type of the boolean variable
+- **`<variable type>`** Type of the Boolean variable
 - **`<variable arguments>`** Additional variable arguments which may or may not exist for this specific variable
 - **`<operator>`** - Currently, the only operator is "equals"
 - **`<expression>`** - What the result of the variable should be. Common values are "true" or false", but you can also compare it to a different boolean variable here.
@@ -37,21 +37,123 @@ Please consult the [Variables Section](/docs/documentation/types/variables) for 
 
 :::
 
-### ❓ List
+### 📙 List
 
 :::info Description
 
-**Fulfilled when:** The list variable equals the expression.
+**Fulfilled when:** The List variable equals the expression.
 
 **Command Arguments:**
 
-- **`<variable type>`** Type of the lust variable
+- **`<variable type>`** Type of the List variable
 - **`<variable arguments>`** Additional variable arguments which may or may not exist for this specific variable
-- **`<operator>`** - Possible operators are `contains`, `containsIgnoreCase`, `equals` and `equalsIgnoreCase`.
+- **`<operator>`** - Possible operators are `contains`, `containsIgnoreCase`, `equals` and `equalsIgnoreCase`
 - **`<expression>`** - What the result of the variable should be. This depends on the variable type
 
 **Example command:** `/qa conditions add conditionname ActiveQuests contains questname` - Checks if questname is currently active for the player. ActiveQuests would be a list variable.
 
 :::
 
-...
+### 📖 ItemStackList
+
+:::info Description
+
+**Fulfilled when:** The ItemStackList variable equals the expression.
+
+**Command Arguments:**
+
+- **`<variable type>`** Type of the ItemStackList variable
+- **`<variable arguments>`** Additional variable arguments which may or may not exist for this specific variable
+- **`<operator>`** - Possible operators are `contains` and `equals`
+- **`<expression>`** - What the result of the variable should be. This depends on the variable type, but they do have to be Items
+
+**Example command:** `/qa conditions add conditionname Inventory contains diamond 32` - Checks if the player has at least 32 diamonds in their inventory. Inventory would be an ItemStackList variable.
+
+:::
+
+### 💯 Number
+
+:::info Description
+
+**Fulfilled when:** The Number variable equals the expression.
+
+**Command Arguments:**
+
+- **`<variable type>`** Type of the Number variable
+- **`<variable arguments>`** Additional variable arguments which may or may not exist for this specific variable
+- **`<operator>`** - Possible operators are `equals`, `lessOrEqualThan`, `lessThan`, `moreOrEqualThan` and `moreThan`
+- **`<expression>`** - What the result of the variable should be. This expression is cool, because it can contain any kind of math expression. And it can even contain other number variables.
+
+**Example command:** `/qa conditions add conditionname Health moreOrEqualThan 9.0` - Checks if the player's health is higher or equal than 9. Health would be a Number variable.
+**Example command with math expression + other variables**: `/qa conditions add conditionname Money moreThan QuestPoints*Money+500-30/2` - This checks if you money is more than your quest points multiplied by your current money plus 500 minus 30/2
+**Example command with very advanced expression:** `/qa conditions add conditionname Money moreThan 10+TagInteger(TagName:reputation)*TagInteger(TagName:level)` - Checks if the player's money is more than 10 + the value of the "reputation" tag multiplied by the value of the "level" tag.
+
+:::
+
+### 🆎 String
+
+:::info Description
+
+**Fulfilled when:** The String variable equals the expression.
+
+**Command Arguments:**
+
+- **`<variable type>`** Type of the String variable
+- **`<variable arguments>`** Additional variable arguments which may or may not exist for this specific variable
+- **`<operator>`** - Possible operators are `contains`, `endsWith`, `equals`, `equalsIgnoreCase`, `isEmpty` and `startsWith`
+- **`<expression>`** - What the result of the variable should be. This is a string. The possible values depend on the variable type.
+
+**Example command:** `/qa conditions add conditionname Name equals Tom` - Checks if the player's name is Tom. Name would be a String variable.
+
+:::
+
+## Default Conditions
+
+These are the default, "standalone" conditions and don't depend on variables.
+
+### 🤓 Condition
+
+:::info Description
+
+**Fulfilled when:** The other condition is fulfilled. Yes, this simply checks another condition which is defined in the `conditions.yml`.
+
+**Command Arguments:**
+
+- **`<Other Condition Name>`** - Name of the other condition which needs to be fulfilled.
+
+**Example command:** `/qa conditions add conditionname Condition otherconditionname`
+
+:::
+
+### ⏲️ WorldTime
+
+:::info Description
+
+**Fulfilled when:** The current time of the players Minecraft world is in a certain time range
+
+**Command Arguments:**
+
+- **`<minTime>`** - minimum time (24-hour clock)
+- **`<maxTime>`** - maximum time (24-hour clock)
+
+**Example command:** `/qa conditions add conditionname WorldTime 11 20` - Checks if the player's current world's time is between 11am and 8pm (or 11:00 - 20:00 in the superior 24-hour clock (come to my Discord, you Americans, and fight me))
+
+:::
+
+## Special Default Conditions
+
+### 🤓 CompletedObjective Condition
+
+:::info Description
+
+This Condition can ONLY be used when attached to an Objective. That's because it's valid for the current Quest. Other Condition attachment places may not be bound to a specific Quest.
+
+**Fulfilled when:** The specified objective of the current Quest has been completed
+
+**Command Arguments:**
+
+- **`<Objective ID>`** - ID of the objective which needs to be completed. To see the objective IDs, use `/qa edit questname objectives list`
+
+**Example command:** `/qa edit questname objectives edit 1 conditions add CompletedObjective 2` - Ths basically makes it so Objective 2 only unlocks once Objective 1 has been completed.
+
+:::

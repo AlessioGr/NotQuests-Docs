@@ -285,7 +285,7 @@ First, we'll list the objectives which are always available:
 
 - **`<NPC ID or Armorstand>`** - Either enter the Citizens NPC ID, or 'armorstand' to receive an item with which you can easily attach this objective to an armorstand.
 
-**Example command:** `/qa edit ooo objectives add TalkToNPC armorstand`
+**Example command:** `/qa edit questname objectives add TalkToNPC armorstand`
 
 :::
 
@@ -319,7 +319,7 @@ In our vote example, if you set that command as a vote reward (in your vote plug
 - **`<Trigger Name>`** - Name of the trigger. That name will have to be put into the trigger command (`/qa triggerObjective <Trigger Name>`)
 - **`<amount>`** - Amount of time the trigger/command needs to be triggered/ran, for the objective to be completed
 
-**Example command:** `/qa edit ooo objectives add TriggerCommand trigger1 1`
+**Example command:** `/qa edit questname objectives add TriggerCommand trigger1 1`
 
 **Command to "trigger"/finish that objective:** `/qa triggerObjective trigger1 {PLAYER}` - {PLAYER} needs to be replaced with the players username.
 
@@ -331,14 +331,16 @@ In our vote example, if you set that command as a vote reward (in your vote plug
 
 :::info Description
 
-**Completed when:** You escort an NPC to another NPC. When the objective is unlocked, the NPC you need to escort spawns at your location and starts following you. You will need to get close to the destination NPC and then right-click the destination NPC while the escort NPC is close to you.
+**Completed when:** You escort an NPC to another NPC. When the objective is unlocked, the NPC you need to escort spawns at your location (or a specified spawn location) and starts following you. You will need to get close to the destination NPC and then right-click the destination NPC while the escort NPC is close to you.
 
 **Command Arguments:**
 
 - **`<NPC to escort>`** - ID of the Citizens NPC the player has to escort
 - **`<Destination NPC>`** - ID of the destination Citizens NPC to whom the player has to escort the NPC to
+- **`(flags)`** - Optional flags
+  - `--spawnLocation <Location X, Y, Z>` - If you set this flag, the NPC you need to escort will always spawn at this location. Otherwise, it will always spawn at the player's current location
 
-**Example command:** `/qa edit ooo objectives add EscortNPC 1 2`
+**Example command:** `/qa edit questname objectives add EscortNPC 1 2`
 
 :::
 
