@@ -34,10 +34,99 @@ Please consult the [Variables Section](/docs/documentation/types/variables) for 
 - **`<variable type>`** Type of the Boolean variable
 - **`<variable arguments>`** Additional variable arguments which may or may not exist for this specific variable
 - **`<operator>`** - Valid operators are `set` and `setNot`
-- **`<expression>`** - What the result of the variable should be. Common values are `true` or `false`, but you can also set it to a different boolean variables here.
+- **`<expression>`** - What the variable should be. Common values are `true` or `false`, but you can also set it to a different boolean variables here.
 
-**Example command:** `/qa actions add actionname Flying set true` - Flying would be a variable type. This action would make the player fly.
+**Example command:** `/qa actions add actionname Flying set true` - Flying would be a Boolean variable type. This action would make the player fly.
 
 :::
 
-...this page is unfinished...
+### 📙 List
+
+:::info Description
+
+**What happens:** The value of this List variable is changed
+
+**Command Arguments:**
+
+- **`<variable type>`** Type of the List variable
+- **`<variable arguments>`** Additional variable arguments which may or may not exist for this specific variable
+- **`<operator>`** - Possible operators are `add`, `clear`, `remove` and `set`
+- **`<expression>`** - What the variable should be. This depends on the variable type
+
+**Example command:** `/qa actions add actionname ActiveQuests add questname` - ActiveQuests would be a List variable.
+
+:::
+
+### 📖 ItemStackList
+
+:::info Description
+
+**What happens:** The value of this ItemStackList variable is changed
+
+**Command Arguments:**
+
+- **`<variable type>`** Type of the ItemStackList variable
+- **`<variable arguments>`** Additional variable arguments which may or may not exist for this specific variable
+- **`<operator>`** - Possible operators are `add`, `clear`, `remove` and `set`
+- **`<expression>`** - What the variable should be. This depends on the variable type, but they do have to be Items
+
+**Example command:** `/qa actions add actionname Inventory remove hand 3` - Inventory would be an ItemStackList variable.
+
+:::
+
+### 💯 Number
+
+:::info Description
+
+**What happens:** The value of this Number variable is changed
+
+**Command Arguments:**
+
+- **`<variable type>`** Type of the Number variable
+- **`<variable arguments>`** Additional variable arguments which may or may not exist for this specific variable
+- **`<operator>`** - Valid operators are `add`, `deduct`, `divide`, `multiply` and `set`
+- **`<expression>`** - What the result of the variable should be. This expression is cool, because it can contain any kind of math expression. And it can even contain other number variables.
+
+**Example command:** `/qa actions add actionname Money multiply 2` - Flying would be a Number variable type. This action would make the player fly.
+**Example command with math expression + other variables**: `/qa actions add actionname Money set QuestPoints*Money+500-30/2`
+**Example command with very advanced expression:** `/qa actions add actionname Money set 10+TagInteger(TagName:reputation)*TagInteger(TagName:level)`
+
+:::
+
+### 🆎 String
+
+:::info Description
+
+**What happens:** The value of this String variable is changed
+
+**Command Arguments:**
+
+- **`<variable type>`** Type of the String variable
+- **`<variable arguments>`** Additional variable arguments which may or may not exist for this specific variable
+- **`<operator>`** - Valid operators are `set` and `append`
+- **`<expression>`** - What the result of the variable should be. This depends on the variable type, but it has to be a String (= text)
+
+**Example command:** `/qa actions add actionname CurrentWorld set world` - CurrentWorld would be a String variable type. This action teleports the player to another world.
+
+:::
+
+## Default Actions
+
+These are the default, "standalone" actions and don't depend on variables.
+
+### 🤓 Action
+
+:::info Description
+
+**What happens:** Another action is executed. Yes, this simply executes another action which is defined in the `actions.yml`.
+
+**Command Arguments:**
+
+- **`<Other Action Name>`** - Name of the other action which needs to be executed.
+- **Optional: `<amount>`** - Amount of times the other action should be executed.
+- **`(flags)`** - Optional flags
+  - `--ignoreConditions` - If you set this flag, all conditions added to the other action which should be executed will be ignored. It will be executed no matter if they are fulfilled or not.
+
+**Example command:** `/qa actions add actionname Action a1 2 --ignoreConditions`
+
+:::
