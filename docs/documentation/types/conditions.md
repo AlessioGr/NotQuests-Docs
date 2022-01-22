@@ -6,6 +6,8 @@ sidebar_position: 2
 
 Raw conditions can be created using `/qa conditions`. Those will be saved in the `plugins/notquests/categoryname/conditions.yml`. Conditions are also Quest requirements, Objective conditions and Action conditions, which can be created with the respective other commands.
 
+To "test" a condition created via `/qa conditions`, you can use `/qa conditions edit conditionname check <Player Name(optional)>`.
+
 **Command Arguments for every condition:**
 
 - **`(flags)`** - Optional flags
@@ -30,8 +32,8 @@ Please consult the [Variables Section](/docs/documentation/types/variables) for 
 
 - **`<variable type>`** Type of the Boolean variable
 - **`<variable arguments>`** Additional variable arguments which may or may not exist for this specific variable
-- **`<operator>`** - Currently, the only operator is "equals"
-- **`<expression>`** - What the result of the variable should be. Common values are "true" or false", but you can also compare it to a different boolean variable here.
+- **`<operator>`** - Currently, the only operator is `equals`
+- **`<expression>`** - What the result of the variable should be. Common values are `true` or `false`, but you can also compare it to a different boolean variable here.
 
 **Example command:** `/qa conditions add conditionname Flying equals false` - Flying would be a variable type.
 
