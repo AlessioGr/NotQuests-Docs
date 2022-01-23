@@ -1,5 +1,5 @@
 ---
-sidebar_position: 9
+sidebar_position: 1
 ---
 
 # 💻 API Usage
@@ -8,7 +8,7 @@ sidebar_position: 9
 
 **For Gradle Kotlin DSL (recommended):**
 
-Add this to your build.gradle.kts:
+Add this to your build.gradle:
 
 ```groovy
 repositories{
@@ -25,7 +25,7 @@ repositories{
 }
 
 dependencies {
-    compileOnly 'rocks.gravili.notquests:paper:4.8.1'
+    compileOnly 'rocks.gravili.notquests:paper:4.10.0'
 }
 ```
 
