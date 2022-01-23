@@ -59,11 +59,13 @@ public final class NotQuestsAPIExample extends JavaPlugin {
 }
 ```
 
-Cool. NotQuests barely uses any static shit, so we'll be using the instance for basically everything.
+Cool. NotQuests barely uses any static stuff, so we'll be using the instance for basically everything.
 
 ## Let's create an action and a condition (= requirement) via variables
 
-In NotQuests you can create a Condition, an Action, or both at the same time using variables!
+In NotQuests you can create Conditions and Actions separately. However, it's also possible to create both at the same time using Variables!
+
+If it's possible to use Variables, you should always use them. Only register Conditions and Actions directly if you can't do what you wanna do with Variables.
 
 Let's create a variable for the player's food level. Create a new class called `FoodLevelVariable` and make it extend `Variable<Integer>`. The food level is an integer and the Variable class uses generics.
 
