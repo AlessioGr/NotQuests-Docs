@@ -4,6 +4,12 @@ sidebar_position: 2
 
 # 💻 API Example Project Tutorial
 
+:::danger Before you read
+
+This guide was designed with at LEAST version **4.10.1** and **[Paper](https://papermc.io/)** in mind.
+
+:::
+
 Let's create our first Project using the NotQuests API!
 
 ## First Step: Adding the NotQuests API to your Project
