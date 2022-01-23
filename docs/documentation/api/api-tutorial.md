@@ -223,6 +223,6 @@ public void onEnable() {
 
 Now back to our `TakeDamageObjective`, just fill out each method. You can see how other Objectives do it [here](https://github.com/AlessioGr/NotQuests/tree/main/paper/src/main/java/rocks/gravili/notquests/paper/structs/objectives).
 
-Then, you'll need to register and handle your own Bukkit events to add Progress (and eventuall complete) your objective. For the internal objectives, I'm doing that [here](https://github.com/AlessioGr/NotQuests/blob/main/paper/src/main/java/rocks/gravili/notquests/paper/events/QuestEvents.java). Feel free to copy the boilerplate code.
+Then, you'll need to register and handle your own Bukkit events to add Progress (and eventually complete) your objective. For the internal objectives, I'm doing that [here](https://github.com/AlessioGr/NotQuests/blob/main/paper/src/main/java/rocks/gravili/notquests/paper/events/QuestEvents.java). Feel free to copy the boilerplate code.
 
 I'll add a more explanatory tutorial on this later, feel free to ask for help on our Discord.
