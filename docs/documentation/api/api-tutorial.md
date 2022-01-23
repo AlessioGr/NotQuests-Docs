@@ -44,7 +44,7 @@ Well, let's start by creating the (proper) NotQuests instance in our Main:
 ```java
 public final class NotQuestsAPIExample extends JavaPlugin {
 
-    NotQuests notQuestsInstance;
+    private NotQuests notQuestsInstance;
     
     @Override
     public void onEnable() {
