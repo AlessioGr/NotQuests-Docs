@@ -167,7 +167,7 @@ And if we execute it via `/qa actions edit actionname4 execute`:
 
 ![FoodLevel action executes](/img/api-tutorial/actionexecuted.png)
 
-For many simple value you can use the variable system. Not only is it easier, it also gives you access to the advanced comparison operators (like being able to use Math and other variables in the expression for Integer variables).
+For many simple values you can use the variable system. Not only is it easier, it also gives you access to the advanced comparison operators (like being able to use Math and other variables in the expression for Integer variables).
 
 ## Let's create an Objective
 
