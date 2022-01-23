@@ -34,7 +34,7 @@ Next, open your plugin.yml and add NotQuests as a depend or softdepend. In our c
 
 NotQuests has one module for Spigot and one module for Paper. They're both very different and the Spigot module is much older. In this Tutorial, we'll be creating our own Objectives, Conditions and Actions using the Paper module only. They will only work if the Server who is using your plugin uses Paper. On spigot, the NotQuests.getInstance() of the paper module will return null. Please check that before registering anything.
 
-Since noone should be using Spigot anyways, that's fine. Your plugin should still be able to load up on Spigot.
+Since noone should be using Spigot anyways, that's fine. Don't worry, your plugin should still be able to load up on Spigot.
 
 Make sure you only use the classes from the paper module:
 ![Paper and Spigot module](/img/api-tutorial/paperspigot.png)
