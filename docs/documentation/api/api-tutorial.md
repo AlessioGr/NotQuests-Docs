@@ -17,7 +17,7 @@ Assuming you are using gradle as your build tool (you should), then head to your
 ```groovy
 dependencies {
     compileOnly 'io.papermc.paper:paper-api:1.18.1-R0.1-SNAPSHOT'
-    compileOnly files('libs/notquests-4.10.0.jar')
+    compileOnly files('libs/notquests-4.10.1.jar')
 }
 ```
 
