@@ -82,7 +82,7 @@ public class FoodLevelVariable extends Variable<Integer> {
     }
 
     @Override
-    public boolean setValueInternally(Integer integer, Player player, Object... objects) {
+    public boolean setValueInternally(Integer newValue, Player player, Object... objects) {
         return false;
     }
 
@@ -116,8 +116,8 @@ Next, in setValueInternally, that's what's used internally for the action. By de
 
 ```java
 @Override
-public boolean setValueInternally(Integer integer, Player player, Object... objects) {
-    player.setFoodLevel(integer);
+public boolean setValueInternally(Integer newValue, Player player, Object... objects) {
+    player.setFoodLevel(newValue);
     return true;
 }
 ```
@@ -194,22 +194,22 @@ public class TakeDamageObjective extends Objective {
     }
 
     @Override
-    public void save(FileConfiguration fileConfiguration, String s) {
+    public void save(FileConfiguration fileConfiguration, String initialPath) {
 
     }
 
     @Override
-    public void load(FileConfiguration fileConfiguration, String s) {
+    public void load(FileConfiguration fileConfiguration, String initialPath) {
 
     }
 
     @Override
-    public void onObjectiveUnlock(ActiveObjective activeObjective, boolean b) {
+    public void onObjectiveUnlock(ActiveObjective activeObjective, boolean unlockedDuringPluginStartupQuestLoadingProcess) {
 
     }
 
     @Override
-    public void onObjectiveCompleteOrLock(ActiveObjective activeObjective, boolean b, boolean b1) {
+    public void onObjectiveCompleteOrLock(ActiveObjective activeObjective, boolean lockedOrCompletedDuringPluginStartupQuestLoadingProcess, boolean completed) {
 
     }
 }
@@ -231,4 +231,4 @@ Now back to our `TakeDamageObjective`, just fill out each method. You can see ho
 
 Then, you'll need to register and handle your own Bukkit events to add Progress (and eventually complete) your objective. For the internal objectives, I'm doing that [here](https://github.com/AlessioGr/NotQuests/blob/main/paper/src/main/java/rocks/gravili/notquests/paper/events/QuestEvents.java). Feel free to copy the boilerplate code.
 
-I'll add a more explanatory tutorial on this later, feel free to ask for help on our Discord. You can find the API example project [on GitHub](https://github.com/AlessioGr/NotQuestsAPIExample).
+I'll add a more explanatory tutorial on Objective Creation later, feel free to ask for help on our Discord. You can find the API example project [on GitHub](https://github.com/AlessioGr/NotQuestsAPIExample).
