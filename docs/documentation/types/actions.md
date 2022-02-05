@@ -131,11 +131,23 @@ These are the default, "standalone" actions and don't depend on variables.
 - **Optional: `<amount>`** - Amount of times the other action should be executed.
 - **`(flags)`** - Optional flags
   - `--ignoreConditions` - If you set this flag, all conditions added to the other action which should be executed will be ignored. It will be executed no matter if they are fulfilled or not.
+  - `--minRandom <amount>` - If this is set, it will only execute a random amount of quests with this minimum
+  - `--maxRandom <amount>` - If this is set, it will only execute a random amount of quests with this maximum
+  - `--onlyCountForRandomIfConditionsFulfilled` - Does not count an action to the min or max random counter if its conditions are not fulfilled, if this flag is set
 
 **Example commands:**
 
 - `/qa actions add actionname Action a1 2 --ignoreConditions` - This executes the action a1 two times, regardless of the conditions of action a1.
 - `/qa actions add actionname Action a1,a2,money10 1` - This executes the actions a1, a2 and money10.
+
+**Example commands for random actions:**
+For these commands, I have pre-created the actions sm1, sm2, sm3 ... sm10 which are all different SendMessage actions.
+
+- `/qa actions add sendAllMessages Action sm1,sm2,sm3,sm4,sm5,sm6,sm7,sm8,sm9,sm10 1` - Executes all 10 actions in the specified order
+- `/qa actions add sendAllMessagesInRandomOrder Action sm1,sm2,sm3,sm4,sm5,sm6,sm7,sm8,sm9,sm10 1 --minRandom 10 --maxRandom 10` - Executes all 10 actions in a random order
+- `/qa actions add sendRandomMessage Action sm1,sm2,sm3,sm4,sm5,sm6,sm7,sm8,sm9,sm10 1 --minRandom 1 --maxRandom 1` - Sends exactly one random action ouf of the provided actions
+- `/qa actions add sendGuaranteedRandomMessage Action sm1,sm2,sm3,sm4,sm5,sm6,sm7,sm8,sm9,sm10 1 --minRandom 1 --maxRandom 1 --onlyCountForRandomIfConditionsFulfilled` - This is useful if your actions have conditions attached to them. It does exactly the same as the previous action. However, in case the action it chooses does not fulfill its condition, it will try out another action instead. The previous action however would simply send nothing
+- `/qa actions add sendOneOrTwoRandomMessage Action sm1,sm2,sm3,sm4,sm5,sm6,sm7,sm8,sm9,sm10 1 --minRandom 1 --maxRandom 2` - Executes either one or two random actions out of the provided actions
 
 :::
 
