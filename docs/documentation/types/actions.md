@@ -1,5 +1,8 @@
 ---
 sidebar_position: 3
+title: NotQuests Actions Overview
+description: This lists and explains all actions (also known as rewards) in NotQuests, as well as how you can use them.
+keywords: [notquests, actions, quest actions, rewards, quest rewards]
 ---
 
 # 🧨 Actions
@@ -36,7 +39,10 @@ Please consult the [Variables Section](/docs/documentation/types/variables) for 
 - **`<operator>`** - Valid operators are `set` and `setNot`
 - **`<expression>`** - What the variable should be. Common values are `true` or `false`, but you can also set it to a different boolean variables here.
 
-**Example command:** `/qa actions add actionname Flying set true` - Flying would be a Boolean variable type. This action would make the player fly.
+**Example commands:**
+
+- `/qa actions add actionname Flying set true` - Flying would be a Boolean variable type. This action would make the player fly.
+- `/qa actions add pp3 Money add ((TagInteger(TagName:points)>=4)*(10+30))+(!(TagInteger(TagName:points)>=4)*5)` - This is just to show that very complex actions are also possible with NotQuests expression system. This action does the following: If your "points" (from the Integer tag) are bigger or equal 4, this action will give you 40$. Otherwise, it will give you 5$.
 
 :::
 
@@ -118,15 +124,48 @@ These are the default, "standalone" actions and don't depend on variables.
 
 :::info Description
 
-**What happens:** Another action is executed. Yes, this simply executes another action which is defined in the `actions.yml`.
+**What happens:** One or multiple other actions are executed. Yes, this simply executes other actions defined in the `actions.yml`.
 
 **Command Arguments:**
 
-- **`<Other Action Name>`** - Name of the other action which needs to be executed.
+- **`<Other Action Name>`** - Name of the other action(s) which needs to be executed.
 - **Optional: `<amount>`** - Amount of times the other action should be executed.
 - **`(flags)`** - Optional flags
   - `--ignoreConditions` - If you set this flag, all conditions added to the other action which should be executed will be ignored. It will be executed no matter if they are fulfilled or not.
 
-**Example command:** `/qa actions add actionname Action a1 2 --ignoreConditions`
+**Example commands:**
+
+- `/qa actions add actionname Action a1 2 --ignoreConditions` - This executes the action a1 two times, regardless of the conditions of action a1.
+- `/qa actions add actionname Action a1,a2,money10 1` - This executes the actions a1, a2 and money10.
 
 :::
+
+### ℹ️ Beam
+
+### ℹ️ Boolean
+
+### ℹ️ BroadcastMessage
+
+### ℹ️ CompleteQuest
+
+### ℹ️ ConsoleCommand
+
+### ℹ️ FailQuest
+
+### ℹ️ GiveItem
+
+### ℹ️ GiveQuest
+
+### ℹ️ SendMessage
+
+### ℹ️ SpawnMob
+
+### ℹ️ StartConversation
+
+### ℹ️ TriggerCommand
+
+## [BetonQuest](https://dev.betonquest.org/) Integration Actions
+
+### ℹ️ BetonQuestFireEvent
+
+### ℹ️ BetonQuestFireInlineEvent

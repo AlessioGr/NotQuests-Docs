@@ -1,5 +1,8 @@
 ---
 sidebar_position: 1
+title: NotQuests Objectives Overview
+description: This lists and explains all objectives (= tasks) in NotQuests, as well as how you can use them.
+keywords: [notquests, objectives, quest objectives, tasks, quest tasks]
 ---
 
 # 🗡️ Objectives
@@ -176,6 +179,20 @@ First, we'll list the objectives which are always available:
     - `--withProjectKorraAbility <ability>` - This flag makes it so you need to kill the mob with a specific ProjectKorra ability.
 
 **Example command:** `/qa edit questname objectives add KillMobs zombie 10`
+
+:::
+
+### 🏴‍☠️ OpenBuriedTreasure
+
+:::info Description
+
+**Completed when:** Player opens any x amount of buried treasures (buried treasures are a vanilla minecraft feature)
+
+**Command Arguments:**
+
+- **`<amount>`** - The amount of buried treasures the player needs to open (right-click)
+
+**Example command:** `/qa edit questname objectives add OpenBuriedTreasure 3`
 
 :::
 
@@ -365,3 +382,11 @@ In our vote example, if you set that command as a vote reward (in your vote plug
 ### ℹ️ TownyNationReachTownCount
 
 ### ℹ️ TownyReachResidentCount
+
+## [BetonQuest](https://dev.betonquest.org/) Integration Objectives
+
+### ℹ️ BetonQuestObjectiveStateChange
+
+## [UltimateJobs](https://www.spigotmc.org/resources/99198/) Integration Objectives
+
+### ℹ️ UltimateJobsReachJobLevel

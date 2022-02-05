@@ -1,5 +1,8 @@
 ---
 sidebar_position: 2
+title: NotQuests Conditions Overview
+description: This lists and explains all conditions in NotQuests, as well as how you can use them.
+keywords: [notquests, conditions, quest conditions]
 ---
 
 # 🎭 Conditions
@@ -35,7 +38,12 @@ Please consult the [Variables Section](/docs/documentation/types/variables) for 
 - **`<operator>`** - Currently, the only operator is `equals`
 - **`<expression>`** - What the result of the variable should be. Common values are `true` or `false`, but you can also compare it to a different boolean variable here.
 
-**Example command:** `/qa conditions add conditionname Flying equals false` - Flying would be a variable type.
+**Example commands:**
+
+- `/qa conditions add conditionname Flying equals false` - Flying would be a variable type.
+- `/qa conditions add conditionname True equals (Money>10)&Flying` - True would be a variable type. This condition is true, if the player is flying AND has more than 10 money.
+  - Another way to do this: `/qa conditions add conditionname True equals Condition(Conditions:Flying&IsRich)` - The conditions `Flying` and `IsRich` will have to be created beforehand
+  - Or `qa conditions add conditionname Condition equals Flying&IsRich` - The conditions `Flying` and `IsRich` will have to be created beforehand
 
 :::
 
@@ -113,17 +121,23 @@ Please consult the [Variables Section](/docs/documentation/types/variables) for 
 
 These are the default, "standalone" conditions and don't depend on variables.
 
-### 🤓 Condition
+### ~~🤓 Condition~~
 
-:::info Description
+:::caution
 
-**Fulfilled when:** The other condition is fulfilled. Yes, this simply checks another condition which is defined in the `conditions.yml`.
+This condition has been removed in v4.13.0. The Boolean variable `Condition` replaces this, and offers far more functionality.
 
-**Command Arguments:**
+:::
 
-- **`<Other Condition Name>`** - Name of the other condition which needs to be fulfilled.
+:::info ~~Description~~
 
-**Example command:** `/qa conditions add conditionname Condition otherconditionname`
+~~**Fulfilled when:** The other condition is fulfilled. Yes, this simply checks another condition which is defined in the `conditions.yml`.~~
+
+~~**Command Arguments:**~~
+
+~~- **`<Other Condition Name>`** - Name of the other condition which needs to be fulfilled.~~
+
+~~**Example command:** `/qa conditions add conditionname Condition otherconditionname`~~
 
 :::
 

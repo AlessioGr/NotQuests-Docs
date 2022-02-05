@@ -1,5 +1,8 @@
 ---
 sidebar_position: 1
+title: NotQuests API Usage
+description: This explains how you can add the NotQuests API to your project and how it works
+keywords: [notquests, api, usage]
 ---
 
 # 💻 API Usage
@@ -25,7 +28,7 @@ repositories{
 }
 
 dependencies {
-    compileOnly 'rocks.gravili.notquests:paper:4.10.1'
+    compileOnly 'rocks.gravili.notquests:paper:4.13.0'
 }
 ```
 
