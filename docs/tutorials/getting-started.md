@@ -1,6 +1,5 @@
 ---
 sidebar_position: 1
-title: Getting Started with NotQuests
 description: This tutorial helps you get started with NotQuests from zero to hero - with an easy-to-follow, practical example
 keywords: [notquests, tutorial, getting started, beginner, guide]
 ---
