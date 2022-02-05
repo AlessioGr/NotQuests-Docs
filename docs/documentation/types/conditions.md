@@ -1,6 +1,5 @@
 ---
 sidebar_position: 2
-title: NotQuests Conditions Overview
 description: This lists and explains all conditions in NotQuests, as well as how you can use them.
 keywords: [notquests, conditions, quest conditions]
 ---

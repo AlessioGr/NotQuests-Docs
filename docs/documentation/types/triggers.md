@@ -1,6 +1,5 @@
 ---
 sidebar_position: 4
-title: NotQuests Triggers Overview
 description: This explains how Triggers work in NotQuests
 keywords: [notquests, triggers, quest triggers]
 ---

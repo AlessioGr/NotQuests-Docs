@@ -1,6 +1,5 @@
 ---
 sidebar_position: 2
-title: NotQuests API Tutorial
 description: This explains how you can use the NotQuests API to create your own conditions, variables, action & objective using an example
 keywords: [notquests, api, tutorial]
 ---

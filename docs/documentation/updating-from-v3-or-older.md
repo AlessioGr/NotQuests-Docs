@@ -1,6 +1,5 @@
 ---
 sidebar_position: 6
-title: NotQuests Updating from V3
 description: This explains how the update process from NotQuests version 3 or older to version 4 or newer works
 keywords: [notquests]
 ---

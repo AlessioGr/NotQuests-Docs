@@ -1,6 +1,5 @@
 ---
 sidebar_position: 5
-title: NotQuests Variables Overview
 description: This lists all variables in NotQuests and explains how they work
 keywords: [notquests, variables, quest variables]
 ---

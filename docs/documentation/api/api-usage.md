@@ -1,6 +1,5 @@
 ---
 sidebar_position: 1
-title: NotQuests API Usage
 description: This explains how you can add the NotQuests API to your project and how it works
 keywords: [notquests, api, usage]
 ---

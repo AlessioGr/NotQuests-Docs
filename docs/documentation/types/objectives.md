@@ -1,6 +1,5 @@
 ---
 sidebar_position: 1
-title: NotQuests Objectives Overview
 description: This lists and explains all objectives (= tasks) in NotQuests, as well as how you can use them.
 keywords: [notquests, objectives, quest objectives, tasks, quest tasks]
 ---

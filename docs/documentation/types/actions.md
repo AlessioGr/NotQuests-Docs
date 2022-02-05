@@ -1,6 +1,5 @@
 ---
 sidebar_position: 3
-title: NotQuests Actions Overview
 description: This lists and explains all actions (also known as rewards) in NotQuests, as well as how you can use them.
 keywords: [notquests, actions, quest actions, rewards, quest rewards]
 ---

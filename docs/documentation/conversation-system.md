@@ -1,6 +1,5 @@
 ---
 sidebar_position: 7
-title: NotQuests Conversation System
 description: This guide explains how the conversation system in notquests works
 keywords: [notquests, conversation, conversations, npc talk, npc conversations]
 ---
