@@ -1,5 +1,8 @@
 ---
 sidebar_position: 8
+title: NotQuests FAQ
+description: This answers questions which have been asked a lot
+keywords: [notquests, faq]
 ---
 
 # ❓ Frequently asked questions

@@ -1,5 +1,8 @@
 ---
 sidebar_position: 1
+title: NotQuests Integration - BetonQuest
+description: This explains how the NotQuests BetonQuest integration works
+keywords: [notquests, betonquest, integration]
 ---
 
 # 🪨 BetonQuest
