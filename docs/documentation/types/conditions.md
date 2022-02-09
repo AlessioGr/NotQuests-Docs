@@ -155,6 +155,32 @@ This condition has been removed in v4.13.0. The Boolean variable `Condition` rep
 
 :::
 
+### 📅 Date
+
+:::info Description
+
+**Fulfilled when:** The current date is (operator) the specified date. Operators are 'before' and 'after'
+
+**Command Arguments:**
+
+- **`<Date operation>`** - Comparison operator between the currentDate or the specified date. Operators are `before` and `after`. Example: Current date `after` 2023
+- **`(flags)`** - Optional flags
+  - `--year <year>` - The year
+  - `--month <month>` - The month of the year
+  - `--day <day>` - The day of the month
+  - `--hours <hours>` - The hours of the day
+  - `--minutes <minutes>` - The minutes of the hour
+  - `--seconds <seconds>` - The seconds of the minute
+  - `--timeZone <name of the timezone>` - Name of the timezone of the specified date.
+
+**Example commands:**
+
+- `/qa conditions add conditionname Date after --year 2022 --timeZone Europe/Berlin` - Makes it so the condition is fulfilled next year in Europe/Berlin time
+- `/qa conditions add conditionname Date after --month 11` - Seasonal condition! It's fulfilled every december
+- `/qa conditions add conditionname Date before --month 11 --year 2022` - You have until the end of october 2022. After that, this condition is NOT fulfilled anymore
+
+:::
+
 ## Special Default Conditions
 
 ### 🎖️ CompletedObjective Condition
