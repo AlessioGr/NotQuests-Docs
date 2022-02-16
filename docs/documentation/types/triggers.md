@@ -6,13 +6,13 @@ keywords: [notquests, triggers, quest triggers]
 
 # 🎁 Triggers
 
-A trigger can be attached to a quest. A trigger is basically an action (usually a console command) which gets activated when something happens.
+A trigger can be attached to a quest. A trigger is basically an action which gets executed when *something happens*.
 
-For example, if you create a `DEATH` trigger in that Quest, it gets activated once the player dies.
+For example, if you create a `DEATH` trigger in that Quest, it gets activated once the player dies. Then, the action bound to that trigger will execute.
 
 ## What happens if the trigger activates?
 
-Well, if the trigger is activated (so, if in the above example, the player dies), an `Action` will be executed. An Action is just a Console Command which you can create using the `/qa actions` command.
+Well, if the trigger is activated (so, if in the above example, the player dies), an `Action` will be executed. You can create pre-defined actions using the `/qa actions` command.
 
 ## More advanced options for triggers
 
@@ -22,18 +22,12 @@ A trigger also has more advanced options. Not only can you set it that it should
 
 Actions can be created and re-used outside of Quests. So basically, you create them with the `/qa actions` command and can re-use them for multiple triggers.
 
-Currently, the only type of actions is a console command. More will be added in the future.
-
 ***
 
 ## Practical Example
 
 Let's create an action which fails the quest:
-`/qa actions add failQuest qa failQuest {PLAYER} {QUEST}`
-
-{PLAYER} and {QUEST} are internal placeholders. You can view all internal placeholders using `/qa listPlaceholders`.
-
-So, `failQuest qa failQuest {PLAYER} {QUEST}` would be the entire command which is executed in the console.
+`/qa actions add failQuest FailQuest test`
 
 Then let's create a trigger in the fictional Quest `test` and bind it to our action:
 `/qa edit test triggers add failQuest DEATH Quest ALL 1`
