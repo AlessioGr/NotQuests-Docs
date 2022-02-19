@@ -123,7 +123,7 @@ Let's accept our Quest by using `/q take TheVirus`:
 
 That was easy, wasn't it?
 
-#### Second Objective:
+#### Second Objective
 
 Onto our next objective! The street is clear! The player should now kill all the infected villagers:
 
