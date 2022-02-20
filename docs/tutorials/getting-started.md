@@ -73,11 +73,11 @@ It should then show you the following message:
 
 Now, the initial Quest Name cannot have any spaces. It's just an identifier for the Quest. However, we can give it a display name which can have spaces - and that's the name the player will actually see!
 
-`/qa edit TheVirus displayName A Deadly Virus`
+`/qa edit TheVirus displayName set A Deadly Virus`
 
 Next, we want to add a description to the Quest, which will be displayed in multiple places, for example if the player tries to preview or take the Quest:
 
-`/qa edit TheVirus description A deadly virus has infected the people of Winterfell. You have to murder the infected villagers to prevent the virus from spreading further.`
+`/qa edit TheVirus description set A deadly virus has infected the people of Winterfell. You have to murder the infected villagers to prevent the virus from spreading further.`
 
 Now, your players will see a beautiful description and display name after accepting the Quest:
 
@@ -115,7 +115,7 @@ Now, let's add a description for that objective:
 
 And a name:
 
-`/qa edit TheVirus objectives edit 1 displayname set Stinky Street`
+`/qa edit TheVirus objectives edit 1 displayName set Stinky Street`
 
 Let's accept our Quest by using `/q take TheVirus`:
 
@@ -133,7 +133,7 @@ After 15 kills of Zombie Villagers, that objective will be completed! Now let's 
 
 `/qa edit TheVirus objectives edit 2 description set You can see the infected villagers in front of you! Murder them all to stop the virus from spreading!`
 
-`/qa edit TheVirus objectives edit 2 displayname set Zombies ahead!`
+`/qa edit TheVirus objectives edit 2 displayName set Zombies ahead!`
 
 #### Objective Dependencies
 
@@ -190,9 +190,9 @@ Your players will murder you if they waste their time on this super hard Quest w
 
 Once you complete the Quest, you will receive the rewards, but the player won't notice. That's because rewards are hidden (can be changed in the config) by default **unless you give them a display name**! So let's do that:
 
-1. `/qa edit TheVirus rewards edit 1 displayname set +2 Quest Points`
-2. `/qa edit TheVirus rewards edit 2 displayname set +2 handcrafted Wooden Swords`
-3. `/qa edit TheVirus rewards edit 3 displayname set +300 Coins`
+1. `/qa edit TheVirus rewards edit 1 displayName set +2 Quest Points`
+2. `/qa edit TheVirus rewards edit 2 displayName set +2 handcrafted Wooden Swords`
+3. `/qa edit TheVirus rewards edit 3 displayName set +300 Coins`
 
 Done! Once you finish the Quest, you will see the rewards:
 
