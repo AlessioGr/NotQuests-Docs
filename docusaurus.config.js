@@ -71,7 +71,7 @@ const config = {
         title: 'NotQuests',
         logo: {
           alt: 'NotQuests Logo',
-          src: 'img/notquests-logo.svg',
+          src: 'img/notquests-logo.jpg',
         },
         items: [
           {
