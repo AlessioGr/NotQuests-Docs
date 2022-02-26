@@ -27,11 +27,11 @@ repositories{
 }
 
 dependencies {
-    compileOnly 'rocks.gravili.notquests:paper:4.16.0'
+    compileOnly 'rocks.gravili.notquests:paper:4.18.0'
 }
 ```
 
-Note: This API will work with versions 3.2.6+ (if released, if not github actions development builds), NOT with the 3.2.5 spigot release.
+Note: Please make sure to use the latest version for the API.
 
 Attention: The GitHub Packages token posted above will not work, because GitHub revokes it every time I post it. You will either have to generate your own in your GitHub profile and use it, or just add the notquests jar to your project directly.
 

@@ -8,7 +8,7 @@ keywords: [notquests, api, tutorial]
 
 :::danger Before you read
 
-This guide was designed version **4.16.0** and **[Paper](https://papermc.io/)** in mind.
+This guide was designed version **4.18.0** and **[Paper](https://papermc.io/)** in mind.
 
 :::
 
@@ -25,7 +25,7 @@ Assuming you are using gradle as your build tool (you should), then head to your
 ```groovy
 dependencies {
     compileOnly 'io.papermc.paper:paper-api:1.18.1-R0.1-SNAPSHOT'
-    compileOnly files('libs/notquests-4.16.0.jar')
+    compileOnly files('libs/notquests-4.18.0.jar')
 }
 ```
 
@@ -83,17 +83,17 @@ public class FoodLevelVariable extends Variable<Integer> {
     }
 
     @Override
-    public Integer getValue(Player player, Object... objects) {
+    public Integer getValue(QuestPlayer questPlayer, Object... objects) {
         return null;
     }
 
     @Override
-    public boolean setValueInternally(Integer newValue, Player player, Object... objects) {
+    public boolean setValueInternally(Integer newValue, QuestPlayer questPlayer, Object... objects) {
         return false;
     }
 
     @Override
-    public List<String> getPossibleValues(Player player, Object... objects) {
+    public List<String> getPossibleValues(QuestPlayer questPlayer, Object... objects) {
         return null;
     }
 
@@ -113,8 +113,8 @@ All we need to do is fill out the each and every method. Let's start with getVal
 
 ```java
 @Override
-public Integer getValue(Player player, Object... objects) {
-    return player.getFoodLevel();
+public Integer getValue(QuestPlayer questPlayer, Object... objects) {
+    return questPlayer.getPlayer().getFoodLevel();
 }
 ```
 
@@ -122,8 +122,8 @@ Next, in setValueInternally, that's what's used internally for the action. By de
 
 ```java
 @Override
-public boolean setValueInternally(Integer newValue, Player player, Object... objects) {
-    player.setFoodLevel(newValue);
+public boolean setValueInternally(Integer newValue, QuestPlayer questPlayer, Object... objects) {
+    questPlayer.getPlayer().setFoodLevel(newValue);
     return true;
 }
 ```
@@ -197,7 +197,7 @@ public class TakeDamageObjective extends Objective {
     }
 
     @Override
-    public String getObjectiveTaskDescription(Player player) {
+    public String getObjectiveTaskDescription(QuestPlayer questPlayer) {
         return null;
     }
 
@@ -241,4 +241,4 @@ Now back to our `TakeDamageObjective`, just fill out each method. You can see ho
 
 Then, you'll need to register and handle your own Bukkit events to add Progress (and eventually complete) your objective. For the internal objectives, I'm doing that [here](https://github.com/AlessioGr/NotQuests/blob/main/paper/src/main/java/rocks/gravili/notquests/paper/events/QuestEvents.java). Feel free to copy the boilerplate code.
 
-I'll add a more explanatory tutorial on Objective Creation later, feel free to ask for help on our Discord. You can find the API example project [on GitHub](https://github.com/AlessioGr/NotQuestsAPIExample).
+I'll add a more explanatory tutorial on Objective Creation later, feel free to ask for help on our Discord. You can find the API example project [on GitHub](https://github.com/AlessioGr/NotQuestsAPIExample). Not that it might not have been updated to the latest NotQuests API yet.
