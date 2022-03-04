@@ -87,6 +87,11 @@ const config = {
             label: 'Documentation',
           },
           {
+            href: '/download',
+            label: 'Download',
+            position: 'left',
+          },
+          {
             href: 'https://discord.gg/7br638S5Ex',
             label: 'Discord',
             position: 'right',
