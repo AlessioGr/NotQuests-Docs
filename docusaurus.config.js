@@ -77,18 +77,18 @@ const config = {
           {
             type: 'doc',
             docId: 'tutorials/getting-started',
-            label: 'Tutorials',
+            label: '🏫 Tutorials',
             position: 'left',
           },
           {
             type: 'doc',
             docId: 'documentation/docs',
             position: 'left',
-            label: 'Documentation',
+            label: '📝 Documentation',
           },
           {
             href: '/download',
-            label: 'Download',
+            label: '▶️ Download',
             position: 'left',
           },
           {
