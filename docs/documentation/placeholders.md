@@ -25,5 +25,7 @@ These are all the Player Placeholders you can use ([PlaceholderAPI](https://www.
 - %notquests_player_expression_EXPRESSION%
 - %notquests_player_rounded_expression_EXPRESSION%
 - %notquests_player_quest_cooldown_left_formatted_QUESTNAME%
+- %notquests_player_objective_progress_OBJECTIVEID_from_active_quest_QUESTNAME%
+- %notquests_player_objective_progress_percentage_OBJECTIVEID_from_active_quest_QUESTNAME%
 
 If applicable, you will need to replace `QUESTNAME` with the name of the quest and `OBJECTIVEID` with the ID of the objective (visible in `/qa edit questname objectives list`) and so on. Uppercase parts of the placeholder will need to be replaced by you.

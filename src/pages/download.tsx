@@ -15,13 +15,13 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <a
             className="button button--secondary button--lg"
-            href="https://github.com/AlessioGr/NotQuests/releases/download/v4.19.3/notquests-4.19.3.jar">
-            NotQuests v4.19.3 for Minecraft 1.18.2 
+            href="https://github.com/AlessioGr/NotQuests/releases/download/v4.19.4/notquests-4.19.4.jar">
+            NotQuests v4.19.4 for Minecraft 1.18.2 
           </a>
           <a
             className="button button--secondary button--lg"
-            href="https://github.com/AlessioGr/NotQuests/releases/download/v4.18.2/notquests-4.18.2.jar">
-            NotQuests v4.18.2 for Minecraft 1.17 - 1.18.1
+            href="https://github.com/AlessioGr/NotQuests/releases/download/v4.18.3/notquests-4.18.3.jar">
+            NotQuests v4.18.3 for Minecraft 1.17 - 1.18.1
           </a>
         </div>
       </div>
