@@ -46,7 +46,7 @@ In NotQuests, we create all our Quests with commands. No need to edit complicate
 
 ### Command Completions
 
-Each thing you write, separated by a space, is called an *argument*. In the following pictures, *qa*, *edit*, and *questname* are the three arguments:
+Each thing you write, separated by a space, is called an *argument*. In the following pictures, *edit*, and *questname* are the two arguments:
 
 ![Command Completions](/img/getting-started/command-completions.png)
 
