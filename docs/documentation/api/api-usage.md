@@ -1,10 +1,9 @@
 ---
+title: 💻 API Usage
 sidebar_position: 1
 description: This explains how you can add the NotQuests API to your project and how it works
 keywords: [notquests, api, usage]
 ---
-
-# 💻 API Usage
 
 ## Adding the API to your project
 

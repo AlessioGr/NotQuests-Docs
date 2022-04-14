@@ -1,10 +1,9 @@
 ---
+title: 🔒 Permissions
 sidebar_position: 4
 description: This lists all permission nodes available in NotQuests and explains what they do
 keywords: [notquests, permissions]
 ---
-
-# 🔒 Permissions
 
 ## Recommended for Players
 

@@ -1,10 +1,9 @@
 ---
+title: ❓ Frequently asked questions
 sidebar_position: 8
 description: This answers questions which have been asked a lot
 keywords: [notquests, faq]
 ---
-
-# ❓ Frequently asked questions
 
 <details><summary>Help, all my rewards show as [HIDDEN]</summary>
 <p>

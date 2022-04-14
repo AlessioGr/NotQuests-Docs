@@ -1,10 +1,9 @@
 ---
+title: 🪨 BetonQuest
 sidebar_position: 1
 description: This explains how the NotQuests BetonQuest integration works
 keywords: [notquests, betonquest, integration]
 ---
-
-# 🪨 BetonQuest
 
 You can use ANY conditions and actions of NotQuests in BetonQuest. At the same time, you can use any actions, conditions & objectives of BetonQuest in NotQuests. Only [BetonQuest 2.x and higher](https://betonquest.org/) is supported.
 

@@ -1,10 +1,9 @@
 ---
+title: 🎁 Triggers
 sidebar_position: 4
 description: This explains how Triggers work in NotQuests
 keywords: [notquests, triggers, quest triggers]
 ---
-
-# 🎁 Triggers
 
 A trigger can be attached to a quest. A trigger is basically an action which gets executed when *something happens*.
 

@@ -1,10 +1,9 @@
 ---
+title: 📄 Placeholders
 sidebar_position: 5
 description: This lists all PlaceholderAPI placeholders available in NotQuests and explains what they do
 keywords: [notquests, PlaceholderAPI, placeholders]
 ---
-
-# 📄 Placeholders
 
 ## Player Placeholders
 

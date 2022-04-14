@@ -1,10 +1,9 @@
 ---
+title: 🧨 Actions
 sidebar_position: 3
 description: This lists and explains all actions (also known as rewards) in NotQuests, as well as how you can use them.
 keywords: [notquests, actions, quest actions, rewards, quest rewards]
 ---
-
-# 🧨 Actions
 
 Raw actions can be created using `/qa actions`. Those will be saved in the `plugins/notquests/categoryname/actions.yml`. Actions are also Quest rewards or Objective rewards. An action is, as the name says, an action. Any action. Something "happens".
 

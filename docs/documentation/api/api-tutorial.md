@@ -1,10 +1,9 @@
 ---
+title: 💻 API Example Project Tutorial
 sidebar_position: 2
 description: This explains how you can use the NotQuests API to create your own conditions, variables, action & objective using an example
 keywords: [notquests, api, tutorial]
 ---
-
-# 💻 API Example Project Tutorial
 
 :::danger Before you read
 

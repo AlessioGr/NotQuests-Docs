@@ -1,10 +1,9 @@
 ---
+title: 🆙 Updating from v3 or older
 sidebar_position: 6
 description: This explains how the update process from NotQuests version 3 or older to version 4 or newer works
 keywords: [notquests]
 ---
-
-# 🆙 Updating from v3 or older
 
 In version 4.x of notquests, I have made a lot of changes to conditions (includes Requirements), actions (includes Rewards) and the entire folder structure (because of categories).
 

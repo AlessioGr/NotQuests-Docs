@@ -1,10 +1,9 @@
 ---
+title: 👋 Getting Started
 sidebar_position: 1
 description: This tutorial helps you get started with NotQuests from zero to hero - with an easy-to-follow, practical example
 keywords: [notquests, tutorial, getting started, beginner, guide]
 ---
-
-# 👋 Getting Started
 
 :::danger Before you read
 

@@ -16,12 +16,12 @@ function HomepageHeader() {
           <a
             className="button button--secondary button--lg"
             href="https://github.com/AlessioGr/NotQuests/releases/download/v4.19.6/notquests-4.19.6.jar">
-            NotQuests v4.19.6 for Minecraft 1.18.2
+            ⏬ v4.19.6 for Minecraft 1.18.2
           </a>
           <a
             className="button button--secondary button--lg"
             href="https://github.com/AlessioGr/NotQuests/releases/download/v4.18.3/notquests-4.18.3.jar">
-            NotQuests v4.18.3 for Minecraft 1.17 - 1.18.1
+            ⏬ v4.18.3 for Minecraft 1.17 - 1.18.1
           </a>
         </div>
       </div>
@@ -43,6 +43,12 @@ export default function Home(): JSX.Element {
             className="button button--secondary button--lg bbb"
             to="/docs/tutorials/getting-started">
             Getting Started Tutorial - 10min ⏱️
+          </Link>
+
+          <Link
+              className="button button--secondary button--lg bbb"
+              to="/docs/documentation/docs">
+              More detailed documentation️
           </Link>
         </div>
       </main>

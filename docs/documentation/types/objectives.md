@@ -1,10 +1,9 @@
 ---
+title: 🗡️ Objectives
 sidebar_position: 1
 description: This lists and explains all objectives (= tasks) in NotQuests, as well as how you can use them.
 keywords: [notquests, objectives, quest objectives, tasks, quest tasks]
 ---
-
-# 🗡️ Objectives
 
 Objectives are tasks the player has to complete in order to finish the Quest. Some objectives are integrations with other plugins and are only available if you have that plugin installed.
 

@@ -1,10 +1,9 @@
 ---
+title: 💬 Conversation System
 sidebar_position: 7
 description: This guide explains how the conversation system in notquests works
 keywords: [notquests, conversation, conversations, npc talk, npc conversations]
 ---
-
-# 💬 Conversation System
 
 > Showcase of conversations with packet magic enabled: https://www.youtube.com/watch?v=iPwcf277K8k (it has improved since I made that video).
 

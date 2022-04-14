@@ -1,10 +1,9 @@
 ---
+title: 🎭 Conditions
 sidebar_position: 2
 description: This lists and explains all conditions in NotQuests, as well as how you can use them.
 keywords: [notquests, conditions, quest conditions]
 ---
-
-# 🎭 Conditions
 
 Raw conditions can be created using `/qa conditions`. Those will be saved in the `plugins/notquests/categoryname/conditions.yml`. Conditions are also Quest requirements, Objective conditions and Action conditions, which can be created with the respective other commands.
 
