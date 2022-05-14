@@ -15,8 +15,8 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <a
             className="button button--secondary button--lg"
-            href="https://github.com/AlessioGr/NotQuests/releases/download/v4.19.6/notquests-4.19.6.jar">
-            ⏬ v4.19.6 for Minecraft 1.18.2
+            href="https://github.com/AlessioGr/NotQuests/releases/download/v4.20.0/notquests-4.20.0.jar">
+            ⏬ v4.20.0 for Minecraft 1.18.2
           </a>
           <a
             className="button button--secondary button--lg"
@@ -34,7 +34,7 @@ export default function Home(): JSX.Element {
   return (
     <Layout
       title={`${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      description="NotQuests download page - download the best Minecraft Spigot Quest Plugin or Paper Quest Plugin here.">
       <HomepageHeader />
       <main>
       <p className="hero__subtitle center">Helpful Links</p>

@@ -273,6 +273,36 @@ Not only that - they can also be used in so-called expressions. So you can even 
 
 :::
 
+### ❓ PlaytimeTicks
+
+:::info Description
+
+**Condition:** ✅ **Action:** ✅
+
+**Type:** Integer
+
+:::
+
+### ❓ PlaytimeMinutes
+
+:::info Description
+
+**Condition:** ✅ **Action:** ✅
+
+**Type:** Double
+
+:::
+
+### ❓ PlaytimeHours
+
+:::info Description
+
+**Condition:** ✅ **Action:** ✅
+
+**Type:** Double
+
+:::
+
 ### ❓ Sneaking
 
 :::info Description
