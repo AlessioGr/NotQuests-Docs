@@ -7,7 +7,7 @@ keywords: [notquests, api, tutorial]
 
 :::danger Before you read
 
-This guide was designed version **4.19.6** and **[Paper 1.18.2](https://papermc.io/)** in mind.
+This guide was designed version **4.21.0** and **[Paper 1.18.2](https://papermc.io/)** in mind.
 
 :::
 
