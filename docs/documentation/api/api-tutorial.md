@@ -7,7 +7,7 @@ keywords: [notquests, api, tutorial]
 
 :::danger Before you read
 
-This guide was designed version **4.21.0** and **[Paper 1.18.2](https://papermc.io/)** in mind.
+This guide was designed version **4.22.0** and **[Paper 1.19](https://papermc.io/)** in mind.
 
 :::
 
@@ -23,8 +23,8 @@ Assuming you are using gradle as your build tool (you should), then head to your
 
 ```groovy
 dependencies {
-    compileOnly 'io.papermc.paper:paper-api:1.18.2-R0.1-SNAPSHOT'
-    compileOnly files('libs/notquests-4.20.0.jar')
+    compileOnly 'io.papermc.paper:paper-api:1.19-R0.1-SNAPSHOT'
+    compileOnly files('libs/notquests-4.22.0.jar')
 }
 ```
 
