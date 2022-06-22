@@ -15,8 +15,8 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <a
             className="button button--secondary button--lg"
-            href="https://github.com/AlessioGr/NotQuests/releases/download/v4.23.0/notquests-4.23.0.jar">
-            ⏬ v4.23.0 for Minecraft 1.19 ⭐
+            href="https://github.com/AlessioGr/NotQuests/releases/download/v4.23.1/notquests-4.23.1.jar">
+            ⏬ v4.23.1 for Minecraft 1.19 ⭐
           </a>
           <a
             className="button button--secondary button--lg"
