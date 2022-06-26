@@ -4,8 +4,11 @@ sidebar_position: 2
 description: This tutorial helps you create a reputation system using our powerful tag system.
 keywords: [notquests, tutorial, tags, tag, reputation, guide]
 ---
+![Featured Image - Game of Thrones Minecraft Style](/img/reputation-system/featuredImage.png)
 
-Say you have multiple NPCs with multiple quests attached to them. Now, let's create a reputation system for those NPCs!
+This tutorial shows how to use the tag system by guiding you through creating a reputation system - using Game of Thrones as an example 😊
+
+Let's create our own reputation system
 
 ## The idea
 
@@ -103,6 +106,10 @@ Here is an example of house you can check your reputation for house stark:
 `/qa variables check TagInteger housestarkreputation`
 
 ## Let's add some privileges & rewards for our reputation system: Conditions
+
+Example condition which checks if you have at least 50 reputation in house stark - can be used anywhere, for example in Quest requirements, objectives or conditions:
+
+`/qa conditions add HouseStarkReputation50 TagInteger housestarkreputation moreOrEqualThan 50`
 
 To be continued... I'll write this part up when I have time. Feel free to contribute to this tutorial (or any other tutorials) here: [Contribute to the docs](https://github.com/AlessioGr/NotQuests-Docs/blob/main/docs/tutorials/creating-a-reputation-system-with-tags.md).
 
