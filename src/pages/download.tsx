@@ -24,13 +24,13 @@ function HomepageHeader() {
             className="button button--secondary button--lg"
             style={{backgroundColor: '#cbcbcb', borderColor: '#cbcbcb'}}
             href="https://github.com/AlessioGr/NotQuests/releases/download/v4.21.0/notquests-4.21.0.jar">
-                ⏬ v4.21.0 <span style={{fontWeight: '400'}}>for Minecraft 1.18.2</span>
+                ⏬ 4.21.0 <span style={{fontWeight: '400'}}>for Minecraft 1.18.2</span>
           </a>
           <a
             className="button button--secondary button--lg"
             style={{backgroundColor: '#a8a8a8', borderColor: '#a8a8a8'}}
             href="https://github.com/AlessioGr/NotQuests/releases/download/v4.18.3/notquests-4.18.3.jar">
-              ⏬ v4.18.3 <span style={{fontWeight: '400'}}>for Minecraft 1.17 - 1.18.1</span>
+              ⏬ 4.18.3 <span style={{fontWeight: '400'}}>for Minecraft 1.17 - 1.18.1</span>
           </a>
         </div>
           <p style={{backgroundColor: 'white', borderRadius: '15px', color: '#ff0000', fontSize: '1.5em', fontWeight: 'bold', padding: '5px'}}>Note: Spigot Servers are supported, but NotQuests on Spigot servers has less and different features than on Paper servers. Please keep in mind that most Quests created on the Spigot versions will not work on Paper servers, and vice-versa. 🙂</p>
