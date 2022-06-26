@@ -26,7 +26,7 @@ repositories{
 }
 
 dependencies {
-    compileOnly 'rocks.gravili.notquests:paper:4.23.2'
+    compileOnly 'rocks.gravili.notquests:paper:4.23.3'
 }
 ```
 
