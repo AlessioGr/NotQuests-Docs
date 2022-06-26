@@ -15,23 +15,25 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <a
             className="button button--secondary button--lg"
-            href="https://github.com/AlessioGr/NotQuests/releases/download/v4.23.1/notquests-4.23.1.jar">
-            ⏬ v4.23.1 for Minecraft 1.19 ⭐
+            href="https://github.com/AlessioGr/NotQuests/releases/download/v4.23.2/notquests-4.23.2.jar">
+              ⏬ 4.23.2 <span style={{fontWeight: '400'}}>for Minecraft 1.19 ⭐</span>
           </a>
-          <a
+            <p style={{backgroundColor: 'white', borderRadius: '15px', color: '#ff0000', fontSize: '1em', fontWeight: 'semibold', padding: '5px'}}>The 1.19 version MAY work on 1.18.2 as well if you disable all options related to "packets", "magic", and "chat message restoration" in the general.yml.</p>
+
+            <a
             className="button button--secondary button--lg"
             style={{backgroundColor: '#cbcbcb', borderColor: '#cbcbcb'}}
             href="https://github.com/AlessioGr/NotQuests/releases/download/v4.21.0/notquests-4.21.0.jar">
-            ⏬ v4.21.0 for Minecraft 1.18.2
+                ⏬ v4.21.0 <span style={{fontWeight: '400'}}>for Minecraft 1.18.2</span>
           </a>
           <a
             className="button button--secondary button--lg"
             style={{backgroundColor: '#a8a8a8', borderColor: '#a8a8a8'}}
             href="https://github.com/AlessioGr/NotQuests/releases/download/v4.18.3/notquests-4.18.3.jar">
-            ⏬ v4.18.3 for Minecraft 1.17 - 1.18.1
+              ⏬ v4.18.3 <span style={{fontWeight: '400'}}>for Minecraft 1.17 - 1.18.1</span>
           </a>
         </div>
-          <p style={{backgroundColor: 'white', borderRadius: '15px', color: '#ff0000', fontSize: '1.5em', fontWeight: 'bold'}}>Note: Spigot Servers are supported, but NotQuests on Spigot servers has less and different features than on Paper servers. Please keep in mind that most Quests created on the Spigot versions will not work on Paper servers, and vice-versa. 🙂</p>
+          <p style={{backgroundColor: 'white', borderRadius: '15px', color: '#ff0000', fontSize: '1.5em', fontWeight: 'bold', padding: '5px'}}>Note: Spigot Servers are supported, but NotQuests on Spigot servers has less and different features than on Paper servers. Please keep in mind that most Quests created on the Spigot versions will not work on Paper servers, and vice-versa. 🙂</p>
           <span>If your server runs an older version of Minecraft, you can also use an older version of NotQuests which is compatible with your version.</span>
           <p>Sadly I'm not updating or supporting older versions of Minecraft as I have no time for that, though. So keep your server updated! 😊</p>
 
