@@ -66,17 +66,35 @@ With this 'Action' action, we can create one action which executes two other act
 
 `/qa actions add HouseLannisterQuestCompleted Action HouseLannisterReputationAdd10,HouseStarkReputationDeduct1 1`
 
+### Actual actions which will be added to the NPCs: More action nesting
+
+But we also want the NPCs individual reputation to increase if you complete a quest for them, don't we? Let's create the final actions for that. First the actions for the reputation:
+
+`/qa actions add JonSnowReputationAdd5 TagInteger jonsnowreputation add 5`
+
+`/qa actions add AryaStarkReputationAdd5 TagInteger aryastarkreputation add 5`
+
+`/qa actions add CerseiLannisterReputationAdd5 TagInteger cerseilannisterreputation add 5`
+
+And now the actual final actions:
+
+`/qa actions add JonSnowQuestCompleted Action HouseStarkQuestCompleted,JonSnowReputationAdd5 1`
+
+`/qa actions add AryaStarkQuestCompleted Action HouseStarkQuestCompleted,AryaStarkReputationAdd5 1`
+
+`/qa actions add CerseiLannisterQuestCompleted Action HouseLannisterQuestCompleted,CerseiLannisterReputationAdd5 1`
+
 ## Adding the actions to our quests
 
 Awesome! Now we just need to add these last two actions as a reward to the respective quests. We have already created the quests `HelpJonSnow`, `HelpAryaStark` and `HelpCerseiLannister` for that (you should know how to create quests at this point. If not, please read the [beginner tutorial](getting-started.md) first.).
 
-`/qa edit HelpAryaStark rewards add Action HouseStarkQuestCompleted 1`
+`/qa edit HelpJonSnow rewards add Action JonSnowQuestCompleted 1`
 
-`/qa edit HelpJonSnow rewards add Action HouseStarkQuestCompleted 1`
+`/qa edit HelpAryaStark rewards add Action AryaStarkQuestCompleted 1`
 
-`/qa edit HelpCerseiLannister rewards add Action HouseLannisterQuestCompleted 1`
+`/qa edit HelpCerseiLannister rewards add Action CerseiLannisterQuestCompleted 1`
 
-Voila, we're done! Try completing those quests and check how your reputation changes:
+Voilà, we're done! Try completing those quests and check how your reputation changes:
 
 ## Checking your reputation (tags)
 
