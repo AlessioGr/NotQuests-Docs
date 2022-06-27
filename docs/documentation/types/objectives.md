@@ -122,7 +122,7 @@ First, we'll list the objectives which are always available:
 
 :::
 
-### 🚮 FishItems
+### 🐟 FishItems
 
 :::info Description
 
