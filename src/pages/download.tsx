@@ -15,8 +15,8 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <a
             className="button button--secondary button--lg"
-            href="https://github.com/AlessioGr/NotQuests/releases/download/v4.23.3/notquests-4.23.3.jar">
-              ⏬ 4.23.3 <span style={{fontWeight: '400'}}>for Minecraft 1.19 ⭐</span>
+            href="https://github.com/AlessioGr/NotQuests/releases/download/v4.24.0/notquests-4.24.0.jar">
+              ⏬ 4.24.0 <span style={{fontWeight: '400'}}>for Minecraft 1.19 ⭐</span>
           </a>
             <p style={{backgroundColor: 'white', borderRadius: '15px', color: '#ff0000', fontSize: '1em', fontWeight: 'semibold', padding: '5px'}}>The 1.19 version MAY or may not work on 1.18.2 as well</p>
 
