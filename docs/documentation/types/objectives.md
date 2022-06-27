@@ -122,6 +122,21 @@ First, we'll list the objectives which are always available:
 
 :::
 
+### 🚮 FishItems
+
+:::info Description
+
+**Completed when:** Player fishes a specific item. Only successful fishing attempts are counted.
+
+**Command Arguments:**
+
+- **`<material>`** The material of the item which the player has to fish. Use 'hand' to specify the item which you are currently holding in your hand. Use 'any' so any item counts. You can also specify items made in the NotQuests item system.
+- **`<amount>`** - The amount of items the player needs to fish
+
+**Example command:** `/qa edit questname objectives add FishItems cod 3`
+
+:::
+
 ### 👉 Interact
 
 :::info Description
