@@ -195,6 +195,20 @@ First, we'll list the objectives which are always available:
 
 :::
 
+### 🔢 NumberVariable
+
+:::info Description
+
+**Completed when:** NumberVariable conditions you can specify here is fulfilled. This allows you to use variables in objectives relatively!
+
+**Command Arguments:**
+
+TODO
+
+**Example command:** `/qa edit questname objectives add NumberVariable PlaytimeMinutes moreOrEqualThan PlaytimeMinutes+2` - This objective makes it, so the player needs to play 2 MORE minutes.
+
+:::
+
 ### 🏴‍☠️ OpenBuriedTreasure
 
 :::info Description

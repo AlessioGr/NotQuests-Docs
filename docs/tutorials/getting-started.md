@@ -7,7 +7,7 @@ keywords: [notquests, tutorial, getting started, beginner, guide]
 
 :::danger Before you read
 
-This guide was designed with version **4.x** and **[Paper](https://papermc.io/)** in mind.
+This guide was designed with version **4.26.1 or higher** and **[Paper](https://papermc.io/)** in mind.
 
 Older versions or Spigot servers, will have less features and different commands.
 If you're using an older version or Spigot, please do your own research as the commands will be different.
@@ -106,7 +106,7 @@ First, the player has to free up the road from all the shit the infected Zombies
 
 `/qa edit TheVirus objectives add BreakBlocks dirt 64`
 
-This objective will be completed once the player breaks 64 dirt 👍
+This objective will be completed once the player breaks 64 dirt 👍 If you want to, you can specify multiple materials there. For example, if both dirt or stone is fine for the player to break, just enter `dirt,stone` there.
 
 Now, let's add a description for that objective:
 
@@ -146,7 +146,7 @@ However, we want the second Objective, "Zombies ahead!" to only be visible and c
 
 To accomplish that, we need to add a condition to the second objective which makes it so the player needs to complete objective 1 first:
 
-`/qa edit TheVirus objectives edit 2 conditions add CompletedObjective 1`
+`/qa edit TheVirus objectives edit 2 conditions unlock add CompletedObjective 1`
 
 Done! If we take the Quest now, the second objective is hidden:
 

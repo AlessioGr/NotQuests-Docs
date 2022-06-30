@@ -133,6 +133,16 @@ Not only that - they can also be used in so-called expressions. So you can even 
 
 :::
 
+### ❓ ItemInInventoryEnchantments
+
+:::info Description
+
+**Condition:** ✅ **Action:** ❌
+
+**Type:** String List
+
+:::
+
 ### ❓ Money
 
 :::info Description
