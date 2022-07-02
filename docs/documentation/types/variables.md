@@ -63,6 +63,16 @@ Not only that - they can also be used in so-called expressions. So you can even 
 
 :::
 
+### ❓ Climbing
+
+:::info Description
+
+**Condition:** ✅ **Action:** ❌
+
+**Type:** Boolean
+
+:::
+
 ### ❓ CompletedObjectiveIDsOfQuest
 
 :::info Description
@@ -100,66 +110,6 @@ Not only that - they can also be used in so-called expressions. So you can even 
 **Condition:** ✅ **Action:** ✅
 
 **Type:** ItemStack List
-
-:::
-
-### ❓ DayOfWeek
-
-:::info Description
-
-**Condition:** ✅ **Action:** ❌
-
-**Type:** String
-
-:::
-
-### ❓ False
-
-:::info Description
-
-**Condition:** ✅ **Action:** ❌
-
-**Type:** Boolean
-
-:::
-
-### ❓ Inventory
-
-:::info Description
-
-**Condition:** ✅ **Action:** ✅
-
-**Type:** ItemStack List
-
-:::
-
-### ❓ ItemInInventoryEnchantments
-
-:::info Description
-
-**Condition:** ✅ **Action:** ❌
-
-**Type:** String List
-
-:::
-
-### ❓ Money
-
-:::info Description
-
-**Condition:** ✅ **Action:** ✅
-
-**Type:** Double
-
-:::
-
-### ❓ Permission
-
-:::info Description
-
-**Condition:** ✅ **Action:** ✅ (only if LuckPerms is installed)
-
-**Type:** Boolean
 
 :::
 
@@ -213,13 +163,13 @@ Not only that - they can also be used in so-called expressions. So you can even 
 
 :::
 
-### ❓ ExperienceLevel
+### ❓ DayOfWeek
 
 :::info Description
 
-**Condition:** ✅ **Action:** ✅
+**Condition:** ✅ **Action:** ❌
 
-**Type:** Integer
+**Type:** String
 
 :::
 
@@ -233,6 +183,26 @@ Not only that - they can also be used in so-called expressions. So you can even 
 
 :::
 
+### ❓ ExperienceLevel
+
+:::info Description
+
+**Condition:** ✅ **Action:** ✅
+
+**Type:** Integer
+
+:::
+
+### ❓ False
+
+:::info Description
+
+**Condition:** ✅ **Action:** ❌
+
+**Type:** Boolean
+
+:::
+
 ### ❓ Flying
 
 :::info Description
@@ -240,6 +210,16 @@ Not only that - they can also be used in so-called expressions. So you can even 
 **Condition:** ✅ **Action:** ✅
 
 **Type:** Boolean
+
+:::
+
+### ❓ FlySpeed
+
+:::info Description
+
+**Condition:** ✅ **Action:** ✅
+
+**Type:** Float
 
 :::
 
@@ -253,6 +233,16 @@ Not only that - they can also be used in so-called expressions. So you can even 
 
 :::
 
+### ❓ Glowing
+
+:::info Description
+
+**Condition:** ✅ **Action:** ✅
+
+**Type:** Boolean
+
+:::
+
 ### ❓ Health
 
 :::info Description
@@ -263,7 +253,57 @@ Not only that - they can also be used in so-called expressions. So you can even 
 
 :::
 
+### ❓ InLava
+
+:::info Description
+
+**Condition:** ✅ **Action:** ❌
+
+**Type:** Boolean
+
+:::
+
+### ❓ InWater
+
+:::info Description
+
+**Condition:** ✅ **Action:** ❌
+
+**Type:** Boolean
+
+:::
+
+### ❓ Inventory
+
+:::info Description
+
+**Condition:** ✅ **Action:** ✅
+
+**Type:** ItemStack List
+
+:::
+
+### ❓ ItemInInventoryEnchantments
+
+:::info Description
+
+**Condition:** ✅ **Action:** ❌
+
+**Type:** String List
+
+:::
+
 ### ❓ MaxHealth
+
+:::info Description
+
+**Condition:** ✅ **Action:** ✅
+
+**Type:** Double
+
+:::
+
+### ❓ Money
 
 :::info Description
 
@@ -280,6 +320,36 @@ Not only that - they can also be used in so-called expressions. So you can even 
 **Condition:** ✅ **Action:** ✅
 
 **Type:** String
+
+:::
+
+### ❓ Op
+
+:::info Description
+
+**Condition:** ✅ **Action:** ✅
+
+**Type:** Boolean
+
+:::
+
+### ❓ Permission
+
+:::info Description
+
+**Condition:** ✅ **Action:** ✅ (only if LuckPerms is installed)
+
+**Type:** Boolean
+
+:::
+
+### ❓ Ping
+
+:::info Description
+
+**Condition:** ✅ **Action:** ❌
+
+**Type:** Integer
 
 :::
 
@@ -310,16 +380,6 @@ Not only that - they can also be used in so-called expressions. So you can even 
 **Condition:** ✅ **Action:** ✅
 
 **Type:** Double
-
-:::
-
-### ❓ Sneaking
-
-:::info Description
-
-**Condition:** ✅ **Action:** ✅
-
-**Type:** Boolean
 
 :::
 
@@ -373,6 +433,46 @@ Not only that - they can also be used in so-called expressions. So you can even 
 
 :::
 
+### ❓ Sleeping
+
+:::info Description
+
+**Condition:** ✅ **Action:** ❌
+
+**Type:** Boolean
+
+:::
+
+### ❓ Sneaking
+
+:::info Description
+
+**Condition:** ✅ **Action:** ✅
+
+**Type:** Boolean
+
+:::
+
+### ❓ Sprinting
+
+:::info Description
+
+**Condition:** ✅ **Action:** ✅
+
+**Type:** Boolean
+
+:::
+
+### ❓ Swimming
+
+:::info Description
+
+**Condition:** ✅ **Action:** ✅
+
+**Type:** Boolean
+
+:::
+
 ### ❓ True
 
 :::info Description
@@ -380,6 +480,16 @@ Not only that - they can also be used in so-called expressions. So you can even 
 **Condition:** ✅ **Action:** ❌
 
 **Type:** Boolean
+
+:::
+
+### ❓ WalkSpeed
+
+:::info Description
+
+**Condition:** ✅ **Action:** ✅
+
+**Type:** Float
 
 :::
 
