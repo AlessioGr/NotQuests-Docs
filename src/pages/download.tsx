@@ -15,8 +15,8 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <a
             className="button button--secondary button--lg"
-            href="https://github.com/AlessioGr/NotQuests/releases/download/v4.26.1/notquests-4.26.1.jar">
-              ⏬ 4.26.1 <span style={{fontWeight: '400'}}>for Minecraft 1.19 ⭐</span>
+            href="https://github.com/AlessioGr/NotQuests/releases/download/v4.27.0/notquests-4.27.0.jar">
+              ⏬ 4.27.0 <span style={{fontWeight: '400'}}>for Minecraft 1.19 ⭐</span>
           </a>
             <p style={{backgroundColor: 'white', borderRadius: '15px', color: '#0039b4', fontSize: '1em', fontWeight: 'bold', padding: '5px'}}>The 1.19 version probably also works on 1.18.2 as well, but it's not guaranteed, and the packet magic conversation will be disabled.</p>
 

@@ -156,6 +156,8 @@ For these commands, I have pre-created the actions sm1, sm2, sm3 ... sm10 which 
 
 ### ℹ️ BroadcastMessage
 
+### ℹ️ Chat
+
 ### ℹ️ CompleteQuest
 
 ### ℹ️ ConsoleCommand
@@ -165,6 +167,8 @@ For these commands, I have pre-created the actions sm1, sm2, sm3 ... sm10 which 
 ### ℹ️ GiveItem
 
 ### ℹ️ GiveQuest
+
+### ℹ️ PlayerCommand
 
 ### ℹ️ SendMessage
 
