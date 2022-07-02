@@ -433,6 +433,56 @@ Not only that - they can also be used in so-called expressions. So you can even 
 
 :::
 
+### ❓ ReflectionStaticBoolean
+
+:::info Description
+
+**Condition:** ✅ **Action:** ✅
+
+**Type:** Boolean
+
+:::
+
+### ❓ ReflectionStaticDouble
+
+:::info Description
+
+**Condition:** ✅ **Action:** ✅
+
+**Type:** Double
+
+:::
+
+### ❓ ReflectionStaticFloat
+
+:::info Description
+
+**Condition:** ✅ **Action:** ✅
+
+**Type:** Float
+
+:::
+
+### ❓ ReflectionStaticInteger
+
+:::info Description
+
+**Condition:** ✅ **Action:** ✅
+
+**Type:** Integer
+
+:::
+
+### ❓ ReflectionStaticString
+
+:::info Description
+
+**Condition:** ✅ **Action:** ✅
+
+**Type:** String
+
+:::
+
 ### ❓ Sleeping
 
 :::info Description
