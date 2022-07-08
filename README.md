@@ -1,3 +1,6 @@
+## How to edit the docs
+Simply edit the relevant markdown files at https://github.com/AlessioGr/NotQuests-Docs/tree/main/docs or create a new one.
+
 # Website
 
 This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
