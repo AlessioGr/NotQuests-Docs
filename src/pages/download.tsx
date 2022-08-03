@@ -11,7 +11,8 @@ function HomepageHeader() {
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
         <h1 className="hero__title">NotQuests Downloads</h1>
-        <p className="hero__subtitle">Choose your Minecraft version:</p>
+          <p>1.19.1 is not fully supported (some commands won't work) as a library NotQuests is using (called cloud command framework) is not updated yet. You will have to wait for them to update first. So, please stay on 1.19 for now.</p>
+          <p className="hero__subtitle">Choose your Minecraft version:</p>
         <div className={styles.buttons}>
           <a
             className="button button--secondary button--lg"
