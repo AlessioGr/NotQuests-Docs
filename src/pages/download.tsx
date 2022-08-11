@@ -11,13 +11,20 @@ function HomepageHeader() {
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
         <h1 className="hero__title">NotQuests Downloads</h1>
-          <p>1.19.1 is not fully supported (some commands won't work) as a library NotQuests is using (called cloud command framework) is not updated yet. You will have to wait for them to update first. So, please stay on 1.19 for now.</p>
           <p className="hero__subtitle">Choose your Minecraft version:</p>
         <div className={styles.buttons}>
+
+        <a
+            className="button button--secondary button--lg"
+            href="https://github.com/AlessioGr/NotQuests/releases/download/v5.1.0/notquests-5.1.0.jar">
+            ⏬ 5.1.0 <span style={{fontWeight: '400'}}>for Minecraft 1.19.2 ⭐</span>
+        </a>
+
           <a
             className="button button--secondary button--lg"
+            style={{backgroundColor: '#cbcbcb', borderColor: '#cbcbcb'}}
             href="https://github.com/AlessioGr/NotQuests/releases/download/v5.0.1/notquests-5.0.1.jar">
-              ⏬ 5.0.1 <span style={{fontWeight: '400'}}>for Minecraft 1.19 (NOT 1.19.1 yet) ⭐</span>
+              ⏬ 5.0.1 <span style={{fontWeight: '400'}}>for Minecraft 1.19</span>
           </a>
             <p style={{backgroundColor: 'white', borderRadius: '15px', color: '#0039b4', fontSize: '1em', fontWeight: 'bold', padding: '5px'}}>The 1.19 version probably also works on 1.18.2 as well, but it's not guaranteed, and the packet magic conversation will be disabled.</p>
 
