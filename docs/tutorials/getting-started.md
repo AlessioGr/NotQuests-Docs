@@ -144,9 +144,10 @@ As you see, both objectives are visible. You can also complete them in no partic
 
 However, we want the second Objective, "Zombies ahead!" to only be visible and complete-able after the first Objective is completed.
 
-To accomplish that, we need to add a condition to the second objective which makes it so the player needs to complete objective 1 first:
+To accomplish that, we need to add a condition to the second objective which makes it so the player needs to complete objective 1 first. There's two ways to achieve this in NotQuests (choose just one):
 
-`/qa edit TheVirus objectives edit 2 conditions unlock add CompletedObjective 1`
+- **Easy way**: `/qa edit TheVirus objectives predefinedProgressOrder set firstToLast`. This also automatically sets the correct, same order for any future objectives you may add to this quest.
+- **Harder way**: `/qa edit TheVirus objectives edit 2 conditions unlock add CompletedObjective 1`. You'd need to set this for every single objective of that quest. However, this way may give you more flexibility.
 
 Done! If we take the Quest now, the second objective is hidden:
 
