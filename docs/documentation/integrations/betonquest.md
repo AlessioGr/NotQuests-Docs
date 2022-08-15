@@ -7,6 +7,12 @@ keywords: [notquests, betonquest, integration]
 
 You can use ANY conditions and actions of NotQuests in BetonQuest. At the same time, you can use any actions, conditions & objectives of BetonQuest in NotQuests. Only [BetonQuest 2.x and higher](https://betonquest.org/) is supported.
 
+## ❤️ Using NotQuests conversation interceptor in BetonQuest
+
+Showcase: https://youtu.be/uKFuSV1CLFo
+
+To use it: Use `default_interceptor: notquests` in the BetonQuest config
+
 ## ❤️ Using BetonQuest Events in NotQuests
 
 Example: `/qa actions add actionname BetonQuestFireEvent default tag_wood_done`
