@@ -7,7 +7,7 @@ keywords: [notquests, PlaceholderAPI, placeholders]
 
 ## Player Placeholders
 
-These are all the Player Placeholders you can use ([PlaceholderAPI](https://www.spigotmc.org/resources/6245/) required):
+These are all the Player Placeholders you can use ([PlaceholderAPI](https://github.com/PlaceholderAPI/PlaceholderAPI/releases) required):
 
 - %notquests_player_has_completed_quest_QUESTNAME%
 - %notquests_player_has_current_active_quest_QUESTNAME%

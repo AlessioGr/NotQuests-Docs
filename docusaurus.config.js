@@ -151,10 +151,6 @@ const config = {
                 label: 'Polymart',
                 href: 'https://polymart.org/resource/1484',
               },
-              {
-                label: 'Spigot',
-                href: 'https://www.spigotmc.org/resources/95872/',
-              },
             ],
           },
         ],

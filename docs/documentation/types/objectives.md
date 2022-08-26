@@ -392,7 +392,7 @@ In our vote example, if you set that command as a vote reward (in your vote plug
 
 ### ℹ️ KillEliteMobs
 
-## [Jobs Reborn](https://www.spigotmc.org/resources/4216/) Integration Objectives
+## [Jobs Reborn](https://www.zrips.net/jobs/) Integration Objectives
 
 ### ℹ️ JobsRebornReachJobLevel
 
@@ -414,6 +414,6 @@ In our vote example, if you set that command as a vote reward (in your vote plug
 
 ### ℹ️ BetonQuestObjectiveStateChange
 
-## [UltimateJobs](https://www.spigotmc.org/resources/99198/) Integration Objectives
+## [UltimateJobs](https://github.com/Warsteiner37/UltimateJobs/releases Integration Objectives
 
 ### ℹ️ UltimateJobsReachJobLevel

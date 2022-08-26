@@ -641,7 +641,7 @@ Not only that - they can also be used in so-called expressions. So you can even 
 
 :::
 
-## [UltimateClans](https://www.spigotmc.org/resources/85615/) Integration Variables
+## [UltimateClans](https://polymart.org/resource/ultimate-clans-v5.1162) Integration Variables
 
 ### ❓ UltimateClansClanLevel
 
