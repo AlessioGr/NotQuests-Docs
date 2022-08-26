@@ -144,12 +144,16 @@ const config = {
                 href: 'https://github.com/AlessioGr/NotQuests',
               },
               {
-                label: 'Spigot',
-                href: 'https://www.spigotmc.org/resources/95872/',
+                label: 'Modrinth',
+                href: 'https://modrinth.com/plugin/notquests',
               },
               {
                 label: 'Polymart',
                 href: 'https://polymart.org/resource/1484',
+              },
+              {
+                label: 'Spigot',
+                href: 'https://www.spigotmc.org/resources/95872/',
               },
             ],
           },
