@@ -10,7 +10,12 @@ function HomepageHeader() {
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
-        <h1 className="hero__title">NotQuests Downloads</h1>
+        <h1 className={clsx('hero__title', styles.mrhead)}>NotQuests Downloads
+            <a className={clsx('', styles.mrhead)} href={"https://modrinth.com/plugin/notquests/versions"}>
+                <img height="60" src="/img/modrinth-badge-dark.svg" alt="Modrinth download" />
+            </a>
+
+        </h1>
           <p className="hero__subtitle">Choose your Minecraft version:</p>
         <div className={styles.buttons}>
 

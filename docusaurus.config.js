@@ -89,8 +89,9 @@ const config = {
             label: '📝 Documentation',
           },
           {
-            href: '/download',
-            label: '▶️ Download',
+            href: 'https://modrinth.com/plugin/notquests/versions',
+            label: 'Download',
+            className: "modrinthicon",
             position: 'left',
           },
           {
@@ -140,12 +141,13 @@ const config = {
                 to: '/blog',
               },*/
               {
-                label: 'GitHub',
-                href: 'https://github.com/AlessioGr/NotQuests',
+                href: 'https://modrinth.com/plugin/notquests/versions',
+                label: 'Modrinth',
+                className: "footer__link-item modrinthicon",
               },
               {
-                label: 'Modrinth',
-                href: 'https://modrinth.com/plugin/notquests',
+                label: 'GitHub',
+                href: 'https://github.com/AlessioGr/NotQuests',
               },
               {
                 label: 'Polymart',

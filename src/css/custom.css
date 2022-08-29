@@ -80,3 +80,15 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
 .navbar__logo img {
   border-radius: 30%;
 }
+
+.modrinthicon {
+  background-image: url("/img/modrinth-mark-light.svg");
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  padding-left: 23px;
+  background-position-y: center;
+}
+
+html[data-theme='dark'] .modrinthicon {
+  background-image: url("/img/modrinth-mark-dark.svg");
+}
