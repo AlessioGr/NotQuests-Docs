@@ -10,7 +10,16 @@
     flex-wrap: wrap;
     height: 60px;
 }
-
+@media screen and (max-width: 746px) {
+    .mrhead {
+        margin-bottom: 2em;
+    }
+}
+@media screen and (max-width: 593px) {
+    .mrhead {
+        margin-bottom: 3em;
+    }
+}
  .heroBanner {
     padding: 4rem 0;
     text-align: center;
