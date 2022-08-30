@@ -7,7 +7,7 @@ keywords: [notquests, tutorial, getting started, beginner, guide]
 
 :::danger Before you read
 
-This guide was designed with version **5.2.2 or higher** and **[Paper](https://papermc.io/)** in mind.
+This guide was designed with version **5.2.3 or higher** and **[Paper](https://papermc.io/)** in mind.
 
 Older versions or Spigot servers, will have less features and different commands.
 If you're using an older version or Spigot, please do your own research as the commands will be different.
