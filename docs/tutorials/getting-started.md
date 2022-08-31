@@ -237,13 +237,43 @@ Instead, we are now using MiniMessage, which allows you to do even more advanced
 
 Let's start by giving our quest a colorful display name:
 
-`/qa edit TheVirus displayName set <red>A <bold>Deadly</bold> <#112233>Virus`
+`/qa edit TheVirus displayName set <red>A <bold>Deadly</bold> <#eb34a1>Virus`
+
+![Cool display name](/img/getting-started/displayname-1.png)
 
 Or even:
 
-`/qa edit TheVirus displayName set <rainbow>A <bold>Deadly</bold></rainbow> <gradient:#112233:#ffffff>Virus</gradient>`
+`/qa edit TheVirus displayName set <rainbow>A <bold>Deadly</bold></rainbow> <gradient:#eb34a1:#ffffff>Virus</gradient>`
+
+![Another display name](/img/getting-started/displayname-2.png)
 
 Pretty cool, right? You even have auto-completions for all MiniMessage color tags for many commands. At the same time, NotQuests has added some internal colors which you can use to achieve a consistent look. For example `<highlight>`, `<highlight2>` or `<main>`. Those can be customize inside of the config, to change NotQuests entire color scheme.
+
+### Categories
+
+You can group Quests together in categories. Categories are just a way to organize your Quests. Let's create a category called "Virus Quests":
+
+`/qa categories create VirusQuests`
+
+Now let's move our quest to that category (by default, it's in a category called "default").
+
+`/qa edit TheVirus category set VirusQuests`
+
+Done - that easy! Each Quest can only belong to one single category. Categories also determine the folder structure of NotQuests - and they'll even determine how it's displayed in the GUI!
+
+### Sub-categories
+
+Each category can also have sub-categories. There can be unlimited sub-categories, and you can nest them how deep you want. Example of creating a category "Zombies" as a sub-category of "VirusQuests": `/qa categories create VirusQuests.Zombies`
+
+### Category display names
+
+The name we specified above is also just the categorie's identifier. You can add a display name (which is what the player will actually see). It can contain spaces, or even color codes, just like quest names! Example:
+
+`/qa categories edit VirusQuests displayName set <dark_green>Virus Quests <main>(dangerous)`
+
+### Category predefined progress order:
+
+(todo, still need to write this up. Works like the predefined progress order for quests > objectives, but for category > quests)
 
 ## What next?
 
