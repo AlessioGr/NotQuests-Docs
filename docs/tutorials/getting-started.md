@@ -273,7 +273,7 @@ The name we specified above is also just the categorie's identifier. You can add
 
 ### Category predefined progress order:
 
-(todo, still need to write this up. Works like the predefined progress order for quests > objectives, but for category > quests)
+(todo, still need to write this up. Works like the predefined progress order for quests > objectives, but for category > quests. Super useful, this can make your life VERY easy and speed things up by a lot)
 
 ## What next?
 
