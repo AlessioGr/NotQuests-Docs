@@ -261,17 +261,17 @@ Now let's move our quest to that category (by default, it's in a category called
 
 Done - that easy! Each Quest can only belong to one single category. Categories also determine the folder structure of NotQuests - and they'll even determine how it's displayed in the GUI!
 
-### Sub-categories
+#### Sub-categories
 
 Each category can also have sub-categories. There can be unlimited sub-categories, and you can nest them how deep you want. Example of creating a category "Zombies" as a sub-category of "VirusQuests": `/qa categories create VirusQuests.Zombies`
 
-### Category display names
+#### Category display names
 
 The name we specified above is also just the categorie's identifier. You can add a display name (which is what the player will actually see). It can contain spaces, or even color codes, just like quest names! Example:
 
 `/qa categories edit VirusQuests displayName set <dark_green>Virus Quests <main>(dangerous)`
 
-### Category predefined progress order:
+#### Category predefined progress order:
 
 (todo, still need to write this up. Works like the predefined progress order for quests > objectives, but for category > quests. Super useful, this can make your life VERY easy and speed things up by a lot)
 
