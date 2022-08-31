@@ -227,6 +227,24 @@ Files for the finished TheVirus Quest (if you want them for some reason. They ar
 
 The quest is saved in the `plugins/NotQuests/default/quests.yml` and `plugins/NotQuests/default/actions.yml` files.
 
+## Advanced concepts
+
+### Color codes
+
+Colors are supported basically everywhere in notquests - but not the legacy ones you used to know. Stuff like &6 or &c won't bring you far - it has long been abandoned by Mojang & kept alive by Spigot - as NotQuests thrives to be as modern and innovating as possible, it abandoned those too.
+
+Instead, we are now using MiniMessage, which allows you to do even more advanced stuff easier, like RGB colors, gradients, and even click commands & hover messages! You can find the MiniMessage docs [here](https://docs.adventure.kyori.net/minimessage/).
+
+Let's start by giving our quest a colorful display name:
+
+`/qa edit TheVirus displayName set <red>A <bold>Deadly</bold> <#112233>Virus`
+
+Or even:
+
+`/qa edit TheVirus displayName set <rainbow>A <bold>Deadly</bold></rainbow> <gradient:#112233:#ffffff>Virus</gradient>`
+
+Pretty cool, right? You even have auto-completions for all MiniMessage color tags for many commands. At the same time, NotQuests has added some internal colors which you can use to achieve a consistent look. For example <highlight>, <highlight2> or <main>. Those can be customize inside of the config, to change NotQuests entire color scheme.
+
 ## What next?
 
 Now, start making Quests! On this website, you can find further information about NotQuests and help if you check out the [Documentation](/docs/documentation/docs/) tab on the top of this page. If you need any help, feel free to join our [Discord](https://discord.gg/7br638S5Ex).

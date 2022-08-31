@@ -414,6 +414,6 @@ In our vote example, if you set that command as a vote reward (in your vote plug
 
 ### ℹ️ BetonQuestObjectiveStateChange
 
-## [UltimateJobs](https://github.com/Warsteiner37/UltimateJobs/releases Integration Objectives
+## [UltimateJobs](https://github.com/Warsteiner37/UltimateJobs/releases) Integration Objectives
 
 ### ℹ️ UltimateJobsReachJobLevel
