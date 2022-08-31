@@ -243,7 +243,7 @@ Or even:
 
 `/qa edit TheVirus displayName set <rainbow>A <bold>Deadly</bold></rainbow> <gradient:#112233:#ffffff>Virus</gradient>`
 
-Pretty cool, right? You even have auto-completions for all MiniMessage color tags for many commands. At the same time, NotQuests has added some internal colors which you can use to achieve a consistent look. For example <highlight>, <highlight2> or <main>. Those can be customize inside of the config, to change NotQuests entire color scheme.
+Pretty cool, right? You even have auto-completions for all MiniMessage color tags for many commands. At the same time, NotQuests has added some internal colors which you can use to achieve a consistent look. For example `<highlight>`, `<highlight2>` or `<main>`. Those can be customize inside of the config, to change NotQuests entire color scheme.
 
 ## What next?
 
