@@ -652,3 +652,15 @@ Not only that - they can also be used in so-called expressions. So you can even 
 **Type:** Integer
 
 :::
+
+## [Floodgate](https://github.com/GeyserMC/Floodgate) Integration Variables
+
+### ❓ FloodgateIsFloodgatePlayer
+
+:::info Description
+
+**Condition:** ✅ **Action:** ❌
+
+**Type:** Boolean
+
+:::
