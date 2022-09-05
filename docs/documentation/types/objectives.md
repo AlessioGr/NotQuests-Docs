@@ -290,6 +290,22 @@ TODO
 
 :::
 
+### 🧑‍💻 ShearSheep
+
+:::info Description
+
+**Completed when:** Player shears a certain amount of sheep
+
+**Command Arguments:**
+
+- **`<amount>`** - Amount of times the player needs to shear the sheep
+- **`(flags)`** - Optional flags
+  - `--cancelShearing` - If you set this flag, the actual shearing of the sheep will be cancelled while this objective is active
+
+**Example command:** `/qa edit questname objectives add ShearSheep 4 --cancelShearing`
+
+:::
+
 ### 🔥 SmeltItems
 
 :::info Description

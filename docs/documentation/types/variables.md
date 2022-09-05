@@ -589,6 +589,16 @@ Not only that - they can also be used in so-called expressions. So you can even 
 
 :::
 
+### ❓ ProjectKorraIsBender
+
+:::info Description
+
+**Condition:** ✅ **Action:** ❌
+
+**Type:** Boolean
+
+:::
+
 ### ❓ ProjectKorraSubElements
 
 :::info Description

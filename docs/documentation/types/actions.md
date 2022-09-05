@@ -13,6 +13,7 @@ To "test" an action created via `/qa actions`, you can use `/qa actions edit act
 
 - **`(flags)`** - Optional flags
   - `--category <categoryName>` - If this is a raw, actions.yml action, you are able to set its category here
+  - `--delay <delay>` - If this is a raw, actions.yml action, you are able to set its execution delay here. If you enter, for example, 1s, it will be executed in 1 seconds and not immediately.
 
 ## Default Variable Actions
 
@@ -133,6 +134,7 @@ These are the default, "standalone" actions and don't depend on variables.
   - `--minRandom <amount>` - If this is set, it will only execute a random amount of quests with this minimum
   - `--maxRandom <amount>` - If this is set, it will only execute a random amount of quests with this maximum
   - `--onlyCountForRandomIfConditionsFulfilled` - Does not count an action to the min or max random counter if its conditions are not fulfilled, if this flag is set
+  - `--executedActionDelay` - Sets the delay for which all included actions will be executed. This overrides possible existing delays.
 
 **Example commands:**
 
@@ -169,6 +171,8 @@ For these commands, I have pre-created the actions sm1, sm2, sm3 ... sm10 which 
 ### ℹ️ GiveQuest
 
 ### ℹ️ PlayerCommand
+
+### ℹ️ PlaySound
 
 ### ℹ️ SendMessage
 
