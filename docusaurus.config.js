@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'NotQuests',
-  tagline: 'Flexible & powerful Quest & Conversation Plugin',
+  tagline: 'The best, most flexible & powerful Minecraft Quest & Conversation Plugin for Paper and Spigot servers',
   url: 'https://www.notquests.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',

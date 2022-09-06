@@ -30,7 +30,7 @@ export default function Home(): JSX.Element {
   return (
     <Layout
       title={`${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      description="NotQuests is the best Minecraft Quest Plugin">
       <HomepageHeader />
       <main>
         <HomepageFeatures />
