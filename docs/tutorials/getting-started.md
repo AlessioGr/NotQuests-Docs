@@ -98,6 +98,11 @@ In order for us to be able to test our own Quest, give yourself 10 Quest Points:
 
 `/qa questpoints putyourminecraftnamehere add 10`
 
+:::tip Thank you for your attention
+
+If you like NotQuests, please [**give NotQuests a follow on modrinth**](https://modrinth.com/plugin/notquests/versions) 😊 This will motivate me bring you more updates and features!
+:::
+
 ### 3. Objectives
 
 Objectives are the heart of every Quest. Let's add our first one!
