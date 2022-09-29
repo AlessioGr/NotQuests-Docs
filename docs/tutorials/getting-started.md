@@ -14,6 +14,14 @@ If you're using an older version or Spigot, please do your own research as the c
 
 :::
 
+:::info Incomplete docs
+
+I know the docs here are very incomplete and cover only 10% of what notquests can actually do. As the docs are open-source that's not my fault though, but yours, because you, or rather the community, is lazy! **Shame on you!**
+
+Once you know more about notquests, you can be a chad and **[contribute to our documentation here](https://github.com/AlessioGr/NotQuests-Docs/tree/main/docs)** (GitHub account needed, but docs can be edited right on there) - any contributions are welcome! ❤️
+
+:::
+
 Let's discover **NotQuests!** There's two ways to get started:
 
 - Either you keep on reading this guide
