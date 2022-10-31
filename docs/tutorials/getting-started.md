@@ -7,7 +7,7 @@ keywords: [notquests, tutorial, getting started, beginner, guide]
 
 :::danger Before you read
 
-This guide was designed with version **5.5.1 or higher** and **[Paper 1.19.2](https://papermc.io/)** in mind.
+This guide was designed with version **5.6.2 or higher** and **[Paper 1.19.2](https://papermc.io/)** in mind.
 
 Older versions or Spigot servers, will have less features and different commands.
 If you're using an older version or Spigot, please do your own research as the commands will be different.
@@ -232,11 +232,6 @@ This will make it, so the player cannot take the Quest using the `/q take TheVir
 ### 7. Taking the Quest
 
 Use `/q take TheVirus` to take the Quest! You can also bind it to either Citizens NPCs or Armor stands using `/qa edit TheVirus npcs add [NPC ID]` or `/qa edit TheVirus armorstands add`.
-
-Files for the finished TheVirus Quest (if you want them for some reason. They are not needed):
-
-- [quests.yml](https://github.com/AlessioGr/NotQuests/blob/main/Demo%20Quests/Deadly%20Virus/quests.yml)
-- [actions.yml](https://github.com/AlessioGr/NotQuests/blob/main/Demo%20Quests/Deadly%20Virus/actions.yml)
 
 The quest is saved in the `plugins/NotQuests/default/quests.yml` and `plugins/NotQuests/default/actions.yml` files.
 

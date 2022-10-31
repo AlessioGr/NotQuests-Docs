@@ -209,6 +209,20 @@ TODO
 
 :::
 
+### 🔢 Objective
+
+:::info Description
+
+**Completed when:** This is a holder for sub-objectives. If you add sub-objectives to an "Objective" objective, it's completed once all its sub-objectives have been completed.
+
+**Command Arguments:**
+
+- **`<Objective Holder Name>`** - This will be displayed when taking the quest
+
+**Example command:** `/qa edit questname objectives add Objective "Crafting Objectives"`
+
+:::
+
 ### 🏴‍☠️ OpenBuriedTreasure
 
 :::info Description
