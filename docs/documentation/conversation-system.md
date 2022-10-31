@@ -7,6 +7,12 @@ keywords: [notquests, conversation, conversations, npc talk, npc conversations]
 
 > Showcase of conversations with packet magic enabled: https://www.youtube.com/watch?v=iPwcf277K8k (it has improved since I made that video).
 
+## NPCs
+
+To add NPCs to a conversation, please use the COMMAND! Don't edit the conversation file. The video tutorial is outdated there.
+
+## Links & Introduction
+
 Good, easy-to-understand video tutorial: https://www.youtube.com/watch?v=OC45_H3Tv8Y
 
 Shitty Video Tutorial: https://www.youtube.com/watch?v=2xgzLTX8KyQ
