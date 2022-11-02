@@ -92,3 +92,19 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
 html[data-theme='dark'] .modrinthicon {
   background-image: url("/img/modrinth-mark-dark.svg");
 }
+
+html[data-theme='light'] code {
+  border-color: #c3c3c3;
+}
+
+html[data-theme='dark'] code {
+  border-color: #000000;
+}
+
+code {
+  /* background: #3c4054; */
+  /* color: white; */
+  padding: 5px 1em 3px 0.5em;
+  border-radius: 5px 5px 5px 0px;
+  font-weight: 700;
+}

@@ -7,7 +7,7 @@ keywords: [notquests, tutorial, getting started, beginner, guide]
 
 :::danger Before you read
 
-This guide was designed with version **5.6.2 or higher** and **[Paper 1.19.2](https://papermc.io/)** in mind.
+This guide was designed with version **5.6.3 or higher** and **[Paper 1.19.2](https://papermc.io/)** in mind.
 
 Older versions or Spigot servers, will have less features and different commands.
 If you're using an older version or Spigot, please do your own research as the commands will be different.
@@ -282,6 +282,98 @@ The name we specified above is also just the categorie's identifier. You can add
 #### Category predefined progress order:
 
 (todo, still need to write this up. Works like the predefined progress order for quests > objectives, but for category > quests. Super useful, this can make your life VERY easy and speed things up by a lot)
+
+### Sub-Objectives
+
+![Sub objectives](/img/getting-started/sub-objectives.png)
+
+NotQuests supports sub-objectives! Each objective can have unlimited sub-objective. And each sub-objective can also have unlimited sub-sub-objectives.. and so on!
+
+For that, there exists an "Objective" objective which is just meant as a holder for sub-objectives. In the screenshot, that would be "Improve soil quality".
+Although any objective can have sub-objectives.
+
+If you add sub-objectives to an "Objective" objective, it's completed once all its sub-objectives have been completed.
+If you add sub-objectives to any other objective, you're only able to progress on it once all its sub-objectives have been completed.
+
+**Example:**
+
+1. `/qa edit quest objectives add Objective "<gold>Improve soil quality"`
+2. `/qa edit quest objectives edit 1 objectives add BreakBlocks dirt 5`
+3. `/qa edit quest objectives edit 1 objectives edit 1 displayname set Less dirt is good`
+4. `/qa edit quest objectives edit 1 objectives add Jump 3.0 --taskDescription "Jump on the soil to make it better"`
+
+### Objective condition types
+
+Earlier in this tutorial, we've explained how you can add objective dependencies via conditions. The command was `/qa edit TheVirus objectives edit 2 conditions unlock add CompletedObjective`.
+
+However, there are different kinds of conditions you can add to Objectives. This condition is an unclock condition, which determines if the objective is Hidden (= no progress is counted and you cannot complete it) or not.
+
+However, you can ALSO add objective conditions which check if you can progress, or complete the objective. Should be super useful!
+
+**Examples:**
+
+- `/qa edit questname objectives edit 1 conditions unlock add Flying equals false` - Unlock condition. That's what you are used to. If you are flying, the objective remains locked / "Hidden"
+- `/qa edit questname objectives edit 1 conditions progress add Flying equals false` - Objective is always shown, but if you are flying, you won't get any positive progress towards it
+- `/qa edit questname objectives edit 1 conditions progress add Flying equals false` - Objective is always shown and you always get progress, but it won't complete if you don't fulfill the condition
+
+### Variables as objectives
+
+There are more possible objectives than you think there are. You can add any variable of notquests as an objective! An example would be if you wanted the objective to be "Play 100 minutes":
+
+`/qa edit questname objectives add NumberVariable PlaytimeMinutes moreOrEqualThan 100`
+
+What if the player already played for 100 minutes already, though? Let's make it, so the player has to play 100 MORE minutes - counting from the point of accepting the quest/unlocking the objective.
+
+`/qa edit questname objectives add NumberVariable PlaytimeMinutes moreOrEqualThan PlaytimeMinutes+100`
+
+This objective makes it so the player needs to play 100 MORE minutes. This is possible, as you are able to use expressions (math, other variables etc.) in many places in notquests (PlaytimeMinutes+100 is such an expression).
+
+Imagine the possibilities! Dynamic objectives based on how much the player has already done / how strong they are / how much karma or questpoints they collected / how much they earned? An easy task with notquests!
+
+### Advanced block/material selector
+
+Anywhere you can specify blocks/materials (e.g. the BreakBlocks objective or the GiveItem action/reward), we use our block selector. You can not only specify one single block/material there, but multiple! Here's some examples:
+
+`/qa edit questname objectives add BreakBlocks diamond_ore,deepslate_diamond_ore 20`
+
+Yes! Finally you can make it so both kinds of diamond ore count towards the progress.
+
+Or:
+
+`/qa edit questname objectives add PlaceBlocks hand,acacia_log,spruce_log,birch_log,dark_oak_log 15`
+
+You can see why that's super useful, right?
+
+This even works in GiveItem actions, so you could give players multiple items at once!
+
+### NotQuests expressions are actually really powerful!
+
+NotQuests gives you the ability to make even more complex conditions much easier, if you want to. Boolean comparisons are now possible in expressions. Note: conditions can be used as quest requirements / objective conditions. They are the same.
+
+Few examples of what's now possible:
+
+- `/qa conditions add cname True equals (Money>10)&Flying`
+  This checks if you are flying AND have more than $10
+  - Another way to do this: `/qa conditions add cname True equals Condition(Conditions:Flying&IsRich)`
+  - Or `/qa conditions add cname Condition equals Flying&IsRich`
+
+You can also use | (or) operators or ! (negation) when using conditions in an expression.
+
+Or:
+
+`/qa conditions add moneyCondition Money moreThan 10+TagInteger(TagName:reputation)*TagInteger(TagName:level)`
+
+This condition makes it so you need more than 10 + the value of the "reputation" tag multiplied by the value of the "level" tag money.
+
+And now a very complex one:
+
+`/qa actions add pp3 Money add ((TagInteger(TagName:points)>=4)*(10+30))+(!(TagInteger(TagName:points)>=4)*5)`
+
+If your "points" (from the Integer tag) are bigger or equal 4, this action will give you 40$. Otherwise, it will give you 5$. If you want to learn more about the tag system, head to the [tag system guide](http://localhost:3000/docs/tutorials/creating-a-reputation-system-with-tags).
+
+[Full list of operators](https://pastebin.com/raw/qZqQmL8x).
+
+NotQuests expressions like these can be used in a lot of places - so powerful!
 
 ## What next?
 
