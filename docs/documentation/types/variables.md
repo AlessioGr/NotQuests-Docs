@@ -173,6 +173,16 @@ Not only that - they can also be used in so-called expressions. So you can even 
 
 :::
 
+### ❓ EnderChest
+
+:::info Description
+
+**Condition:** ✅ **Action:** ✅
+
+**Type:** ItemStack List
+
+:::
+
 ### ❓ Experience
 
 :::info Description
