@@ -7,7 +7,7 @@ keywords: [notquests, tutorial, getting started, beginner, guide]
 
 :::danger Before you read
 
-This guide was designed with version **5.7.0 or higher** and **[Paper 1.19.2](https://papermc.io/)** in mind.
+This guide was designed with version **5.8.1 or higher** and **[Paper 1.19.2](https://papermc.io/)** in mind.
 
 Older versions or Spigot servers, will have less features and different commands.
 If you're using an older version or Spigot, please do your own research as the commands will be different.
@@ -374,6 +374,15 @@ If your "points" (from the Integer tag) are bigger or equal 4, this action will 
 [Full list of operators](https://pastebin.com/raw/qZqQmL8x).
 
 NotQuests expressions like these can be used in a lot of places - so powerful!
+
+### Profiles
+
+Every player with the permission node "notquests.user.profiles" can now create **profiles** in notquests! :fire:
+Each profile has **their own quest points, tags active & completed quests etc.** This would allow players to start over if they want to, in order to choose a different path, do a speedrun or just to experience your RPG again - or whatever else!
+
+Showing all your current profiles: `/notquests profiles show` (seen on the screenshot)
+Creating a new profile: `/notquests profiles create profilename`
+Changing your profile: `/notquests profiles change profilename`
 
 ## What next?
 
