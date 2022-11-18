@@ -21,8 +21,8 @@ function HomepageHeader() {
 
         <a
             className="button button--secondary button--lg"
-            href="https://cdn.modrinth.com/data/17DyGUnO/versions/SwSp7h04/notquests-5.8.3.jar">
-            ⏬ 5.8.3 <span style={{fontWeight: '400'}}>for Minecraft 1.19.2 ⭐</span>
+            href="https://cdn.modrinth.com/data/17DyGUnO/versions/PH8gZG9C/notquests-5.8.4.jar">
+            ⏬ 5.8.4 <span style={{fontWeight: '400'}}>for Minecraft 1.19.2 ⭐</span>
         </a>
 
           <a

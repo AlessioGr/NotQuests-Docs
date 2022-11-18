@@ -43,20 +43,22 @@ First, we'll list the objectives which are always available:
 
 :::
 
-### 🚮 CollectItems
+### 🚮 PickupItems
 
 :::info Description
 
-**Completed when:** Player collects a specific item by picking it up from the ground into his inventory.
+**Completed when:** Player picks up a specific item by picking it up from the ground into his inventory.
 
 **Command Arguments:**
 
 - **`<material>`** The material of the block which the player has to break. Use 'hand' to specify the item which you are currently holding in your hand. Use 'any' so any item counts. You can also specify items made in the NotQuests item system.
-- **`<amount>`** - The amount of items the player needs to collect
+- **`<amount>`** - The amount of items the player needs to pick up
 - **`(flags)`** - Optional flags
-  - `--doNotDeductIfItemIsDropped` - By default, if you drop an item which is specified in the CollectItems objective, it will be deducted from your progress. Otherwise, players would be able to simply cheat by dropping and then picking up the item. Setting this flag will **disable** that safety mechanism.
+  - `--doNotDeductIfItemIsDropped` - By default, if you drop an item which is specified in the PickupItems objective, it will be deducted from your progress. Otherwise, players would be able to simply cheat by dropping and then picking up the item over and m. Setting this flag will **disable** that safety mechanism.
+  - `--doNotDeductIfItemIsPlaced` - By default, if you place an item which is specified in the PickupItems objective, it will be deducted from your progress. Otherwise, players would be able to simply cheat by placing and then picking up the item over and over. Setting this flag will **disable** that safety mechanism.
+  - `--doNotDeductIfItemIsRemovedFromInventory` - By default, if you remove an item from your inventory (e.g. put in a chest) which is specified in the PickupItems objective, it will be deducted from your progress. Otherwise, players would be able to simply cheat by, e.g., putting an item in a chest and destroying the chest. Setting this flag will **disable** that safety mechanism.
 
-**Example command:** `/qa edit questname objectives add CollectItems dirt 12`
+**Example command:** `/qa edit questname objectives add PickupItems dirt 12`
 
 :::
 
