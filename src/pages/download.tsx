@@ -28,7 +28,7 @@ function HomepageHeader() {
           <a
             className="button button--secondary button--lg"
             style={{backgroundColor: '#cbcbcb', borderColor: '#cbcbcb'}}
-            href="https://github.com/AlessioGr/NotQuests/releases/download/v5.0.1/notquests-5.0.1.jar">
+            href="https://cdn.modrinth.com/data/17DyGUnO/versions/5.0.1/notquests-5.0.1.jar">
               ⏬ 5.0.1 <span style={{fontWeight: '400'}}>for Minecraft 1.19</span>
           </a>
             <p style={{backgroundColor: 'white', borderRadius: '15px', color: '#0039b4', fontSize: '1em', fontWeight: 'bold', padding: '5px'}}>The 1.19 version probably also works on 1.18.2 as well, but it's not guaranteed, and the packet magic conversation will be disabled.</p>
@@ -36,13 +36,13 @@ function HomepageHeader() {
             <a
             className="button button--secondary button--lg"
             style={{backgroundColor: '#cbcbcb', borderColor: '#cbcbcb'}}
-            href="https://github.com/AlessioGr/NotQuests/releases/download/v4.21.0/notquests-4.21.0.jar">
+            href="https://cdn.modrinth.com/data/17DyGUnO/versions/4.21.0/notquests-4.21.0.jar">
                 ⏬ 4.21.0 <span style={{fontWeight: '400'}}>for Minecraft 1.18.2</span>
           </a>
           <a
             className="button button--secondary button--lg"
             style={{backgroundColor: '#a8a8a8', borderColor: '#a8a8a8'}}
-            href="https://github.com/AlessioGr/NotQuests/releases/download/v4.18.3/notquests-4.18.3.jar">
+            href="https://cdn.modrinth.com/data/17DyGUnO/versions/4.18.3/notquests-4.18.3.jar">
               ⏬ 4.18.3 <span style={{fontWeight: '400'}}>for Minecraft 1.17 - 1.18.1</span>
           </a>
         </div>
