@@ -21,8 +21,15 @@ function HomepageHeader() {
 
         <a
             className="button button--secondary button--lg"
+            href="https://cdn.modrinth.com/data/17DyGUnO/versions/B7Hh3Mqf/notquests-5.9.0.jar">
+            ⏬ 5.9.0 <span style={{fontWeight: '400'}}>for Minecraft 1.19.3 ⭐</span>
+        </a>
+
+        <a
+            className="button button--secondary button--lg"
+            style={{backgroundColor: '#cbcbcb', borderColor: '#cbcbcb'}}
             href="https://cdn.modrinth.com/data/17DyGUnO/versions/PH8gZG9C/notquests-5.8.4.jar">
-            ⏬ 5.8.4 <span style={{fontWeight: '400'}}>for Minecraft 1.19.2 ⭐</span>
+            ⏬ 5.8.4 <span style={{fontWeight: '400'}}>for Minecraft 1.19.2</span>
         </a>
 
           <a
