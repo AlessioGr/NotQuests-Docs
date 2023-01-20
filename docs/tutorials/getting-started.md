@@ -7,7 +7,7 @@ keywords: [notquests, tutorial, getting started, beginner, guide]
 
 :::danger Before you read
 
-This guide was designed with version **5.10.1 or higher** and **[Paper 1.19.3](https://papermc.io/)** in mind.
+This guide was designed with version **5.11.0 or higher** and **[Paper 1.19.3](https://papermc.io/)** in mind.
 
 Older versions or Spigot servers, will have less features and different commands.
 If you're using an older version or Spigot, please do your own research as the commands will be different.
@@ -33,7 +33,7 @@ A Quest in NotQuests can have different properties. Examples:
 
 - **displayName**: the Quest name which players will actually see
 - **description**: the Quest description
-- **maxAccepts**: the maximum amount of times a player can complete the Quest
+- **limits**: the maximum amount of times a player can accept, complete or fail the Quest
 - *and much more...*
 
 Additionally, we can attach the following to a Quest:
@@ -216,13 +216,21 @@ Done! Once you finish the Quest, you will see the rewards:
 
 We don't want the player to take this Quest over and over and over and over again after they completed it. Let's limit that.
 
-First, let's make it, so they can only accept it once every 20 hours:
+First, let's make it, so they can only accept it only when it has not been completed less than 20 hours ago:
 
-`/qa edit TheVirus acceptCooldown set 20h`
+`/qa edit TheVirus acceptCooldown complete set 20h`
 
 20h = 20 hours. Now, let's give it a hard limit of 10 Quest completions. After 10 completions, the player cannot accept the Quest anymore, no matter how long they wait:
 
-`/qa edit TheVirus maxAccepts 10`
+`/qa edit TheVirus limits completions 10`
+
+Wanna make it so they cannot accept the quest if they have failed or aborted it 3 times or more? Easy:
+
+`/qa edit TheVirus limits fails 3`
+
+Alternatively, you could also prevent them from aborting the quest in the first place:
+
+`/qa edit TheVirus abortEnabled false`
 
 At last, let's set takeEnabled to false:
 

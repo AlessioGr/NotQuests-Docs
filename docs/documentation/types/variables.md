@@ -433,6 +433,26 @@ Not only that - they can also be used in so-called expressions. So you can even 
 
 :::
 
+### ❓ QuestReachedMaxCompletions
+
+:::info Description
+
+**Condition:** ✅ **Action:** ❌
+
+**Type:** Boolean
+
+:::
+
+### ❓ QuestReachedMaxFails
+
+:::info Description
+
+**Condition:** ✅ **Action:** ❌
+
+**Type:** Boolean
+
+:::
+
 ### ❓ RandomNumberBetweenRange
 
 :::info Description
