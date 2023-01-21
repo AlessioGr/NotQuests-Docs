@@ -11,7 +11,7 @@ You can customize the items displayed in the GUI for both categories (default: C
 
 ### Advanced items (e.g. custom model data)
 
-NotQuests supports any items - even the most complex one. This includes special items from other plugins! Internally, notquests uses the Bukkit Item Serialization API, so notquests supports anything you support that.
+NotQuests supports any items - even the most complex one. This includes special items from other plugins! Internally, notquests uses the Bukkit Item Serialization API, so notquests supports anything that supports that.
 
 Do you have any item which is complex like that (so not just a material)? Then hold the item in your hand and use 'hand' as material name. E.g. if you want your super fancy enchanted custom model data item to be displayed in the GUI for a category, hold it in your hand and use `/qa categories edit categoryName guiItem hand`. That easy!
 
