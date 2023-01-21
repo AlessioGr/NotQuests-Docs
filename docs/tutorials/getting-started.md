@@ -198,7 +198,7 @@ Your players will murder you if they waste their time on this super hard Quest w
 - 2 Swords: `/qa edit TheVirus rewards add GiveItem hand 2`
   - For this reward, you have to hold the item in your hand while running that command. Otherwise, you can also run `/qa edit TheVirus rewards add GiveItem wooden_sword 2`
 - +300 Money (if you have Vault installed): `/qa edit TheVirus rewards add Money add 300`
-- Want to give a reward from some other plugin via commands? You can use the {PLAYER} placeholder there. Example: `/qa edit TheVirus rewards add ConsoleCommand cr give to PLAYER DailyCrate 2`
+- Want to give a reward from some other plugin via commands? You can use the {PLAYER} placeholder there. Example: `/qa edit TheVirus rewards add ConsoleCommand cr give to {PLAYER} DailyCrate 2`
 
 #### Reward Display Names
 

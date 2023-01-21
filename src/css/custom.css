@@ -111,3 +111,75 @@ code {
 .button {
   width: 20em;
 }
+
+p.specialcode {
+  margin: 0;
+  padding: 5px 1em 3px 0.5em !important;
+  border-radius: 5px 5px 5px 0px !important;
+  font-weight: 700 !important;
+  display: inline-block !important; /* inline works too - it would have a smaller y padding that way */
+  border-radius: 5px 5px 5px 0;
+  font-weight: 700;
+  background-color: #425b7c;
+  color: white;
+  border: 0.1rem solid #0000001a;
+  font-family: var(--ifm-font-family-monospace);
+  font-size: var(--ifm-code-font-size);
+  flex-wrap: wrap;
+}
+
+html[data-theme="light"] p.specialcode {
+  border-color: #c3c3c3;
+}
+
+html[data-theme="dark"] p.specialcode {
+  border-color: #000000;
+}
+
+.color-qa {
+  color: rgb(222, 245, 222);
+}
+.color-q {
+  color: rgb(244, 225, 215);
+}
+
+.color-questname {
+  color: #00fffe;
+}
+
+.color-quest-operation {
+  color: rgb(230, 230, 230);
+}
+
+.color-quest-string {
+  color: #fcfc06;
+}
+
+.color-quest-string-minimessage {
+  color: #fcfc06;
+  font-style: italic;
+}
+
+.color-number {
+  color: #00ff26;
+}
+
+.color-file {
+  color: #ffccfc;
+}
+
+.color-boolean {
+  color: #ff5fff;
+}
+
+.color-expression {
+  color: #40ffbf;
+}
+
+.color-flag {
+  color: #b9e7d8;
+}
+
+.color-optional {
+  font-style: italic;
+}
