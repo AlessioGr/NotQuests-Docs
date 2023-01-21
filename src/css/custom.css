@@ -126,6 +126,7 @@ undefined span.specialcode {
   font-family: var(--ifm-font-family-monospace);
   font-size: var(--ifm-code-font-size);
   flex-wrap: wrap;
+  overflow-wrap: anywhere;
 }
 
 html[data-theme="light"] undefined span.specialcode {
