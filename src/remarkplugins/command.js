@@ -20,9 +20,9 @@ const plugin = (options) => {
                         </h1>
                     `;*/
       const html = `
-            <p class="specialcode">
+            <span class="specialcode">
                 ${parseCommand(text)}
-            </p>
+            </span>
         `;
 
       node.type = "html";
