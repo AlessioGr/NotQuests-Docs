@@ -112,7 +112,7 @@ code {
   width: 20em;
 }
 
-p span.specialcode {
+undefined span.specialcode {
   margin: 0;
   padding: 5px 1em 3px 0.5em !important;
   border-radius: 5px 5px 5px 0px !important;
@@ -128,11 +128,11 @@ p span.specialcode {
   flex-wrap: wrap;
 }
 
-html[data-theme="light"] p span.specialcode {
+html[data-theme="light"] undefined span.specialcode {
   border-color: #c3c3c3;
 }
 
-html[data-theme="dark"] p span.specialcode {
+html[data-theme="dark"] undefined span.specialcode {
   border-color: #000000;
 }
 
