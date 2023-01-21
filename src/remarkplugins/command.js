@@ -187,7 +187,7 @@ function getColorForArgument(argument, index, allArguments) {
     argument.endsWith(">") &&
     !argument.includes("/")
   ) {
-    color = "color-optional";
+    color += " color-optional";
   }
 
   if (argument === "QuestOnCooldown") {
