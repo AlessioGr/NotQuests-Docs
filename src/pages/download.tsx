@@ -19,22 +19,22 @@ function HomepageHeader() {
           <p className="hero__subtitle">Choose your Minecraft version:</p>
         <div className={styles.buttons}>
 
-        <p style={{fontWeight: 'bold', color: 'red', padding: '8px', background: 'white'}}>The latest versions 5.12.1 and higher are not available from this downloads page</p>
+        <p style={{fontWeight: 'bold', color: 'red', padding: '8px', background: 'white', borderRadius: '15px'}}>The latest versions 5.12.1 and higher are not available from this downloads page</p>
         <a
-            className="button button--secondary button--lg"
+            className="button dlbutton button--secondary button--lg"
             href="https://cdn.modrinth.com/data/17DyGUnO/versions/EfH8wXSy/notquests-5.12.0.jar">
             ⏬ 5.12.0 <span style={{fontWeight: '400'}}>for Minecraft 1.19.3 ⭐</span>
         </a>
 
         <a
-            className="button button--secondary button--lg"
+            className="button dlbutton button--secondary button--lg"
             style={{backgroundColor: '#cbcbcb', borderColor: '#cbcbcb'}}
             href="https://cdn.modrinth.com/data/17DyGUnO/versions/PH8gZG9C/notquests-5.8.4.jar">
             ⏬ 5.8.4 <span style={{fontWeight: '400'}}>for Minecraft 1.19.2</span>
         </a>
 
           <a
-            className="button button--secondary button--lg"
+            className="button dlbutton button--secondary button--lg"
             style={{backgroundColor: '#cbcbcb', borderColor: '#cbcbcb'}}
             href="https://cdn.modrinth.com/data/17DyGUnO/versions/5.0.1/notquests-5.0.1.jar">
               ⏬ 5.0.1 <span style={{fontWeight: '400'}}>for Minecraft 1.19</span>
@@ -42,13 +42,13 @@ function HomepageHeader() {
             <p style={{backgroundColor: 'white', borderRadius: '15px', color: '#0039b4', fontSize: '1em', fontWeight: 'bold', padding: '5px'}}>The 1.19 version probably also works on 1.18.2 as well, but it's not guaranteed, and the packet magic conversation will be disabled.</p>
 
             <a
-            className="button button--secondary button--lg"
+            className="button dlbutton button--secondary button--lg"
             style={{backgroundColor: '#cbcbcb', borderColor: '#cbcbcb'}}
             href="https://cdn.modrinth.com/data/17DyGUnO/versions/4.21.0/notquests-4.21.0.jar">
                 ⏬ 4.21.0 <span style={{fontWeight: '400'}}>for Minecraft 1.18.2</span>
           </a>
           <a
-            className="button button--secondary button--lg"
+            className="button dlbutton button--secondary button--lg"
             style={{backgroundColor: '#a8a8a8', borderColor: '#a8a8a8'}}
             href="https://cdn.modrinth.com/data/17DyGUnO/versions/4.18.3/notquests-4.18.3.jar">
               ⏬ 4.18.3 <span style={{fontWeight: '400'}}>for Minecraft 1.17 - 1.18.1</span>
