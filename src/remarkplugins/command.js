@@ -182,7 +182,11 @@ function getColorForArgument(argument, index, allArguments) {
     color = "color-flag";
   }
 
-  if (argument.startsWith("<") && argument.endsWith(">")) {
+  if (
+    argument.startsWith("<") &&
+    argument.endsWith(">") &&
+    !argument.includes("/")
+  ) {
     color = "color-optional";
   }
 
