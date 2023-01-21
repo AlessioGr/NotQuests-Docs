@@ -43,6 +43,6 @@ Or even:
 
 Pretty cool, right? You even have auto-completions for all MiniMessage color tags for many commands. At the same time, NotQuests has added some internal colors which you can use to achieve a consistent look. For example `<highlight>`, `<highlight2>` or `<main>`. Those can be customize inside of the config, to change NotQuests entire color scheme.
 
-**Example:** lickable link in the description of your first objective of a quest:
+**Example:** clickable link in the description of your first objective of a quest:
 
 `/qa edit yourquestname objectives edit 1 description set <click:OPEN_URL:yoururllink>Click here</click>`
