@@ -11,7 +11,7 @@ You can use ANY conditions and actions of NotQuests in BetonQuest. At the same t
 
 Showcase: https://youtu.be/uKFuSV1CLFo
 
-To use it: Use `default_interceptor: notquests` in the BetonQuest config
+To use it: Use `default_interceptor: notquests` in the BetonQuest config. Also make sure your `default_conversation_IO:` setting is either set to `menu` or `simple`.
 
 ## ❤️ Using BetonQuest Events in NotQuests
 
