@@ -20,21 +20,21 @@ If you want to have multiple quests set, and every day, the player can pick and 
 Since notquests is built to be super powerful, it's possible now nonetheless - just in a more complex way. Here's how:
 
 Say you have Quest A and B which should be in the daily pool (you can set it to be weekly or monthly as well for weekly or daily quests).
-1. Give them a 1 day cooldown: /qa edit A acceptCooldown complete set 1d and /qa edit B acceptCooldown complete set 1d
+1. Give them a 1 day cooldown: `/qa edit A acceptCooldown complete set 1d` and `/qa edit B acceptCooldown complete set 1d`
 
-2. Create two actions which give you the Quest when executed
-/qa actions add giveQuestA GiveQuest A
-/qa actions add giveQuestB GiveQuest B
+2. Create two actions which give you the Quest when executed:<br/>
+`/qa actions add giveQuestA GiveQuest A` and
+`/qa actions add giveQuestB GiveQuest B`
 
-3. Create an Action action which executes either Action giveQuestA or giveQuestB randomly:
-/qa actions add giveDailyQuest Action giveQuestA,giveQuestB 1 --minRandom 1 --maxRandom 1
+3. Create an Action action which executes either Action giveQuestA or giveQuestB randomly:<br/>
+`/qa actions add giveDailyQuest Action giveQuestA,giveQuestB 1 --minRandom 1 --maxRandom 1`<br/>
 Without the --minRandom 1 --maxRandom 1 flags it would execute both actions and thus give you both Quests. With these flags however, it only chooses 1 random one out of those.
 
-4. Add two conditions to this Action action so it executes only when neither A or B are on cooldown
-/qa actions edit giveDailyQuest conditions add QuestOnCooldown A equals false
-/qa actions edit giveDailyQuest conditions add QuestOnCooldown B equals false
+4. Add two conditions to this Action action so it executes only when neither A or B are on cooldown:<br/>
+`/qa actions edit giveDailyQuest conditions add QuestOnCooldown A equals false` and
+`/qa actions edit giveDailyQuest conditions add QuestOnCooldown B equals false`
 
-5. Execute the action like this. Should do exactly what you want with the daily Quest pool
-/qa actions edit giveDailyQuest execute
+5. Execute the action like this. Should do exactly what you want with the daily Quest pool:<br/>
+`/qa actions edit giveDailyQuest execute`
 
 You can put this command anywhere - e.g. with the citizens plugin, you could make an npc run that command for a certain player
