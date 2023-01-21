@@ -44,7 +44,7 @@ function parseCommand(command) {
     if (color === "inherit") {
       finalString += argument + " ";
     } else {
-      finalString += `<span class="command-argument ${color}">${argument} </span> `;
+      finalString += `<span class="${color}">${argument} </span> `;
     }
     index++;
   }
