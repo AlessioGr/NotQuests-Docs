@@ -288,7 +288,7 @@ If you add sub-objectives to any other objective, you're only able to progress o
 
 1. `/qa edit quest objectives add Objective "<gold>Improve soil quality"`
 2. `/qa edit quest objectives edit 1 objectives add BreakBlocks dirt 5`
-3. `/qa edit quest objectives edit 1 objectives edit 1 displayname set Less dirt is good`
+3. `/qa edit quest objectives edit 1 objectives edit 1 displayName set Less dirt is good`
 4. `/qa edit quest objectives edit 1 objectives add Jump 3.0 --taskDescription "Jump on the soil to make it better"`
 
 ### Objective condition types
