@@ -158,7 +158,7 @@ html[data-theme="dark"] undefined span.specialcode {
 
 .color-quest-string-minimessage {
   color: #fcfc06;
-  font-style: italic;
+  /*font-style: italic;*/
 }
 
 .color-number {
