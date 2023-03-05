@@ -43,24 +43,6 @@ First, we'll list the objectives which are always available:
 
 :::
 
-### 🚮 PickupItems
-
-:::info Description
-
-**Completed when:** Player picks up a specific item by picking it up from the ground into his inventory.
-
-**Command Arguments:**
-
-- **`<material>`** The material of the block which the player has to break. Use 'hand' to specify the item which you are currently holding in your hand. Use 'any' so any item counts. You can also specify items made in the NotQuests item system.
-- **`<amount>`** - The amount of items the player needs to pick up
-- **`(flags)`** - Optional flags
-  - `--doNotDeductIfItemIsDropped` - By default, if you drop an item which is specified in the PickupItems objective, it will be deducted from your progress. Otherwise, players would be able to simply cheat by dropping and then picking up the item over and m. Setting this flag will **disable** that safety mechanism.
-  - `--doNotDeductIfItemIsPlaced` - By default, if you place an item which is specified in the PickupItems objective, it will be deducted from your progress. Otherwise, players would be able to simply cheat by placing and then picking up the item over and over. Setting this flag will **disable** that safety mechanism.
-  - `--doNotDeductIfItemIsRemovedFromInventory` - By default, if you remove an item from your inventory (e.g. put in a chest) which is specified in the PickupItems objective, it will be deducted from your progress. Otherwise, players would be able to simply cheat by, e.g., putting an item in a chest and destroying the chest. Setting this flag will **disable** that safety mechanism.
-
-**Example command:** `/qa edit questname objectives add PickupItems dirt 12`
-
-:::
 
 ### ❓ Condition
 
@@ -121,6 +103,25 @@ First, we'll list the objectives which are always available:
 - **`<NPC ID or Armorstand>`** - Either enter the Citizens NPC ID, or 'armorstand' to receive an item with which you can easily attach this objective to an armorstand.
 
 **Example command:** `/qa edit questname objectives add DeliverItems coal 20 armorstand`
+
+:::
+
+### 🪄 Enchant
+
+:::info Description
+
+**Completed when:** Player delivers an Item to an NPC (Both Citizen NPCs and Armorstands work). Delivering means that the item will be removed from the player's inventory.
+
+**Command Arguments:**
+
+- **`<enchantment>`** The enchantment the player has to enchant the item with.
+- **`<materials>`** The item the player has to enchant. You can use 'any' here if it doesn't matter
+- **`<amount>`** - The amount of items the player needs to enchant that item
+- **`(flags)`** - Optional flags
+  - `--min <minimum level>` - Specify the minimum enchantment level
+  - `--max <maximum level>` - Specify the maximum enchantment level
+
+**Example command:** `/qa edit enchant1 objectives add Enchant minecraft:efficiency diamond_pickaxe 3.0 --min 2.0` (Enchant diamond pickaxe 3 times with efficiency (minimum enchantment level: 2))
 
 :::
 
@@ -253,6 +254,25 @@ TODO
   - `--countPreviouslyCompletedQuests` - If you set this flag, all previous Quest completions before the player unlocks this objective will count towards its progress as well. Otherwise, only new Quest completions will count.
 
 **Example command:** `/qa edit questname objectives add OtherQuest otherQuestName 2 --countPreviouslyCompletedQuests`
+
+:::
+
+### 🚮 PickupItems
+
+:::info Description
+
+**Completed when:** Player picks up a specific item by picking it up from the ground into his inventory.
+
+**Command Arguments:**
+
+- **`<material>`** The material of the block which the player has to break. Use 'hand' to specify the item which you are currently holding in your hand. Use 'any' so any item counts. You can also specify items made in the NotQuests item system.
+- **`<amount>`** - The amount of items the player needs to pick up
+- **`(flags)`** - Optional flags
+  - `--doNotDeductIfItemIsDropped` - By default, if you drop an item which is specified in the PickupItems objective, it will be deducted from your progress. Otherwise, players would be able to simply cheat by dropping and then picking up the item over and m. Setting this flag will **disable** that safety mechanism.
+  - `--doNotDeductIfItemIsPlaced` - By default, if you place an item which is specified in the PickupItems objective, it will be deducted from your progress. Otherwise, players would be able to simply cheat by placing and then picking up the item over and over. Setting this flag will **disable** that safety mechanism.
+  - `--doNotDeductIfItemIsRemovedFromInventory` - By default, if you remove an item from your inventory (e.g. put in a chest) which is specified in the PickupItems objective, it will be deducted from your progress. Otherwise, players would be able to simply cheat by, e.g., putting an item in a chest and destroying the chest. Setting this flag will **disable** that safety mechanism.
+
+**Example command:** `/qa edit questname objectives add PickupItems dirt 12`
 
 :::
 

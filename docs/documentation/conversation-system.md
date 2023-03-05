@@ -5,6 +5,10 @@ description: This guide explains how the conversation system in notquests works
 keywords: [notquests, conversation, conversations, npc talk, npc conversations]
 ---
 
+THIS GUIDE IS HEAVILY OUTDATED AND INCOMPLETE! Thats because people (like you) are too lazy to write a good conversation guide. I recommend watching the video here: https://www.youtube.com/watch?v=OC45_H3Tv8Y (incomplete but only slightly outdated) and look at the demo conversation with the --demo flag when creating a new conversation.
+
+
+
 > Showcase of conversations with packet magic enabled: https://www.youtube.com/watch?v=iPwcf277K8k (it has improved since I made that video).
 
 ## NPCs
@@ -70,5 +74,4 @@ If you want to try it out, head to `plugins/NotQuests/general.yml` and enable bo
 * [x] Conditions: Each line will have a condition which will be checked. This will be done in v3.0, when the old Quest requirements are fully converted to conditions which can be re-used everywhere.
 * [x] Shouting flags. This is a simple flag which can be applied to a conversation line, which will make its font bold.
 * [x] End current conversation if you start another, new conversation
-* [ ] End conversation if you move too far away from the NPC
-* [ ] End conversation if you ~~shit~~shift
+* [x] End conversation if you move too far away from the NPC
