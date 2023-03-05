@@ -110,7 +110,7 @@ First, we'll list the objectives which are always available:
 
 :::info Description
 
-**Completed when:** Player delivers an Item to an NPC (Both Citizen NPCs and Armorstands work). Delivering means that the item will be removed from the player's inventory.
+**Completed when:** Player enchants an item
 
 **Command Arguments:**
 
