@@ -148,6 +148,10 @@ const config = {
                 className: "footer__link-item modrinthicon",
               },
               {
+                label: 'Hangar',
+                href: 'https://hangar.papermc.io/Alessio/NotQuests',
+              },
+              {
                 label: 'GitHub',
                 href: 'https://github.com/AlessioGr/NotQuests',
               },
