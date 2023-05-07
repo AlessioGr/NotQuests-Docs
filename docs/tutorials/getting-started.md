@@ -358,7 +358,7 @@ And now a very complex one:
 
 `/qa actions add pp3 Money add ((TagInteger(TagName:points)>=4)*(10+30))+(!(TagInteger(TagName:points)>=4)*5)`
 
-If your "points" (from the Integer tag) are bigger or equal 4, this action will give you 40$. Otherwise, it will give you 5$. If you want to learn more about the tag system, head to the [tag system guide](http://localhost:3000/docs/tutorials/creating-a-reputation-system-with-tags).
+If your "points" (from the Integer tag) are bigger or equal 4, this action will give you 40$. Otherwise, it will give you 5$. If you want to learn more about the tag system, head to the [tag system guide](/docs/tutorials/creating-a-reputation-system-with-tags).
 
 [Full list of operators](https://pastebin.com/raw/qZqQmL8x).
 
