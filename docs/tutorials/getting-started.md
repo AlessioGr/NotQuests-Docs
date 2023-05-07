@@ -303,7 +303,7 @@ However, you can ALSO add objective conditions which check if you can progress, 
 
 - `/qa edit questname objectives edit 1 conditions unlock add Flying equals false` - Unlock condition. That's what you are used to. If you are flying, the objective remains locked / "Hidden"
 - `/qa edit questname objectives edit 1 conditions progress add Flying equals false` - Objective is always shown, but if you are flying, you won't get any positive progress towards it
-- `/qa edit questname objectives edit 1 conditions progress add Flying equals false` - Objective is always shown and you always get progress, but it won't complete if you don't fulfill the condition
+- `/qa edit questname objectives edit 1 conditions complete add Flying equals false` - Objective is always shown and you always get progress, but it won't complete if you don't fulfill the condition
 
 ### Variables as objectives
 
