@@ -94,7 +94,7 @@ That file is a **conversation** (test). A conversation has multiple **speakers**
 
 ### start
 
-On line 1, you should see `start: Atlas.specialgreeting,Atlas.greeting1`. This determines where it should start the conversations. In here, 2 conversation lines are specified: Atlas.specialgreeting and Atlas.greeting 1.
+On line 1, you should see `start: Atlas.specialgreeting,Atlas.greeting1`. This determines where it should start the conversations. In here, 2 conversation lines are specified: Atlas.specialgreeting and Atlas.greeting1.
 
 How it works is, it first tries to start Atlas.specialgreeting, which is this line:
 
