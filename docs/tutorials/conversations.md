@@ -83,54 +83,14 @@ With your newest yaml knowledge, try to understand what this file does and how i
 
 Every time you change the file and save it, you can load all changes in-game using `/qa reload conversations`. Please check your console for warnings and erros afterwards and READ them. You can the start the conversation using `/qa conversations start yourconversationname`, so in this case `/qa conversations start test`.
 
-## Terminology
-
-That file is a **conversation** (test). A conversation has multiple **speakers** (in this case, Atlas and Player). Each speaker has multiple **conversation lines** which are identified using this format: "`<Speaker>.<LineName>`". For example: `Atlas.greeting1`
-
-## Actions and conditions
-
-Each conversation line can have an `actions:` list object, and a `conditions:` list object. When it reaches the conversation line, it will execute all actions you specified there. It will ONLY play the conversation line, if all conditions you specified are fulfilled.
-
-Just check the demo conversation above - it has examples for both actions and conditions.
-
-Conditions usually start with "condition yourconditionname". "condition" at the beginning tells it that it should look for a condition you pre-created in-game, and next comes the name of the condition. Actions work similarly
-
-### Negating conditions
-
-You can negate conditions by putting a "!" in front. Example:
-
-- "!condition yourconditionname"
-
-Make sure to wrap it in quotes ("")
-
-### in-line actions/conditions
-
-So, putting "condition" in front makes it look for a pre-created condition which you created in-game. You can also do stuff like
-
-```yaml
-conditions:
-- Money moreThan 100
-```
-
-or
-
-```yaml
-actions:
-- StartConversation someotherconversationname
-```
-
-instead of
-
-```
-actions:
-- action youringamecreatedactionwhichstartsanotherconversation
-```
-
-This is NOT recommended as there is no documentation for in-line stuff (they usually follow the commands closely) and there is no checking if you do it correctly, unlike the in-game commands which tell you exactly if you do something wrong (`/qa conditions create` and `/qa actions create`)
 
 ## Some explanations
 
 I don't have a lot of time so I cannot make a 100% throughout guide yet - instead, try to experiment and understand it yourself. I'll improve this guide gradually when I find time. Let's begin with some explanations:
+
+### Terminology
+
+That file is a **conversation** (test). A conversation has multiple **speakers** (in this case, Atlas and Player). Each speaker has multiple **conversation lines** which are identified using this format: "`<Speaker>.<LineName>`". For example: `Atlas.greeting1`
 
 ### start
 
@@ -174,6 +134,48 @@ So what happens when a conversation line does not have a `next:` attribute attac
 Simple!
 
 The conversation will just end. No next, it'll end.
+
+## Actions and conditions
+
+Each conversation line can have an `actions:` list object, and a `conditions:` list object. When it reaches the conversation line, it will execute all actions you specified there. It will ONLY play the conversation line, if all conditions you specified are fulfilled.
+
+Just check the demo conversation above - it has examples for both actions and conditions.
+
+Conditions usually start with "condition yourconditionname". "condition" at the beginning tells it that it should look for a condition you pre-created in-game, and next comes the name of the condition. Actions work similarly
+
+### Negating conditions
+
+You can negate conditions by putting a "!" in front. Example:
+
+- "!condition yourconditionname"
+
+Make sure to wrap it in quotes ("")
+
+### in-line actions/conditions
+
+So, putting "condition" in front makes it look for a pre-created condition which you created in-game. You can also do stuff like
+
+```yaml
+conditions:
+- Money moreThan 100
+```
+
+or
+
+```yaml
+actions:
+- StartConversation someotherconversationname
+```
+
+instead of
+
+```
+actions:
+- action youringamecreatedactionwhichstartsanotherconversation
+```
+
+This is NOT recommended as there is no documentation for in-line stuff (they usually follow the commands closely) and there is no checking if you do it correctly, unlike the in-game commands which tell you exactly if you do something wrong (`/qa conditions create` and `/qa actions create`)
+
 
 ## FAQ
 
