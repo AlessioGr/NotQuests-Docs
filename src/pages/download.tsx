@@ -19,7 +19,7 @@ function HomepageHeader() {
           <p className="hero__subtitle">Choose your Minecraft version:</p>
         <div className={styles.buttons}>
 
-        <p style={{fontWeight: 'bold', color: 'red', padding: '8px', background: 'white', borderRadius: '15px'}}>The latest versions 5.14.0 and higher are not available from this downloads page</p>
+        <p style={{fontWeight: 'bold', color: 'red', padding: '8px', background: 'white', borderRadius: '15px'}}>The latest versions 5.14.0 (or the Minecraft 1.20+ versions) and higher are not available from this downloads page</p>
         <a
             className="button dlbutton button--secondary button--lg"
             href="https://cdn.modrinth.com/data/17DyGUnO/versions/8flt30LS/notquests-5.13.1.jar">
