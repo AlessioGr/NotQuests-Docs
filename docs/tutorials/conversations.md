@@ -203,7 +203,7 @@ A: Between 1 week and never. I can't give any time-frames as I don't know them m
 
 **Q: When will this guide be improved?**
 
-A: Same answer as above. Sadly, community members who figured stuff out are lazy fucks who don't share it with others. Probably, once you figured stuff out or become good at this, you probably won't give back and share your solution here either / try to improve this guide. The docs and guides here are open source, so everyone can contribute, but noone wants to. Don't blame me! PLENTY of people would have the knowledge to help with these guides. And noone does. And I'm not getting paid any more than they (and you) are (= I'm not getting paid at all).
+A: Same answer as above. Sadly, community members who figured stuff out don't share it with others. Probably, once you figured stuff out or become good at this, you probably won't give back and share your solution here either / try to improve this guide. The docs and guides here are open source, so everyone can contribute, but noone wants to. Don't blame me! PLENTY of people would have the knowledge to help with these guides. And noone does. And I'm not getting paid any more than they (and you) are (= I'm not getting paid at all). So, please consider contributing and helping others! ❤️
 
 ## Something doesn't work!
 
