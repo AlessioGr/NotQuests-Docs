@@ -175,6 +175,29 @@ Simple!
 
 The conversation will just end. No next, it'll end.
 
+## FAQ
+
+Q: Conversation delay doesn't work
+A: This feature is half-broken. Will fix in the future
+
+Q: Something went wrong
+A: Read the next section ("Something doesn't work")
+
+Q: My chat is disappearing, messages are disappearing, something weird with previous messages it's just weird
+A: You probably encountered the conversation packet magic / chat resotoration features, which aims to de-clutter your chat! Most like it, some find it weird, which is understandable. You can disable it in the notquests config!
+
+Q: Why am I getting no support in the discord?
+A: Conversations can be really complex, and thus take a LOT more time for me to understand the issue. And I sadly just have very little time at the moment. But rest assured! 99% of issues people reported ended up being user-errors, not issues in notquests, so most issues you encounter should be fixable! It's just easy to make mistakes, which leads me to the next question:
+
+Q: Conversations are hard. Will you make a GUI?
+A: No Minecraft GUI, no. Those are even worse and a pure pain in the ass to use. Instead, I'm planning to make a nice Web UI
+
+Q: When will it be finished?
+A: Between 1 week and never. I can't give any time-frames as I don't know them myself. And I can't predict it because I don't know when I'm working on notquests and how long it would take.
+
+Q: When will this guide be improved?
+A: Same answer as above. Sadly, community members who figured stuff out are lazy fucks who don't share it with others. Probably, once you figured stuff out or become good at this, you probably won't give back and share your solution here / try to improve this guide. The docs and guides here are open source, so everyone can contribute, but noone wants to. Don't blame me! PLENTY of people would have the knowledge to help with these guides. And I'm not getting paid any more than they (and you) are (= I'm not getting paid at all).
+
 ## Something doesn't work!
 
 Every time you use `/qa reload conversations`, it'll throw warnings inside your server console if anything is wrong. So just read them. Read the damn warnings. They will tell you EXACTLY what went wrong.
