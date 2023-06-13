@@ -186,7 +186,7 @@ First, we'll list the objectives which are always available:
 
 **Command Arguments:**
 
-- **`<entityType>`** - The type of mob which the player has to kill. Use 'any' so any mob counts. Use 'player' to kill a player. If you have MythicMobs or EcoBosses installed, you can also use mobs from those mods.
+- **`<entityType>`** - The type of mob which the player has to kill. Use 'any' so any mob counts. Use 'player' to kill a player. If you have MythicMobs or EcoBosses installed, you can also use mobs from those mods or target entire factions in mythicmobs using mmfaction:yourfactionname.
 - **`<amount>`** - Amount of kills needed
 - **`(flags)`** - Optional flags
   - `--nametag_containsany <what the nametag can contain>` - If you set this flag, it will check if the nametag of the mob contains any of the strings specified here
