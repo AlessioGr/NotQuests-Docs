@@ -172,9 +172,9 @@ It will be unlocked once you complete the first objective 😀
 
 With Triggers, we can add some action to the Quest!
 
-When the user reaches the second objective and has to kill the Zombie Villagers, he will notice one thing: **There are no Zombie Villagers to kill**. Why would they?
+When the user reaches the second objective and has to kill the Zombie Villagers, they will notice one thing: **There are no Zombie Villagers to kill**. Why would they?
 
-Let's make NotQuests **spawn some Zombie Villagers for him once he reaches the second objective**.
+Let's make NotQuests **spawn some Zombie Villagers for them once they reaches the second objective**.
 
 First, we need to create the action which spawns the zombie villagers. Actions can be created outside of Quests and re-used for every quest. Let's make a SpawnMob Action:
 
