@@ -417,7 +417,7 @@ In our vote example, if you set that command as a vote reward (in your vote plug
 
 **Example command:** `/qa edit questname objectives add TriggerCommand trigger1 1`
 
-**Command to "trigger"/finish that objective:** `/qa triggerObjective trigger1 {PLAYER}` - {PLAYER} needs to be replaced with the players username.
+**Command to "trigger"/finish that objective:** `/qa triggerObjective trigger1 {PLAYER}` - `{PLAYER}` needs to be replaced with the players username.
 
 :::
 

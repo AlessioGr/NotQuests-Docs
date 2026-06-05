@@ -1,54 +1,67 @@
-const visit = require("unist-util-visit");
+// Remark plugin: turns inline code (`/qa ...`) into colour-highlighted command spans.
+//
+// MDX v3 (Docusaurus 3) parses raw HTML in markdown as JSX, so emitting an HTML string
+// (`<span class="...">`) no longer works (`class` is not valid JSX, and the markup is not
+// rendered). Instead we emit proper MDX JSX element nodes (mdxJsxTextElement with a
+// `className` attribute). We also drop the now ESM-only `unist-util-visit` dependency and
+// use a tiny built-in walker so this file can stay CommonJS.
 
-function htmlEntities(str) {
-  return String(str)
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;");
+function visitInlineCode(node, callback) {
+  if (!node || typeof node !== "object") return;
+  if (node.type === "inlineCode") {
+    callback(node);
+    return;
+  }
+  if (Array.isArray(node.children)) {
+    node.children.forEach((child) => visitInlineCode(child, callback));
+  }
+}
+
+function textNode(value) {
+  return { type: "text", value };
+}
+
+function colouredSpan(className, value) {
+  return {
+    type: "mdxJsxTextElement",
+    name: "span",
+    attributes: [
+      { type: "mdxJsxAttribute", name: "className", value: className },
+    ],
+    children: [textNode(value)],
+  };
 }
 
 const plugin = (options) => {
-  const transformer = async (ast) => {
-    let number = 1;
-    visit(ast, "inlineCode", (node) => {
-      let text = node.value;
-
-      /* const html = `
-                        <h1 style="color: rebeccapurple">
-                            ${htmlEntities(text)}
-                        </h1>
-                    `;*/
-      const html = `
-            <span class="specialcode">
-                ${parseCommand(text)}
-            </span>
-        `;
-
-      node.type = "html";
-      node.children = undefined;
-      node.value = html;
+  return async (ast) => {
+    visitInlineCode(ast, (node) => {
+      const children = parseCommand(node.value);
+      node.type = "mdxJsxTextElement";
+      node.name = "span";
+      node.attributes = [
+        { type: "mdxJsxAttribute", name: "className", value: "specialcode" },
+      ];
+      node.children = children;
+      delete node.value;
     });
   };
-  return transformer;
 };
 
 function parseCommand(command) {
-  const arguments = command.split(" ");
-  let finalString = "";
+  const allArguments = command.split(" ");
+  const nodes = [];
   let index = 0;
-  for (argument of arguments) {
-    let color = getColorForArgument(argument, index, arguments);
-    //...
-    argument = htmlEntities(argument);
+  for (const argument of allArguments) {
+    const color = getColorForArgument(argument, index, allArguments);
+    // Text nodes are escaped automatically by MDX, so no manual HTML-entity encoding.
     if (color === "inherit") {
-      finalString += argument + " ";
+      nodes.push(textNode(argument + " "));
     } else {
-      finalString += `<span class="${color}">${argument} </span> `;
+      nodes.push(colouredSpan(color, argument + " "));
     }
     index++;
   }
-  return finalString;
+  return nodes;
 }
 
 function getColorForArgument(argument, index, allArguments) {
@@ -111,7 +124,6 @@ function getColorForArgument(argument, index, allArguments) {
     allArguments.includes("description") ||
     allArguments.includes("displayName") ||
     allArguments.includes("ConsoleCommand") ||
-    //Now convert stringlist to string:
     allArguments.join(" ").includes("objectives add Objective")
   ) {
     let ii = 0;
@@ -132,9 +144,9 @@ function getColorForArgument(argument, index, allArguments) {
     if (index > ii) {
       if (!(index === ii + 1 && argument === "set")) {
         if (argument.startsWith("<") && argument.endsWith(">")) {
-          color = "color-quest-string-minimessage"; //TODO: Doesnt work if mm is part of string
+          color = "color-quest-string-minimessage";
         } else {
-          color = "color-quest-string"; // TODO: Also maybe check if there is a -- before (for flag)
+          color = "color-quest-string";
         }
       }
     }
