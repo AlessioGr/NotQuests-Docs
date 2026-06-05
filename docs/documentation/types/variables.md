@@ -573,6 +573,93 @@ Not only that - they can also be used in so-called expressions. So you can even 
 
 :::
 
+### ❓ Statistic
+
+:::info Description
+
+**Condition:** ✅ **Action:** ✅
+
+**Type:** Number
+
+**Required argument:** the [Bukkit statistic](https://jd.papermc.io/paper/1.21/org/bukkit/Statistic.html) to read or change (e.g. `MOB_KILLS`, `JUMP`, `DAMAGE_DEALT`).
+
+**Example:** `/qa conditions add killedEnough Statistic MOB_KILLS moreOrEqualThan 100` - true once the player has 100+ mob kills.
+
+:::
+
+## Tag Variables
+
+NotQuests has a powerful **tag system**: store a custom value on a player — a reputation score, a faction name, a `hasMetTheKing` flag — and then read or change it anywhere variables work (conditions, actions, objectives, even inside expressions).
+
+First create a tag with `/qa tags create <Type> <name>` (types: `Integer`, `Double`, `Float`, `Boolean`, `String`). Then use the matching variable below. In commands the tag name is **positional** (`TagInteger reputation add 10`); inside an expression use the `TagInteger(TagName:reputation)` form instead.
+
+For a full, practical walkthrough, see the [reputation system tutorial](/docs/tutorials/creating-a-reputation-system-with-tags).
+
+### ❓ TagInteger
+
+:::info Description
+
+**Condition:** ✅ **Action:** ✅
+
+**Type:** Number (whole numbers)
+
+**Required argument:** the tag name (create it with `/qa tags create Integer <name>`).
+
+**Examples:**
+
+- `/qa conditions add hasRep TagInteger reputation moreOrEqualThan 50` - true once the player's `reputation` tag is at least 50.
+- `/qa actions add addRep TagInteger reputation add 10` - adds 10 to the `reputation` tag.
+
+:::
+
+### ❓ TagDouble
+
+:::info Description
+
+**Condition:** ✅ **Action:** ✅
+
+**Type:** Number (decimals)
+
+**Required argument:** the tag name (create it with `/qa tags create Double <name>`).
+
+:::
+
+### ❓ TagFloat
+
+:::info Description
+
+**Condition:** ✅ **Action:** ✅
+
+**Type:** Number (decimals)
+
+**Required argument:** the tag name (create it with `/qa tags create Float <name>`).
+
+:::
+
+### ❓ TagBoolean
+
+:::info Description
+
+**Condition:** ✅ **Action:** ✅
+
+**Type:** Boolean
+
+**Required argument:** the tag name (create it with `/qa tags create Boolean <name>`).
+
+:::
+
+### ❓ TagString
+
+:::info Description
+
+**Condition:** ✅ **Action:** ✅
+
+**Type:** String
+
+**Required argument:** the tag name (create it with `/qa tags create String <name>`).
+
+:::
+
 ## [PlaceholderAPI](https://github.com/PlaceholderAPI/PlaceholderAPI/releases) Integration Variables
 
 ### ❓ PlaceholderAPINumber
@@ -627,23 +714,11 @@ Not only that - they can also be used in so-called expressions. So you can even 
 
 :::
 
-### ❓ TownyTownResidentCountVariable
+### ❓ TownyTownResidentCount
 
 :::info Description
 
 **Condition:** ✅ **Action:** ❌
-
-**Type:** Integer
-
-:::
-
-## [UltimateClans](https://polymart.org/resource/ultimate-clans-v5.1162) Integration Variables
-
-### ❓ UltimateClansClanLevel
-
-:::info Description
-
-**Condition:** ✅ **Action:** ✅
 
 **Type:** Integer
 

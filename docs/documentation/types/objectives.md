@@ -28,7 +28,7 @@ First, we'll list the objectives which are always available:
 
 :::
 
-### ❣️ Breed
+### ❣️ BreedMobs
 
 :::info Description
 
