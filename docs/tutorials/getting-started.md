@@ -14,10 +14,7 @@ If you're using an older version or Spigot, please do your own research as the c
 
 :::
 
-Let's discover **NotQuests!** There's two ways to get started:
-
-- Either you keep on reading this guide
-- Or watch our [Video Tutorial](https://www.youtube.com/watch?v=OC45_H3Tv8Y). Note that the video tutorial was made with NotQuests v3 and some commands might be slightly different.
+Let's discover **NotQuests!** Just keep on reading this guide.
 
 ## The Structure
 

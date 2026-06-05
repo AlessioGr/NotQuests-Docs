@@ -5,7 +5,7 @@ description: This guide explains how the conversation system in notquests works
 keywords: [notquests, conversation, conversations, npc talk, npc conversations]
 ---
 
-For a walkthrough, watch the video here: https://www.youtube.com/watch?v=OC45_H3Tv8Y, and look at the demo conversation via the `--demo` flag when creating a new conversation.
+For a walkthrough, look at the demo conversation via the `--demo` flag when creating a new conversation.
 
 
 
@@ -13,11 +13,9 @@ For a walkthrough, watch the video here: https://www.youtube.com/watch?v=OC45_H3
 
 ## NPCs
 
-To add NPCs to a conversation, please use the COMMAND! Don't edit the conversation file. The video tutorial is outdated there.
+To add NPCs to a conversation, please use the command — don't edit the conversation file directly.
 
 ## Links & Introduction
-
-Good, easy-to-understand video tutorial: https://www.youtube.com/watch?v=OC45_H3Tv8Y
 
 Shitty Video Tutorial: https://www.youtube.com/watch?v=2xgzLTX8KyQ
 
