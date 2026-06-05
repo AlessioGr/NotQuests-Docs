@@ -458,16 +458,89 @@ In our vote example, if you set that command as a vote reward (in your vote plug
 
 ### ℹ️ KillEliteMobs
 
+:::info Description
+
+**Completed when:** Player kills a specific amount of EliteMobs.
+
+**Command Arguments:**
+
+- **`<amount>`** - The amount of Elite Mobs the player needs to kill. This can be a number expression.
+- **`(flags)`** - Optional flags
+  - `--mobname <name>` - Only count Elite Mobs whose name contains this text.
+  - `--minimumLevel <level>` - Only count Elite Mobs at or above this level.
+  - `--maximumLevel <level>` - Only count Elite Mobs at or below this level.
+  - `--spawnReason <reason>` - Only count Elite Mobs that spawned for this reason.
+  - `--minimumDamagePercentage <percentage>` - Only count the kill if the player dealt at least this percentage of the damage.
+
+**Example command:** `/qa edit questname objectives add KillEliteMobs 10 --mobname Zombie --minimumLevel 5 --maximumLevel 15`
+
+:::
+
 ## [Jobs Reborn](https://www.zrips.net/jobs/) Integration Objectives
 
 ### ℹ️ JobsRebornReachJobLevel
+
+:::info Description
+
+**Completed when:** Player reaches a specific level in a Jobs Reborn job. This tracks the player's real Jobs level, including admin changes like `/jobs level add`.
+
+**Command Arguments:**
+
+- **`<Job Name>`** - The name of the job (e.g. `Miner`).
+- **`<level>`** - The level the player needs to reach. This can be a number expression.
+- **`(flags)`** - Optional flags
+  - `--doNotCountPreviousLevels` - Only count levels gained *after* the objective unlocks, instead of the player's current level.
+
+**Example command:** `/qa edit questname objectives add JobsRebornReachJobLevel Miner 10`
+
+:::
 
 ## [Slimefun](https://github.com/Slimefun/Slimefun4/releases) Integration Objectives
 
 ### ℹ️ SlimefunResearch
 
+:::info Description
+
+**Completed when:** Player spends a specific amount of research points in Slimefun.
+
+**Command Arguments:**
+
+- **`<amount>`** - The amount of research points the player needs to spend. This can be a number expression.
+
+**Example command:** `/qa edit questname objectives add SlimefunResearch 500`
+
+:::
+
 ## [Towny](https://github.com/TownyAdvanced/Towny/releases) Integration Objectives
 
 ### ℹ️ TownyNationReachTownCount
 
+:::info Description
+
+**Completed when:** The player's nation reaches a minimum number of towns.
+
+**Command Arguments:**
+
+- **`<amount>`** - The minimum number of towns the nation needs. This can be a number expression.
+- **`(flags)`** - Optional flags
+  - `--doNotCountPreviousTowns` - Only count towns added *after* the objective unlocks.
+
+**Example command:** `/qa edit questname objectives add TownyNationReachTownCount 5`
+
+:::
+
 ### ℹ️ TownyReachResidentCount
+
+:::info Description
+
+**Completed when:** The player's town reaches a minimum number of residents.
+
+**Command Arguments:**
+
+- **`<amount>`** - The minimum number of residents the town needs. This can be a number expression.
+- **`(flags)`** - Optional flags
+  - `--doNotCountPreviousResidents` - Only count residents added *after* the objective unlocks.
+
+**Example command:** `/qa edit questname objectives add TownyReachResidentCount 20`
+
+:::
