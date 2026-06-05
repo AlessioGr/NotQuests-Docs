@@ -21,13 +21,15 @@ You can edit most strings and translations in notquests (currently not all of th
 
 ## Customize the entire GUI
 
-The entire GUI, including materials and positions of stuff, can be customized - to a certain degree - in translation files in the "languages" folder as well
+Every GUI lives as its own editable `.yml` file in the `plugins/NotQuests/guis/` folder. In there you can rearrange the whole layout, swap materials and move buttons around — the `structure:` lines are a little visual map of the slots, and the `icons:` / `items:` sections define what goes in them.
+
+The *text* shown in a GUI (titles, button names and lore) comes from your language file in the `languages/` folder instead. So: layout lives in `guis/`, wording lives in `languages/`. Which GUI files get used is set by `gui.main-gui-name` and `gui.npc-gui-name` in [general.yml](/docs/documentation/configuration).
 
 ## Color codes
 
 Colors are supported basically everywhere in notquests - but not the legacy ones you used to know. Stuff like &6 or &c won't bring you far - it has long been abandoned by Mojang & kept alive by Spigot - as NotQuests thrives to be as modern and innovating as possible, it abandoned those too.
 
-Instead, we are now using MiniMessage, which allows you to do even more advanced stuff easier, like RGB colors, gradients, and even click commands & hover messages! You can find the MiniMessage docs [here](https://docs.adventure.kyori.net/minimessage/).
+Instead, we are now using MiniMessage, which allows you to do even more advanced stuff easier, like RGB colors, gradients, and even click commands & hover messages! You can find the MiniMessage docs [here](https://docs.advntr.dev/minimessage/format.html).
 
 Let's start by giving our quest a colorful display name:
 

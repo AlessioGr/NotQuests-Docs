@@ -21,7 +21,7 @@ You add a trigger to a quest like this:
 - **`<TYPE>`** - *when* it fires (see the list below).
 - **`(extra args)`** - some types need an extra value, like a world name or a death count.
 - **`(flags)`** - optional, and shared by every type:
-  - `--applyOn <objectiveID>` - only fire while a specific objective is active. `0` (the default) means the whole quest — fire as long as the quest is active. `1` means only while objective 1 is active, and so on.
+  - `--applyOn <objectiveID>` - only fire while a specific objective is active. `0` (or `Quest`, the default) means the whole quest — fire as long as the quest is active. `1` (or `O1`) means only while objective 1 is active, and so on.
   - `--world_name <world>` - only fire in this world. Defaults to `ALL` (any world).
 
 :::tip What `--applyOn` is good for
