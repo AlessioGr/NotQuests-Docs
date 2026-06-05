@@ -100,7 +100,7 @@ First, we'll list the objectives which are always available:
 
 - **`<material>`** The material of the item which the player has to deliver. Use 'hand' to specify the item which you are currently holding in your hand. Use 'any' so any item counts. You can also specify items made in the NotQuests item system.
 - **`<amount>`** - The amount of items the player needs to deliver
-- **`<NPC ID or Armorstand>`** - Either enter the Citizens NPC ID, or 'armorstand' to receive an item with which you can easily attach this objective to an armorstand.
+- **`<NPC ID or Armorstand>`** - Either enter the Citizens or FancyNPCs NPC ID, or 'armorstand' to receive an item with which you can easily attach this objective to an armorstand.
 
 **Example command:** `/qa edit questname objectives add DeliverItems coal 20 armorstand`
 
@@ -186,13 +186,11 @@ First, we'll list the objectives which are always available:
 
 **Command Arguments:**
 
-- **`<entityType>`** - The type of mob which the player has to kill. Use 'any' so any mob counts. Use 'player' to kill a player. If you have MythicMobs or EcoBosses installed, you can also use mobs from those mods or target entire factions in mythicmobs using mmfaction:yourfactionname.
+- **`<entityType>`** - The type of mob which the player has to kill. Use 'any' so any mob counts. Use 'player' to kill a player. If you have MythicMobs or EcoMobs installed, you can also use mobs from those mods or target entire factions in mythicmobs using mmfaction:yourfactionname.
 - **`<amount>`** - Amount of kills needed
 - **`(flags)`** - Optional flags
   - `--nametag_containsany <what the nametag can contain>` - If you set this flag, it will check if the nametag of the mob contains any of the strings specified here
   - `--nametag_equals <what the nametag should be>` - If you set this flag, it will check if the nametag of the mob is equal to the nametag specified here
-  - ProjectKorra integration:
-    - `--withProjectKorraAbility <ability>` - This flag makes it so you need to kill the mob with a specific ProjectKorra ability.
 
 **Example command:** `/qa edit questname objectives add KillMobs zombie 10`
 
@@ -342,6 +340,22 @@ TODO
 
 :::
 
+### 🐄 MilkCow
+
+:::info Description
+
+**Completed when:** Player milks a certain amount of cows
+
+**Command Arguments:**
+
+- **`<amount>`** - Amount of times the player needs to milk a cow
+- **`(flags)`** - Optional flags
+  - `--cancelMilking` - If you set this flag, the actual milking of the cow will be cancelled while this objective is active
+
+**Example command:** `/qa edit questname objectives add MilkCow 4 --cancelMilking`
+
+:::
+
 ### 🔥 SmeltItems
 
 :::info Description
@@ -379,7 +393,7 @@ TODO
 
 **Command Arguments:**
 
-- **`<NPC ID or Armorstand>`** - Either enter the Citizens NPC ID, or 'armorstand' to receive an item with which you can easily attach this objective to an armorstand.
+- **`<NPC ID or Armorstand>`** - Either enter the Citizens or FancyNPCs NPC ID, or 'armorstand' to receive an item with which you can easily attach this objective to an armorstand.
 
 **Example command:** `/qa edit questname objectives add TalkToNPC armorstand`
 
@@ -448,10 +462,6 @@ In our vote example, if you set that command as a vote reward (in your vote plug
 
 ### ℹ️ JobsRebornReachJobLevel
 
-## [Project Korra](https://github.com/ProjectKorra/ProjectKorra/releases) Integration Objectives
-
-### ℹ️ ProjectKorraUseAbility
-
 ## [Slimefun](https://github.com/Slimefun/Slimefun4/releases) Integration Objectives
 
 ### ℹ️ SlimefunResearch
@@ -461,11 +471,3 @@ In our vote example, if you set that command as a vote reward (in your vote plug
 ### ℹ️ TownyNationReachTownCount
 
 ### ℹ️ TownyReachResidentCount
-
-## [BetonQuest](https://dev.betonquest.org/) Integration Objectives
-
-### ℹ️ BetonQuestObjectiveStateChange
-
-## [UltimateJobs](https://github.com/Warsteiner37/UltimateJobs/releases) Integration Objectives
-
-### ℹ️ UltimateJobsReachJobLevel

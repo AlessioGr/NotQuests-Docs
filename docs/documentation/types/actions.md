@@ -181,9 +181,3 @@ For these commands, I have pre-created the actions sm1, sm2, sm3 ... sm10 which 
 ### ℹ️ StartConversation
 
 ### ℹ️ TriggerCommand
-
-## [BetonQuest](https://dev.betonquest.org/) Integration Actions
-
-### ℹ️ BetonQuestFireEvent
-
-### ℹ️ BetonQuestFireInlineEvent

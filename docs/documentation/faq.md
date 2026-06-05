@@ -29,7 +29,7 @@ I recommend you to do that manually via DBEaver or something like that. Shouldn'
 1. In general.yml set load-playerdata-on-join and save-playerdata-on-quit to false
 2. Start server with old database
 3. Add new database to the general.yml
-4. Do /qa reload (Miight not be neccesary)
+4. Do /qa reload (might not be necessary)
 5. Do /qa debug loadDataManagerUnsafe
 6. Shut down the server
 7. Revert what you did in step 1

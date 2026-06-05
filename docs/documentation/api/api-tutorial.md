@@ -7,7 +7,7 @@ keywords: [notquests, api, tutorial]
 
 :::danger Before you read
 
-This guide was designed version **5.19.0** and **[Paper 1.21.1](https://papermc.io/)** in mind.
+This guide was designed with version **6.1.0** and **[Paper 26.1.2](https://papermc.io/)** in mind.
 
 :::
 
@@ -15,7 +15,7 @@ Let's create our first Project using the NotQuests API!
 
 ## First Step: Adding the NotQuests API to your Project
 
-First, create a libs folder in your project and add the NotQuests jar to it. *You can also use our GitHub packages repository, but it doesn't work that well because you'll need to generate your own GitHub secret key and can't publish it. As for JitPack, they don't support Java 17.*
+First, create a libs folder in your project and add the NotQuests jar to it. *You can also use our GitHub packages repository, but it doesn't work that well because you'll need to generate your own GitHub secret key and can't publish it. As for JitPack, they don't support Java 25.*
 
 ![Libs folder](/img/api-tutorial/libsfolder.png)
 
@@ -23,7 +23,7 @@ Assuming you are using gradle as your build tool (you should), then head to your
 
 ```groovy
 dependencies {
-    compileOnly 'io.papermc.paper:paper-api:1.21.1-R0.1-SNAPSHOT'
+    compileOnly 'io.papermc.paper:paper-api:26.1.2-R0.1-SNAPSHOT'
     compileOnly files('libs/notquests-5.19.0.jar')
 }
 ```

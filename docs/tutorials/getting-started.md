@@ -7,18 +7,10 @@ keywords: [notquests, tutorial, getting started, beginner, guide]
 
 :::danger Before you read
 
-This guide was designed with version **5.19.0 or higher** and **[Paper 1.21.1](https://papermc.io/)** in mind.
+This guide was designed with version **6.1.0 or higher** and **[Paper 26.1.2](https://papermc.io/)** in mind.
 
 Older versions or Spigot servers, will have less features and different commands.
 If you're using an older version or Spigot, please do your own research as the commands will be different.
-
-:::
-
-:::info Incomplete docs
-
-I know the docs here are very incomplete and cover only 10% of what notquests can actually do. As the docs are open-source that's not my fault though, but yours, because you, or rather the community, is lazy! **Shame on you!**
-
-Once you know more about notquests, you can be a chad and **[contribute to our documentation here](https://github.com/AlessioGr/NotQuests-Docs/tree/main/docs)** (GitHub account needed, but docs can be edited right on there) - any contributions are welcome! ❤️
 
 :::
 
@@ -240,7 +232,7 @@ This will make it, so the player cannot take the Quest using the `/q take TheVir
 
 ### 7. Taking the Quest
 
-Use `/q take TheVirus` to take the Quest! You can also bind it to either Citizens NPCs or Armor stands using `/qa edit TheVirus npcs add [NPC ID]` or `/qa edit TheVirus armorstands add`.
+Use `/q take TheVirus` to take the Quest! You can also bind it to Citizens or FancyNPCs NPCs, or Armor stands using `/qa edit TheVirus npcs add citizens:[NPC ID]` (or `fancynpcs:[NPC ID]`) or `/qa edit TheVirus armorstands add`.
 
 The quest is saved in the `plugins/NotQuests/default/quests.yml` and `plugins/NotQuests/default/actions.yml` files.
 

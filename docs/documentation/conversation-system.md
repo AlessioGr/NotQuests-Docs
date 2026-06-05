@@ -5,7 +5,7 @@ description: This guide explains how the conversation system in notquests works
 keywords: [notquests, conversation, conversations, npc talk, npc conversations]
 ---
 
-THIS GUIDE IS HEAVILY OUTDATED AND INCOMPLETE! Thats because people (like you) are too lazy to write a good conversation guide. I recommend watching the video here: https://www.youtube.com/watch?v=OC45_H3Tv8Y (incomplete but only slightly outdated) and look at the demo conversation with the --demo flag when creating a new conversation.
+For a walkthrough, watch the video here: https://www.youtube.com/watch?v=OC45_H3Tv8Y, and look at the demo conversation via the `--demo` flag when creating a new conversation.
 
 
 

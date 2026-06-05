@@ -573,18 +573,6 @@ Not only that - they can also be used in so-called expressions. So you can even 
 
 :::
 
-## [BetonQuest](https://dev.betonquest.org/) Integration Variables
-
-### ❓ BetonQuestCondition
-
-:::info Description
-
-**Condition:** ✅ **Action:** ❌
-
-**Type:** Boolean
-
-:::
-
 ## [PlaceholderAPI](https://github.com/PlaceholderAPI/PlaceholderAPI/releases) Integration Variables
 
 ### ❓ PlaceholderAPINumber
