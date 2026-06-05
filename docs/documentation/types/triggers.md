@@ -5,40 +5,60 @@ description: This explains how Triggers work in NotQuests
 keywords: [notquests, triggers, quest triggers]
 ---
 
-A trigger can be attached to a quest. A trigger is basically an action which gets executed when *something happens*.
+A trigger lets a Quest *react to things that happen* while a player has it active. You bind a trigger to an **action**, and when the trigger fires, that action runs.
 
-For example, if you create a `DEATH` trigger in that Quest, it gets activated once the player dies. Then, the action bound to that trigger will execute.
+For example: add a `DEATH` trigger to a Quest, and the moment the player dies, the bound action runs — maybe failing the Quest, maybe spawning some mobs, maybe sending a cheeky taunt. Up to you.
 
-## What happens if the trigger activates?
+## How triggers work
 
-Well, if the trigger is activated (so, if in the above example, the player dies), an `Action` will be executed. You can create pre-defined actions using the `/qa actions` command.
+A trigger always runs a pre-defined **action**. You create actions with `/qa actions` (see the [Actions page](/docs/documentation/types/actions)) and can reuse the same action across many triggers and quests.
 
-## More advanced options for triggers
+You add a trigger to a quest like this:
 
-A trigger also has more advanced options. Not only can you set it that it should "trigger" when the player dies (via the `DEATH` trigger). You can also set it to trigger when the player dies ONLY while, let's say, objective 3 is unlocked. Or, only if the player dies in a specific world.
+`/qa edit <questName> triggers add <actionName> <TYPE> (extra args) (flags)`
 
-## Actions
+- **`<actionName>`** - the action to run when the trigger fires.
+- **`<TYPE>`** - *when* it fires (see the list below).
+- **`(extra args)`** - some types need an extra value, like a world name or a death count.
+- **`(flags)`** - optional, and shared by every type:
+  - `--applyOn <objectiveID>` - only fire while a specific objective is active. `0` (the default) means the whole quest — fire as long as the quest is active. `1` means only while objective 1 is active, and so on.
+  - `--world_name <world>` - only fire in this world. Defaults to `ALL` (any world).
 
-Actions can be created and re-used outside of Quests. So basically, you create them with the `/qa actions` command and can re-use them for multiple triggers.
+:::tip What `--applyOn` is good for
+This is what makes triggers flexible. Say objective 2 is hidden until objective 1 is done. Set `--applyOn 2` and the trigger only watches once the player reaches objective 2. Leave it off (or `0`) and it watches for the whole quest. Pretty flexible, eh?
+:::
+
+## Trigger types
+
+| Type | Fires when… | Extra args |
+| --- | --- | --- |
+| `BEGIN` | a quest begins, or an objective unlocks | – |
+| `COMPLETE` | a quest or objective is completed | – |
+| `FAIL` | a quest is failed | – |
+| `DEATH` | the player dies | `<amount>` |
+| `DISCONNECT` | the player logs off | `<amount>` |
+| `WORLDENTER` | the player enters a world | `<world>` `<amount>` |
+| `WORLDLEAVE` | the player leaves a world | `<world>` `<amount>` |
+| `NPCDEATH` | a Citizens NPC dies | `<npcID>` `<amount>` |
+
+For the counted types (`DEATH`, `DISCONNECT`, `WORLDENTER`, `WORLDLEAVE`, `NPCDEATH`), the `<amount>` is how many times it has to happen before the trigger fires. `1` means "fire on the first one".
 
 ***
 
-## Practical Example
+## Practical example
 
-Let's create an action which fails the quest:
+Let's make a quest fail if the player dies while doing it.
+
+First, create an action that fails the quest:
+
 `/qa actions add failQuest FailQuest test`
 
-Then let's create a trigger in the fictional Quest `test` and bind it to our action:
-`/qa edit test triggers add failQuest DEATH Quest ALL 1`
+Then bind it to a `DEATH` trigger on the quest `test`:
 
-Basically, what happens now, is that when you have the Quest active, and you die, the Quest will fail for you.
-`failQuest` here is the name of the action. `DEATH` is the `TriggerType`.
+`/qa edit test triggers add failQuest DEATH 1`
 
-### Detailed explanation of the trigger add command in this example
+Now, while a player has the `test` quest active, dying once runs the `failQuest` action — and the quest fails. Here, `failQuest` is the action name and `DEATH` is the trigger type.
 
-The next argument, "Quest" is when that trigger should apply. With "Quest", it's enough to have the quest active for the trigger to activate. If I were to set this to "O1" instead of "Quest", it would only trigger if the Objective Number 1 is currently active. In our case, it does not matter, since Objective 1 is always active.
+Want it to only count deaths in the nether, and only once the player has reached objective 2?
 
-But in a Quest with 2 Objectives you could set it so Objective 2 depends on Objective 1. That way, objective 2 would be hidden until objective 1 is completed. If, in that Quest, you were to set this trigger to "O2", it will not trigger until you have reached objective 2 (by finishing objective 1 first). Pretty flexible, eh?
-
-The next argument, "ALL" is the world it should apply to. If I set that to "world_nether" I would need to die in the nether for the trigger to activate.
-The last argument is simply the amount of deaths until it activates.
+`/qa edit test triggers add failQuest DEATH 1 --applyOn 2 --world_name world_nether`
