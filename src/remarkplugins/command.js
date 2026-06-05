@@ -35,11 +35,17 @@ function colouredSpan(className, value) {
 const plugin = (options) => {
   return async (ast) => {
     visitInlineCode(ast, (node) => {
-      const children = parseCommand(node.value);
+      const raw = node.value;
+      const isCommand = raw.trim().startsWith("/");
+      const children = parseCommand(raw);
       node.type = "mdxJsxTextElement";
       node.name = "span";
       node.attributes = [
-        { type: "mdxJsxAttribute", name: "className", value: "specialcode" },
+        {
+          type: "mdxJsxAttribute",
+          name: "className",
+          value: isCommand ? "specialcode specialcode--cmd" : "specialcode",
+        },
       ];
       node.children = children;
       delete node.value;
