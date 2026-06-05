@@ -1,6 +1,6 @@
 ---
 title: 🎨 Customization
-sidebar_position: 4
+sidebar_position: 6
 description: This tutorial helps you customize notquests
 keywords: [notquests, tutorial, customization, customize, guide]
 ---

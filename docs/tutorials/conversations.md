@@ -1,6 +1,6 @@
 ---
 title: 💬 Conversations
-sidebar_position: 5
+sidebar_position: 3
 description: This tutorial helps you create conversations
 keywords: [notquests, tutorial, conversation, conversations, chat, speak, talk]
 ---

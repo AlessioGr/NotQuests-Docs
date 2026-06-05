@@ -1,6 +1,6 @@
 ---
 title: 📄 Placeholders
-sidebar_position: 5
+sidebar_position: 6
 description: This lists all PlaceholderAPI placeholders available in NotQuests and explains what they do
 keywords: [notquests, PlaceholderAPI, placeholders]
 ---

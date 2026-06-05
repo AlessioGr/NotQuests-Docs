@@ -1,6 +1,6 @@
 ---
 title: ❓ Frequently asked questions
-sidebar_position: 8
+sidebar_position: 9
 description: This answers questions which have been asked a lot
 keywords: [notquests, faq]
 ---

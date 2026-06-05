@@ -1,6 +1,6 @@
 ---
 title: 👩‍❤️‍👨 Reputation system with tags
-sidebar_position: 2
+sidebar_position: 5
 description: This tutorial helps you create a reputation system using our powerful tag system.
 keywords: [notquests, tutorial, tags, tag, reputation, guide]
 ---

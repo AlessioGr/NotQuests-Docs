@@ -1,6 +1,6 @@
 ---
 title: ⏰ Daily Quests
-sidebar_position: 3
+sidebar_position: 4
 description: This tutorial helps you create daily quests
 keywords: [notquests, tutorial, daily, repeating, timed, guide]
 ---

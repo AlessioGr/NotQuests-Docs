@@ -1,6 +1,6 @@
 ---
 title: 🔒 Permissions
-sidebar_position: 4
+sidebar_position: 7
 description: This lists all permission nodes available in NotQuests and explains what they do
 keywords: [notquests, permissions]
 ---
