@@ -595,38 +595,6 @@ Not only that - they can also be used in so-called expressions. So you can even 
 
 :::
 
-## [Project Korra](https://github.com/ProjectKorra/ProjectKorra/releases) Integration Variables
-
-### ❓ ProjectKorraElements
-
-:::info Description
-
-**Condition:** ✅ **Action:** ✅
-
-**Type:** String List
-
-:::
-
-### ❓ ProjectKorraIsBender
-
-:::info Description
-
-**Condition:** ✅ **Action:** ❌
-
-**Type:** Boolean
-
-:::
-
-### ❓ ProjectKorraSubElements
-
-:::info Description
-
-**Condition:** ✅ **Action:** ✅
-
-**Type:** String List
-
-:::
-
 ## [Towny](https://github.com/TownyAdvanced/Towny/releases) Integration Variables
 
 ### ❓ TownyNationName
