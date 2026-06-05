@@ -5,16 +5,15 @@ description: This tutorial helps you get started with NotQuests from zero to her
 keywords: [notquests, tutorial, getting started, beginner, guide]
 ---
 
-:::danger Before you read
+:::note Before you start
 
-This guide was designed with version **6.1.0 or higher** and **[Paper 26.1.2](https://papermc.io/)** in mind.
-
-Older versions or Spigot servers, will have less features and different commands.
-If you're using an older version or Spigot, please do your own research as the commands will be different.
+This guide is written for **NotQuests 6.1.0 or newer** on **[Paper 26.1.2](https://papermc.io/)**. Older versions and Spigot have fewer features and some different commands, so a few things might not line up there.
 
 :::
 
-Let's discover **NotQuests!** Just keep on reading this guide.
+Let's discover **NotQuests!** The best way to learn it is to actually *build* something — so that's what we'll do. In the next few minutes we'll make a complete little quest from scratch: a display name and description, a requirement, two objectives, a trigger that spawns mobs, and some rewards. All with commands — no config files to wrestle with.
+
+By the end you'll know your way around, and everything after that is just remixing these same building blocks.
 
 ## The Structure
 
@@ -39,7 +38,7 @@ There are two types of commands:
 - `/q` or `/notquests` for **Player commands**. All players will have access to this command.
 - `/qa` or `/notquestsadmin` for **Admin commands**. We're gonna use this to make and edit our Quests!
 
-In NotQuests, we create all our Quests with commands. No need to edit complicated configuration files!
+In NotQuests, we create all our Quests with commands. No need to edit complicated configuration files! Want the full list? Check out the [Commands reference](/docs/documentation/commands) any time.
 
 ### Command Completions
 
@@ -173,7 +172,7 @@ This action spawns 15 zombie villagers at the location wherever the player takin
 
 Now, let's add the **trigger with this action** to our Quest:
 
-`/qa edit TheVirus triggers add Spawn15ZombieVillagers BEGIN --applyon O2 --world_name ALL`
+`/qa edit TheVirus triggers add Spawn15ZombieVillagers BEGIN --applyOn O2 --world_name ALL`
 
 This runs the action "*Spawn15ZombieVillagers*" once we BEGIN O2 (objective 2) in ALL worlds (not limited to any world). Feel free to test it out — it will work 👍
 
@@ -257,9 +256,21 @@ The name we specified above is also just the categorie's identifier. You can add
 
 `/qa categories edit VirusQuests displayName set <dark_green>Virus Quests <main>(dangerous)`
 
-#### Category predefined progress order:
+#### Category predefined progress order
 
-(todo, still need to write this up. Works like the predefined progress order for quests > objectives, but for category > quests. Super useful, this can make your life VERY easy and speed things up by a lot)
+Remember the `predefinedProgressOrder` trick we used to make objectives complete in order? Categories have the exact same thing — but for the **quests inside them**. This is perfect for story chapters: drop your quests into a category and force players to do them one after another, without manually chaining a condition onto every single quest.
+
+`/qa categories edit VirusQuests predefinedProgressOrder set firstToLast`
+
+Now players have to finish the quests in this category from the first to the last. Your options:
+
+- `set firstToLast` - quests must be done top to bottom.
+- `set lastToFirst` - quests must be done bottom to top.
+- `set custom <quest order>` - you pick the exact order (quest names separated by spaces).
+- `set none` - removes the order again.
+- `show` - shows the current order.
+
+Super useful, and it can save you a *ton* of time.
 
 ### Sub-Objectives
 
