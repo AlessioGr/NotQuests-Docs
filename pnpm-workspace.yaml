@@ -1,3 +1,5 @@
 allowBuilds:
   '@swc/core': true
   core-js: true
+patchedDependencies:
+  '@docsearch/react@4.6.3': patches/@docsearch__react@4.6.3.patch
