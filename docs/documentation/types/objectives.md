@@ -43,6 +43,21 @@ First, we'll list the objectives which are always available:
 
 :::
 
+### 🍎 FeedMobs
+
+:::info Description
+
+**Completed when:** Player feeds a specific mob a certain number of times
+
+**Command Arguments:**
+
+- **`<entityType>`** The mob type which the player needs to feed. Use 'any' if any mob type should count.
+- **`<amount>`** - The amount of times the player needs to feed that mob
+
+**Example command:** `/qa edit questname objectives add FeedMobs cow 4`
+
+:::
+
 
 ### ❓ Condition
 
