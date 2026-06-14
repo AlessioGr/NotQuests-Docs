@@ -1,6 +1,6 @@
 ---
 title: 👩‍❤️‍👨 Reputation system with tags
-sidebar_position: 5
+sidebar_position: 6
 description: This tutorial helps you create a reputation system using our powerful tag system.
 keywords: [notquests, tutorial, tags, tag, reputation, guide]
 ---
@@ -112,4 +112,3 @@ Example condition which checks if you have at least 50 reputation in house stark
 `/qa conditions add HouseStarkReputation50 TagInteger housestarkreputation moreOrEqualThan 50`
 
 To be continued... I'll write this part up when I have time. Feel free to contribute to this tutorial (or any other tutorials) here: [Contribute to the docs](https://github.com/AlessioGr/NotQuests-Docs/blob/main/docs/tutorials/creating-a-reputation-system-with-tags.md).
-

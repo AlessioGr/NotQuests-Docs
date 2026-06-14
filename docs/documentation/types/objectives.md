@@ -23,6 +23,8 @@ When a player is tracking that objective, NotQuests shows a client-side beam/mar
 
 If you also enable `visual.objective-tracking.location-compass.enabled` in `general.yml`, players get a small bossbar compass while tracking an objective marker. It shows whether the target is left, right, behind, or straight ahead, plus the distance in blocks/meters. This is off by default because bossbars are visually noticeable and many servers already use them for progress or events.
 
+For a full walkthrough, see the [Guided Location Quest tutorial](/docs/tutorials/guided-location-quest).
+
 Useful commands:
 
 - **`/qa edit questname objectives edit 1 location set here`** - Save your current in-game position for objective `1` and turn the marker on. This is the easiest way to set it up.
