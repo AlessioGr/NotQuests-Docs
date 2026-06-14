@@ -402,3 +402,42 @@ For these commands, I have pre-created the actions sm1, sm2, sm3 ... sm10 which 
 **Example command:** `/qa actions add pulllever TriggerCommand lever1`
 
 </Admonition>
+
+## BetonQuest 3 Integration Actions
+
+These actions are only available when BetonQuest 3.0.0 or newer is installed. BetonQuest 1.x and 2.x are not supported.
+
+BetonQuest 3 calls these "actions"; older BetonQuest docs may call the same thing "events". NotQuests keeps the old `FireEvent` names so existing setups are easier to recognize.
+
+### ℹ️ BetonQuestFireEvent
+
+<Admonition type="info" title="Description">
+
+**What happens:** Runs a named BetonQuest action from a BetonQuest package.
+
+Use this when the BetonQuest action is already defined in a package and you want NotQuests to trigger it as a reward, saved action, trigger, or objective reward.
+
+**Command Arguments:**
+
+- **`<package>`** - BetonQuest package containing the action.
+- **`<action>`** - Action name inside that BetonQuest package.
+
+**Example command:** `@optional-integration /qa actions add run_betonquest_action BetonQuestFireEvent main reward_player`
+
+</Admonition>
+
+### ℹ️ BetonQuestFireInlineEvent
+
+<Admonition type="info" title="Description">
+
+**What happens:** Runs a BetonQuest action instruction written directly in the NotQuests command.
+
+Use this for small one-off BetonQuest actions. If the instruction gets long or reused often, define it in a BetonQuest package and use `BetonQuestFireEvent` instead.
+
+**Command Arguments:**
+
+- **`<action>`** - Full inline BetonQuest action instruction.
+
+**Example command:** `@optional-integration /qa actions add notify_from_betonquest BetonQuestFireInlineEvent notify Hello from BetonQuest`
+
+</Admonition>

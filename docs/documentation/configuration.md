@@ -180,9 +180,45 @@ integrations:
 | `towny` | The `TownyNationReachTownCount` & `TownyReachResidentCount` objectives |
 | `jobs-reborn` | The `JobsRebornReachJobLevel` objective |
 | `ecoMobs` | eco / EcoMobs spawn actions and kill detection |
+| `betonQuest` | BetonQuest 3 actions, conditions, objective-state objectives, variables, and the `notquests` conversation interceptor |
 
 <Admonition type="info">
 
 Every supported integration is bundled with NotQuests at its latest tested version — you don't install anything extra on the NotQuests side. The plugin you run on your server is what NotQuests talks to.
 
 </Admonition>
+
+### BetonQuest 3
+
+NotQuests supports **BetonQuest 3.0.0 and newer**. Older BetonQuest 1.x/2.x versions are detected and skipped with a clean console warning, because their API is not compatible with the modern integration.
+
+When BetonQuest 3 is installed, NotQuests adds:
+
+- NotQuests actions and conditions usable inside BetonQuest packages.
+- NotQuests actions that run BetonQuest actions.
+- A NotQuests objective that advances when a BetonQuest objective reaches a chosen state.
+- A `BetonQuestCondition` variable for checking BetonQuest conditions from NotQuests.
+- A `notquests` BetonQuest conversation interceptor.
+
+See the [Actions](./types/actions#betonquest-3-integration-actions), [Objectives](./types/objectives#betonquest-3-integration-objectives), and [Variables](./types/variables#betonquest-3-integration-variables) pages for examples.
+
+Inside a BetonQuest package, these NotQuests hooks are available:
+
+```yaml
+actions:
+  sendNotQuestsMessage: "nq_action SendMessage Hello from NotQuests"
+  startNotQuestsQuest: "nq_startquest questname -force -silent -notriggers"
+  failNotQuestsQuest: "nq_failquest questname"
+  abortNotQuestsQuest: "nq_abortquest questname"
+  triggerNotQuestsObjective: "nq_triggerobjective triggerName"
+  addQuestPoints: "nq_questpoints add 10 -silent"
+conditions:
+  hasNotQuestsCondition: "nq_condition Flying equals true"
+```
+
+- **`nq_action <NotQuests action line>`** - Runs any inline NotQuests action.
+- **`nq_condition <NotQuests condition line>`** - Checks any inline NotQuests condition.
+- **`nq_startquest <quest> [-force] [-silent] [-notriggers]`** - Starts a NotQuests quest for the BetonQuest player.
+- **`nq_failquest <quest>`** / **`nq_abortquest <quest>`** - Fails or aborts a NotQuests quest.
+- **`nq_triggerobjective <triggerName>`** - Adds progress to matching NotQuests `TriggerCommand` objectives.
+- **`nq_questpoints set|add|remove <amount> [-silent]`** - Changes the player's NotQuests Quest Points.

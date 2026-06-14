@@ -23,6 +23,8 @@ details, see the [Generated Command Reference](./command-reference).
 
 In the lists below: `<required>` is a required argument, `[optional]` is optional, and `(flags)` are optional `--flags`.
 
+Duration arguments accept short and readable formats. For example, `500ms`, `1s`, `5m`, `2h`, and `1d` all work. A bare number is treated as milliseconds.
+
 ## 🎮 Player commands (`/q`)
 
 - **`/q`** - Opens the quest GUI (or shows clickable text, depending on your config).

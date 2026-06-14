@@ -92,6 +92,29 @@ First, we'll list the objectives which are always available:
 
 </Admonition>
 
+### 🌾 Harvest
+
+<Admonition type="info" title="Description">
+
+**Completed when:** Player harvests fully grown crops, plants, or fruit blocks.
+
+This is safer than using `BreakBlocks` or `PickupItems` for farming quests. NotQuests checks that the crop was actually ready to harvest, and it ignores directly placed melon, pumpkin, cactus, and sugar cane blocks so players cannot just place-break the same block for progress.
+
+**Command Arguments:**
+
+- **`<crops>`** - The crop, plant, or fruit block to count. You can use crop block names like `wheat`, `carrots`, `potatoes`, and `beetroots`, or item-style aliases like `carrot`, `potato`, and `beetroot`. Comma-separated lists work too.
+- **`<amount>`** - The amount of fully grown crops, plants, or fruit blocks the player has to harvest.
+
+**What counts:**
+
+- Fully grown ageable crops, such as wheat, carrots, potatoes, beetroot, nether wart, cocoa, sweet berries, pitcher crop, and torchflower crop.
+- Melon and pumpkin fruit blocks.
+- Sugar cane and cactus segments that grew on top of another sugar cane/cactus block.
+
+**Example command:** `/qa edit questname objectives add Harvest wheat,carrot,potato,beetroot,melon,pumpkin,sugar_cane,cactus 32`
+
+</Admonition>
+
 
 ### ❓ Condition
 
@@ -420,6 +443,23 @@ TODO
 
 </Admonition>
 
+### 🧪 BrewItems
+
+<Admonition type="info" title="Description">
+
+**Completed when:** Player takes freshly brewed items out of a brewing stand.
+
+NotQuests tracks the brewing result, not just any potion in the inventory. A player cannot manually insert old potions into a brewing stand and take them back out for progress.
+
+**Command Arguments:**
+
+- **`<materials>`** - The potion, bottle, or custom brewed item the player must collect from the brewing stand. Use `potion`, `splash_potion`, `lingering_potion`, or a custom NotQuests item if you need a more specific result.
+- **`<amount>`** - The amount of freshly brewed items the player has to collect.
+
+**Example command:** `/qa edit questname objectives add BrewItems potion 5`
+
+</Admonition>
+
 ### 🧟 Sneak
 
 <Admonition type="info" title="Description">
@@ -481,6 +521,28 @@ In our vote example, if you set that command as a vote reward (in your vote plug
 **Example command:** `/qa edit questname objectives add TriggerCommand trigger1 1`
 
 **Command to "trigger"/finish that objective:** `/qa triggerObjective trigger1 {PLAYER}` - `{PLAYER}` needs to be replaced with the players username.
+
+</Admonition>
+
+## BetonQuest 3 Integration Objectives
+
+These objectives are only available when BetonQuest 3.0.0 or newer is installed. BetonQuest 1.x and 2.x are not supported.
+
+### ℹ️ BetonQuestObjectiveStateChange
+
+<Admonition type="info" title="Description">
+
+**Completed when:** A BetonQuest objective from a BetonQuest package reaches the state you choose.
+
+Use this when part of a quest is managed by BetonQuest, but you still want the player to progress a NotQuests quest when that BetonQuest objective changes state.
+
+**Command Arguments:**
+
+- **`<package>`** - BetonQuest package containing the objective.
+- **`<objective>`** - Objective name inside that BetonQuest package.
+- **`<objectiveState>`** - BetonQuest objective state that should count, such as `COMPLETED`. Tab-completion suggests the states available to NotQuests.
+
+**Example command:** `@optional-integration /qa edit questname objectives add BetonQuestObjectiveStateChange main talk_to_guard COMPLETED`
 
 </Admonition>
 

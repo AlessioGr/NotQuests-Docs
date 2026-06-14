@@ -737,3 +737,26 @@ For a full, practical walkthrough, see the [reputation system tutorial](/docs/tu
 **Type:** Boolean
 
 </Admonition>
+
+## BetonQuest 3 Integration Variables
+
+These variables are only available when BetonQuest 3.0.0 or newer is installed. BetonQuest 1.x and 2.x are not supported.
+
+### ❓ BetonQuestCondition
+
+<Admonition type="info" title="Description">
+
+**Condition:** ✅ **Action:** ❌
+
+**Type:** Boolean
+
+Checks a condition from a BetonQuest package and returns `true` or `false` for the current player.
+
+**Required arguments:**
+
+- **`<package>`** - BetonQuest package containing the condition.
+- **`<condition>`** - Condition name inside that BetonQuest package.
+
+**Example command:** `@optional-integration /qa conditions add has_betonquest_permission BetonQuestCondition main permission_check equals true`
+
+</Admonition>
