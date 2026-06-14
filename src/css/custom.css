@@ -552,3 +552,101 @@ html[data-theme="dark"] .commandReferenceCard {
 html[data-theme="dark"] .commandReferenceSyntax {
   background: #0d121b;
 }
+
+.markdown-actions-container {
+  display: flex;
+  justify-content: flex-start;
+  margin: -0.15rem 0 1.15rem;
+}
+
+.markdown-actions-container .dropdown {
+  position: relative;
+  display: inline-flex;
+}
+
+.markdown-actions-container .button {
+  width: auto;
+  min-width: 0;
+  height: 2rem;
+  padding: 0 0.7rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 999px;
+  background: var(--ifm-background-surface-color);
+  box-shadow: 0 1px 2px rgba(15, 30, 55, 0.08);
+  color: var(--ifm-color-content-secondary);
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.markdown-actions-container .button:hover,
+.markdown-actions-container .button:focus-visible {
+  border-color: var(--ifm-color-primary);
+  background: var(--ifm-color-emphasis-100);
+  color: var(--ifm-color-primary);
+}
+
+.markdown-actions-container .button svg {
+  width: 0.75rem;
+  height: 0.75rem;
+  margin-left: 0.35rem !important;
+  opacity: 0.72;
+}
+
+.markdown-actions-container .dropdown__menu {
+  right: auto;
+  left: 0;
+  min-width: 13.5rem;
+  margin-top: 0.45rem;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 8px;
+  padding: 0.35rem;
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.16);
+}
+
+.markdown-actions-container .dropdown__link {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  border-radius: 6px;
+  padding: 0.48rem 0.55rem;
+  color: var(--ifm-color-content);
+  font-size: 0.84rem;
+}
+
+.markdown-actions-container .dropdown__link:hover,
+.markdown-actions-container .dropdown__link:focus {
+  background: var(--ifm-color-emphasis-100) !important;
+  color: var(--ifm-color-primary);
+}
+
+.markdown-actions-container .dropdown__link svg {
+  flex: 0 0 auto;
+  margin-right: 0 !important;
+  color: var(--ifm-color-content-secondary);
+}
+
+html[data-theme="dark"] .markdown-actions-container .button {
+  border-color: #3a4352;
+  background: #171d26;
+  box-shadow: none;
+  color: #c9d2e3;
+}
+
+html[data-theme="dark"] .markdown-actions-container .button:hover,
+html[data-theme="dark"] .markdown-actions-container .button:focus-visible {
+  border-color: #5f96ff;
+  background: #1f2937;
+  color: #8ab4ff;
+}
+
+html[data-theme="dark"] .markdown-actions-container .dropdown__menu {
+  border-color: #303846;
+  background: #151b24;
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.36);
+}
+
+html[data-theme="dark"] .markdown-actions-container .dropdown__link:hover,
+html[data-theme="dark"] .markdown-actions-container .dropdown__link:focus {
+  background: #202938 !important;
+}
