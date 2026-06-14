@@ -55,13 +55,13 @@ const config = {
     ],
   ],
 
-  plugins: ['docusaurus-markdown-source-plugin'],
+  plugins: ['@docsearch/docusaurus-adapter', 'docusaurus-markdown-source-plugin'],
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       metadata: [{name: 'keywords', content: 'notquests, notquest, minecraft, quest, quests, quest plugin, paper, spigot'}],
-      algolia: {
+      docsearch: {
         // The application ID provided by Algolia
         appId: 'ILVXA82547',
 
@@ -79,6 +79,13 @@ const config = {
         askAi: {
           assistantId: '8eaecbd4-465e-4175-85b9-579388fb2ebc',
           indexName: 'notquests_markdown',
+          agentStudio: true,
+          searchParameters: {
+            notquests_markdown: {
+              attributesToRetrieve: ['title', 'heading', 'text', 'url'],
+              restrictSearchableAttributes: ['title', 'heading', 'text'],
+            },
+          },
           suggestedQuestions: true,
         },
       },
