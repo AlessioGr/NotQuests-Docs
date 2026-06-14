@@ -7,7 +7,7 @@ keywords: [notquests, tutorial, getting started, beginner, guide]
 
 :::note Before you start
 
-This guide is written for **NotQuests 6.1.0 or newer** on **[Paper 26.1.2](https://papermc.io/)**. Older versions and Spigot have fewer features and some different commands, so a few things might not line up there.
+This guide is written for **NotQuests 6.2.0** on **[Paper 26.1.2](https://papermc.io/)**. Older versions and Spigot have fewer features and some different commands, so a few things might not line up there.
 
 :::
 

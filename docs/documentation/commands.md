@@ -88,7 +88,7 @@ Inside `objectives edit <id>` you can set a `description`, `displayName`, `taskD
 - **`triggers list`** · **`clear`** · **`edit <id> ...`**
 
 **Quest givers**
-- **`npcs add <citizens:ID | fancynpcs:ID | rightclick> [--hideInNPC]`** - Attach the quest to a Citizens or FancyNPCs NPC. Use `rightclick` to get an item you can click an NPC with.
+- **`npcs add <citizens:ID | fancynpcs:ID | rightClickSelect> [--hideInNPC]`** - Attach the quest to a Citizens or FancyNPCs NPC. Use `rightClickSelect` to get an item you can click an NPC with.
 - **`npcs list`** · **`npcs clear`**
 - **`armorstands add <rightclick>`** - Get an item, then right-click an armor stand to attach the quest to it.
 - **`armorstands list`** · **`armorstands clear`**
