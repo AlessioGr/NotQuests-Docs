@@ -5,7 +5,7 @@ description: Create NPC conversations with choices, branches, actions, and condi
 keywords: [notquests, tutorial, conversation, conversations, chat, speak, talk]
 ---
 
-Conversations let an NPC talk to a player, show clickable answers, branch into different paths, and run quest actions or conditions while the dialogue is happening.
+Conversations let an NPC talk to a player, show clickable answers, branch into different paths, and run quest actions or checks during the dialogue.
 
 You do not need to understand the whole system before making your first one. Start with a tiny file, test it in-game, then add choices and logic one piece at a time.
 
@@ -55,7 +55,13 @@ Start it as a player:
 
 `/qa conversations start intro`
 
-If that works, you already know the core pattern: an NPC line sends text, `next:` points to player answers, and each player answer points back to the next NPC line.
+If that works, you already know the main idea:
+
+- an NPC line sends text,
+- `next:` points to the answers the player can choose,
+- each player answer points back to the next NPC line.
+
+Think of it like a small flow chart.
 
 ## Attach it to an NPC
 
@@ -79,13 +85,13 @@ The demo is useful after you understand the small version above:
 
 `/qa conversations create atlas --demo`
 
-It creates a larger conversation with multiple answers, random text variants, MiniMessage formatting, and nested branches. Use it as a reference, not as the first thing you try to understand.
+It creates a larger conversation with multiple answers, random text variants, MiniMessage formatting, and nested branches. Use it for ideas after your small test conversation works.
 
 ## How conversation files work
 
 Every conversation has:
 
-- `start`: the first line or first list of candidate lines.
+- `start`: the first line, or a short list of fallback lines.
 - `Lines`: every speaker and every line they can say.
 - speakers such as `Guard` or `Player`.
 - line names such as `hello`, `yes`, or `goodbye`.
@@ -131,6 +137,8 @@ If a line has no `next:`, the conversation ends after that line.
 
 Conditions decide whether a line is allowed to play.
 
+You can skip this section until your basic conversation works.
+
 First create a saved condition in-game:
 
 `/qa conditions add HasTenQuestPoints QuestPoints moreOrEqualThan 10`
@@ -153,7 +161,7 @@ Lines:
       text: "Come back after you have earned 10 quest points."
 ```
 
-Because `start` lists `Guard.reward` first, NotQuests tries that line first. If its condition fails, it tries `Guard.noReward`.
+Because `start` lists `Guard.reward` first, NotQuests tries that line first. If the player does not pass the condition, NotQuests tries `Guard.noReward` instead.
 
 To negate a condition, add `!` before it and quote the line:
 
@@ -187,7 +195,7 @@ actions:
   - QuestPoints add 5
 ```
 
-Saved actions are easier to test because the command tells you immediately if the action syntax is wrong. Inline actions are useful once you are comfortable with the action types.
+Saved actions are easier to test because the command tells you immediately if the action syntax is wrong. Inline actions are handy later, once you know the action types well.
 
 ## Random text variants
 
@@ -228,7 +236,7 @@ warning:
 
 ## Running actions without showing text
 
-Use `text: "/skip/"` for a hidden line that only runs logic:
+Use `text: "/skip/"` for a hidden step that only runs actions:
 
 ```yaml
 giveReward:
@@ -238,7 +246,7 @@ giveReward:
   next: Guard.rewardGiven
 ```
 
-This is useful for keeping logic separate from dialogue.
+This is useful when you want to give a reward or update a tag without showing an extra chat message.
 
 ## Testing checklist
 
@@ -250,7 +258,7 @@ After every edit:
 4. Run `/qa conversations analyze intro --printToConsole`.
 5. Start it with `/qa conversations start intro` or right-click the attached NPC.
 
-Most conversation problems are one of these:
+Most conversation problems come from one of these:
 
 - The YAML indentation is wrong.
 - `start:` or `next:` points to a line that does not exist.
@@ -268,7 +276,7 @@ Most conversation problems are one of these:
 6. Reload and test.
 7. Attach it to an NPC.
 
-Do not build a 100-line conversation before testing it. Small changes are much easier to debug.
+Do not write a huge conversation before testing it. Small changes are much easier to fix.
 
 ## Useful commands
 

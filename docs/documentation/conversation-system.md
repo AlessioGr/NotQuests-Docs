@@ -1,11 +1,11 @@
 ---
 title: 💬 Conversation System
 sidebar_position: 5
-description: Reference for NotQuests conversation files, commands, branching, actions, conditions, and NPC attachment.
+description: Simple reference for NotQuests conversation files, commands, branching, actions, conditions, and NPC attachment.
 keywords: [notquests, conversation, conversations, npc talk, npc conversations]
 ---
 
-This page is the reference for the conversation file format. If you are creating your first conversation, start with the [Conversations tutorial](/docs/tutorials/conversations) first.
+This page explains the conversation file format. If you are creating your first conversation, start with the [Conversations tutorial](/docs/tutorials/conversations) first.
 
 ## What a conversation is
 
@@ -28,7 +28,7 @@ The file controls:
 - which lines each speaker can say,
 - which choices the player can click,
 - which actions run,
-- which conditions gate branches.
+- which conditions control branches.
 
 ## Minimal file
 
@@ -52,7 +52,7 @@ Lines:
 
 | Key | Required | Meaning |
 | --- | --- | --- |
-| `start` | yes | First line, or comma-separated candidate lines, for the conversation. |
+| `start` | yes | First line, or comma-separated fallback lines, for the conversation. |
 | `Lines` | yes | Speakers and their lines. |
 | `npcs` | no | NPC attachment data. Prefer managing this with commands instead of editing it manually. |
 
@@ -99,7 +99,7 @@ Line keys:
 | --- | --- |
 | `text` | Message shown when the line plays. |
 | `texts` | List of possible messages; one is chosen randomly. Use this instead of `text`. |
-| `next` | Next line, or comma-separated candidate lines. If omitted, the conversation ends. |
+| `next` | Next line, or comma-separated fallback lines. If omitted, the conversation ends. |
 | `conditions` | Conditions that must pass before this line can play. |
 | `actions` | Actions executed when the line is reached. |
 | `shout` | `true` makes the line visually stand out in bold. |
@@ -132,7 +132,7 @@ Or multiple references:
 next: Player.accept,Player.decline,Player.askMore
 ```
 
-## How NotQuests chooses the next line
+## How NotQuests picks the next line
 
 NotQuests reads comma-separated line references from left to right.
 
@@ -142,7 +142,7 @@ start: Guard.vipGreeting,Guard.normalGreeting
 
 It tries `Guard.vipGreeting` first. If that line has conditions and they fail, NotQuests tries `Guard.normalGreeting`.
 
-That pattern is how you make conditional branches:
+That is how you make branches that depend on conditions:
 
 ```yaml
 vipGreeting:
@@ -197,7 +197,7 @@ Conversation text supports MiniMessage:
 text: "Bring me <green>10 herbs</green> and I will pay you <gold>well</gold>."
 ```
 
-Use `text: "/skip/"` for a line that sends no message and only runs actions or routing:
+Use `text: "/skip/"` for a line that sends no message and only runs actions or moves to another line:
 
 ```yaml
 giveReward:
@@ -228,7 +228,7 @@ actions:
   - QuestPoints add 5
 ```
 
-Saved actions are easier to validate because `/qa actions add ...` gives command feedback immediately. Inline actions are useful for short, obvious actions.
+Saved actions are easier to check because `/qa actions add ...` gives command feedback immediately. Inline actions are useful for short, obvious actions.
 
 ## Conditions
 
@@ -303,13 +303,13 @@ You can add and remove speakers with commands, but line content is still edited 
 
 `/qa conversations edit intro speakers remove Guard`
 
-## Validation and debugging
+## Checking and debugging
 
 After editing a file:
 
 `/qa reload conversations`
 
-Then check the parsed structure:
+Then check how NotQuests reads the file:
 
 `/qa conversations analyze intro`
 
@@ -333,7 +333,7 @@ NotQuests can keep conversation chat tidy by removing previous conversation line
 
 If players report that chat messages appear to disappear during conversations, that is usually this feature. It is intended, but it can be disabled in the config if your server prefers normal chat history.
 
-## Practical limits
+## Keep conversations easy to debug
 
 Conversations are powerful, but they are still YAML files. The most reliable workflow is:
 
