@@ -104,7 +104,7 @@ See the [Conversation System](./conversation-system) for the full picture.
 - **`/qa conversations list => conversations list`** - List conversations.
 - **`/qa conversations analyze Intro --printToConsole => conversations analyze <conversation> --printToConsole`** - Sanity-check a conversation's structure.
 - **`/qa conversations start Intro => conversations start <conversation>`** - Start a conversation.
-- **`/qa conversations edit Intro npcs add rightClickSelect => conversations edit <conversation> ...`** - Edit lines, speakers, and attached NPCs/armor stands.
+- **`/qa conversations edit Intro npcs add rightClickSelect => conversations edit <conversation> ...`** - Attach NPCs/armor stands and manage speakers/categories. Conversation lines are edited in the `.yml` file.
 
 ### Global actions & conditions
 

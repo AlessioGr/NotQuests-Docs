@@ -1,75 +1,346 @@
 ---
 title: 💬 Conversation System
 sidebar_position: 5
-description: This guide explains how the conversation system in notquests works
+description: Reference for NotQuests conversation files, commands, branching, actions, conditions, and NPC attachment.
 keywords: [notquests, conversation, conversations, npc talk, npc conversations]
 ---
 
-For a walkthrough, look at the demo conversation via the `--demo` flag when creating a new conversation.
+This page is the reference for the conversation file format. If you are creating your first conversation, start with the [Conversations tutorial](/docs/tutorials/conversations) first.
 
+## What a conversation is
 
+A conversation is one YAML file in a category's `conversations` folder:
 
-> Showcase of conversations with packet magic enabled: https://www.youtube.com/watch?v=iPwcf277K8k (it has improved since I made that video).
+```text
+plugins/NotQuests/<category>/conversations/<conversation>.yml
+```
 
-## NPCs
+For the default category:
 
-To add NPCs to a conversation, please use the command — don't edit the conversation file directly.
+```text
+plugins/NotQuests/default/conversations/intro.yml
+```
 
-## Links & Introduction
+The file controls:
 
-Shitty Video Tutorial: https://www.youtube.com/watch?v=2xgzLTX8KyQ
+- where the conversation starts,
+- which speakers exist,
+- which lines each speaker can say,
+- which choices the player can click,
+- which actions run,
+- which conditions gate branches.
 
-NotQuests has a very extensive and flexible conversation system integrated. With it, you can create and add remarkable conversations to both Citizens NPCs or Armor Stands (or basically anything else via commands).
+## Minimal file
 
-The learning curve for creating conversations is steeper compared to learning other features NotQuests offers. That's mainly because the majority of the conversation cannot be created using commands (I'll add that in the future).
+```yaml
+start: Robert.greeting
 
-That means that you will have to edit conversation files to create your conversation. Each conversation = one `.yml` file. But don't worry! There are some commands to assist you.
+Lines:
+  Robert:
+    color: "<blue>"
+    greeting:
+      text: "Hello!"
+      next: Player.bye
 
-## Creating our first conversation
+  Player:
+    color: "<green>"
+    bye:
+      text: "Bye!"
+```
 
-Of course, you can create the conversation file yourself by going to the `plugins/NotQuests/default/conversations` folder - but I added a helpful command which creates the initial template for you:
+## Top-level keys
 
-`/qa conversations create myconversation => /qa conversations create <name>`. Make sure _[name]_ contains no spaces. For our first conversation, however, let's use this command:
+| Key | Required | Meaning |
+| --- | --- | --- |
+| `start` | yes | First line, or comma-separated candidate lines, for the conversation. |
+| `Lines` | yes | Speakers and their lines. |
+| `npcs` | no | NPC attachment data. Prefer managing this with commands instead of editing it manually. |
 
-`/qa conversations create myconversation --demo => /qa conversations create <name> --demo` By adding the --demo flag at the end of the command, it won't just create a conversation file with the blank template - it will also fill it with a demo conversation.
+## Speakers
 
-### Editing our first conversation
+Speakers are children of `Lines`.
 
-Head to the `plugins/NotQuests/default/conversations` folder and open the respective `[name].yml` file which the _create command_ should have created for you.
+```yaml
+Lines:
+  Robert:
+    color: "<blue>"
+    greeting:
+      text: "Hello!"
+```
 
-Since you used the --demo flag, it should be filled with a demo conversation.
+The speaker name is used in line references:
 
-In-game, you can already “start” the conversation by using `/qa conversations start myconversation => /qa conversations start <name>`. Now it's up to you:
+```text
+Robert.greeting
+```
 
-Try to understand the conversation file and how it works by comparing it with the result in-game. Make some changes and see what happens in-game. Note that after each change, you have to re-load it in-game by using `/qa reload conversations`.
+Speaker keys:
 
-I know that "Learn it yourself" approach isn't that easy - I'm still preparing a proper guide which explains everything for you. The following "Features & Explanation" should help as well.
+| Key | Meaning |
+| --- | --- |
+| `color` | MiniMessage tag used for the speaker name. |
+| any other key | A conversation line owned by that speaker. |
 
-## Features & Explanation
+Use speaker names that are easy to read and stable, such as `Guard`, `Player`, `King`, or `Merchant`.
 
-* Each conversation can have multiple Speakers. Each speaker has multiple conversation lines.
-* The system jumps from conversation line to conversation line (by using the `next:` attribute). If there is no `next:` attribute, the conversation will end.
-* There can be unlimited branches in your conversation - for example, you can link to multiple Player conversation lines in a `next:`. That will make it, so the player can choose different “answers” and depending on their answer, they will get a different reply (/ branch)
-* Each conversation line can have an action which executes once that line is reached (sent to the player). These actions are identical to the actions used in triggers (saved in the `plugins/NotQuests/default/actions.yml`)
-* Each Speaker can have a different color
-* Old chat messages can be restored via our packet magic system (see last section)
-* You can bind a conversation to an NPC ID (by specifying it in the file) or to an armor stand (there is a command for that in-game)
+## Lines
 
-## Further helpful tips
+A line is one named entry below a speaker.
 
-* You can use the `/qa conversations analyze` command to see how the game parses your conversation file and to check if everything is correct.
-* After making changes to a conversation file and reloading it, please check your console for any errors or warnings. If you made a mistake, it will tell you right there!
+```yaml
+greeting:
+  text: "Welcome to town."
+  next: Player.askShop,Player.leave
+```
 
-## Fancy conversations with chat packets
+Line keys:
 
-I have added an amazing, unique system which deletes previous conversations from the chat by catching the chat packets the server sends to the client and “restoring” the old chat. **This makes the player experience a LOT better,** and currently no other conversation plugin offers it.
+| Key | Meaning |
+| --- | --- |
+| `text` | Message shown when the line plays. |
+| `texts` | List of possible messages; one is chosen randomly. Use this instead of `text`. |
+| `next` | Next line, or comma-separated candidate lines. If omitted, the conversation ends. |
+| `conditions` | Conditions that must pass before this line can play. |
+| `actions` | Actions executed when the line is reached. |
+| `shout` | `true` makes the line visually stand out in bold. |
 
-If you want to try it out, head to `plugins/NotQuests/general.yml` and enable both packet options (set them to true). Then, restart your server (/qa reload won't do it) and enjoy! In current versions, this is enabled by default.
+## Line references
 
-## Coming Soon
+Use this format everywhere a line is referenced:
 
-* [ ] Full in-game conversation editor via just commands (no file editing required)
-* [x] Conditions: Each line will have a condition which will be checked. This will be done in v3.0, when the old Quest requirements are fully converted to conditions which can be re-used everywhere.
-* [x] Shouting flags. This is a simple flag which can be applied to a conversation line, which will make its font bold.
-* [x] End current conversation if you start another, new conversation
-* [x] End conversation if you move too far away from the NPC
+```text
+Speaker.line
+```
+
+Examples:
+
+```text
+Robert.greeting
+Player.leave
+Merchant.buy
+```
+
+`start:` and `next:` can contain one reference:
+
+```yaml
+next: Robert.goodbye
+```
+
+Or multiple references:
+
+```yaml
+next: Player.accept,Player.decline,Player.askMore
+```
+
+## How NotQuests chooses the next line
+
+NotQuests reads comma-separated line references from left to right.
+
+```yaml
+start: Guard.vipGreeting,Guard.normalGreeting
+```
+
+It tries `Guard.vipGreeting` first. If that line has conditions and they fail, NotQuests tries `Guard.normalGreeting`.
+
+That pattern is how you make conditional branches:
+
+```yaml
+vipGreeting:
+  text: "Welcome back, honored guest."
+  conditions:
+    - condition HasVipTag
+normalGreeting:
+  text: "Welcome, traveler."
+```
+
+## Player choices
+
+When an NPC line points to multiple `Player` lines, those lines become clickable answer options.
+
+```yaml
+Guard:
+  greeting:
+    text: "Do you want work?"
+    next: Player.accept,Player.decline
+
+Player:
+  accept:
+    text: "Yes. What do you need?"
+    next: Guard.questOffer
+  decline:
+    text: "Not right now."
+    next: Guard.goodbye
+```
+
+Players can click the answer in chat. If enabled in `general.yml`, they can also type the option number in chat.
+
+## Text and formatting
+
+Use `text:` for one message:
+
+```yaml
+text: "Bring me 10 herbs."
+```
+
+Use `texts:` for random variants:
+
+```yaml
+texts:
+  - "Bring me 10 herbs."
+  - "The apothecary needs herbs again."
+  - "I have work for someone who knows the forest."
+```
+
+Conversation text supports MiniMessage:
+
+```yaml
+text: "Bring me <green>10 herbs</green> and I will pay you <gold>well</gold>."
+```
+
+Use `text: "/skip/"` for a line that sends no message and only runs actions or routing:
+
+```yaml
+giveReward:
+  text: "/skip/"
+  actions:
+    - action GiveReward
+  next: Guard.rewardGiven
+```
+
+## Actions
+
+Actions run when a line is reached.
+
+Recommended: create saved actions with commands, then reference them by name:
+
+`/qa actions add RewardQuestPoints QuestPoints add 5`
+
+```yaml
+actions:
+  - action RewardQuestPoints
+```
+
+Inline actions are also supported:
+
+```yaml
+actions:
+  - SendMessage You made the guard happy.
+  - QuestPoints add 5
+```
+
+Saved actions are easier to validate because `/qa actions add ...` gives command feedback immediately. Inline actions are useful for short, obvious actions.
+
+## Conditions
+
+Conditions decide whether a line is allowed to play.
+
+Recommended: create saved conditions with commands, then reference them:
+
+`/qa conditions add HasTenQuestPoints QuestPoints moreOrEqualThan 10`
+
+```yaml
+conditions:
+  - condition HasTenQuestPoints
+```
+
+Negate a saved condition with `!` and quotes:
+
+```yaml
+conditions:
+  - "!condition HasTenQuestPoints"
+```
+
+Inline conditions are also supported:
+
+```yaml
+conditions:
+  - QuestPoints moreOrEqualThan 10
+```
+
+Use saved conditions when you are learning. They are easier to test and reuse.
+
+## NPC attachments
+
+Prefer attaching conversations with commands:
+
+`/qa conversations edit intro npcs add citizens:5`
+
+`/qa conversations edit intro npcs add fancynpcs:guard`
+
+`/qa conversations edit intro npcs add rightClickSelect`
+
+`rightClickSelect` gives a selector item. Right-click a Citizens NPC, FancyNPCs NPC, or armor stand to attach the conversation.
+
+Useful NPC commands:
+
+- `/qa conversations list` - shows conversations and attached NPCs.
+- `/qa conversations edit intro npcs add rightClickSelect` - attach by clicking.
+- `/qa conversations edit intro armorstand remove` - get the tool that removes conversations from armor stands.
+
+## Categories
+
+Conversations belong to a category, just like quests.
+
+Create in a specific category:
+
+`/qa conversations create intro --category story`
+
+Move an existing conversation:
+
+`/qa conversations edit intro category set story`
+
+Show the current category:
+
+`/qa conversations edit intro category show`
+
+## Speakers from commands
+
+You can add and remove speakers with commands, but line content is still edited in the YAML file.
+
+`/qa conversations edit intro speakers add Guard --speakerColor <gold>`
+
+`/qa conversations edit intro speakers list`
+
+`/qa conversations edit intro speakers remove Guard`
+
+## Validation and debugging
+
+After editing a file:
+
+`/qa reload conversations`
+
+Then check the parsed structure:
+
+`/qa conversations analyze intro`
+
+For larger conversations, print the output to console:
+
+`/qa conversations analyze intro --printToConsole`
+
+If something does not work, check these first:
+
+- YAML uses spaces, not tabs.
+- Indentation is consistent.
+- Every `start:` and `next:` target exists.
+- Every saved `condition ...` exists in `/qa conditions`.
+- Every saved `action ...` exists in `/qa actions`.
+- You ran `/qa reload conversations` after editing the file.
+- You are starting the conversation as a player. `/qa conversations start <conversation>` is player-only.
+
+## Packet magic
+
+NotQuests can keep conversation chat tidy by removing previous conversation lines and restoring older chat afterwards. This is controlled in `general.yml` under packet magic conversation settings.
+
+If players report that chat messages appear to disappear during conversations, that is usually this feature. It is intended, but it can be disabled in the config if your server prefers normal chat history.
+
+## Practical limits
+
+Conversations are powerful, but they are still YAML files. The most reliable workflow is:
+
+1. Add a small branch.
+2. Reload.
+3. Analyze.
+4. Test in-game.
+5. Repeat.
+
+Avoid writing a whole questline before the first test. It is much faster to debug five lines than fifty.

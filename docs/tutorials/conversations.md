@@ -1,216 +1,283 @@
 ---
 title: 💬 Conversations
 sidebar_position: 3
-description: This tutorial helps you create conversations
+description: Create NPC conversations with choices, branches, actions, and conditions.
 keywords: [notquests, tutorial, conversation, conversations, chat, speak, talk]
 ---
 
-NotQuests has a wonderful conversation system which allows you to create unlimited conversations with unlimited speakers, options, paths and outcomes each. This is also the hardest feature to understand, since conversations are created YAML files.
+Conversations let an NPC talk to a player, show clickable answers, branch into different paths, and run quest actions or conditions while the dialogue is happening.
 
-Before starting this journey, please learn YAML (yml) first. [Here](https://spacelift.io/blog/yaml) is a tutorial you can use. Make sure you understand the hierarchies of yaml before you continue (e.g. in the below demo conversation code, understand that "greeting" is a PART of the speaker "Atlas" which by itself is a part of the object "Lines". One indentation (spaces) too much or too little and you fuck up the hierarchy and thus the entire syntax)
+You do not need to understand the whole system before making your first one. Start with a tiny file, test it in-game, then add choices and logic one piece at a time.
 
-Next, install a suitable editor with YAML support. I recommend [Visual Studio Code](https://code.visualstudio.com/download). Without a proper editor, it's easy to fuck up the YAML syntax (especially spaces, tabs, indentation) which will cause your conversations to not work. Visual Studio code will show you errors as you type them.
+## The fastest working conversation
 
-## Create a demo conversations
+Create a conversation file:
 
-To get started, first create a demo conversation using `/qa conversations create test --demo`. The --demo flag at the end makes it create a conversation filled with demo data instead of a blank one. **test** is the name of the conversation. You can find the conversation in `plugin/notquests/default/conversations/test.yml` - go ahead and open that one with Visual Studio Code! It should look like this:
+`/qa conversations create intro`
+
+Open:
+
+```text
+plugins/NotQuests/default/conversations/intro.yml
+```
+
+Replace the file with this:
 
 ```yaml
-start: Atlas.specialgreeting,Atlas.greeting1
+start: Guard.hello
+
 Lines:
-  Atlas:
-    color: "<BLUE>"
-    delay: 200
-    greeting1:
-      text: "Hello traveler! I am atlas, the keeper of time!"
-      next: Player.greeting1,Player.greeting2
-      shout: true
-    specialgreeting:
-      text: "I don't wanna talk to you while you fulfill this condition. Bye!"
-      conditions:
-        - condition replaceThisWithTheNameOfYourCondition
-    answer1:
-      text: "That's a secret, but without me, you all wouldn't exist."
-      next: Atlas.answer3
-    notime:
-      text: "Time is a rare good. Au revoir!"
-    answer3:
-      text: "Anyways though, what are you doing here?"
-      next: Player.three,Player.four,Player.five
-    answer4:
-      text: "Oooh I see! I'm sure you are in need for some time, then. Should I lend you some?"
-      next: Player.lend,Player.nolend
-    answer5:
-      text: "Here it is!"
-      next: Atlas.answer6
-    answer6:
-      text: "[Hands time]"
-      next: Player.bye
-    nicebye:
-      text: "You're very welcome. Good luck on your ventures!"
-      actions:
-        - "action replaceThisWithTheNameOfYourAction"
-        - "action anotherAction"
+  Guard:
+    color: "<gold>"
+    hello:
+      text: "Welcome to town. Need directions?"
+      next: Player.yes,Player.no
+    directions:
+      text: "The market is north, the mine is east, and the inn is behind you."
+    goodbye:
+      text: "Safe travels."
+
   Player:
-    delay: 200
-    greeting1:
-      text: "Nice to meet you! Why do you need to keep time?"
-      next: Atlas.answer1
-    greeting2:
-      text: "I have no time for you."
-      next: Atlas.notime
-    three:
-      text: "I'm just exploring the area!"
-      next: Atlas.answer4
-    four:
-      text: "I'm on a mission."
-      next: Atlas.answer4
-    five:
-      text: "I'm here to meet the king."
-      next: Atlas.answer4
-    lend:
-      text: "Yes, please! I could use some time"
-      next: Atlas.answer5
-    nolend:
-      text: "No, sorry, I have enough time. Thank you for the offer, though!"
-      next: Atlas.notime
-    bye:
-      text: "Thank you a lot, time keeper. See you around!"
-      next: Atlas.nicebye
+    color: "<green>"
+    yes:
+      text: "Yes, please."
+      next: Guard.directions
+    no:
+      text: "No thanks."
+      next: Guard.goodbye
 ```
 
-With your newest yaml knowledge, try to understand what this file does and how it works. Just use your brain and go through it. Experiment with it, make some changes, and see what happens.
+Reload conversations:
 
-Every time you change the file and save it, you can load all changes in-game using `/qa reload conversations`. Please check your console for warnings and erros afterwards and READ them. You can the start the conversation using `/qa conversations start yourconversationname`, so in this case `/qa conversations start test`.
+`/qa reload conversations`
 
+Start it as a player:
 
-## Some explanations
+`/qa conversations start intro`
 
-I don't have a lot of time so I cannot make a 100% throughout guide yet - instead, try to experiment and understand it yourself. I'll improve this guide gradually when I find time. Let's begin with some explanations:
+If that works, you already know the core pattern: an NPC line sends text, `next:` points to player answers, and each player answer points back to the next NPC line.
 
-### Terminology
+## Attach it to an NPC
 
-That file is a **conversation** (test). A conversation has multiple **speakers** (in this case, Atlas and Player). Each speaker has multiple **conversation lines** which are identified using this format: "`<Speaker>.<LineName>`". For example: `Atlas.greeting1`
+For a Citizens NPC:
 
-### start
+`/qa conversations edit intro npcs add citizens:5`
 
-On line 1, you should see `start: Atlas.specialgreeting,Atlas.greeting1`. This determines where it should start the conversations. In here, 2 conversation lines are specified: Atlas.specialgreeting and Atlas.greeting1.
+For a FancyNPCs NPC:
 
-How it works is, it first tries to start Atlas.specialgreeting, which is this line:
+`/qa conversations edit intro npcs add fancynpcs:guard`
+
+If you do not want to type an id, use the selector item:
+
+`/qa conversations edit intro npcs add rightClickSelect`
+
+Then right-click the NPC or armor stand in-game. Players can now right-click that NPC to start the conversation.
+
+## Use the demo when you want examples
+
+The demo is useful after you understand the small version above:
+
+`/qa conversations create atlas --demo`
+
+It creates a larger conversation with multiple answers, random text variants, MiniMessage formatting, and nested branches. Use it as a reference, not as the first thing you try to understand.
+
+## How conversation files work
+
+Every conversation has:
+
+- `start`: the first line or first list of candidate lines.
+- `Lines`: every speaker and every line they can say.
+- speakers such as `Guard` or `Player`.
+- line names such as `hello`, `yes`, or `goodbye`.
+
+A line is referenced as:
+
+```text
+SpeakerName.lineName
+```
+
+Examples:
+
+```text
+Guard.hello
+Player.yes
+```
+
+## Choices and branches
+
+When an NPC line points to multiple player lines, the player sees multiple answers:
 
 ```yaml
-specialgreeting:
-    text: "I don't wanna talk to you while you fulfill this condition. Bye!"
-    conditions:
-    - condition replaceThisWithTheNameOfYourCondition
+hello:
+  text: "Need directions?"
+  next: Player.yes,Player.no
 ```
 
-As you can see, it has a text and a condition attached to it. The text is what will be sent to the player. Conditions are conditions which have to be fulfilled in order for the conversation line to play. You can create them in-game using `/qa conditions add yourconditionname True equals true => /qa conditions add yourconditionname ...` - the condition in the demo conversation obviously won't exist, so replace it with your own.
-
-Now, what happens if the attached condition is not fulfilled? Well, since it's the start of the conversation, it would then try to play the next conversation line specified in the comma-separated list in `start: Atlas.specialgreeting,Atlas.greeting1` - and this would be Atlas.greeting1:
+Those answers then decide where the conversation goes:
 
 ```yaml
-answer1:
-    text: "That's a secret, but without me, you all wouldn't exist."
-    next: Atlas.answer3
+Player:
+  yes:
+    text: "Yes, please."
+    next: Guard.directions
+  no:
+    text: "No thanks."
+    next: Guard.goodbye
 ```
 
-So basically, it only plays the first conversation line specified (Atlas.specialgreeting here) and ignores the second one (Atlas.greeting1) here, UNLESS the condition of the first conversation line is not fulfilled. Then it goes to the next conversation until the FIRST conversation line which has a fulfilled condition. And that's how you can branch your conversation into multiple paths!
+If a line has no `next:`, the conversation ends after that line.
 
-### next
+## Conditions
 
-Each conversation line has a next: object. See the Atlas.answer1 for example
+Conditions decide whether a line is allowed to play.
+
+First create a saved condition in-game:
+
+`/qa conditions add HasTenQuestPoints QuestPoints moreOrEqualThan 10`
+
+Then use it in the conversation:
 
 ```yaml
-answer1:
-    text: "That's a secret, but without me, you all wouldn't exist."
-    next: Atlas.answer3
+start: Guard.reward,Guard.noReward
+
+Lines:
+  Guard:
+    color: "<gold>"
+    reward:
+      text: "You have proven yourself. Take this reward."
+      conditions:
+        - condition HasTenQuestPoints
+      actions:
+        - action GiveReward
+    noReward:
+      text: "Come back after you have earned 10 quest points."
 ```
 
-The next attribute determines, well, which conversation it should play next. In this case, it goes to `Atlas.answer3` next. This should be quite obvious. Similarly to start, you can also specify multiple conversation lines separated by commas here, if you want to branch it conditionally.
+Because `start` lists `Guard.reward` first, NotQuests tries that line first. If its condition fails, it tries `Guard.noReward`.
 
-So what happens when a conversation line does not have a `next:` attribute attached to it?
-
-Simple!
-
-The conversation will just end. No next, it'll end.
-
-## Actions and conditions
-
-Each conversation line can have an `actions:` list object, and a `conditions:` list object. When it reaches the conversation line, it will execute all actions you specified there. It will ONLY play the conversation line, if all conditions you specified are fulfilled.
-
-Just check the demo conversation above - it has examples for both actions and conditions.
-
-Conditions usually start with "condition yourconditionname". "condition" at the beginning tells it that it should look for a condition you pre-created in-game, and next comes the name of the condition. Actions work similarly
-
-### Negating conditions
-
-You can negate conditions by putting a "!" in front. Example:
-
-- "!condition yourconditionname"
-
-Make sure to wrap it in quotes ("")
-
-### in-line actions/conditions
-
-So, putting "condition" in front makes it look for a pre-created condition which you created in-game. You can also do stuff like
+To negate a condition, add `!` before it and quote the line:
 
 ```yaml
 conditions:
-- Money moreThan 100
+  - "!condition HasTenQuestPoints"
 ```
 
-or
+## Actions
+
+Actions run when the conversation reaches a line.
+
+Create a saved action:
+
+`/qa actions add GiveReward QuestPoints add 5`
+
+Use it in a line:
+
+```yaml
+reward:
+  text: "You have proven yourself. Take this reward."
+  actions:
+    - action GiveReward
+```
+
+You can also run inline actions:
 
 ```yaml
 actions:
-- StartConversation someotherconversationname
+  - SendMessage Thanks for talking to the guard.
+  - QuestPoints add 5
 ```
 
-instead of
+Saved actions are easier to test because the command tells you immediately if the action syntax is wrong. Inline actions are useful once you are comfortable with the action types.
 
+## Random text variants
+
+Use `texts:` instead of `text:` when a line should randomly pick one message:
+
+```yaml
+hello:
+  texts:
+    - "Good to see you again."
+    - "Back already?"
+    - "Need something?"
+  next: Player.ask,Player.leave
 ```
-actions:
-- action youringamecreatedactionwhichstartsanotherconversation
+
+## Formatting and speaker names
+
+Speaker `color` controls how that speaker name is shown:
+
+```yaml
+Lines:
+  Guard:
+    color: "<gold>"
 ```
 
-This is NOT recommended as there is no documentation for in-line stuff (they usually follow the commands closely) and there is no checking if you do it correctly, unlike the in-game commands which tell you exactly if you do something wrong (`/qa conditions add yourconditionname True equals true => /qa conditions add` and `/qa actions add youraction SendMessage Hello => /qa actions add`)
+Line text supports MiniMessage formatting:
 
+```yaml
+text: "Bring me <green>10 herbs</green> and I will pay you <gold>well</gold>."
+```
 
-## FAQ
+Use `shout: true` when a line should stand out in bold:
 
-**Q: Conversation delay doesn't work**
+```yaml
+warning:
+  text: "Do not enter the ruins after dark."
+  shout: true
+```
 
-A: This feature is half-broken. Will fix in the future
+## Running actions without showing text
 
-**Q: Something went wrong**
+Use `text: "/skip/"` for a hidden line that only runs logic:
 
-A: Read the next section ("Something doesn't work")
+```yaml
+giveReward:
+  text: "/skip/"
+  actions:
+    - action GiveReward
+  next: Guard.rewardGiven
+```
 
-**Q: My chat is disappearing, messages are disappearing, something weird with previous messages it's just weird**
+This is useful for keeping logic separate from dialogue.
 
-A: You probably encountered the conversation packet magic / chat resotoration features, which aims to de-clutter your chat! Most like it, some find it weird, which is understandable. You can disable it in the notquests config!
+## Testing checklist
 
-**Q: Why am I getting no support in the discord?**
+After every edit:
 
-A: Conversations can be really complex, and thus take a LOT more time for me to understand the issue. And I sadly just have very little time at the moment. But rest assured! 99% of issues people reported ended up being user-errors, not issues in notquests, so most issues you encounter should be fixable! It's just easy to make mistakes, which leads me to the next question:
+1. Save the `.yml` file.
+2. Run `/qa reload conversations`.
+3. Watch the server console for warnings.
+4. Run `/qa conversations analyze intro --printToConsole`.
+5. Start it with `/qa conversations start intro` or right-click the attached NPC.
 
-**Q: Conversations are hard. Will you make a GUI?**
+Most conversation problems are one of these:
 
-A: No Minecraft GUI, no. Those are even worse and a pure pain in the ass to use. Instead, I'm planning to make a nice Web UI
+- The YAML indentation is wrong.
+- `start:` or `next:` points to a line that does not exist.
+- A line uses `conditions:` or `actions:` but the saved condition/action name is wrong.
+- A player answer points nowhere, so the conversation ends earlier than expected.
+- You edited the file but forgot `/qa reload conversations`.
 
-**Q: When will it/feature XY be finished?**
+## Recommended workflow
 
-A: Between 1 week and never. I can't give any time-frames as I don't know them myself. And I can't predict it because I don't know when I'm working on notquests and how long it would take.
+1. Create a tiny conversation with one NPC line and one player answer.
+2. Reload and test.
+3. Add one branch.
+4. Reload and test.
+5. Add one condition.
+6. Reload and test.
+7. Attach it to an NPC.
 
-**Q: When will this guide be improved?**
+Do not build a 100-line conversation before testing it. Small changes are much easier to debug.
 
-A: Same answer as above. Sadly, community members who figured stuff out don't share it with others. Probably, once you figured stuff out or become good at this, you probably won't give back and share your solution here either / try to improve this guide. The docs and guides here are open source, so everyone can contribute, but noone wants to. Don't blame me! PLENTY of people would have the knowledge to help with these guides. And noone does. And I'm not getting paid any more than they (and you) are (= I'm not getting paid at all). So, please consider contributing and helping others! ❤️
+## Useful commands
 
-## Something doesn't work!
-
-Every time you use `/qa reload conversations`, it'll throw warnings inside your server console if anything is wrong. So just read them. Read the damn warnings. They will tell you EXACTLY what went wrong.
-
-Thus, it is a good practice to check your server console every time you reload your conversations, if you did something wrong. If you see a giiiant error which is not yellow and rambles about some yaml errors, you fucked up the yaml syntax. Thus, as I said in the second and third paragraph of this guide, use a proper editor which shows you errors as you type them (like Visual Studio Code) and read the yaml tutorial. Yaml is very anal about its syntax - if you forget one space or add a space too much, you're fucked.
-
-Also tip: better us too many quotes than too little.
+- `/qa conversations create intro` - create a blank conversation file.
+- `/qa conversations create intro --demo` - create the larger demo conversation.
+- `/qa reload conversations` - reload edited files.
+- `/qa conversations start intro` - start a conversation as a player.
+- `/qa conversations analyze intro --printToConsole` - print the parsed conversation tree to console.
+- `/qa conversations list` - list loaded conversations and their attached NPCs.
+- `/qa conversations edit intro npcs add rightClickSelect` - attach the conversation by clicking an NPC or armor stand.
+- `/qa conversations edit intro npcs add citizens:5` - attach to a Citizens NPC.
+- `/qa conversations edit intro npcs add fancynpcs:guard` - attach to a FancyNPCs NPC.
