@@ -2,7 +2,6 @@
   "name": "notquests-docs",
   "version": "0.0.1",
   "private": true,
-  "packageManager": "pnpm@11.6.0",
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
