@@ -119,11 +119,40 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: 'Start',
             items: [
               {
                 label: 'Getting Started',
                 to: '/docs/tutorials/getting-started',
+              },
+              {
+                label: 'Documentation Overview',
+                to: '/docs/documentation/docs',
+              },
+              {
+                label: 'Commands',
+                to: '/docs/documentation/commands',
+              },
+            ],
+          },
+          {
+            title: 'Features',
+            items: [
+              {
+                label: 'Objectives',
+                to: '/docs/documentation/types/objectives',
+              },
+              {
+                label: 'Actions & Rewards',
+                to: '/docs/documentation/types/actions',
+              },
+              {
+                label: 'Conversations',
+                to: '/docs/documentation/conversation-system',
+              },
+              {
+                label: 'NPC Quest Givers',
+                to: '/docs/tutorials/npc-quest-givers',
               },
             ],
           },
@@ -131,34 +160,17 @@ const config = {
             title: 'Community',
             items: [
               {
-                label: 'Discord',
-                href: 'https://discord.gg/7br638S5Ex',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              /*{
-                label: 'Blog',
-                to: '/blog',
-              },*/
-              {
                 href: 'https://modrinth.com/plugin/notquests/versions',
-                label: 'Modrinth',
-                className: "footer__link-item modrinthicon",
-              },
-              {
-                label: 'Hangar',
-                href: 'https://hangar.papermc.io/Alessio/NotQuests',
+                label: 'Download on Modrinth',
+                className: 'footer__link-item modrinthicon',
               },
               {
                 label: 'GitHub',
                 href: 'https://github.com/AlessioGr/NotQuests',
               },
               {
-                label: 'Polymart',
-                href: 'https://polymart.org/resource/1484',
+                label: 'Discord',
+                href: 'https://discord.gg/7br638S5Ex',
               },
             ],
           },
