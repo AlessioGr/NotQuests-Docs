@@ -18,6 +18,10 @@ const config = {
       onBrokenMarkdownLinks: 'warn',
     },
   },
+  future: {
+    v4: true,
+    faster: true,
+  },
   clientModules: [require.resolve('./src/clientModules/commandCopy.ts')],
   favicon: 'img/favicon.ico',
   organizationName: 'alessiogr', // Usually your GitHub org/user name.
