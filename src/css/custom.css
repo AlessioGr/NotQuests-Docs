@@ -346,6 +346,12 @@ html[data-theme="light"] .commandCopyIcon::after {
   cursor: default;
 }
 
+.commandRichToken[data-command-tooltip-token="true"] {
+  cursor: pointer;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
 .commandRichToken--argument,
 .commandRichToken--flag,
 .commandRichToken--flagValue,
@@ -405,21 +411,24 @@ html[data-theme="light"] .commandCopyIcon::after {
 .commandRichToken--minecraftGreen:hover,
 .commandRichToken--minecraftLightPurple:hover,
 .commandRichToken--minecraftGold:hover,
-.commandRichToken--expand:hover {
+.commandRichToken--expand:hover,
+.commandRichToken[data-command-tooltip-open="true"] {
   background: rgba(255, 255, 255, 0.1);
   box-shadow: none;
 }
 
 .commandRichTooltip {
-  position: absolute;
+  position: fixed;
   z-index: 50;
-  left: 0;
-  bottom: calc(100% + 0.45rem);
+  left: var(--command-tooltip-left, 0);
+  top: var(--command-tooltip-top, 0);
   display: none;
   box-sizing: border-box;
   width: max-content;
-  min-width: min(22rem, calc(100vw - 2rem));
-  max-width: min(34rem, calc(100vw - 2rem));
+  min-width: min(22rem, calc(100vw - 1rem));
+  max-width: min(34rem, calc(100vw - 1rem));
+  max-height: calc(100vh - 1rem);
+  overflow-y: auto;
   padding: 0.68rem 0.72rem;
   border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 8px;
@@ -432,29 +441,38 @@ html[data-theme="light"] .commandCopyIcon::after {
   line-height: 1.38;
   opacity: 0;
   pointer-events: none;
-  transform: translateY(4px);
+  transform: translateY(0);
   user-select: none;
   white-space: normal;
+  -webkit-overflow-scrolling: touch;
 }
 
 .commandRichTooltip::after {
   position: absolute;
-  left: 0.8rem;
+  left: var(--command-tooltip-arrow-left, 0.8rem);
+  margin-left: -0.35rem;
   bottom: -0.38rem;
   width: 0.7rem;
   height: 0.7rem;
-  border-right: 1px solid rgba(255, 255, 255, 0.14);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-left: 0;
+  border-top: 0;
   background: #111827;
   content: "";
   transform: rotate(45deg);
 }
 
-.commandRichToken:hover > .commandRichTooltip,
-.commandRichToken:focus-within > .commandRichTooltip {
+.commandRichTooltip[data-placement="bottom"]::after {
+  top: -0.38rem;
+  bottom: auto;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-right: 0;
+  border-bottom: 0;
+}
+
+.commandRichToken[data-command-tooltip-open="true"] > .commandRichTooltip {
   display: block;
   opacity: 1;
-  transform: translateY(0);
 }
 
 .commandRichTooltipTitle {
@@ -495,6 +513,23 @@ html[data-theme="light"] .commandCopyIcon::after {
   font-family: var(--ifm-font-family-monospace);
   font-size: 0.76rem;
   line-height: 1.35;
+}
+
+@media (max-width: 520px) {
+  .commandRichTooltip {
+    min-width: min(18rem, calc(100vw - 1rem));
+    padding: 0.62rem 0.66rem;
+    font-size: 0.78rem;
+  }
+
+  .commandRichTooltipTitle {
+    font-size: 0.84rem;
+  }
+
+  .commandRichTooltipRow {
+    grid-template-columns: 1fr;
+    gap: 0.12rem;
+  }
 }
 
 .commandReferenceList {
