@@ -7,7 +7,7 @@
   color: #ffffff;
   background-image:
     linear-gradient(90deg, rgba(9, 18, 17, 0.94), rgba(9, 18, 17, 0.74), rgba(9, 18, 17, 0.32)),
-    url('/img/home/quest-adventure-hero.png');
+    url('/img/home/quest-adventure-hero.jpg');
   background-position: center;
   background-size: cover;
 }
