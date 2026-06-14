@@ -55,7 +55,7 @@ const schemaOutput = path.join(docsRoot, 'src', 'remarkplugins', 'command-schema
 
 if (!fs.existsSync(source)) {
   console.error(`Command schema not found: ${source}`);
-  console.error('Run the plugin E2E sweep first, or pass a schema path: npm run update-commands -- <path>');
+  console.error('Run the plugin E2E sweep first, or pass a schema path: pnpm update-commands -- <path>');
   process.exit(1);
 }
 

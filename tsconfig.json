@@ -4,5 +4,6 @@
   "compilerOptions": {
     // @docusaurus/tsconfig still sets the (now-deprecated in TS 6) `baseUrl`; silence until they drop it.
     "ignoreDeprecations": "6.0"
-  }
+  },
+  "exclude": ["build", ".docusaurus", "node_modules"]
 }
