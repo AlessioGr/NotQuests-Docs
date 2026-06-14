@@ -1,39 +1,97 @@
 import React from 'react';
-import clsx from 'clsx';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './index.module.css';
-import HomepageFeatures from '../components/HomepageFeatures';
+
+const features = [
+  {
+    title: 'Create real quests',
+    text: 'Use objectives, requirements, categories, triggers, rewards, and ordered progression to build quests players can follow.',
+    to: '/docs/tutorials/getting-started',
+  },
+  {
+    title: 'Use NPC quest givers',
+    text: 'Attach quests and conversations to Citizens, FancyNPCs, or armor stands, with preview GUIs before players accept.',
+    to: '/docs/tutorials/npc-quest-givers',
+  },
+  {
+    title: 'Build progression systems',
+    text: 'Track reputation, quest points, player tags, variables, conditions, and rewards that unlock more content over time.',
+    to: '/docs/tutorials/creating-a-reputation-system-with-tags',
+  },
+];
 
 function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
   return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
+    <header className={styles.hero}>
       <div className="container">
-        <h1 className="hero__title">{siteConfig.title}</h1>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/docs/tutorials/getting-started">
-            Getting Started Tutorial - 10min ⏱️
-          </Link>
+        <div className={styles.heroContent}>
+          <p className={styles.eyebrow}>Minecraft quest plugin for Paper servers</p>
+          <h1 className={styles.heroTitle}>NotQuests</h1>
+          <p className={styles.heroText}>
+            Build quests, NPC stories, daily tasks, rewards, conversations, and
+            reputation systems for your Minecraft server.
+          </p>
+          <div className={styles.buttons}>
+            <Link className={styles.primaryButton} to="/docs/tutorials/getting-started">
+              Getting Started
+            </Link>
+            <Link className={styles.secondaryButton} to="/docs/documentation/docs">
+              Documentation
+            </Link>
+          </div>
         </div>
       </div>
     </header>
   );
 }
 
+function HomepageFeatures() {
+  return (
+    <section className={styles.features}>
+      <div className="container">
+        <div className={styles.featureGrid}>
+          {features.map((feature) => (
+            <Link className={styles.featureCard} to={feature.to} key={feature.title}>
+              <h2>{feature.title}</h2>
+              <p>{feature.text}</p>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function StartSection() {
+  return (
+    <section className={styles.startSection}>
+      <div className="container">
+        <h2>Start with a complete quest in a few minutes.</h2>
+        <p>
+          The tutorial walks through display names, requirements, objectives,
+          triggers, rewards, NPC setup, categories, and more.
+        </p>
+        <Link className={styles.inlineButton} to="/docs/tutorials/getting-started">
+          Open the beginner tutorial
+        </Link>
+      </div>
+    </section>
+  );
+}
+
 export default function Home(): React.JSX.Element {
   const {siteConfig} = useDocusaurusContext();
+
   return (
     <Layout
-      title={`${siteConfig.title}`}
-      description="NotQuests is the best Minecraft Quest Plugin">
+      title={siteConfig.title}
+      description="NotQuests is a Minecraft quest plugin for Paper servers with quests, NPCs, conversations, rewards, tags, reputation, and progression systems.">
       <HomepageHeader />
       <main>
         <HomepageFeatures />
+        <StartSection />
       </main>
     </Layout>
   );

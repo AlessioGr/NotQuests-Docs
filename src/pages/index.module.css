@@ -1,23 +1,249 @@
-/**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
- */
-
-.heroBanner {
-  padding: 4rem 0;
-  text-align: center;
+.hero {
   position: relative;
+  min-height: min(620px, calc(100svh - var(--ifm-navbar-height) - 3rem));
+  display: flex;
+  align-items: center;
   overflow: hidden;
+  color: #ffffff;
+  background-image:
+    linear-gradient(90deg, rgba(9, 18, 17, 0.94), rgba(9, 18, 17, 0.74), rgba(9, 18, 17, 0.32)),
+    url('/img/home/quest-adventure-hero.png');
+  background-position: center;
+  background-size: cover;
 }
 
-@media screen and (max-width: 966px) {
-  .heroBanner {
-    padding: 2rem;
-  }
+.heroContent {
+  max-width: 760px;
+  padding: 5rem 0 4.5rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.85rem;
+  color: #6ee7dc;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.heroTitle {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(3.75rem, 8vw, 7rem);
+  font-weight: 900;
+  letter-spacing: 0;
+  line-height: 0.95;
+}
+
+.heroText {
+  max-width: 700px;
+  margin: 1.25rem 0 0;
+  color: #eef7f2;
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  line-height: 1.55;
 }
 
 .buttons {
   display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 2rem;
+}
+
+.primaryButton,
+.secondaryButton,
+.inlineButton {
+  display: inline-flex;
+  min-height: 2.85rem;
   align-items: center;
   justify-content: center;
+  border-radius: 8px;
+  padding: 0.78rem 1.15rem;
+  font-weight: 800;
+  line-height: 1.1;
+  text-decoration: none;
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease,
+    transform 160ms ease;
+}
+
+.primaryButton:hover,
+.secondaryButton:hover,
+.inlineButton:hover {
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.primaryButton {
+  color: #061514;
+  background: #35ddd1;
+}
+
+.primaryButton:hover {
+  color: #061514;
+  background: #72eee5;
+}
+
+.secondaryButton {
+  border: 1px solid rgba(255, 255, 255, 0.44);
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.secondaryButton:hover {
+  border-color: rgba(255, 255, 255, 0.82);
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.features {
+  padding: 4rem 0;
+  background: #f5f8f6;
+}
+
+.featureGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.featureCard {
+  display: block;
+  min-height: 210px;
+  border: 1px solid #d8e3dd;
+  border-radius: 8px;
+  padding: 1.4rem;
+  color: #10231d;
+  background: #ffffff;
+  text-decoration: none;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+
+.featureCard:hover {
+  border-color: #28ada4;
+  color: #10231d;
+  text-decoration: none;
+  box-shadow: 0 14px 34px rgba(16, 35, 29, 0.1);
+  transform: translateY(-2px);
+}
+
+.featureCard h2 {
+  margin: 0;
+  color: #10231d;
+  font-size: 1.35rem;
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+
+.featureCard p {
+  margin: 1rem 0 0;
+  color: #52625d;
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.startSection {
+  padding: 4rem 0 4.5rem;
+  color: #ffffff;
+  background: #10231d;
+}
+
+.startSection h2 {
+  max-width: 760px;
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: 0;
+  line-height: 1.08;
+}
+
+.startSection p {
+  max-width: 720px;
+  margin: 1rem 0 0;
+  color: #c9dad2;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.inlineButton {
+  margin-top: 1.5rem;
+  color: #061514;
+  background: #f5d06f;
+}
+
+.inlineButton:hover {
+  color: #061514;
+  background: #f8dc91;
+}
+
+html[data-theme='dark'] .features {
+  background: #111817;
+}
+
+html[data-theme='dark'] .featureCard {
+  border-color: #30403c;
+  color: #f0f7f5;
+  background: #18211f;
+}
+
+html[data-theme='dark'] .featureCard:hover {
+  border-color: #35ddd1;
+  color: #f0f7f5;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.22);
+}
+
+html[data-theme='dark'] .featureCard h2 {
+  color: #ffffff;
+}
+
+html[data-theme='dark'] .featureCard p {
+  color: #c8d8d4;
+}
+
+html[data-theme='dark'] .startSection {
+  background: #07110f;
+}
+
+html[data-theme='dark'] .startSection p {
+  color: #c8d8d4;
+}
+
+@media screen and (max-width: 996px) {
+  .heroContent {
+    padding: 4rem 0;
+  }
+
+  .featureGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .featureCard {
+    min-height: auto;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .hero {
+    min-height: auto;
+  }
+
+  .heroContent {
+    padding: 3rem 0;
+  }
+
+  .primaryButton,
+  .secondaryButton,
+  .inlineButton {
+    width: 100%;
+  }
+
+  .features,
+  .startSection {
+    padding: 3rem 0;
+  }
 }
