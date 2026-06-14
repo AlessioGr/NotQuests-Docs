@@ -74,6 +74,10 @@ const config = {
         // Keep the UI focused on docs search and expose a shareable full-page search route.
         placeholder: 'Search NotQuests docs',
         searchPagePath: 'search',
+        askAi: {
+          assistantId: '8eaecbd4-465e-4175-85b9-579388fb2ebc',
+          suggestedQuestions: true,
+        },
       },
       navbar: {
         title: 'NotQuests',
