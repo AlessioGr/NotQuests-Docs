@@ -7,7 +7,7 @@ keywords: [notquests, conditions, quest conditions]
 
 Raw conditions can be created using `/qa conditions`. Those will be saved in the `plugins/notquests/categoryname/conditions.yml`. Conditions are also Quest requirements, Objective conditions and Action conditions, which can be created with the respective other commands.
 
-To "test" a condition created via `/qa conditions`, you can use `/qa conditions edit conditionname check <Player Name(optional)>`.
+To "test" a condition created via `/qa conditions`, you can use `/qa conditions edit conditionname check Steve => /qa conditions edit <condition> check [player]`.
 
 **Command Arguments for every condition:**
 
@@ -194,6 +194,6 @@ This Condition can ONLY be used when attached to an Objective. That's because it
 
 - **`<Objective ID>`** - ID of the objective which needs to be completed. To see the objective IDs, use `/qa edit questname objectives list`
 
-**Example command:** `/qa edit questname objectives edit 1 conditions add CompletedObjective 2` - Ths basically makes it so Objective 2 only unlocks once Objective 1 has been completed.
+**Example command:** `/qa edit questname objectives edit 1 conditions unlock add CompletedObjective 2` - This basically makes it so Objective 2 only unlocks once Objective 1 has been completed.
 
 :::

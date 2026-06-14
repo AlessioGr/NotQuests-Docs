@@ -7,7 +7,7 @@ keywords: [notquests, tutorial, customization, customize, guide]
 
 ## GUI items
 
-You can customize the items displayed in the GUI for both categories (default: Chest) and quests (default: book). For Quests, you can use the command `/qa edit questName guiItem ...` and for categories `/qa categories edit categoryName guiItem ...`
+You can customize the items displayed in the GUI for both categories (default: Chest) and quests (default: book). For quests, use `/qa edit questName guiItem hand => /qa edit <quest> guiItem <material>`. For categories, use `/qa categories edit categoryName guiItem hand => /qa categories edit <category> guiItem <material>`.
 
 ### Advanced items (e.g. custom model data)
 

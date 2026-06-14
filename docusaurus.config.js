@@ -18,6 +18,7 @@ const config = {
       onBrokenMarkdownLinks: 'warn',
     },
   },
+  clientModules: [require.resolve('./src/clientModules/commandCopy.ts')],
   favicon: 'img/favicon.ico',
   organizationName: 'alessiogr', // Usually your GitHub org/user name.
   projectName: 'notquests', // Usually your repo name.
@@ -86,10 +87,10 @@ const config = {
             position: 'left',
           },
           {
-            type: 'doc',
-            docId: 'documentation/docs',
+            to: '/docs/documentation/docs',
             position: 'left',
             label: '📝 Documentation',
+            activeBaseRegex: '^/docs/documentation/',
           },
           {
             href: 'https://modrinth.com/plugin/notquests/versions',
@@ -130,8 +131,8 @@ const config = {
                 to: '/docs/documentation/docs',
               },
               {
-                label: 'Commands',
-                to: '/docs/documentation/commands',
+                label: 'Command Reference',
+                to: '/docs/documentation/command-reference',
               },
             ],
           },

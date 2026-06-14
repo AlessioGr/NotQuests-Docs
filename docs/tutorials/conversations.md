@@ -105,7 +105,7 @@ specialgreeting:
     - condition replaceThisWithTheNameOfYourCondition
 ```
 
-As you can see, it has a text and a condition attached to it. The text is what will be sent to the player. Conditions are conditions which have to be fulfilled in order for the conversation line to play. You can create them in-game using `/qa conditions create yourconditionname ...` - the condition in the demo conversation obviously won't exist, so replace it with your own.
+As you can see, it has a text and a condition attached to it. The text is what will be sent to the player. Conditions are conditions which have to be fulfilled in order for the conversation line to play. You can create them in-game using `/qa conditions add yourconditionname True equals true => /qa conditions add yourconditionname ...` - the condition in the demo conversation obviously won't exist, so replace it with your own.
 
 Now, what happens if the attached condition is not fulfilled? Well, since it's the start of the conversation, it would then try to play the next conversation line specified in the comma-separated list in `start: Atlas.specialgreeting,Atlas.greeting1` - and this would be Atlas.greeting1:
 
@@ -174,7 +174,7 @@ actions:
 - action youringamecreatedactionwhichstartsanotherconversation
 ```
 
-This is NOT recommended as there is no documentation for in-line stuff (they usually follow the commands closely) and there is no checking if you do it correctly, unlike the in-game commands which tell you exactly if you do something wrong (`/qa conditions create` and `/qa actions create`)
+This is NOT recommended as there is no documentation for in-line stuff (they usually follow the commands closely) and there is no checking if you do it correctly, unlike the in-game commands which tell you exactly if you do something wrong (`/qa conditions add yourconditionname True equals true => /qa conditions add` and `/qa actions add youraction SendMessage Hello => /qa actions add`)
 
 
 ## FAQ

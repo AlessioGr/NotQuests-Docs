@@ -1,0 +1,4 @@
+# NotQuests docs — Node 24.16.0 is required for native TypeScript script execution.
+
+[tools]
+node = "24.16.0"

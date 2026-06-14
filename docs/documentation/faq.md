@@ -8,7 +8,7 @@ keywords: [notquests, faq]
 <details>
 <summary>Help, all my rewards show as [HIDDEN]</summary>
 
-Rewards show as hidden by default unless you give them a displayname. So just use `/qa edit [questname] rewards edit [rewardid] displayname` and that'll be displayed instead of [HIDDEN].
+Rewards show as hidden by default unless you give them a displayname. So just use `/qa edit TheVirus rewards edit 1 displayName set Rare Sword => /qa edit <quest> rewards edit <rewardId> displayName set <name>` and that'll be displayed instead of [HIDDEN].
 
 This gives you the benefit that you can better specify what the reward is (for example, “Mysterious sword” instead of “NETHERITE_SWORD” if it would be done automatically by the plugin)
 

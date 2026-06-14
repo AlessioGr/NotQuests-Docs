@@ -317,7 +317,7 @@ TODO
 - **`<selection type>`** - Currently, the only selection type is *worldeditselection*. This takes your current worldedit selection as the location the player needs to reach. Thus, worldedit is currently required to create this objective. Please make a worldedit selection (via `//wand` or `//pos1` and `//pos2`) before running this command.
 - **`<Location Name>`** - Name of the location the player has to reach. It will be displayed in the objective task description.
 
-**Example command:** `/qa edit questname objectives add ReachLocation worldeditselection Luthers Church`
+**Example command:** `@optional-integration /qa edit questname objectives add ReachLocation worldeditselection Luthers Church`
 
 :::
 
@@ -441,7 +441,7 @@ In our vote example, if you set that command as a vote reward (in your vote plug
 
 **Command Arguments:**
 
-- **`<Trigger Name>`** - Name of the trigger. That name will have to be put into the trigger command (`/qa triggerObjective <Trigger Name>`)
+- **`<Trigger Name>`** - Name of the trigger. That name will have to be put into the trigger command (`/qa triggerObjective trigger1 Steve => /qa triggerObjective <triggerName> <player>`)
 - **`<amount>`** - Amount of time the trigger/command needs to be triggered/ran, for the objective to be completed
 
 **Example command:** `/qa edit questname objectives add TriggerCommand trigger1 1`
@@ -465,7 +465,7 @@ In our vote example, if you set that command as a vote reward (in your vote plug
 - **`(flags)`** - Optional flags
   - `--spawnLocation <Location X, Y, Z>` - If you set this flag, the NPC you need to escort will always spawn at this location. Otherwise, it will always spawn at the player's current location
 
-**Example command:** `/qa edit questname objectives add EscortNPC 1 2`
+**Example command:** `@optional-integration /qa edit questname objectives add EscortNPC 1 2`
 
 :::
 
@@ -487,7 +487,7 @@ In our vote example, if you set that command as a vote reward (in your vote plug
   - `--spawnReason <reason>` - Only count Elite Mobs that spawned for this reason.
   - `--minimumDamagePercentage <percentage>` - Only count the kill if the player dealt at least this percentage of the damage.
 
-**Example command:** `/qa edit questname objectives add KillEliteMobs 10 --mobname Zombie --minimumLevel 5 --maximumLevel 15`
+**Example command:** `@optional-integration /qa edit questname objectives add KillEliteMobs 10 --mobname Zombie --minimumLevel 5 --maximumLevel 15`
 
 :::
 
@@ -506,7 +506,7 @@ In our vote example, if you set that command as a vote reward (in your vote plug
 - **`(flags)`** - Optional flags
   - `--doNotCountPreviousLevels` - Only count levels gained *after* the objective unlocks, instead of the player's current level.
 
-**Example command:** `/qa edit questname objectives add JobsRebornReachJobLevel Miner 10`
+**Example command:** `@optional-integration /qa edit questname objectives add JobsRebornReachJobLevel Miner 10`
 
 :::
 
@@ -522,7 +522,7 @@ In our vote example, if you set that command as a vote reward (in your vote plug
 
 - **`<amount>`** - The amount of research points the player needs to spend. This can be a number expression.
 
-**Example command:** `/qa edit questname objectives add SlimefunResearch 500`
+**Example command:** `@optional-integration /qa edit questname objectives add SlimefunResearch 500`
 
 :::
 
@@ -540,7 +540,7 @@ In our vote example, if you set that command as a vote reward (in your vote plug
 - **`(flags)`** - Optional flags
   - `--doNotCountPreviousTowns` - Only count towns added *after* the objective unlocks.
 
-**Example command:** `/qa edit questname objectives add TownyNationReachTownCount 5`
+**Example command:** `@optional-integration /qa edit questname objectives add TownyNationReachTownCount 5`
 
 :::
 
@@ -556,6 +556,6 @@ In our vote example, if you set that command as a vote reward (in your vote plug
 - **`(flags)`** - Optional flags
   - `--doNotCountPreviousResidents` - Only count residents added *after* the objective unlocks.
 
-**Example command:** `/qa edit questname objectives add TownyReachResidentCount 20`
+**Example command:** `@optional-integration /qa edit questname objectives add TownyReachResidentCount 20`
 
 :::

@@ -7,7 +7,7 @@ keywords: [notquests, actions, quest actions, rewards, quest rewards]
 
 Raw actions can be created using `/qa actions`. Those will be saved in the `plugins/notquests/categoryname/actions.yml`. Actions are also Quest rewards or Objective rewards. An action is, as the name says, an action. Any action. Something "happens".
 
-To "test" an action created via `/qa actions`, you can use `/qa actions edit actionname execute <Player Name(optional)>`. It can have the optional flag `--ignoreConditions` if you want to ignore any conditions attached to this action.
+To "test" an action created via `/qa actions`, you can use `/qa actions edit actionname execute Steve => /qa actions edit <action> execute [player]`. It can have the optional flag `--ignoreConditions` if you want to ignore any conditions attached to this action.
 
 **Command Arguments for every action:**
 

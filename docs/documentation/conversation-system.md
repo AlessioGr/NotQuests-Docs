@@ -29,9 +29,9 @@ That means that you will have to edit conversation files to create your conversa
 
 Of course, you can create the conversation file yourself by going to the `plugins/NotQuests/default/conversations` folder - but I added a helpful command which creates the initial template for you:
 
-`/qa conversations create [name]`. Make sure _[name]_ contains no spaces. For our first conversation, however, let's use this command:
+`/qa conversations create myconversation => /qa conversations create <name>`. Make sure _[name]_ contains no spaces. For our first conversation, however, let's use this command:
 
-`/qa conversations create [name] --demo` By adding the --demo flag at the end of the command, it won't just create a conversation file with the blank template - it will also fill it with a demo conversation.
+`/qa conversations create myconversation --demo => /qa conversations create <name> --demo` By adding the --demo flag at the end of the command, it won't just create a conversation file with the blank template - it will also fill it with a demo conversation.
 
 ### Editing our first conversation
 
@@ -39,7 +39,7 @@ Head to the `plugins/NotQuests/default/conversations` folder and open the respec
 
 Since you used the --demo flag, it should be filled with a demo conversation.
 
-In-game, you can already “start” the conversation by using `/qa conversations start [name]`. Now it's up to you:
+In-game, you can already “start” the conversation by using `/qa conversations start myconversation => /qa conversations start <name>`. Now it's up to you:
 
 Try to understand the conversation file and how it works by comparing it with the result in-game. Make some changes and see what happens in-game. Note that after each change, you have to re-load it in-game by using `/qa reload conversations`.
 

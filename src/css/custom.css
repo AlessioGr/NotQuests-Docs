@@ -112,60 +112,27 @@ code {
   width: 20em;
 }
 
-/* ââ NotQuests command chips ââââââââââââââââââââââââââââââ
-   Inline command showcase, rendered by src/remarkplugins/command.js (it wraps each
-   inline-code snippet in span.specialcode and colours each argument with .color-*).
-   The chip stays dark in BOTH light & dark mode â like a little terminal â so the
-   bright syntax tokens always read well. Real /slash-commands also get
-   span.specialcode--cmd, which adds the â¯ prompt. */
+/* NotQuests command chips. Rendered from the exported command schema during the docs build. */
 .specialcode {
   display: inline-block;
-  margin: 0.12em 0;
-  padding: 0.32em 0.7em 0.32em 0.6em;
-  border-radius: 8px;
-  font-family: var(--ifm-font-family-monospace);
-  font-size: 0.9em;
+  margin: 0.08em 0;
+  padding: 0.18em 0.5em;
+  border-radius: 5px;
+  font-family: "Minecraft", "Minecraftia", var(--ifm-font-family-monospace);
+  font-size: 0.88em;
   font-weight: 600;
-  line-height: 1.6;
+  line-height: 1.45;
   color: #e9eefb;
-  background: linear-gradient(180deg, #2b3852, #1d2636);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-left: 3px solid #2dd4ff;
-  box-shadow:
-    0 1px 1px rgba(0, 0, 0, 0.18),
-    0 2px 7px rgba(8, 14, 26, 0.28),
-    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  background: #111827;
+  border: 1px solid rgba(148, 163, 184, 0.24);
+  box-shadow: none;
   overflow-wrap: anywhere;
   white-space: normal;
   vertical-align: baseline;
-  transition: transform 0.1s ease, box-shadow 0.2s ease, border-left-color 0.2s ease;
 }
 
-/* terminal prompt â only for actual /slash-commands */
-.specialcode--cmd::before {
-  content: "\276F";
-  margin-right: 0.55em;
-  color: #2dd4ff;
-  opacity: 0.9;
-  font-weight: 700;
-}
-
-.specialcode:hover {
-  border-left-color: #7ae9ff;
-  box-shadow:
-    0 2px 2px rgba(0, 0, 0, 0.18),
-    0 7px 18px rgba(14, 90, 150, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.08);
-  transform: translateY(-1px);
-}
-
-/* a touch more presence against a white page */
 html[data-theme="light"] .specialcode {
-  border-color: rgba(15, 30, 55, 0.18);
-  box-shadow:
-    0 1px 1px rgba(0, 0, 0, 0.12),
-    0 3px 10px rgba(20, 35, 60, 0.2),
-    inset 0 1px 0 rgba(255, 255, 255, 0.07);
+  border-color: rgba(15, 23, 42, 0.22);
 }
 
 .color-qa {
@@ -215,3 +182,373 @@ html[data-theme="light"] .specialcode {
 /*.color-optional {
   font-style: italic;
 }*/
+
+.commandRich {
+  position: relative;
+  white-space: normal;
+}
+
+.commandRichBlock {
+  display: block;
+  white-space: pre-wrap;
+}
+
+.commandRichLine {
+  position: relative;
+  display: inline-block;
+}
+
+.commandCopyButton {
+  position: relative;
+  display: inline-grid;
+  align-items: center;
+  justify-content: center;
+  place-items: center;
+  width: 0.95em;
+  height: 1em;
+  margin-right: 0.28em;
+  padding: 0;
+  border: 0;
+  appearance: none;
+  color: #8b95a7;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 800;
+  line-height: 1;
+  transition:
+    color 120ms ease;
+  user-select: none;
+  vertical-align: -0.08em;
+  transform: none;
+}
+
+.commandCopyPrompt,
+.commandCopyIcon,
+.commandCopyDone {
+  grid-area: 1 / 1;
+  pointer-events: none;
+}
+
+.commandCopyPrompt {
+  display: block;
+  transform: none;
+}
+
+.commandCopyIcon {
+  position: relative;
+  display: none;
+  width: 0.78em;
+  height: 0.82em;
+}
+
+.commandCopyIcon::before,
+.commandCopyIcon::after {
+  position: absolute;
+  width: 0.44em;
+  height: 0.56em;
+  border: 1.4px solid currentColor;
+  border-radius: 2px;
+  content: "";
+}
+
+.commandCopyIcon::before {
+  left: 0.12em;
+  top: 0.24em;
+  opacity: 0.72;
+}
+
+.commandCopyIcon::after {
+  left: 0.27em;
+  top: 0.07em;
+  background: #111827;
+}
+
+.commandCopyDone {
+  display: none;
+  line-height: 1;
+}
+
+.commandRich:hover > .commandCopyButton,
+.commandRich:focus-within > .commandCopyButton,
+.commandRichLine:hover > .commandCopyButton,
+.commandRichLine:focus-within > .commandCopyButton,
+.commandCopyButton:hover,
+.commandCopyButton:focus {
+  color: #dbeafe;
+  background: transparent;
+  outline: none;
+}
+
+.commandCopyButton:active {
+  transform: none;
+}
+
+.commandRich:hover > .commandCopyButton .commandCopyPrompt,
+.commandRich:focus-within > .commandCopyButton .commandCopyPrompt,
+.commandRichLine:hover > .commandCopyButton .commandCopyPrompt,
+.commandRichLine:focus-within > .commandCopyButton .commandCopyPrompt,
+.commandCopyButton:hover .commandCopyPrompt,
+.commandCopyButton:focus .commandCopyPrompt {
+  display: none;
+}
+
+.commandRich:hover > .commandCopyButton .commandCopyIcon,
+.commandRich:focus-within > .commandCopyButton .commandCopyIcon,
+.commandRichLine:hover > .commandCopyButton .commandCopyIcon,
+.commandRichLine:focus-within > .commandCopyButton .commandCopyIcon,
+.commandCopyButton:hover .commandCopyIcon,
+.commandCopyButton:focus .commandCopyIcon {
+  display: inline-block;
+}
+
+.commandCopyButton[data-copied="true"] {
+  color: #55ff55;
+  background: transparent;
+}
+
+.commandCopyButton[data-copied="true"] .commandCopyPrompt,
+.commandCopyButton[data-copied="true"] .commandCopyIcon {
+  display: none;
+}
+
+.commandRich:hover > .commandCopyButton[data-copied="true"] .commandCopyPrompt,
+.commandRich:focus-within > .commandCopyButton[data-copied="true"] .commandCopyPrompt,
+.commandRichLine:hover > .commandCopyButton[data-copied="true"] .commandCopyPrompt,
+.commandRichLine:focus-within > .commandCopyButton[data-copied="true"] .commandCopyPrompt,
+.commandCopyButton[data-copied="true"]:hover .commandCopyPrompt,
+.commandCopyButton[data-copied="true"]:focus .commandCopyPrompt,
+.commandRich:hover > .commandCopyButton[data-copied="true"] .commandCopyIcon,
+.commandRich:focus-within > .commandCopyButton[data-copied="true"] .commandCopyIcon,
+.commandRichLine:hover > .commandCopyButton[data-copied="true"] .commandCopyIcon,
+.commandRichLine:focus-within > .commandCopyButton[data-copied="true"] .commandCopyIcon,
+.commandCopyButton[data-copied="true"]:hover .commandCopyIcon,
+.commandCopyButton[data-copied="true"]:focus .commandCopyIcon {
+  display: none;
+}
+
+.commandCopyButton[data-copied="true"] .commandCopyDone {
+  display: block;
+  font-size: 0.96em;
+}
+
+html[data-theme="light"] .commandCopyIcon::after {
+  background: #111827;
+}
+
+.commandRichToken {
+  position: relative;
+  border-radius: 3px;
+  padding: 0 0.045rem;
+}
+
+.commandRichToken[aria-label] {
+  cursor: default;
+}
+
+.commandRichToken--argument,
+.commandRichToken--flag,
+.commandRichToken--flagValue,
+.commandRichToken--expand {
+  border-bottom: 1px dotted currentColor;
+  text-underline-offset: 0.18em;
+}
+
+.commandRichToken--literal {
+  color: #e8f1ff;
+}
+
+.commandRichToken--argument {
+  color: #55ffff;
+  background: transparent;
+}
+
+.commandRichToken--minecraftAqua {
+  color: #55ffff;
+  background: transparent;
+}
+
+.commandRichToken--minecraftYellow,
+.commandRichToken--flag {
+  color: #ffff55;
+  background: transparent;
+}
+
+.commandRichToken--minecraftGreen,
+.commandRichToken--flagValue {
+  color: #55ff55;
+  background: transparent;
+}
+
+.commandRichToken--minecraftLightPurple {
+  color: #ff55ff;
+  background: transparent;
+}
+
+.commandRichToken--minecraftGold {
+  color: #ffaa00;
+  background: transparent;
+}
+
+.commandRichToken--expand {
+  color: #aebcff;
+  background: transparent;
+  font-size: 0.86em;
+  font-weight: 800;
+}
+
+.commandRichToken--argument:hover,
+.commandRichToken--flag:hover,
+.commandRichToken--flagValue:hover,
+.commandRichToken--minecraftAqua:hover,
+.commandRichToken--minecraftYellow:hover,
+.commandRichToken--minecraftGreen:hover,
+.commandRichToken--minecraftLightPurple:hover,
+.commandRichToken--minecraftGold:hover,
+.commandRichToken--expand:hover {
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: none;
+}
+
+.commandRichTooltip {
+  position: absolute;
+  z-index: 50;
+  left: 0;
+  bottom: calc(100% + 0.45rem);
+  display: none;
+  box-sizing: border-box;
+  width: max-content;
+  min-width: min(22rem, calc(100vw - 2rem));
+  max-width: min(34rem, calc(100vw - 2rem));
+  padding: 0.68rem 0.72rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 8px;
+  color: #e9eefb;
+  background: #111827;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.34);
+  font-family: var(--ifm-font-family-base);
+  font-size: 0.8rem;
+  font-weight: 500;
+  line-height: 1.38;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(4px);
+  user-select: none;
+  white-space: normal;
+}
+
+.commandRichTooltip::after {
+  position: absolute;
+  left: 0.8rem;
+  bottom: -0.38rem;
+  width: 0.7rem;
+  height: 0.7rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.14);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  background: #111827;
+  content: "";
+  transform: rotate(45deg);
+}
+
+.commandRichToken:hover > .commandRichTooltip,
+.commandRichToken:focus-within > .commandRichTooltip {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.commandRichTooltipTitle {
+  display: block;
+  margin-bottom: 0.34rem;
+  color: #ffffff;
+  font-size: 0.88rem;
+  font-weight: 800;
+}
+
+.commandRichTooltipDescription {
+  display: block;
+  margin-top: 0.28rem;
+  color: #cbd5e1;
+}
+
+.commandRichTooltipRow {
+  display: grid;
+  grid-template-columns: 4.8rem minmax(0, 1fr);
+  gap: 0.45rem;
+  align-items: baseline;
+  margin-top: 0.42rem;
+  padding-top: 0.38rem;
+  border-top: 1px solid rgba(148, 163, 184, 0.16);
+}
+
+.commandRichTooltipLabel {
+  color: #94a3b8;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.035em;
+  text-transform: uppercase;
+}
+
+.commandRichTooltipValue {
+  overflow-wrap: anywhere;
+  color: #e9eefb;
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.76rem;
+  line-height: 1.35;
+}
+
+.commandReferenceList {
+  display: grid;
+  gap: 0.75rem;
+  margin: 1rem 0 2rem;
+  min-width: 0;
+}
+
+.commandReferenceCard {
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 8px;
+  min-width: 0;
+  padding: 0.9rem 1rem;
+  background: var(--ifm-background-surface-color);
+}
+
+.commandReferenceSyntax {
+  position: relative;
+  overflow: visible;
+  padding: 0.65rem 0.75rem;
+  border-radius: 8px;
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.92rem;
+  line-height: 1.75;
+  color: #e9eefb;
+  background: #1d2636;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+.commandReferenceDescription {
+  margin-top: 0.65rem;
+  color: var(--ifm-color-content);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.commandReferenceMeta {
+  margin-top: 0.45rem;
+  color: var(--ifm-color-content-secondary);
+  font-size: 0.8rem;
+  line-height: 1.45;
+}
+
+html[data-theme="light"] .commandReferenceCard {
+  box-shadow: 0 1px 2px rgba(15, 30, 55, 0.05);
+}
+
+html[data-theme="dark"] .commandReferenceCard {
+  border-color: #303846;
+  background: #141a24;
+}
+
+html[data-theme="dark"] .commandReferenceSyntax {
+  background: #0d121b;
+}

@@ -79,7 +79,7 @@ Quest givers get a lot more lively when they actually *talk*. You can bind a [co
 
 ## Quick recap
 
-- Attach: `/qa edit <quest> npcs add <citizens:id | fancynpcs:id | rightClickSelect>`
+- Attach: `/qa edit TheVirus npcs add rightClickSelect => /qa edit <quest> npcs add <npc>`
 - Hide on the NPC: add `--hideInNPC`
 - Armor stands: `/qa edit <quest> armorstands add`, then right-click the stand
 - Conversations: `/qa conversations edit <conversation> npcs add <npc>`

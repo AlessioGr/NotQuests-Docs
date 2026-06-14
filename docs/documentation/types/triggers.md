@@ -15,7 +15,7 @@ A trigger always runs a pre-defined **action**. You create actions with `/qa act
 
 You add a trigger to a quest like this:
 
-`/qa edit <questName> triggers add <actionName> <TYPE> (extra args) (flags)`
+`/qa edit questName triggers add actionName DEATH 1 --applyOn O1 --world_name ALL => /qa edit <questName> triggers add <actionName> <TYPE> ... (flags)`
 
 - **`<actionName>`** - the action to run when the trigger fires.
 - **`<TYPE>`** - *when* it fires (see the list below).

@@ -228,7 +228,7 @@ This will make it, so the player cannot take the Quest using the `/q take TheVir
 
 ### 7. Taking the Quest
 
-Use `/q take TheVirus` to take the Quest! You can also bind it to Citizens or FancyNPCs NPCs, or Armor stands using `/qa edit TheVirus npcs add citizens:[NPC ID]` (or `fancynpcs:[NPC ID]`) or `/qa edit TheVirus armorstands add`.
+Use `/q take TheVirus` to take the Quest! You can also bind it to Citizens or FancyNPCs NPCs, or Armor stands using `/qa edit TheVirus npcs add citizens:5 => /qa edit <quest> npcs add citizens:<id>` (or `fancynpcs:<id>`) or `/qa edit TheVirus armorstands add`.
 
 The quest is saved in the `plugins/NotQuests/default/quests.yml` and `plugins/NotQuests/default/actions.yml` files.
 
