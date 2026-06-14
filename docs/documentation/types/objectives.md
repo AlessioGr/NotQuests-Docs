@@ -21,6 +21,8 @@ This is not a separate objective type. It is an extra setting you can add to alm
 
 When a player is tracking that objective, NotQuests shows a client-side beam/marker pointing toward the saved location. It does not place real blocks in the world for everyone. The marker is only shown to the player who is doing the quest.
 
+If you also enable `visual.objective-tracking.location-compass.enabled` in `general.yml`, players get a small bossbar compass while tracking an objective marker. It shows whether the target is left, right, behind, or straight ahead, plus the distance in blocks/meters. This is off by default because bossbars are visually noticeable and many servers already use them for progress or events.
+
 Useful commands:
 
 - **`/qa edit questname objectives edit 1 location set here`** - Save your current in-game position for objective `1` and turn the marker on. This is the easiest way to set it up.
@@ -44,6 +46,7 @@ Notes:
 - The marker appears for the player's currently tracked objective. This is usually the newest unlocked objective, or the objective that just gained progress.
 - `set here`, `set looking`, and `preview` must be run in-game by a player. Console can use the exact-coordinate `location set world x y z` command.
 - The target location must be in the same world as the player.
+- The bossbar compass is global opt-in. There are no per-objective commands for it; if it is enabled, it appears for objectives that already have a marker location.
 - Keep `general.enable-move-event` enabled in `general.yml`; it is needed for location tracking and `ReachLocation`.
 - This is different from the `Beam` action. Objective locations are tied to objective tracking. The `Beam` action is a separate action you can run from rewards, triggers, or saved actions.
 

@@ -99,6 +99,8 @@ visual:
       enabled: true
     bossbar:
       enabled: true
+    location-compass:
+      enabled: false
 ```
 
 - **`language`** - Which language file to use, from `plugins/NotQuests/languages/`. Ships with 31 languages. Default is `en-US`.
@@ -106,7 +108,7 @@ visual:
 - **`citizensnpc` / `armorstands`** - The floating particle above quest-giver NPCs and armor stands. Change the particle with `type`, or turn it off. `focusing` makes Citizens NPCs turn to face the player during a conversation. `armorstands.prevent-editing` stops you from accidentally editing the gear of an armor stand that has quests attached.
 - **`titles`** - The big on-screen titles when a quest is accepted, failed or completed. Toggle each independently.
 - **`hide-rewards-without-name`** - Rewards show as `[HIDDEN]` unless you give them a display name (see the [FAQ](/docs/documentation/faq)). This is what makes that happen.
-- **`objective-tracking`** - Live progress shown in the `actionbar` and/or a `bossbar` while an objective is active. Objective location markers are configured per objective; see the [Objectives page](./types/objectives#objective-locations-and-guiding-beams).
+- **`objective-tracking`** - Live progress shown in the `actionbar` and/or a `bossbar` while an objective is active. `location-compass.enabled` adds an optional bossbar compass for objectives with a saved guiding marker. Objective location markers are configured per objective; see the [Objectives page](./types/objectives#objective-locations-and-guiding-beams).
 
 <Admonition type="tip" title="Colors">
 
