@@ -11,6 +11,8 @@ This website is built using [Docusaurus 2](https://docusaurus.io/), a modern sta
 $ pnpm install
 ```
 
+Tool versions are pinned for local development through `mise.toml`. For asdf-compatible tools, `.tool-versions` pins Node.js. Cloudflare Pages does not install pnpm from `.tool-versions`; set `PNPM_VERSION=11.6.0` in the Pages build environment so Cloudflare uses the same pnpm version as local builds.
+
 ### Local Development
 
 ```
