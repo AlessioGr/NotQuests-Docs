@@ -279,6 +279,27 @@ Use this for economy or reputation quests where the player must trade with villa
 
 </Admonition>
 
+### 🏹 ShootArrow
+
+<Admonition type="info" title="Description">
+
+**Completed when:** Player shoots an arrow and that arrow lands inside a radius around a target location.
+
+This is useful for archery ranges, target practice quests, hidden switches, dungeon puzzles, and any quest where the player should hit an area instead of just standing there.
+
+**Command Arguments:**
+
+- **`<amount>`** - Amount of arrows that need to land inside the target region
+- **`<world>`** - World containing the target region
+- **`<x>`** - Center X coordinate of the target region
+- **`<y>`** - Center Y coordinate of the target region
+- **`<z>`** - Center Z coordinate of the target region
+- **`<radius>`** - Radius in blocks around the center where arrows count
+
+**Example command:** `/qa edit questname objectives add ShootArrow 3 world 1453 71 -2451 4`
+
+</Admonition>
+
 ### 🤸 Jump
 
 <Admonition type="info" title="Description">
