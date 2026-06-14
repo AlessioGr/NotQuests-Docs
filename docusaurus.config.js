@@ -55,6 +55,8 @@ const config = {
     ],
   ],
 
+  plugins: ['docusaurus-markdown-source-plugin'],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
