@@ -9,6 +9,38 @@ import Admonition from '@theme/Admonition';
 
 Objectives are tasks the player has to complete in order to finish the Quest. Some objectives are integrations with other plugins and are only available if you have that plugin installed.
 
+## Objective locations and guiding beams
+
+NotQuests can show a Wynncraft-style guiding marker for an objective. This is useful for objectives where the player should go to a certain place, click a certain block, find an NPC, or return to a quest area.
+
+This is not a separate objective type. It is an extra setting you can add to almost any objective:
+
+1. Add the objective.
+2. Find its objective ID with `/qa edit questname objectives list`.
+3. Set the location with `/qa edit questname objectives edit 1 location set world 1453 71 -2451`.
+
+When a player is tracking that objective, NotQuests shows a client-side beam/marker pointing toward the saved location. It does not place real blocks in the world for everyone. The marker is only shown to the player who is doing the quest.
+
+Useful commands:
+
+- **`/qa edit questname objectives edit 1 location set world 1453 71 -2451`** - Save a location for objective `1` and turn the marker on.
+- **`/qa edit questname objectives edit 1 location enable`** - Turn the marker back on if the objective already has a saved location.
+- **`/qa edit questname objectives edit 1 location disable`** - Turn the marker off again.
+
+Good use cases:
+
+- Show where a player should search after accepting a quest.
+- Point players to a hidden cave, camp, chest, NPC, or dungeon entrance.
+- Make `Interact`, `DeliverItems`, `KillMobs`, `Harvest`, or custom objective chains easier to follow.
+- Enable the marker for a `ReachLocation` objective after creating it from a WorldEdit selection.
+
+Notes:
+
+- The marker appears for the player's currently tracked objective. This is usually the newest unlocked objective, or the objective that just gained progress.
+- The target location must be in the same world as the player.
+- Keep `general.enable-move-event` enabled in `general.yml`; it is needed for location tracking and `ReachLocation`.
+- This is different from the `Beam` action. Objective locations are tied to objective tracking. The `Beam` action is a separate action you can run from rewards, triggers, or saved actions.
+
 First, we'll list the objectives which are always available:
 
 ## Default Objectives

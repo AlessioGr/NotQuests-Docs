@@ -56,7 +56,7 @@ general:
 ```
 
 - **`max-active-quests-per-player`** - How many quests a player can have going at once. `-1` means unlimited.
-- **`enable-move-event`** - Needed for the `ReachLocation` objective. If you don't use location objectives, setting this to `false` is a tiny performance win.
+- **`enable-move-event`** - Needed for the `ReachLocation` objective and objective location markers. If you don't use location objectives or guiding markers, setting this to `false` is a tiny performance win.
 - **`journal-item`** - Optionally turn a slot of the player's inventory into a clickable quest journal book. Set `enabled-worlds` to the worlds you want it in (or `'*'` for all), and pick the `inventory-slot`.
 - **`packet-magic`** - Powers the smooth conversation experience.
   - **`mode`** - `internal` or `packetevents`. Leave it on `internal` unless you have a reason not to.
@@ -106,7 +106,7 @@ visual:
 - **`citizensnpc` / `armorstands`** - The floating particle above quest-giver NPCs and armor stands. Change the particle with `type`, or turn it off. `focusing` makes Citizens NPCs turn to face the player during a conversation. `armorstands.prevent-editing` stops you from accidentally editing the gear of an armor stand that has quests attached.
 - **`titles`** - The big on-screen titles when a quest is accepted, failed or completed. Toggle each independently.
 - **`hide-rewards-without-name`** - Rewards show as `[HIDDEN]` unless you give them a display name (see the [FAQ](/docs/documentation/faq)). This is what makes that happen.
-- **`objective-tracking`** - Live progress shown in the `actionbar` and/or a `bossbar` while an objective is active.
+- **`objective-tracking`** - Live progress shown in the `actionbar` and/or a `bossbar` while an objective is active. Objective location markers are configured per objective; see the [Objectives page](./types/objectives#objective-locations-and-guiding-beams).
 
 <Admonition type="tip" title="Colors">
 
