@@ -5,11 +5,13 @@ description: This tutorial helps you get started with NotQuests from zero to her
 keywords: [notquests, tutorial, getting started, beginner, guide]
 ---
 
-:::note Before you start
+import Admonition from '@theme/Admonition';
+
+<Admonition type="note" title="Before you start">
 
 This guide is written for **NotQuests 6.2.0** on **[Paper 26.1.2](https://papermc.io/)**. Older versions and Spigot have fewer features and some different commands, so a few things might not line up there.
 
-:::
+</Admonition>
 
 Let's discover **NotQuests!** The best way to learn it is to actually *build* something — so that's what we'll do. In the next few minutes we'll make a complete little quest from scratch: a display name and description, a requirement, two objectives, a trigger that spawns mobs, and some rewards. All with commands — no config files to wrestle with.
 
@@ -48,11 +50,11 @@ Each thing you write, separated by a space, is called an *argument*. In the foll
 
 If you press space after the last argument, our intelligent command system will show you what argument comes "next". If you're stuck with a command, just make sure the last character is a space and **read the command completions**!
 
-:::tip Still stuck?
+<Admonition type="tip" title="Still stuck?">
 
 If the command completions aren't enough and you still don't know how a command works, just **press enter** and run the command! It will show you a **help menu**. Just read it, and it will tell you what arguments it needs and what they do.
 
-:::
+</Admonition>
 
 ## Creating our first Quest
 
@@ -94,10 +96,11 @@ In order for us to be able to test our own Quest, give yourself 10 Quest Points:
 
 `/qa questpoints putyourminecraftnamehere add 10`
 
-:::tip Thank you for your attention
+<Admonition type="tip" title="Thank you for your attention">
 
 If you like NotQuests, please [**give NotQuests a follow on modrinth**](https://modrinth.com/plugin/notquests/versions) 😊 This will motivate me bring you more updates and features!
-:::
+
+</Admonition>
 
 ### 3. Objectives
 

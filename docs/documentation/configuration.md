@@ -5,6 +5,8 @@ description: A friendly tour of general.yml — the main NotQuests config file.
 keywords: [notquests, config, configuration, general.yml, mysql, database, settings]
 ---
 
+import Admonition from '@theme/Admonition';
+
 NotQuests' main settings live in **`plugins/NotQuests/general.yml`**. After editing it, run `/qa reload` (or just restart the server) to apply your changes.
 
 Good news: **you don't have to touch most of this.** The defaults are sensible and the plugin runs great out of the box. This page is here for when you *do* want to tweak something — so feel free to skim and jump to the section you care about.
@@ -106,9 +108,11 @@ visual:
 - **`hide-rewards-without-name`** - Rewards show as `[HIDDEN]` unless you give them a display name (see the [FAQ](/docs/documentation/faq)). This is what makes that happen.
 - **`objective-tracking`** - Live progress shown in the `actionbar` and/or a `bossbar` while an objective is active.
 
-:::tip Colors
+<Admonition type="tip" title="Colors">
+
 The `visual.colors` block lets you re-theme every message NotQuests sends, using [MiniMessage](https://docs.advntr.dev/minimessage/format.html) gradients (`main`, `highlight`, `error`, `success`, ...). The defaults look great, but it's all yours to recolor.
-:::
+
+</Admonition>
 
 ## 🖼️ GUI
 
@@ -177,6 +181,8 @@ integrations:
 | `jobs-reborn` | The `JobsRebornReachJobLevel` objective |
 | `ecoMobs` | eco / EcoMobs spawn actions and kill detection |
 
-:::info
+<Admonition type="info">
+
 Every supported integration is bundled with NotQuests at its latest tested version — you don't install anything extra on the NotQuests side. The plugin you run on your server is what NotQuests talks to.
-:::
+
+</Admonition>

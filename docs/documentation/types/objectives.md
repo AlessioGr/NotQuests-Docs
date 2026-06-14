@@ -5,6 +5,8 @@ description: This lists and explains all objectives (= tasks) in NotQuests, as w
 keywords: [notquests, objectives, quest objectives, tasks, quest tasks]
 ---
 
+import Admonition from '@theme/Admonition';
+
 Objectives are tasks the player has to complete in order to finish the Quest. Some objectives are integrations with other plugins and are only available if you have that plugin installed.
 
 First, we'll list the objectives which are always available:
@@ -13,7 +15,7 @@ First, we'll list the objectives which are always available:
 
 ### ⛏️ BreakBlocks
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Completed when:** Player breaks a specific amount of blocks.
 
@@ -26,11 +28,11 @@ First, we'll list the objectives which are always available:
 
 **Example command:** `/qa edit questname objectives add BreakBlocks grass_block 4`
 
-:::
+</Admonition>
 
 ### ❣️ BreedMobs
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Completed when:** Player breeds a specific mob
 
@@ -41,11 +43,11 @@ First, we'll list the objectives which are always available:
 
 **Example command:** `/qa edit questname objectives add BreedMobs cow 4`
 
-:::
+</Admonition>
 
 ### 🍎 FeedMobs
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Completed when:** Player feeds a specific mob a certain number of times
 
@@ -56,12 +58,12 @@ First, we'll list the objectives which are always available:
 
 **Example command:** `/qa edit questname objectives add FeedMobs cow 4`
 
-:::
+</Admonition>
 
 
 ### ❓ Condition
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Completed when:** Player fulfills a certain condition (Created using `/qa conditions`). The plugin checks if the condition has been fulfilled every second or if the corresponding action to that condition has been executed (for example the *Money* action for the *Money* condition). This basically adds countless more objectives. For example, you can even use PlaceholderAPI Placeholders to create objectives.
 
@@ -73,11 +75,11 @@ First, we'll list the objectives which are always available:
 
 **Example command:** `/qa edit questname objectives add Condition myCondition`
 
-:::
+</Admonition>
 
 ### 🥗 ConsumeItems
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Completed when:** Player consumes an item. Consuming usually means eating or drinking - for example an apple.
 
@@ -88,11 +90,11 @@ First, we'll list the objectives which are always available:
 
 **Example command:** `/qa edit questname objectives add ConsumeItems apple 5`
 
-:::
+</Admonition>
 
 ### ⚒️ CraftItems
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Completed when:** Player consumes an item. Consuming usually means eating or drinking - for example an apple.
 
@@ -103,11 +105,11 @@ First, we'll list the objectives which are always available:
 
 **Example command:** `/qa edit questname objectives add CraftItems enchanting_table 1`
 
-:::
+</Admonition>
 
 ### 🚚 DeliverItems
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Completed when:** Player delivers an Item to an NPC (Both Citizen NPCs and Armorstands work). Delivering means that the item will be removed from the player's inventory.
 
@@ -119,11 +121,11 @@ First, we'll list the objectives which are always available:
 
 **Example command:** `/qa edit questname objectives add DeliverItems coal 20 armorstand`
 
-:::
+</Admonition>
 
 ### 🪄 Enchant
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Completed when:** Player enchants an item
 
@@ -138,11 +140,11 @@ First, we'll list the objectives which are always available:
 
 **Example command:** `/qa edit enchant1 objectives add Enchant minecraft:efficiency diamond_pickaxe 3.0 --min 2.0` (Enchant diamond pickaxe 3 times with efficiency (minimum enchantment level: 2))
 
-:::
+</Admonition>
 
 ### 🐟 FishItems
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Completed when:** Player fishes a specific item. Only successful fishing attempts are counted.
 
@@ -153,11 +155,11 @@ First, we'll list the objectives which are always available:
 
 **Example command:** `/qa edit questname objectives add FishItems cod 3`
 
-:::
+</Admonition>
 
 ### 👉 Interact
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Completed when:** Player interacts with a specific location by either left-clicking, right-clicking or both.
 
@@ -177,11 +179,11 @@ First, we'll list the objectives which are always available:
 
 **Example command:** `/qa edit questname objectives add Interact 2 world 1453 71 -2451 --rightClick --maxDistance 2 --cancelInteraction --taskDescription "Find Trents fishing rod"`
 
-:::
+</Admonition>
 
 ### 🤸 Jump
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Completed when:** Player jumps a certain amount of times
 
@@ -191,11 +193,11 @@ First, we'll list the objectives which are always available:
 
 **Example command:** `/qa edit questname objectives add Jump 10`
 
-:::
+</Admonition>
 
 ### 🩸 KillMobs
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Completed when:** Player kills a mobs.
 
@@ -209,11 +211,11 @@ First, we'll list the objectives which are always available:
 
 **Example command:** `/qa edit questname objectives add KillMobs zombie 10`
 
-:::
+</Admonition>
 
 ### 🔢 NumberVariable
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Completed when:** NumberVariable conditions you can specify here is fulfilled. This allows you to use variables in objectives relatively!
 
@@ -223,11 +225,11 @@ TODO
 
 **Example command:** `/qa edit questname objectives add NumberVariable PlaytimeMinutes moreOrEqualThan PlaytimeMinutes+2` - This objective makes it, so the player needs to play 2 MORE minutes.
 
-:::
+</Admonition>
 
 ### 🔢 Objective
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Completed when:** This is a holder for sub-objectives. If you add sub-objectives to an "Objective" objective, it's completed once all its sub-objectives have been completed.
 
@@ -237,11 +239,11 @@ TODO
 
 **Example command:** `/qa edit questname objectives add Objective "Crafting Objectives"`
 
-:::
+</Admonition>
 
 ### 🏴‍☠️ OpenBuriedTreasure
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Completed when:** Player opens any x amount of buried treasures (buried treasures are a vanilla minecraft feature)
 
@@ -251,11 +253,11 @@ TODO
 
 **Example command:** `/qa edit questname objectives add OpenBuriedTreasure 3`
 
-:::
+</Admonition>
 
 ### 📕 OtherQuest
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Completed when:** Player completes another Quest
 
@@ -268,11 +270,11 @@ TODO
 
 **Example command:** `/qa edit questname objectives add OtherQuest otherQuestName 2 --countPreviouslyCompletedQuests`
 
-:::
+</Admonition>
 
 ### 🚮 PickupItems
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Completed when:** Player picks up a specific item by picking it up from the ground into his inventory.
 
@@ -287,11 +289,11 @@ TODO
 
 **Example command:** `/qa edit questname objectives add PickupItems dirt 12`
 
-:::
+</Admonition>
 
 ### 🪧 PlaceBlocks
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Completed when:** Player breaks a specific amount of blocks.
 
@@ -304,11 +306,11 @@ TODO
 
 **Example command:** `/qa edit questname objectives add PlaceBlocks acacia_planks 20`
 
-:::
+</Admonition>
 
 ### 🛬 ReachLocation
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Completed when:** Player reaches a certain location
 
@@ -319,11 +321,11 @@ TODO
 
 **Example command:** `@optional-integration /qa edit questname objectives add ReachLocation worldeditselection Luthers Church`
 
-:::
+</Admonition>
 
 ### 🧑‍💻 RunCommand
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Completed when:** Player runs a certain command
 
@@ -337,11 +339,11 @@ TODO
 
 **Example command:** `/qa edit questname objectives add RunCommand 2 "warp spawn" --ignoreCase`
 
-:::
+</Admonition>
 
 ### 🧑‍💻 ShearSheep
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Completed when:** Player shears a certain amount of sheep
 
@@ -353,11 +355,11 @@ TODO
 
 **Example command:** `/qa edit questname objectives add ShearSheep 4 --cancelShearing`
 
-:::
+</Admonition>
 
 ### 🐄 MilkCow
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Completed when:** Player milks a certain amount of cows
 
@@ -369,11 +371,11 @@ TODO
 
 **Example command:** `/qa edit questname objectives add MilkCow 4 --cancelMilking`
 
-:::
+</Admonition>
 
 ### 🔥 SmeltItems
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Completed when:** Player takes a smelted item out of a furnace. So yeah, they'll have to smelt it, and then take it out. The output item counts, not the item which you put in the furnace.
 
@@ -384,11 +386,11 @@ TODO
 
 **Example command:** `/qa edit questname objectives add SmeltItems coal 4`
 
-:::
+</Admonition>
 
 ### 🧟 Sneak
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Completed when:** Player sneaks
 
@@ -398,11 +400,11 @@ TODO
 
 **Example command:** `/qa edit questname objectives add Sneak 4`
 
-:::
+</Admonition>
 
 ### 🗯️ TalkToNPC
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Completed when:** Player talks to (right-clicks) an NPC (Both Citizen NPCs and Armorstands work).
 
@@ -412,11 +414,11 @@ TODO
 
 **Example command:** `/qa edit questname objectives add TalkToNPC armorstand`
 
-:::
+</Admonition>
 
 ### ❗ TriggerCommand
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Completed when:** A special command is run from someone with enough permissions (can be a command block or a player with op permissions. Usually, the console is used.)
 
@@ -448,13 +450,13 @@ In our vote example, if you set that command as a vote reward (in your vote plug
 
 **Command to "trigger"/finish that objective:** `/qa triggerObjective trigger1 {PLAYER}` - `{PLAYER}` needs to be replaced with the players username.
 
-:::
+</Admonition>
 
 ## [Citizens](https://ci.citizensnpcs.co/job/Citizens2/) Integration Objectives
 
 ### ℹ️ EscortNPC
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Completed when:** You escort an NPC to another NPC. When the objective is unlocked, the NPC you need to escort spawns at your location (or a specified spawn location) and starts following you. You will need to get close to the destination NPC and then right-click the destination NPC while the escort NPC is close to you.
 
@@ -467,13 +469,13 @@ In our vote example, if you set that command as a vote reward (in your vote plug
 
 **Example command:** `@optional-integration /qa edit questname objectives add EscortNPC 1 2`
 
-:::
+</Admonition>
 
 ## [EliteMobs](https://magmaguy.com/downloads/elitemobs.html) Integration Objectives
 
 ### ℹ️ KillEliteMobs
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Completed when:** Player kills a specific amount of EliteMobs.
 
@@ -489,13 +491,13 @@ In our vote example, if you set that command as a vote reward (in your vote plug
 
 **Example command:** `@optional-integration /qa edit questname objectives add KillEliteMobs 10 --mobname Zombie --minimumLevel 5 --maximumLevel 15`
 
-:::
+</Admonition>
 
 ## [Jobs Reborn](https://www.zrips.net/jobs/) Integration Objectives
 
 ### ℹ️ JobsRebornReachJobLevel
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Completed when:** Player reaches a specific level in a Jobs Reborn job. This tracks the player's real Jobs level, including admin changes like `/jobs level add`.
 
@@ -508,13 +510,13 @@ In our vote example, if you set that command as a vote reward (in your vote plug
 
 **Example command:** `@optional-integration /qa edit questname objectives add JobsRebornReachJobLevel Miner 10`
 
-:::
+</Admonition>
 
 ## [Slimefun](https://github.com/Slimefun/Slimefun4/releases) Integration Objectives
 
 ### ℹ️ SlimefunResearch
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Completed when:** Player spends a specific amount of research points in Slimefun.
 
@@ -524,13 +526,13 @@ In our vote example, if you set that command as a vote reward (in your vote plug
 
 **Example command:** `@optional-integration /qa edit questname objectives add SlimefunResearch 500`
 
-:::
+</Admonition>
 
 ## [Towny](https://github.com/TownyAdvanced/Towny/releases) Integration Objectives
 
 ### ℹ️ TownyNationReachTownCount
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Completed when:** The player's nation reaches a minimum number of towns.
 
@@ -542,11 +544,11 @@ In our vote example, if you set that command as a vote reward (in your vote plug
 
 **Example command:** `@optional-integration /qa edit questname objectives add TownyNationReachTownCount 5`
 
-:::
+</Admonition>
 
 ### ℹ️ TownyReachResidentCount
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Completed when:** The player's town reaches a minimum number of residents.
 
@@ -558,4 +560,4 @@ In our vote example, if you set that command as a vote reward (in your vote plug
 
 **Example command:** `@optional-integration /qa edit questname objectives add TownyReachResidentCount 20`
 
-:::
+</Admonition>

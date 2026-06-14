@@ -5,6 +5,8 @@ description: This lists and explains all conditions in NotQuests, as well as how
 keywords: [notquests, conditions, quest conditions]
 ---
 
+import Admonition from '@theme/Admonition';
+
 Raw conditions can be created using `/qa conditions`. Those will be saved in the `plugins/notquests/categoryname/conditions.yml`. Conditions are also Quest requirements, Objective conditions and Action conditions, which can be created with the respective other commands.
 
 To "test" a condition created via `/qa conditions`, you can use `/qa conditions edit conditionname check Steve => /qa conditions edit <condition> check [player]`.
@@ -25,7 +27,7 @@ Please consult the [Variables Section](/docs/documentation/types/variables) for 
 
 ### ❓ Boolean
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Fulfilled when:** The Boolean variable equals the expression. Booleans simply means true or false. Or, in easy words: Yes or No
 
@@ -43,11 +45,11 @@ Please consult the [Variables Section](/docs/documentation/types/variables) for 
   - Another way to do this: `/qa conditions add conditionname True equals Condition(Conditions:Flying&IsRich)` - The conditions `Flying` and `IsRich` will have to be created beforehand
   - Or `qa conditions add conditionname Condition equals Flying&IsRich` - The conditions `Flying` and `IsRich` will have to be created beforehand
 
-:::
+</Admonition>
 
 ### 📙 List
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Fulfilled when:** The List variable equals the expression.
 
@@ -60,11 +62,11 @@ Please consult the [Variables Section](/docs/documentation/types/variables) for 
 
 **Example command:** `/qa conditions add conditionname ActiveQuests contains questname` - Checks if questname is currently active for the player. ActiveQuests would be a list variable.
 
-:::
+</Admonition>
 
 ### 📖 ItemStackList
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Fulfilled when:** The ItemStackList variable equals the expression.
 
@@ -77,11 +79,11 @@ Please consult the [Variables Section](/docs/documentation/types/variables) for 
 
 **Example command:** `/qa conditions add conditionname Inventory contains diamond 32` - Checks if the player has at least 32 diamonds in their inventory. Inventory would be an ItemStackList variable.
 
-:::
+</Admonition>
 
 ### 💯 Number
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Fulfilled when:** The Number variable equals the expression.
 
@@ -96,11 +98,11 @@ Please consult the [Variables Section](/docs/documentation/types/variables) for 
 **Example command with math expression + other variables**: `/qa conditions add conditionname Money moreThan QuestPoints*Money+500-30/2` - This checks if you money is more than your quest points multiplied by your current money plus 500 minus 30/2
 **Example command with very advanced expression:** `/qa conditions add conditionname Money moreThan 10+TagInteger(TagName:reputation)*TagInteger(TagName:level)` - Checks if the player's money is more than 10 + the value of the "reputation" tag multiplied by the value of the "level" tag.
 
-:::
+</Admonition>
 
 ### 🆎 String
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Fulfilled when:** The String variable equals the expression.
 
@@ -113,7 +115,7 @@ Please consult the [Variables Section](/docs/documentation/types/variables) for 
 
 **Example command:** `/qa conditions add conditionname Name equals Tom` - Checks if the player's name is Tom. Name would be a String variable.
 
-:::
+</Admonition>
 
 ## Default Conditions
 
@@ -121,13 +123,13 @@ These are the default, "standalone" conditions and don't depend on variables.
 
 ### ~~🤓 Condition~~
 
-:::caution
+<Admonition type="caution">
 
 This condition has been removed in v4.13.0. The Boolean variable `Condition` replaces this, and offers far more functionality.
 
-:::
+</Admonition>
 
-:::info ~~Description~~
+<Admonition type="info" title="~~Description~~">
 
 ~~**Fulfilled when:** The other condition is fulfilled. Yes, this simply checks another condition which is defined in the `conditions.yml`.~~
 
@@ -137,11 +139,11 @@ This condition has been removed in v4.13.0. The Boolean variable `Condition` rep
 
 ~~**Example command:** `/qa conditions add conditionname Condition otherconditionname`~~
 
-:::
+</Admonition>
 
 ### ⏲️ WorldTime
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Fulfilled when:** The current time of the players Minecraft world is in a certain time range
 
@@ -152,11 +154,11 @@ This condition has been removed in v4.13.0. The Boolean variable `Condition` rep
 
 **Example command:** `/qa conditions add conditionname WorldTime 11 20` - Checks if the player's current world's time is between 11am and 8pm (or 11:00 - 20:00 in the superior 24-hour clock (come to my Discord, you Americans, and fight me))
 
-:::
+</Admonition>
 
 ### 📅 Date
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Fulfilled when:** The current date is (operator) the specified date. Operators are 'before' and 'after'
 
@@ -178,13 +180,13 @@ This condition has been removed in v4.13.0. The Boolean variable `Condition` rep
 - `/qa conditions add conditionname Date after --month 11` - Seasonal condition! It's fulfilled every december
 - `/qa conditions add conditionname Date before --month 11 --year 2022` - You have until the end of october 2022. After that, this condition is NOT fulfilled anymore
 
-:::
+</Admonition>
 
 ## Special Default Conditions
 
 ### 🎖️ CompletedObjective Condition
 
-:::info Description
+<Admonition type="info" title="Description">
 
 This Condition can ONLY be used when attached to an Objective. That's because it's valid for the current Quest. Other Condition attachment places may not be bound to a specific Quest.
 
@@ -196,4 +198,4 @@ This Condition can ONLY be used when attached to an Objective. That's because it
 
 **Example command:** `/qa edit questname objectives edit 1 conditions unlock add CompletedObjective 2` - This basically makes it so Objective 2 only unlocks once Objective 1 has been completed.
 
-:::
+</Admonition>

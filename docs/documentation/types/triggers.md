@@ -5,6 +5,8 @@ description: This explains how Triggers work in NotQuests
 keywords: [notquests, triggers, quest triggers]
 ---
 
+import Admonition from '@theme/Admonition';
+
 A trigger lets a Quest *react to things that happen* while a player has it active. You bind a trigger to an **action**, and when the trigger fires, that action runs.
 
 For example: add a `DEATH` trigger to a Quest, and the moment the player dies, the bound action runs — maybe failing the Quest, maybe spawning some mobs, maybe sending a cheeky taunt. Up to you.
@@ -24,9 +26,11 @@ You add a trigger to a quest like this:
   - `--applyOn <objectiveID>` - only fire while a specific objective is active. `0` (or `Quest`, the default) means the whole quest — fire as long as the quest is active. `1` (or `O1`) means only while objective 1 is active, and so on.
   - `--world_name <world>` - only fire in this world. Defaults to `ALL` (any world).
 
-:::tip What `--applyOn` is good for
+<Admonition type="tip" title="What `--applyOn` is good for">
+
 This is what makes triggers flexible. Say objective 2 is hidden until objective 1 is done. Set `--applyOn 2` and the trigger only watches once the player reaches objective 2. Leave it off (or `0`) and it watches for the whole quest. Pretty flexible, eh?
-:::
+
+</Admonition>
 
 ## Trigger types
 

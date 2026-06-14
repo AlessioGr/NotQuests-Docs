@@ -5,6 +5,8 @@ description: Reference documentation for NotQuests — commands, configuration, 
 keywords: [notquests, documentation, reference, commands, config]
 ---
 
+import Admonition from '@theme/Admonition';
+
 # 📝 Documentation
 
 Welcome! This is the **reference** section — the place to look things up once you know your way around. If you're brand new, start with the [Getting Started guide](/docs/tutorials/getting-started) instead; it walks you through building your first quest in a few minutes.
@@ -32,6 +34,8 @@ Every quest is assembled from these. Each page lists every available type with i
 - **[🆙 Updating from v3 or older](/docs/documentation/updating-from-v3-or-older)** — migration notes.
 - **[❓ FAQ](/docs/documentation/faq)** — quick answers to common questions.
 
-:::tip Prefer learning by doing?
+<Admonition type="tip" title="Prefer learning by doing?">
+
 The [**Tutorials**](/docs/tutorials/getting-started) section is full of hands-on, practical guides — your first quest, NPC quest givers, conversations, daily quests, a reputation system, and theming. Highly recommended.
-:::
+
+</Admonition>

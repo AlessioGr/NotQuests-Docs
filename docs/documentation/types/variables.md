@@ -5,6 +5,8 @@ description: This lists all variables in NotQuests and explains how they work
 keywords: [notquests, variables, quest variables]
 ---
 
+import Admonition from '@theme/Admonition';
+
 Variables are used internally to create both advanced actions and conditions at the same time- and that much quicker! A lot of the following variables can thus be used as conditions and, in many cases, as actions as well.
 Not only that - they can also be used in so-called expressions. So you can even do calculations with these variables!
 
@@ -12,7 +14,7 @@ Not only that - they can also be used in so-called expressions. So you can even 
 
 ### ❓ ActiveQuests
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Condition:** ✅ **Action:** ✅
 
@@ -31,551 +33,551 @@ Not only that - they can also be used in so-called expressions. So you can even 
 - `/qa actions add setQuestWoodCutter ActiveQuests set woodCutter` - This action force-gives the woodCutter quest to the player and fails all other quests the player currently has
 - `/qa actions add giveForestQuests ActiveQuests add woodCutter,saveTheWoods` - This action force-gives both the woodCutter quest and the saveTheWoods quest to the player
 
-:::
+</Admonition>
 
 ### ❓ Advancement
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Condition:** ✅ **Action:** ✅
 
 **Type:** Boolean
 
-:::
+</Admonition>
 
 ### ❓ Block
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Condition:** ✅ **Action:** ✅
 
 **Type:** String
 
-:::
+</Admonition>
 
 ### ❓ Chance
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Condition:** ✅ **Action:** ❌
 
 **Type:** Boolean
 
-:::
+</Admonition>
 
 ### ❓ Climbing
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Condition:** ✅ **Action:** ❌
 
 **Type:** Boolean
 
-:::
+</Admonition>
 
 ### ❓ CompletedObjectiveIDsOfQuest
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Condition:** ✅ **Action:** ✅
 
 **Type:** String List
 
-:::
+</Admonition>
 
 ### ❓ CompletedQuests
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Condition:** ✅ **Action:** ✅
 
 **Type:** String List
 
-:::
+</Admonition>
 
 ### ❓ Condition
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Condition:** ✅ **Action:** ❌
 
 **Type:** Boolean
 
-:::
+</Admonition>
 
 ### ❓ ContainerInventory
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Condition:** ✅ **Action:** ✅
 
 **Type:** ItemStack List
 
-:::
+</Admonition>
 
 ### ❓ CurrentBiome
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Condition:** ✅ **Action:** ❌
 
 **Type:** String
 
-:::
+</Admonition>
 
 ### ❓ CurrentPositionX
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Condition:** ✅ **Action:** ✅
 
 **Type:** Double
 
-:::
+</Admonition>
 
 ### ❓ CurrentPositionY
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Condition:** ✅ **Action:** ✅
 
 **Type:** Double
 
-:::
+</Admonition>
 
 ### ❓ CurrentPositionZ
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Condition:** ✅ **Action:** ✅
 
 **Type:** Double
 
-:::
+</Admonition>
 
 ### ❓ CurrentWorld
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Condition:** ✅ **Action:** ✅
 
 **Type:** String
 
-:::
+</Admonition>
 
 ### ❓ DayOfWeek
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Condition:** ✅ **Action:** ❌
 
 **Type:** String
 
-:::
+</Admonition>
 
 ### ❓ EnderChest
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Condition:** ✅ **Action:** ✅
 
 **Type:** ItemStack List
 
-:::
+</Admonition>
 
 ### ❓ Experience
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Condition:** ✅ **Action:** ✅
 
 **Type:** Integer
 
-:::
+</Admonition>
 
 ### ❓ ExperienceLevel
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Condition:** ✅ **Action:** ✅
 
 **Type:** Integer
 
-:::
+</Admonition>
 
 ### ❓ False
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Condition:** ✅ **Action:** ❌
 
 **Type:** Boolean
 
-:::
+</Admonition>
 
 ### ❓ Flying
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Condition:** ✅ **Action:** ✅
 
 **Type:** Boolean
 
-:::
+</Admonition>
 
 ### ❓ FlySpeed
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Condition:** ✅ **Action:** ✅
 
 **Type:** Float
 
-:::
+</Admonition>
 
 ### ❓ GameMode
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Condition:** ✅ **Action:** ✅
 
 **Type:** String
 
-:::
+</Admonition>
 
 ### ❓ Glowing
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Condition:** ✅ **Action:** ✅
 
 **Type:** Boolean
 
-:::
+</Admonition>
 
 ### ❓ Health
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Condition:** ✅ **Action:** ✅
 
 **Type:** Double
 
-:::
+</Admonition>
 
 ### ❓ InLava
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Condition:** ✅ **Action:** ❌
 
 **Type:** Boolean
 
-:::
+</Admonition>
 
 ### ❓ InWater
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Condition:** ✅ **Action:** ❌
 
 **Type:** Boolean
 
-:::
+</Admonition>
 
 ### ❓ Inventory
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Condition:** ✅ **Action:** ✅
 
 **Type:** ItemStack List
 
-:::
+</Admonition>
 
 ### ❓ ItemInInventoryEnchantments
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Condition:** ✅ **Action:** ❌
 
 **Type:** String List
 
-:::
+</Admonition>
 
 ### ❓ MaxHealth
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Condition:** ✅ **Action:** ✅
 
 **Type:** Double
 
-:::
+</Admonition>
 
 ### ❓ Money
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Condition:** ✅ **Action:** ✅
 
 **Type:** Double
 
-:::
+</Admonition>
 
 ### ❓ Name
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Condition:** ✅ **Action:** ✅
 
 **Type:** String
 
-:::
+</Admonition>
 
 ### ❓ Op
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Condition:** ✅ **Action:** ✅
 
 **Type:** Boolean
 
-:::
+</Admonition>
 
 ### ❓ Permission
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Condition:** ✅ **Action:** ✅ (only if LuckPerms is installed)
 
 **Type:** Boolean
 
-:::
+</Admonition>
 
 ### ❓ Ping
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Condition:** ✅ **Action:** ❌
 
 **Type:** Integer
 
-:::
+</Admonition>
 
 ### ❓ PlaytimeTicks
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Condition:** ✅ **Action:** ✅
 
 **Type:** Integer
 
-:::
+</Admonition>
 
 ### ❓ PlaytimeMinutes
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Condition:** ✅ **Action:** ✅
 
 **Type:** Double
 
-:::
+</Admonition>
 
 ### ❓ PlaytimeHours
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Condition:** ✅ **Action:** ✅
 
 **Type:** Double
 
-:::
+</Admonition>
 
 ### ❓ QuestAbleToAccept
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Condition:** ✅ **Action:** ❌
 
 **Type:** Boolean
 
-:::
+</Admonition>
 
 ### ❓ QuestOnCooldown
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Condition:** ✅ **Action:** ❌
 
 **Type:** Boolean
 
-:::
+</Admonition>
 
 ### ❓ QuestPoints
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Condition:** ✅ **Action:** ✅
 
 **Type:** Long
 
-:::
+</Admonition>
 
 ### ❓ QuestReachedMaxAccepts
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Condition:** ✅ **Action:** ❌
 
 **Type:** Boolean
 
-:::
+</Admonition>
 
 ### ❓ QuestReachedMaxCompletions
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Condition:** ✅ **Action:** ❌
 
 **Type:** Boolean
 
-:::
+</Admonition>
 
 ### ❓ QuestReachedMaxFails
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Condition:** ✅ **Action:** ❌
 
 **Type:** Boolean
 
-:::
+</Admonition>
 
 ### ❓ RandomNumberBetweenRange
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Condition:** ✅ **Action:** ❌
 
 **Type:** Integer
 
-:::
+</Admonition>
 
 ### ❓ ReflectionStaticBoolean
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Condition:** ✅ **Action:** ✅
 
 **Type:** Boolean
 
-:::
+</Admonition>
 
 ### ❓ ReflectionStaticDouble
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Condition:** ✅ **Action:** ✅
 
 **Type:** Double
 
-:::
+</Admonition>
 
 ### ❓ ReflectionStaticFloat
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Condition:** ✅ **Action:** ✅
 
 **Type:** Float
 
-:::
+</Admonition>
 
 ### ❓ ReflectionStaticInteger
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Condition:** ✅ **Action:** ✅
 
 **Type:** Integer
 
-:::
+</Admonition>
 
 ### ❓ ReflectionStaticString
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Condition:** ✅ **Action:** ✅
 
 **Type:** String
 
-:::
+</Admonition>
 
 ### ❓ Sleeping
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Condition:** ✅ **Action:** ❌
 
 **Type:** Boolean
 
-:::
+</Admonition>
 
 ### ❓ Sneaking
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Condition:** ✅ **Action:** ✅
 
 **Type:** Boolean
 
-:::
+</Admonition>
 
 ### ❓ Sprinting
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Condition:** ✅ **Action:** ✅
 
 **Type:** Boolean
 
-:::
+</Admonition>
 
 ### ❓ Swimming
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Condition:** ✅ **Action:** ✅
 
 **Type:** Boolean
 
-:::
+</Admonition>
 
 ### ❓ True
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Condition:** ✅ **Action:** ❌
 
 **Type:** Boolean
 
-:::
+</Admonition>
 
 ### ❓ WalkSpeed
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Condition:** ✅ **Action:** ✅
 
 **Type:** Float
 
-:::
+</Admonition>
 
 ### ❓ Statistic
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Condition:** ✅ **Action:** ✅
 
@@ -585,7 +587,7 @@ Not only that - they can also be used in so-called expressions. So you can even 
 
 **Example:** `/qa conditions add killedEnough Statistic MOB_KILLS moreOrEqualThan 100` - true once the player has 100+ mob kills.
 
-:::
+</Admonition>
 
 ## Tag Variables
 
@@ -597,7 +599,7 @@ For a full, practical walkthrough, see the [reputation system tutorial](/docs/tu
 
 ### ❓ TagInteger
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Condition:** ✅ **Action:** ✅
 
@@ -610,11 +612,11 @@ For a full, practical walkthrough, see the [reputation system tutorial](/docs/tu
 - `/qa conditions add hasRep TagInteger reputation moreOrEqualThan 50` - true once the player's `reputation` tag is at least 50.
 - `/qa actions add addRep TagInteger reputation add 10` - adds 10 to the `reputation` tag.
 
-:::
+</Admonition>
 
 ### ❓ TagDouble
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Condition:** ✅ **Action:** ✅
 
@@ -622,11 +624,11 @@ For a full, practical walkthrough, see the [reputation system tutorial](/docs/tu
 
 **Required argument:** the tag name (create it with `/qa tags create Double <name>`).
 
-:::
+</Admonition>
 
 ### ❓ TagFloat
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Condition:** ✅ **Action:** ✅
 
@@ -634,11 +636,11 @@ For a full, practical walkthrough, see the [reputation system tutorial](/docs/tu
 
 **Required argument:** the tag name (create it with `/qa tags create Float <name>`).
 
-:::
+</Admonition>
 
 ### ❓ TagBoolean
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Condition:** ✅ **Action:** ✅
 
@@ -646,11 +648,11 @@ For a full, practical walkthrough, see the [reputation system tutorial](/docs/tu
 
 **Required argument:** the tag name (create it with `/qa tags create Boolean <name>`).
 
-:::
+</Admonition>
 
 ### ❓ TagString
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Condition:** ✅ **Action:** ✅
 
@@ -658,80 +660,80 @@ For a full, practical walkthrough, see the [reputation system tutorial](/docs/tu
 
 **Required argument:** the tag name (create it with `/qa tags create String <name>`).
 
-:::
+</Admonition>
 
 ## [PlaceholderAPI](https://github.com/PlaceholderAPI/PlaceholderAPI/releases) Integration Variables
 
 ### ❓ PlaceholderAPINumber
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Condition:** ✅ **Action:** ❌
 
 **Type:** Double
 
-:::
+</Admonition>
 
 ### ❓ PlaceholderAPIString
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Condition:** ✅ **Action:** ❌
 
 **Type:** String
 
-:::
+</Admonition>
 
 ## [Towny](https://github.com/TownyAdvanced/Towny/releases) Integration Variables
 
 ### ❓ TownyNationName
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Condition:** ✅ **Action:** ✅
 
 **Type:** String
 
-:::
+</Admonition>
 
 ### ❓ TownyNationTownCount
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Condition:** ✅ **Action:** ❌
 
 **Type:** Integer
 
-:::
+</Admonition>
 
 ### ❓ TownyTownPlotCount
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Condition:** ✅ **Action:** ❌
 
 **Type:** Integer
 
-:::
+</Admonition>
 
 ### ❓ TownyTownResidentCount
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Condition:** ✅ **Action:** ❌
 
 **Type:** Integer
 
-:::
+</Admonition>
 
 ## [Floodgate](https://github.com/GeyserMC/Floodgate) Integration Variables
 
 ### ❓ FloodgateIsFloodgatePlayer
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **Condition:** ✅ **Action:** ❌
 
 **Type:** Boolean
 
-:::
+</Admonition>

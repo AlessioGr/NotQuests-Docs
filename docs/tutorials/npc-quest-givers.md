@@ -5,6 +5,8 @@ description: Attach quests to NPCs and armor stands so players can pick them up 
 keywords: [notquests, npc, quest giver, citizens, fancynpcs, armor stand, questgiver]
 ---
 
+import Admonition from '@theme/Admonition';
+
 Letting players run `/q take <quest>` is fine, but it's way more immersive when they walk up to a villager, right-click them, and get handed a quest. That's what **quest givers** are for.
 
 NotQuests supports three kinds of quest givers out of the box:
@@ -29,13 +31,15 @@ Grab your NPC's id, then:
 
 That's it — now players can right-click that NPC to preview and take the quest.
 
-:::tip Don't know the id? Just click it.
+<Admonition type="tip" title="Don't know the id? Just click it.">
+
 Instead of an id, type `rightClickSelect` and then right-click the NPC you want:
 
 `/qa edit TheVirus npcs add rightClickSelect`
 
 No need to look anything up. This also works for armor stands.
-:::
+
+</Admonition>
 
 ### Hiding a quest on an NPC
 
@@ -61,9 +65,11 @@ A couple of companion commands, each of which gives you an item to click an armo
 - `/qa edit TheVirus armorstands remove` - removes the quest from an armor stand you click.
 - `/qa edit TheVirus armorstands check` - shows you which quests are on an armor stand you click.
 
-:::note
+<Admonition type="note">
+
 By default, armor stands with quests attached are protected from accidental edits, and they get a little floating particle so players can spot them. Both are configurable under `visual.armorstands` in [general.yml](/docs/documentation/configuration).
-:::
+
+</Admonition>
 
 ## Using NPCs inside objectives
 

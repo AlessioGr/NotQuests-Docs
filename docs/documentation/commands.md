@@ -5,14 +5,18 @@ description: The full list of NotQuests commands for players and admins
 keywords: [notquests, commands, command list, qa, nq, admin commands]
 ---
 
+import Admonition from '@theme/Admonition';
+
 Every NotQuests command lives under one of two roots:
 
 - **`/q`** — the **player** command (needs the `notquests.use` permission, which everyone has by default). Aliases: `/nq`, `/quest`, `/quests`, `/notquests`.
 - **`/qa`** — the **admin** command for building and managing quests (needs `notquests.admin`, OP by default). Aliases: `/nqa`, `/questadmin`, `/notquestsadmin`.
 
-:::tip
+<Admonition type="tip">
+
 You don't have to memorise any of this — just start typing and the **tab-completion** will guide you the whole way. This page is here for when you want the big picture.
-:::
+
+</Admonition>
 
 For every generated command shape, including nested objective/action/condition commands and flag
 details, see the [Generated Command Reference](./command-reference).
@@ -35,9 +39,11 @@ In the lists below: `<required>` is a required argument, `[optional]` is optiona
 - **`/q profiles create <name>`** - Create a new profile (a separate, fresh save of your quest progress).
 - **`/q profiles change <name>`** - Switch to another profile.
 
-:::info Profiles
+<Admonition type="info" title="Profiles">
+
 A profile is a self-contained save of a player's quest progress (active/completed quests, Quest Points, tags, cooldowns). Switching profiles is like having multiple save files. Managing profiles needs the `notquests.user.profiles` permission.
-:::
+
+</Admonition>
 
 ## 🛠️ Admin commands (`/qa`)
 
@@ -136,6 +142,8 @@ Reusable actions and conditions you can refer to by name from anywhere.
 - **`/qa debug worldInfo`** · **`/qa debug clearOwnChat => clearOwnChat`** · **`/qa debug beaconBeam Steve spawn world,0,64,0 => beaconBeam <player> <name> <location>`** - Misc debug helpers.
 - **`/qa debug loadDataManagerUnsafe`** · **`/qa debug disablePluginAndSaving maintenance => disablePluginAndSaving <reason>`** · **`/qa debug enablePluginAndSaving maintenance => enablePluginAndSaving <reason>`** - Advanced/risky (used for things like database migrations). Back up first!
 
-:::tip Lost? Use the in-game help
+<Admonition type="tip" title="Lost? Use the in-game help">
+
 `/qa help` and `/qa help <search>` open a searchable, clickable help menu — handy when you can't remember the exact path.
-:::
+
+</Admonition>

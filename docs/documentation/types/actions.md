@@ -5,6 +5,8 @@ description: This lists and explains all actions (also known as rewards) in NotQ
 keywords: [notquests, actions, quest actions, rewards, quest rewards]
 ---
 
+import Admonition from '@theme/Admonition';
+
 Raw actions can be created using `/qa actions`. Those will be saved in the `plugins/notquests/categoryname/actions.yml`. Actions are also Quest rewards or Objective rewards. An action is, as the name says, an action. Any action. Something "happens".
 
 To "test" an action created via `/qa actions`, you can use `/qa actions edit actionname execute Steve => /qa actions edit <action> execute [player]`. It can have the optional flag `--ignoreConditions` if you want to ignore any conditions attached to this action.
@@ -27,7 +29,7 @@ Please consult the [Variables Section](/docs/documentation/types/variables) for 
 
 ### ❓ Boolean
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **What happens:** The value of this Boolean variable is set to either true or false
 
@@ -43,11 +45,11 @@ Please consult the [Variables Section](/docs/documentation/types/variables) for 
 - `/qa actions add actionname Flying set true` - Flying would be a Boolean variable type. This action would make the player fly.
 - `/qa actions add pp3 Money add ((TagInteger(TagName:points)>=4)*(10+30))+(!(TagInteger(TagName:points)>=4)*5)` - This is just to show that very complex actions are also possible with NotQuests expression system. This action does the following: If your "points" (from the Integer tag) are bigger or equal 4, this action will give you 40$. Otherwise, it will give you 5$.
 
-:::
+</Admonition>
 
 ### 📙 List
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **What happens:** The value of this List variable is changed
 
@@ -60,11 +62,11 @@ Please consult the [Variables Section](/docs/documentation/types/variables) for 
 
 **Example command:** `/qa actions add actionname ActiveQuests add questname` - ActiveQuests would be a List variable.
 
-:::
+</Admonition>
 
 ### 📖 ItemStackList
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **What happens:** The value of this ItemStackList variable is changed
 
@@ -77,11 +79,11 @@ Please consult the [Variables Section](/docs/documentation/types/variables) for 
 
 **Example command:** `/qa actions add actionname Inventory remove hand 3` - Inventory would be an ItemStackList variable.
 
-:::
+</Admonition>
 
 ### 💯 Number
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **What happens:** The value of this Number variable is changed
 
@@ -96,11 +98,11 @@ Please consult the [Variables Section](/docs/documentation/types/variables) for 
 **Example command with math expression + other variables**: `/qa actions add actionname Money set QuestPoints*Money+500-30/2`
 **Example command with very advanced expression:** `/qa actions add actionname Money set 10+TagInteger(TagName:reputation)*TagInteger(TagName:level)`
 
-:::
+</Admonition>
 
 ### 🆎 String
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **What happens:** The value of this String variable is changed
 
@@ -113,7 +115,7 @@ Please consult the [Variables Section](/docs/documentation/types/variables) for 
 
 **Example command:** `/qa actions add actionname CurrentWorld set world` - CurrentWorld would be a String variable type. This action teleports the player to another world.
 
-:::
+</Admonition>
 
 ## Default Actions
 
@@ -121,7 +123,7 @@ These are the default, "standalone" actions and don't depend on variables.
 
 ### 🤓 Action
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **What happens:** One or multiple other actions are executed. Yes, this simply executes other actions defined in the `actions.yml`.
 
@@ -150,11 +152,11 @@ For these commands, I have pre-created the actions sm1, sm2, sm3 ... sm10 which 
 - `/qa actions add sendGuaranteedRandomMessage Action sm1,sm2,sm3,sm4,sm5,sm6,sm7,sm8,sm9,sm10 1 --minRandom 1 --maxRandom 1 --onlyCountForRandomIfConditionsFulfilled` - This is useful if your actions have conditions attached to them. It does exactly the same as the previous action. However, in case the action it chooses does not fulfill its condition, it will try out another action instead. The previous action however would simply send nothing
 - `/qa actions add sendOneOrTwoRandomMessage Action sm1,sm2,sm3,sm4,sm5,sm6,sm7,sm8,sm9,sm10 1 --minRandom 1 --maxRandom 2` - Executes either one or two random actions out of the provided actions
 
-:::
+</Admonition>
 
 ### 🔆 Beam
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **What happens:** A beacon-style light beam is spawned (or removed) at a location. Handy for marking a quest objective spot from far away.
 
@@ -169,11 +171,11 @@ For these commands, I have pre-created the actions sm1, sm2, sm3 ... sm10 which 
 - `/qa actions add showbeam Beam questbeam spawn world 100 64 200`
 - `/qa actions add hidebeam Beam questbeam remove`
 
-:::
+</Admonition>
 
 ### 📢 BroadcastMessage
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **What happens:** A message is broadcast to *everyone* on the server. Supports MiniMessage formatting (`<gold>`, `<bold>`, ...).
 
@@ -183,11 +185,11 @@ For these commands, I have pre-created the actions sm1, sm2, sm3 ... sm10 which 
 
 **Example command:** `/qa actions add announce BroadcastMessage <gold>A hero has risen!`
 
-:::
+</Admonition>
 
 ### 💬 Chat
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **What happens:** The player sends a chat message, exactly as if they typed it themselves.
 
@@ -197,11 +199,11 @@ For these commands, I have pre-created the actions sm1, sm2, sm3 ... sm10 which 
 
 **Example command:** `/qa actions add greet Chat "Hey everyone, I'm on an adventure!"`
 
-:::
+</Admonition>
 
 ### ❌ CloseInventory
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **What happens:** Closes whatever inventory or GUI the player currently has open. Useful at the end of a conversation or after opening a menu.
 
@@ -209,11 +211,11 @@ For these commands, I have pre-created the actions sm1, sm2, sm3 ... sm10 which 
 
 **Example command:** `/qa actions add closegui CloseInventory`
 
-:::
+</Admonition>
 
 ### ✅ CompleteQuest
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **What happens:** Instantly completes a Quest for the player, as if they finished every objective.
 
@@ -223,11 +225,11 @@ For these commands, I have pre-created the actions sm1, sm2, sm3 ... sm10 which 
 
 **Example command:** `/qa actions add finishtutorial CompleteQuest tutorial`
 
-:::
+</Admonition>
 
 ### 🖥️ ConsoleCommand
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **What happens:** Runs a command from the **console**. Use this whenever you need elevated permissions — giving currency through another economy plugin, granting a LuckPerms group, etc. `%player%` is replaced with the player's name.
 
@@ -237,11 +239,11 @@ For these commands, I have pre-created the actions sm1, sm2, sm3 ... sm10 which 
 
 **Example command:** `/qa actions add payout ConsoleCommand eco give %player% 500`
 
-:::
+</Admonition>
 
 ### 💥 FailQuest
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **What happens:** Fails a Quest for the player.
 
@@ -251,11 +253,11 @@ For these commands, I have pre-created the actions sm1, sm2, sm3 ... sm10 which 
 
 **Example command:** `/qa actions add botched FailQuest heist`
 
-:::
+</Admonition>
 
 ### 🎒 GiveItem
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **What happens:** Gives an item to the player. Works with vanilla materials and items made in the NotQuests item system.
 
@@ -266,11 +268,11 @@ For these commands, I have pre-created the actions sm1, sm2, sm3 ... sm10 which 
 
 **Example command:** `/qa actions add reward_diamonds GiveItem diamond 16`
 
-:::
+</Admonition>
 
 ### 📜 GiveQuest
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **What happens:** Gives (starts) a Quest for the player.
 
@@ -282,11 +284,11 @@ For these commands, I have pre-created the actions sm1, sm2, sm3 ... sm10 which 
 
 **Example command:** `/qa actions add startchapter2 GiveQuest chapter2 --forceGive`
 
-:::
+</Admonition>
 
 ### 🪟 OpenGui
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **What happens:** Opens one of NotQuests' GUIs for the player.
 
@@ -301,11 +303,11 @@ For these commands, I have pre-created the actions sm1, sm2, sm3 ... sm10 which 
 
 **Example command:** `/qa actions add showquests OpenGui questsoverview`
 
-:::
+</Admonition>
 
 ### 🔊 PlaySound
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **What happens:** Plays a sound for the player — or for everyone, at a location.
 
@@ -323,11 +325,11 @@ For these commands, I have pre-created the actions sm1, sm2, sm3 ... sm10 which 
 
 **Example command:** `/qa actions add levelup PlaySound entity.player.levelup --volume 0.8 --pitch 1.2`
 
-:::
+</Admonition>
 
 ### 🧑 PlayerCommand
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **What happens:** Runs a command **as the player** (with their permissions). `%player%` is replaced with their name.
 
@@ -337,11 +339,11 @@ For these commands, I have pre-created the actions sm1, sm2, sm3 ... sm10 which 
 
 **Example command:** `/qa actions add gohome PlayerCommand home`
 
-:::
+</Admonition>
 
 ### ✉️ SendMessage
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **What happens:** Sends a private message to the player. Supports MiniMessage formatting.
 
@@ -351,11 +353,11 @@ For these commands, I have pre-created the actions sm1, sm2, sm3 ... sm10 which 
 
 **Example command:** `/qa actions add congrats SendMessage <green>Nice work — the village is safe again!`
 
-:::
+</Admonition>
 
 ### 🧟 SpawnMob
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **What happens:** Spawns mobs — either right on the player, or at fixed coordinates.
 
@@ -369,11 +371,11 @@ For these commands, I have pre-created the actions sm1, sm2, sm3 ... sm10 which 
 
 **Example command:** `/qa actions add ambush SpawnMob ZOMBIE 5 PlayerLocation --spawnRadiusX 3 --spawnRadiusZ 3`
 
-:::
+</Admonition>
 
 ### 🗨️ StartConversation
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **What happens:** Starts a [conversation](/docs/documentation/conversation-system) for the player.
 
@@ -385,11 +387,11 @@ For these commands, I have pre-created the actions sm1, sm2, sm3 ... sm10 which 
 
 **Example command:** `/qa actions add talktoking StartConversation king_intro --endPrevious`
 
-:::
+</Admonition>
 
 ### 🎯 TriggerCommand
 
-:::info Description
+<Admonition type="info" title="Description">
 
 **What happens:** Fires a named `TriggerCommand` objective. This is how you complete one of those "do something, then we mark it done" objectives from an action — for example after a player flips a lever or reaches a region.
 
@@ -399,4 +401,4 @@ For these commands, I have pre-created the actions sm1, sm2, sm3 ... sm10 which 
 
 **Example command:** `/qa actions add pulllever TriggerCommand lever1`
 
-:::
+</Admonition>

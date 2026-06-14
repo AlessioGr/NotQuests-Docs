@@ -5,11 +5,13 @@ description: This explains how you can use the NotQuests API to create your own 
 keywords: [notquests, api, tutorial]
 ---
 
-:::danger Before you read
+import Admonition from '@theme/Admonition';
+
+<Admonition type="danger" title="Before you read">
 
 This guide was designed with version **6.2.0** and **[Paper 26.1.2](https://papermc.io/)** in mind.
 
-:::
+</Admonition>
 
 Let's create our first Project using the NotQuests API!
 
