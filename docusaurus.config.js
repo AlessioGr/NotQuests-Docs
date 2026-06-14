@@ -76,6 +76,7 @@ const config = {
         searchPagePath: 'search',
         askAi: {
           assistantId: '8eaecbd4-465e-4175-85b9-579388fb2ebc',
+          indexName: 'notquests_markdown',
           suggestedQuestions: true,
         },
       },
