@@ -17,15 +17,20 @@ This is not a separate objective type. It is an extra setting you can add to alm
 
 1. Add the objective.
 2. Find its objective ID with `/qa edit questname objectives list`.
-3. Set the location with `/qa edit questname objectives edit 1 location set world 1453 71 -2451`.
+3. Stand where the marker should point and run `/qa edit questname objectives edit 1 location set here`.
 
 When a player is tracking that objective, NotQuests shows a client-side beam/marker pointing toward the saved location. It does not place real blocks in the world for everyone. The marker is only shown to the player who is doing the quest.
 
 Useful commands:
 
-- **`/qa edit questname objectives edit 1 location set world 1453 71 -2451`** - Save a location for objective `1` and turn the marker on.
+- **`/qa edit questname objectives edit 1 location set here`** - Save your current in-game position for objective `1` and turn the marker on. This is the easiest way to set it up.
+- **`/qa edit questname objectives edit 1 location set looking`** - Save the block you are looking at and turn the marker on.
+- **`/qa edit questname objectives edit 1 location set world 1453 71 -2451`** - Save exact coordinates. This is useful from console or when copying coordinates from another tool.
+- **`/qa edit questname objectives edit 1 location status`** - Show whether the objective has a saved marker, whether it is enabled, and where it points.
+- **`/qa edit questname objectives edit 1 location preview`** - Show the saved marker to yourself for a short preview.
 - **`/qa edit questname objectives edit 1 location enable`** - Turn the marker back on if the objective already has a saved location.
-- **`/qa edit questname objectives edit 1 location disable`** - Turn the marker off again.
+- **`/qa edit questname objectives edit 1 location disable`** - Turn the marker off but keep the saved location.
+- **`/qa edit questname objectives edit 1 location clear`** - Delete the saved marker location and turn it off.
 
 Good use cases:
 
@@ -37,6 +42,7 @@ Good use cases:
 Notes:
 
 - The marker appears for the player's currently tracked objective. This is usually the newest unlocked objective, or the objective that just gained progress.
+- `set here`, `set looking`, and `preview` must be run in-game by a player. Console can use the exact-coordinate `location set world x y z` command.
 - The target location must be in the same world as the player.
 - Keep `general.enable-move-event` enabled in `general.yml`; it is needed for location tracking and `ReachLocation`.
 - This is different from the `Beam` action. Objective locations are tied to objective tracking. The `Beam` action is a separate action you can run from rewards, triggers, or saved actions.
