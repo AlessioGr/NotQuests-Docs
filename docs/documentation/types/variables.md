@@ -163,6 +163,8 @@ Not only that - they can also be used in so-called expressions. So you can even 
 
 **Type:** String
 
+Reads the world the player is currently in. As an action, it teleports the player to that world's spawn.
+
 </Admonition>
 
 ### ❓ DayOfWeek
@@ -172,6 +174,22 @@ Not only that - they can also be used in so-called expressions. So you can even 
 **Condition:** ✅ **Action:** ❌
 
 **Type:** String
+
+</Admonition>
+
+### ❓ DistanceToLocation
+
+<Admonition type="info" title="Description">
+
+**Condition:** ✅ **Action:** ❌
+
+**Type:** Double
+
+Returns the player's distance in blocks from a fixed location. If the player is in a different world, the value is very large so “less than” checks will not pass by accident.
+
+**Arguments:** `<world> <x> <y> <z>`
+
+**Example condition:** `/qa conditions add nearShrine DistanceToLocation world 120 72 -45 lessThan 8`
 
 </Admonition>
 
@@ -232,6 +250,22 @@ Not only that - they can also be used in so-called expressions. So you can even 
 **Condition:** ✅ **Action:** ✅
 
 **Type:** Float
+
+</Admonition>
+
+### ❓ FoodLevel
+
+<Admonition type="info" title="Description">
+
+**Condition:** ✅ **Action:** ✅
+
+**Type:** Integer
+
+Reads or changes the player's hunger bar value from `0` to `20`.
+
+**Example condition:** `/qa conditions add isHungry FoodLevel lessThan 8`
+
+**Example action:** `/qa actions add feedPlayer FoodLevel set 20`
 
 </Admonition>
 
@@ -332,6 +366,24 @@ Not only that - they can also be used in so-called expressions. So you can even 
 **Condition:** ✅ **Action:** ✅
 
 **Type:** String
+
+</Admonition>
+
+### ❓ NearbyEntityCount
+
+<Admonition type="info" title="Description">
+
+**Condition:** ✅ **Action:** ❌
+
+**Type:** Integer
+
+Counts nearby entities around the player. The player themself is not counted.
+
+**Arguments:** `<entityType> <radius>`
+
+Use a mob type like `zombie`, `villager`, or `wolf`, or use `any` to count all nearby entities.
+
+**Example condition:** `/qa conditions add crowded NearbyEntityCount any 10 moreOrEqualThan 5`
 
 </Admonition>
 
@@ -525,6 +577,22 @@ Not only that - they can also be used in so-called expressions. So you can even 
 
 </Admonition>
 
+### ❓ Saturation
+
+<Admonition type="info" title="Description">
+
+**Condition:** ✅ **Action:** ✅
+
+**Type:** Float
+
+Reads or changes the player's hidden saturation value. This is Minecraft's extra food buffer before the visible hunger bar starts dropping.
+
+**Example condition:** `/qa conditions add lowSaturation Saturation lessThan 2`
+
+**Example action:** `/qa actions add restoreSaturation Saturation set 10`
+
+</Admonition>
+
 ### ❓ Sneaking
 
 <Admonition type="info" title="Description">
@@ -572,6 +640,22 @@ Not only that - they can also be used in so-called expressions. So you can even 
 **Condition:** ✅ **Action:** ✅
 
 **Type:** Float
+
+</Admonition>
+
+### ❓ Weather
+
+<Admonition type="info" title="Description">
+
+**Condition:** ✅ **Action:** ✅
+
+**Type:** String
+
+Reads or changes the weather in the player's current world. Possible values are `clear`, `rain`, and `thunder`.
+
+**Example condition:** `/qa conditions add isStormy Weather equals thunder`
+
+**Example action:** `/qa actions add makeItRain Weather set rain`
 
 </Admonition>
 

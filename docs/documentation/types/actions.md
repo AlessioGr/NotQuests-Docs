@@ -327,6 +327,28 @@ For these commands, I have pre-created the actions sm1, sm2, sm3 ... sm10 which 
 
 </Admonition>
 
+### ✨ SpawnParticle
+
+<Admonition type="info" title="Description">
+
+**What happens:** Spawns a visual particle effect at the player's location or at fixed coordinates.
+
+Only particles that do not need extra Bukkit data are supported by this action. Examples include `happy_villager`, `flame`, `heart`, `cloud`, and `end_rod`.
+
+**Command Arguments:**
+
+- **`<particle>`** - Particle effect to spawn.
+- **`<count>`** - Number of particles.
+- **`PlayerLocation`** *or* **`Location <world> <x> <y> <z>`** - Where to spawn the particles.
+- **`(flags)`** - Optional flags
+  - `--offsetX <number>`, `--offsetY <number>`, `--offsetZ <number>` - Random spread around the particle location.
+  - `--speed <number>` - Particle speed value.
+  - `--forEveryone` - Show the particles to every online player instead of only the target player.
+
+**Example command:** `/qa actions add sparkle SpawnParticle happy_villager 12 PlayerLocation --offsetY 0.5`
+
+</Admonition>
+
 ### 🧑 PlayerCommand
 
 <Admonition type="info" title="Description">
@@ -352,6 +374,40 @@ For these commands, I have pre-created the actions sm1, sm2, sm3 ... sm10 which 
 - **`<message>`** - The message to send.
 
 **Example command:** `/qa actions add congrats SendMessage <green>Nice work — the village is safe again!`
+
+</Admonition>
+
+### 🖥️ ShowActionBar
+
+<Admonition type="info" title="Description">
+
+**What happens:** Shows a short message above the player's hotbar. Supports MiniMessage formatting and NotQuests placeholders.
+
+**Command Arguments:**
+
+- **`<message>`** - The action-bar message to show.
+
+**Example command:** `/qa actions add hint ShowActionBar <yellow>Look for the smoke above the ruins`
+
+</Admonition>
+
+### 🏷️ ShowTitle
+
+<Admonition type="info" title="Description">
+
+**What happens:** Shows a big title in the middle of the player's screen.
+
+Put `|` between the title and subtitle if you want both. Use the `timed` form when you want custom fade and stay durations.
+
+**Command Arguments:**
+
+- **`<title>`** - The title text. Supports MiniMessage formatting and NotQuests placeholders.
+- **`timed <fadeIn> <stay> <fadeOut> <title>`** - Optional form with custom title timings. Durations can be `250ms`, `2s`, `1m`, and so on.
+
+**Example commands:**
+
+- `/qa actions add chapterTitle ShowTitle <gold>Chapter 2|<gray>The Old Mine`
+- `/qa actions add fastTitle ShowTitle timed 250ms 2s 500ms <green>Quest Complete`
 
 </Admonition>
 
@@ -400,6 +456,24 @@ For these commands, I have pre-created the actions sm1, sm2, sm3 ... sm10 which 
 - **`<triggerName>`** - The name of the trigger to fire (matches the name on the `TriggerCommand` objective).
 
 **Example command:** `/qa actions add pulllever TriggerCommand lever1`
+
+</Admonition>
+
+### 🧭 Teleport
+
+<Admonition type="info" title="Description">
+
+**What happens:** Teleports the target player to a fixed location.
+
+**Command Arguments:**
+
+- **`<world>`** - World to teleport to.
+- **`<x> <y> <z>`** - Coordinates to teleport to.
+- **`(flags)`** - Optional flags
+  - `--yaw <number>` - Direction the player should face after teleporting.
+  - `--pitch <number>` - Up/down look angle after teleporting.
+
+**Example command:** `/qa actions add sendToDungeon Teleport world 120 65 -34 --yaw 90`
 
 </Admonition>
 

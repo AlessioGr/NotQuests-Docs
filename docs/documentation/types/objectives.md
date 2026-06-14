@@ -103,6 +103,21 @@ First, we'll list the objectives which are always available:
 
 </Admonition>
 
+### 🐺 TameMobs
+
+<Admonition type="info" title="Description">
+
+**Completed when:** Player tames a specific mob, such as a wolf, cat, horse, or parrot.
+
+**Command Arguments:**
+
+- **`<entityType>`** - The mob type the player needs to tame. Use `any` if any tameable mob should count.
+- **`<amount>`** - The amount of mobs the player needs to tame.
+
+**Example command:** `/qa edit questname objectives add TameMobs wolf 1`
+
+</Admonition>
+
 ### 🌾 Harvest
 
 <Admonition type="info" title="Description">
@@ -186,6 +201,23 @@ This is safer than using `BreakBlocks` or `PickupItems` for farming quests. NotQ
 - **`<NPC ID or Armorstand>`** - Either enter the Citizens or FancyNPCs NPC ID, or 'armorstand' to receive an item with which you can easily attach this objective to an armorstand.
 
 **Example command:** `/qa edit questname objectives add DeliverItems coal 20 armorstand`
+
+</Admonition>
+
+### 🧑‍🌾 TradeWithVillager
+
+<Admonition type="info" title="Description">
+
+**Completed when:** Player takes a matching result item from a villager trading window.
+
+Use this for economy or reputation quests where the player must trade with villagers. NotQuests counts the item the trade gives to the player, not the items the player pays.
+
+**Command Arguments:**
+
+- **`<materials>`** - The trade result item that should count. Use a material like `emerald`, a comma-separated list such as `emerald,diamond`, a NotQuests custom item, or `any`.
+- **`<amount>`** - The amount of matching traded items the player needs to receive.
+
+**Example command:** `/qa edit questname objectives add TradeWithVillager emerald 12`
 
 </Admonition>
 
@@ -468,6 +500,44 @@ NotQuests tracks the brewing result, not just any potion in the inventory. A pla
 - **`<amount>`** - The amount of freshly brewed items the player has to collect.
 
 **Example command:** `/qa edit questname objectives add BrewItems potion 5`
+
+</Admonition>
+
+### ⚒️ SmithItems
+
+<Admonition type="info" title="Description">
+
+**Completed when:** Player takes a matching result item from a smithing table.
+
+The output item counts, so this is useful for quests around upgrades, armor trims, or other smithing recipes.
+
+**Command Arguments:**
+
+- **`<materials>`** - The smithing result item that should count. Use a material like `netherite_sword`, a comma-separated list, a NotQuests custom item, or `any`.
+- **`<amount>`** - The amount of matching smithing result items the player needs to take.
+
+**Example command:** `/qa edit questname objectives add SmithItems netherite_sword 1`
+
+</Admonition>
+
+### 💀 Die
+
+<Admonition type="info" title="Description">
+
+**Completed when:** Player dies.
+
+You can count every death, or require a specific death cause such as `fall`, `lava`, `drown`, or `player_attack`.
+
+**Command Arguments:**
+
+- **`<amount>`** - Amount of times the player needs to die.
+- **`(flags)`** - Optional flags
+  - `--cause <damage type>` - Only count deaths caused by this Minecraft damage type.
+
+**Example commands:**
+
+- `/qa edit questname objectives add Die 1`
+- `/qa edit questname objectives add Die 1 --cause fall`
 
 </Admonition>
 
