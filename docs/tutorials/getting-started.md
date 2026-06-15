@@ -9,7 +9,7 @@ import Admonition from '@theme/Admonition';
 
 <Admonition type="note" title="Before you start">
 
-This guide is written for **NotQuests 6.2.0** on **[Paper 26.1.2](https://papermc.io/)**. Older versions and Spigot have fewer features and some different commands, so a few things might not line up there.
+This guide is written for **NotQuests 6.3.0** on **[Paper 26.1.2](https://papermc.io/)**. Older versions and Spigot have fewer features and some different commands, so a few things might not line up there.
 
 </Admonition>
 
