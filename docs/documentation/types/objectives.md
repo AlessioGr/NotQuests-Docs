@@ -264,10 +264,9 @@ Use this for economy or reputation quests where the player must trade with villa
 **Command Arguments:**
 
 - **`<amount>`** - Amount of times the player needs to interact
-- **`<world>`** - World name of the location with which the player has to interact
-- **`<x>`** - X-coordinate location with which the player has to interact
-- **`<y>`** - Y-coordinate of the location with which the player has to interact
-- **`<z>`** - Z-coordinate of the location with which the player has to interact
+- Then choose one location setup:
+  - **`looking`** - Use the block you are currently looking at. This must be run in-game by a player.
+  - **`<world> <x> <y> <z>`** - Use exact coordinates. This also works from console.
 - **`(flags)`** - Optional flags
   - `--leftClick` - If you set this flag, then interactions by left-clicking the location will count.
   - `--rightClick` - If you set this flag, then interactions by right-clicking the location will count.
@@ -275,7 +274,9 @@ Use this for economy or reputation quests where the player must trade with villa
   - `--taskDescription <task description>` - With this flag you can specify the description of what the player has to do. It will be displayed in the objective.
   - `--maxDistance <radius in blocks>` - This is the maximum radius in blocks around the specified location in which the interaction will count.
 
-**Example command:** `/qa edit questname objectives add Interact 2 world 1453 71 -2451 --rightClick --maxDistance 2 --cancelInteraction --taskDescription "Find Trents fishing rod"`
+**Easy in-game setup:** `/qa edit questname objectives add Interact 2 looking --rightClick --maxDistance 2 --cancelInteraction --taskDescription "Find Trents fishing rod"`
+
+**Exact-coordinate setup:** `/qa edit questname objectives add Interact 2 world 1453 71 -2451 --rightClick --maxDistance 2 --cancelInteraction --taskDescription "Find Trents fishing rod"`
 
 </Admonition>
 
