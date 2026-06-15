@@ -284,20 +284,22 @@ Use this for economy or reputation quests where the player must trade with villa
 
 <Admonition type="info" title="Description">
 
-**Completed when:** Player shoots an arrow and that arrow lands inside a radius around a target location.
+**Completed when:** Player shoots an arrow and that arrow lands inside a target region.
 
 This is useful for archery ranges, target practice quests, hidden switches, dungeon puzzles, and any quest where the player should hit an area instead of just standing there.
 
 **Command Arguments:**
 
 - **`<amount>`** - Amount of arrows that need to land inside the target region
-- **`<world>`** - World containing the target region
+- **`<world>`** - World containing the target region. If WorldEdit is installed, you can use `worldeditselection` instead to use your current selection.
 - **`<x>`** - Center X coordinate of the target region
 - **`<y>`** - Center Y coordinate of the target region
 - **`<z>`** - Center Z coordinate of the target region
 - **`<radius>`** - Radius in blocks around the center where arrows count
 
 **Example command:** `/qa edit questname objectives add ShootArrow 3 world 1453 71 -2451 4`
+
+**WorldEdit example:** `@optional-integration /qa edit questname objectives add ShootArrow 3 worldeditselection`
 
 </Admonition>
 
@@ -432,14 +434,20 @@ TODO
 
 <Admonition type="info" title="Description">
 
-**Completed when:** Player reaches a certain location
+**Completed when:** Player reaches a certain location or region.
 
 **Command Arguments:**
 
-- **`<selection type>`** - Currently, the only selection type is *worldeditselection*. This takes your current worldedit selection as the location the player needs to reach. Thus, worldedit is currently required to create this objective. Please make a worldedit selection (via `//wand` or `//pos1` and `//pos2`) before running this command.
+- **`<world>`** - World containing the center of the target region. If WorldEdit is installed, you can use `worldeditselection` instead to use your current selection.
+- **`<x>`** - Center X coordinate of the target region
+- **`<y>`** - Center Y coordinate of the target region
+- **`<z>`** - Center Z coordinate of the target region
+- **`<radius>`** - Radius in blocks around the center where reaching the location counts
 - **`<Location Name>`** - Name of the location the player has to reach. It will be displayed in the objective task description.
 
-**Example command:** `@optional-integration /qa edit questname objectives add ReachLocation worldeditselection Luthers Church`
+**Example command:** `/qa edit questname objectives add ReachLocation world 1453 71 -2451 6 Luthers Church`
+
+**WorldEdit example:** `@optional-integration /qa edit questname objectives add ReachLocation worldeditselection Luthers Church`
 
 </Admonition>
 
