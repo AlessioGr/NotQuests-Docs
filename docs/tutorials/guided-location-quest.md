@@ -5,8 +5,6 @@ description: Create a quest that guides players to a place with a marker beam an
 keywords: [notquests, tutorial, location, marker, beam, bossbar, compass, guided quest]
 ---
 
-import Admonition from '@theme/Admonition';
-
 This tutorial shows how to make a quest that points players toward a real place in your world.
 
 The player will:
@@ -19,13 +17,7 @@ The player will:
 
 We'll build a small quest called **Lost Relic**. The player has to find an old crate near some ruins and right-click it.
 
-<Admonition type="note" title="Screenshot placeholder">
-
-Add screenshot later: `static/img/tutorials/guided-location-quest/01-player-following-marker.jpg`
-
-Suggested shot: the player looking toward the guiding beam, with the bossbar compass visible at the top.
-
-</Admonition>
+![A player following a NotQuests guiding beam with the bossbar compass visible at the top.](/img/tutorials/guided-location-quest/01-player-following-marker.jpg)
 
 ## Before you start
 
@@ -55,14 +47,6 @@ visual:
 `actionbar` and `bossbar` show objective progress. `location-compass` adds the direction helper for objectives that have a saved marker location.
 
 Restart the server or reload NotQuests after changing the config.
-
-<Admonition type="note" title="Screenshot placeholder">
-
-Add screenshot later: `static/img/tutorials/guided-location-quest/02-visual-config.jpg`
-
-Suggested shot: the `visual.objective-tracking` config section with `location-compass.enabled: true`.
-
-</Admonition>
 
 ## Create the quest
 
@@ -113,14 +97,6 @@ Preview the marker before giving the quest to players:
 
 `/qa edit LostRelic objectives edit 1 location preview`
 
-<Admonition type="note" title="Screenshot placeholder">
-
-Add screenshot later: `static/img/tutorials/guided-location-quest/03-location-preview.jpg`
-
-Suggested shot: command feedback after `location preview`, plus the temporary marker in-game.
-
-</Admonition>
-
 ## Test it like a player
 
 Take the quest:
@@ -135,14 +111,6 @@ Walk away from the target location. If everything is set up correctly:
 - the distance goes down as you get closer.
 
 Right-click the target block to complete the objective.
-
-<Admonition type="note" title="Screenshot placeholder">
-
-Add screenshot later: `static/img/tutorials/guided-location-quest/04-bossbar-compass.jpg`
-
-Suggested shot: the bossbar compass while the player is not facing the target, so the left/right direction is visible.
-
-</Admonition>
 
 ## Optional: attach the quest to an NPC
 
