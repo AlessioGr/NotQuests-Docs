@@ -15,7 +15,7 @@ Until the v7 artifacts are published to a Maven repository, put the matching Not
 
 ```groovy
 dependencies {
-    compileOnly files('libs/notquests-7.0.0-beta.1-26.2-paper.jar')
+    compileOnly files('libs/notquests-7.0.0-beta.2-26.2-paper.jar')
     compileOnly 'io.papermc.paper:paper-api:26.2.build.121-stable'
 }
 ```

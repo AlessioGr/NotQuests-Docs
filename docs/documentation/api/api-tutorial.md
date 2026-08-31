@@ -7,7 +7,7 @@ keywords: [notquests, api, tutorial, objective, variable, registry]
 
 # Creating a v7 registry pack
 
-This example targets **NotQuests 7.0.0-beta.1**, **Minecraft 26.2**, **Java 25**, and Paper. The objective and variable themselves use the portable API and can also live in a shared module for NeoForge.
+This example targets **NotQuests 7.0.0-beta.2**, **Minecraft 26.2**, **Java 25**, and Paper. The objective and variable themselves use the portable API and can also live in a shared module for NeoForge.
 
 Start with the dependency and `plugin.yml` setup from [API usage](./api-usage).
 

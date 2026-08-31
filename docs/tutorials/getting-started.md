@@ -9,7 +9,7 @@ import Admonition from '@theme/Admonition';
 
 <Admonition type="note" title="Before you start">
 
-This guide is written for **NotQuests 7.0.0-beta.1** on **Minecraft 26.2**. The commands and quest format are the same on Paper and NeoForge. Use Java 25 and install the jar that matches your platform; Spigot is not supported.
+This guide is written for **NotQuests 7.0.0-beta.2** on **Minecraft 26.2**. The commands and quest format are the same on Paper and NeoForge. Use Java 25 and install the jar that matches your platform; Spigot is not supported.
 
 </Admonition>
 

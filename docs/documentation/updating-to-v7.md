@@ -7,7 +7,7 @@ keywords: [notquests, update, migration, 6.3, 7.0, paper, neoforge]
 
 # Updating from 6.3 to v7
 
-NotQuests 7.0.0-beta.1 targets **Minecraft 26.2** and **Java 25**. It supports Paper and NeoForge; Spigot is no longer supported.
+NotQuests 7.0.0-beta.2 targets **Minecraft 26.2** and **Java 25**. It supports Paper and NeoForge; Spigot is no longer supported.
 
 ## Before starting
 
