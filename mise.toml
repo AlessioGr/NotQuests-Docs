@@ -1,5 +1,5 @@
-# NotQuests docs — Node 24.16.0 is required for native TypeScript script execution.
+# NotQuests docs — Node 26.8.1 is required for native TypeScript script execution.
 
 [tools]
-node = "24.16.0"
+node = "26.8.1"
 "npm:pnpm" = "11.24.0"
