@@ -68,18 +68,17 @@ const config = {
         // Public API key: it is safe to commit it
         apiKey: '11a48fc15b8a38e14d0dca780c6cd2ab',
 
-        indexName: 'notquests',
+        indices: [{name: 'notquests'}],
 
         // Optional: see doc section below
         contextualSearch: true,
 
         // Keep the UI focused on docs search and expose a shareable full-page search route.
         placeholder: 'Search NotQuests docs',
-        searchPagePath: 'search',
+        searchPage: {path: 'search'},
         askAi: {
-          assistantId: '8eaecbd4-465e-4175-85b9-579388fb2ebc',
-          indexName: 'notquests_markdown',
-          agentStudio: true,
+          agentId: '8eaecbd4-465e-4175-85b9-579388fb2ebc',
+          indices: ['notquests_markdown'],
           searchParameters: {
             notquests_markdown: {
               attributesToRetrieve: ['title', 'heading', 'text', 'url'],

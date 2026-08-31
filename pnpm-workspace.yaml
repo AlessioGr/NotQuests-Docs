@@ -1,5 +1,9 @@
+overrides:
+  '@docsearch/core': 5.0.4
+  '@docsearch/modal': 5.0.4
+  '@docsearch/react': 5.0.4
+  '@docsearch/sidepanel': 5.0.4
+
 allowBuilds:
   '@swc/core': true
   core-js: true
-patchedDependencies:
-  '@docsearch/react@4.6.3': patches/@docsearch__react@4.6.3.patch
