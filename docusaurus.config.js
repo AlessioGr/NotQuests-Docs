@@ -1,41 +1,42 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const {themes} = require('prism-react-renderer');
+const { themes } = require("prism-react-renderer");
 const lightCodeTheme = themes.github;
 const darkCodeTheme = themes.dracula;
-const commandPlugin = require('./src/remarkplugins/command')
+const commandPlugin = require("./src/remarkplugins/command");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'NotQuests',
-  tagline: 'A flexible Minecraft quest and conversation system for Paper and NeoForge',
-  url: 'https://www.notquests.com',
-  baseUrl: '/',
-  onBrokenLinks: 'throw',
+  title: "NotQuests",
+  tagline:
+    "A flexible Minecraft quest and conversation system for Paper and NeoForge",
+  url: "https://www.notquests.com",
+  baseUrl: "/",
+  onBrokenLinks: "throw",
   markdown: {
     hooks: {
-      onBrokenMarkdownLinks: 'warn',
+      onBrokenMarkdownLinks: "warn",
     },
   },
   future: {
     v4: true,
     faster: true,
   },
-  clientModules: [require.resolve('./src/clientModules/commandCopy.ts')],
-  favicon: 'img/favicon.ico',
-  organizationName: 'alessiogr', // Usually your GitHub org/user name.
-  projectName: 'notquests', // Usually your repo name.
+  clientModules: [require.resolve("./src/clientModules/commandCopy.ts")],
+  favicon: "img/favicon.ico",
+  organizationName: "alessiogr", // Usually your GitHub org/user name.
+  projectName: "notquests", // Usually your repo name.
 
   presets: [
     [
-      'classic',
+      "classic",
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
+          sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
-          editUrl: 'https://github.com/AlessioGr/notquests-docs/tree/main/',
+          editUrl: "https://github.com/AlessioGr/notquests-docs/tree/main/",
           remarkPlugins: [commandPlugin],
         },
         /*blog: {
@@ -45,85 +46,93 @@ const config = {
             'https://github.com/AlessioGr/notquests-docs/tree/main/blog/',
         },*/
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: require.resolve("./src/css/custom.css"),
         },
         sitemap: {
-          changefreq: 'weekly',
+          changefreq: "weekly",
           priority: 0.5,
         },
       }),
     ],
   ],
 
-  plugins: ['@docsearch/docusaurus-adapter', 'docusaurus-markdown-source-plugin'],
+  plugins: [
+    "@docsearch/docusaurus-adapter",
+    "docusaurus-markdown-source-plugin",
+  ],
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      metadata: [{name: 'keywords', content: 'notquests, notquest, minecraft, quest, quests, quest plugin, paper, neoforge'}],
+      metadata: [
+        {
+          name: "keywords",
+          content:
+            "notquests, notquest, minecraft, quest, quests, quest plugin, paper, neoforge",
+        },
+      ],
       docsearch: {
         // The application ID provided by Algolia
-        appId: 'ILVXA82547',
+        appId: "ILVXA82547",
 
         // Public API key: it is safe to commit it
-        apiKey: '11a48fc15b8a38e14d0dca780c6cd2ab',
+        apiKey: "11a48fc15b8a38e14d0dca780c6cd2ab",
 
-        indices: [{name: 'notquests'}],
+        indices: [{ name: "notquests" }],
 
         // Optional: see doc section below
         contextualSearch: true,
 
         // Keep the UI focused on docs search and expose a shareable full-page search route.
-        placeholder: 'Search NotQuests docs',
-        searchPage: {path: 'search'},
+        placeholder: "Search NotQuests docs",
+        searchPage: { path: "search" },
         askAi: {
-          agentId: '8eaecbd4-465e-4175-85b9-579388fb2ebc',
-          indices: ['notquests_markdown'],
+          agentId: "8eaecbd4-465e-4175-85b9-579388fb2ebc",
           searchParameters: {
             notquests_markdown: {
-              attributesToRetrieve: ['title', 'heading', 'text', 'url'],
-              restrictSearchableAttributes: ['title', 'heading', 'text'],
+              attributesToRetrieve: ["title", "heading", "text", "url"],
+              restrictSearchableAttributes: ["title", "heading", "text"],
             },
           },
           suggestedQuestions: true,
         },
       },
       navbar: {
-        title: 'NotQuests',
+        title: "NotQuests",
         logo: {
-          alt: 'NotQuests Logo',
-          src: 'img/notquests-logo.png',
-          width: '32px',
-          height: '32px',
+          alt: "NotQuests Logo",
+          src: "img/notquests-logo.png",
+          width: "32px",
+          height: "32px",
         },
         items: [
           {
-            type: 'doc',
-            docId: 'tutorials/getting-started',
-            label: '🏫 Tutorials',
-            position: 'left',
+            type: "doc",
+            docId: "tutorials/getting-started",
+            label: "🏫 Tutorials",
+            position: "left",
           },
           {
-            to: '/docs/documentation/docs',
-            position: 'left',
-            label: '📝 Documentation',
-            activeBaseRegex: '^/docs/documentation/',
+            to: "/docs/documentation/docs",
+            position: "left",
+            label: "📝 Documentation",
+            activeBaseRegex: "^/docs/documentation/",
           },
           {
-            href: 'https://modrinth.com/plugin/notquests/versions',
-            label: 'Download',
+            href: "https://modrinth.com/plugin/notquests/versions",
+            label: "Download",
             className: "modrinthicon",
-            position: 'left',
+            position: "left",
           },
           {
-            href: 'https://discord.gg/7br638S5Ex',
-            label: 'Discord',
-            position: 'right',
+            href: "https://discord.gg/7br638S5Ex",
+            label: "Discord",
+            position: "right",
           },
           {
-            href: 'https://github.com/AlessioGr/NotQuests',
-            label: 'GitHub',
-            position: 'right',
+            href: "https://github.com/AlessioGr/NotQuests",
+            label: "GitHub",
+            position: "right",
           },
           /*{to: '/blog', label: 'Blog', position: 'left'},
           {
@@ -134,61 +143,61 @@ const config = {
         ],
       },
       footer: {
-        style: 'dark',
+        style: "dark",
         links: [
           {
-            title: 'Start',
+            title: "Start",
             items: [
               {
-                label: 'Getting Started',
-                to: '/docs/tutorials/getting-started',
+                label: "Getting Started",
+                to: "/docs/tutorials/getting-started",
               },
               {
-                label: 'Documentation Overview',
-                to: '/docs/documentation/docs',
+                label: "Documentation Overview",
+                to: "/docs/documentation/docs",
               },
               {
-                label: 'Command Reference',
-                to: '/docs/documentation/command-reference',
+                label: "Command Reference",
+                to: "/docs/documentation/command-reference",
               },
             ],
           },
           {
-            title: 'Features',
+            title: "Features",
             items: [
               {
-                label: 'Objectives',
-                to: '/docs/documentation/types/objectives',
+                label: "Objectives",
+                to: "/docs/documentation/types/objectives",
               },
               {
-                label: 'Actions & Rewards',
-                to: '/docs/documentation/types/actions',
+                label: "Actions & Rewards",
+                to: "/docs/documentation/types/actions",
               },
               {
-                label: 'Conversations',
-                to: '/docs/documentation/conversation-system',
+                label: "Conversations",
+                to: "/docs/documentation/conversation-system",
               },
               {
-                label: 'NPC Quest Givers',
-                to: '/docs/tutorials/npc-quest-givers',
+                label: "NPC Quest Givers",
+                to: "/docs/tutorials/npc-quest-givers",
               },
             ],
           },
           {
-            title: 'Community',
+            title: "Community",
             items: [
               {
-                href: 'https://modrinth.com/plugin/notquests/versions',
-                label: 'Download on Modrinth',
-                className: 'footer__link-item modrinthicon',
+                href: "https://modrinth.com/plugin/notquests/versions",
+                label: "Download on Modrinth",
+                className: "footer__link-item modrinthicon",
               },
               {
-                label: 'GitHub',
-                href: 'https://github.com/AlessioGr/NotQuests',
+                label: "GitHub",
+                href: "https://github.com/AlessioGr/NotQuests",
               },
               {
-                label: 'Discord',
-                href: 'https://discord.gg/7br638S5Ex',
+                label: "Discord",
+                href: "https://discord.gg/7br638S5Ex",
               },
             ],
           },
@@ -198,7 +207,7 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
-        additionalLanguages: ['groovy', 'java'],
+        additionalLanguages: ["groovy", "java"],
       },
     }),
 };

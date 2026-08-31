@@ -16,6 +16,32 @@
   --ifm-code-font-size: 95%;
   --dark-background: #393d46;
 }
+
+/*
+ * DocSearch 5 maps its surfaces to --ifm-background-color, which is
+ * transparent in Docusaurus' light theme. Keep the modal on the same solid
+ * Infima surfaces used by the previous DocSearch integration. html:root has
+ * enough specificity to override the adapter stylesheet loaded with the modal.
+ */
+html:root {
+  --docsearch-secondary-text-color: var(--ifm-color-emphasis-600);
+  --docsearch-icon-color: var(--ifm-color-emphasis-600);
+  --docsearch-muted-color: var(--ifm-color-emphasis-600);
+  --docsearch-background-color: var(--ifm-color-emphasis-200);
+  --docsearch-modal-background: var(--ifm-color-emphasis-100);
+  --docsearch-search-button-background: var(--ifm-background-surface-color);
+  --docsearch-searchbox-background: var(--ifm-background-surface-color);
+  --docsearch-searchbox-focus-background: var(--ifm-background-surface-color);
+  --docsearch-hit-background: var(--ifm-background-surface-color);
+  --docsearch-footer-background: var(--ifm-background-surface-color);
+  --docsearch-key-color: var(--ifm-color-emphasis-600);
+  --docsearch-sidepanel-background: var(--ifm-color-emphasis-100);
+  --docsearch-sidepanel-white: var(--ifm-background-surface-color);
+}
+
+html .DocSearch-SidepanelButton.inline {
+  background-color: var(--ifm-background-surface-color);
+}
 .footer--dark {
   --ifm-footer-background-color: #393d46;
 }
