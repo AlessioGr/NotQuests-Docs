@@ -31,7 +31,7 @@ In this tutorial, replace `world 100 64 200` with your real location.
 
 ## Enable the visual helpers
 
-Open `plugins/NotQuests/general.yml` and check this section:
+Open `general.yml` in the NotQuests data folder (`plugins/NotQuests` on Paper or `<world>/notquests` on NeoForge) and check this section:
 
 ```yaml
 visual:

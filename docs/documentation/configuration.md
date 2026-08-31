@@ -2,18 +2,26 @@
 title: ⚙️ Configuration
 sidebar_position: 3
 description: A friendly tour of general.yml — the main NotQuests config file.
-keywords: [notquests, config, configuration, general.yml, mysql, database, settings]
+keywords:
+  [notquests, config, configuration, general.yml, mysql, database, settings]
 ---
 
 import Admonition from '@theme/Admonition';
 
-NotQuests' main settings live in **`plugins/NotQuests/general.yml`**. After editing it, run `/qa reload` (or just restart the server) to apply your changes.
+NotQuests' main settings live in `general.yml` inside its data folder:
 
-Good news: **you don't have to touch most of this.** The defaults are sensible and the plugin runs great out of the box. This page is here for when you *do* want to tweak something — so feel free to skim and jump to the section you care about.
+| Platform | Data folder         |
+| -------- | ------------------- |
+| Paper    | `plugins/NotQuests` |
+| NeoForge | `<world>/notquests` |
+
+All paths on this page are relative to that folder. After editing `general.yml`, run `/qa reload` (or restart the server) to apply your changes.
+
+Good news: **you don't have to touch most of this.** The defaults are sensible and the plugin runs great out of the box. This page is here for when you _do_ want to tweak something — so feel free to skim and jump to the section you care about.
 
 ## 💾 Storage & database
 
-By default NotQuests uses **SQLite** — a single file in your `plugins/NotQuests` folder, zero setup. That's totally fine for most servers.
+By default NotQuests uses **SQLite** — the single `database_sqlite.db` file in the data folder, with no setup required. That's fine for most servers.
 
 If you want **MySQL** (faster, and the queries were designed with it in mind), set `database.enabled` to `true` and fill in your credentials:
 
@@ -28,11 +36,11 @@ storage:
   database:
     # false = SQLite (no setup needed). true = use the MySQL details below.
     enabled: false
-    host: ''
+    host: ""
     port: 3306
-    database: ''
-    username: ''
-    password: ''
+    database: ""
+    username: ""
+    password: ""
 ```
 
 - **`load-playerdata` / `save-playerdata`** - Master switches for reading/writing player progress. Leave these on.
@@ -103,9 +111,9 @@ visual:
       enabled: false
 ```
 
-- **`language`** - Which language file to use, from `plugins/NotQuests/languages/`. Ships with 31 languages. Default is `en-US`.
+- **`language`** - Which language file to use from `languages/`. Ships with 31 languages. Default is `en-US`.
 - **`fancy-command-completion`** - The helpful argument hints that pop up while you type commands. Show them in the `actionbar` (default), as a `title`, and/or in a `bossbar`.
-- **`citizensnpc` / `armorstands`** - The floating particle above quest-giver NPCs and armor stands. Change the particle with `type`, or turn it off. `focusing` makes Citizens NPCs turn to face the player during a conversation. `armorstands.prevent-editing` stops you from accidentally editing the gear of an armor stand that has quests attached.
+- **`citizensnpc` / `armorstands`** - The floating particle above quest-giver NPCs and armor stands. Change the particle with `type`, or turn it off. Citizens settings apply only on Paper when Citizens is installed. Armor stands work on both platforms. `armorstands.prevent-editing` stops accidental equipment changes on quest armor stands.
 - **`titles`** - The big on-screen titles when a quest is accepted, failed or completed. Toggle each independently.
 - **`hide-rewards-without-name`** - Rewards show as `[HIDDEN]` unless you give them a display name (see the [FAQ](/docs/documentation/faq)). This is what makes that happen.
 - **`objective-tracking`** - Live progress shown in the `actionbar` and/or a `bossbar` while an objective is active. `location-compass.enabled` adds an optional bossbar compass for objectives with a saved guiding marker. Objective location markers are configured per objective; see the [Objectives page](./types/objectives#objective-locations-and-guiding-beams).
@@ -120,8 +128,8 @@ The `visual.colors` block lets you re-theme every message NotQuests sends, using
 
 ```yaml
 gui:
-  main-gui-name: 'main-base'
-  npc-gui-name: 'npc-available-quests'
+  main-gui-name: "main-base"
+  npc-gui-name: "npc-available-quests"
   quest-visibility-evaluations:
     already-accepted:
       enabled: true
@@ -137,7 +145,7 @@ gui:
     enabled: true
 ```
 
-- **`main-gui-name` / `npc-gui-name`** - Which GUI layout files to use. You can fully customize these — every GUI lives in `plugins/NotQuests/guis/` as its own editable `.yml`.
+- **`main-gui-name` / `npc-gui-name`** - Which GUI layout files to use. Every GUI lives in `guis/` as its own editable `.yml`.
 - **`quest-visibility-evaluations`** - Controls which quests show up in the menus. For example, hide quests the player has `already-accepted`, reached the `max-accepts` for, are still on `accept-cooldown` for, or don't meet the `conditions` of.
 - **`questpreview.enabled`** - `true` opens a proper GUI preview before accepting a quest; `false` falls back to clickable chat text.
 - **`usercommands.enabled`** - `true` uses GUIs for the player-facing `/q` commands; `false` uses clickable chat text instead.
@@ -148,7 +156,7 @@ gui:
 placeholders:
   support_placeholderapi_in_translation_strings: false
   player_active_quests_list_horizontal:
-    separator: '|'
+    separator: "|"
     limit: -1
     use-displayname-if-available: true
 ```
@@ -158,7 +166,7 @@ placeholders:
 
 ## 🔌 Integrations
 
-These are all `true` by default and only ever kick in **if you actually have that plugin installed** — so you can safely leave the whole section alone. They're here only in case you want to force one off.
+These integrations are **Paper-only**. They are enabled by default but activate only when the matching Paper plugin is installed, so you can normally leave this section alone. NeoForge ignores Paper plugin integrations and still supports the shared quest, armor-stand, GUI, command, and objective features.
 
 ```yaml
 integrations:
@@ -167,22 +175,22 @@ integrations:
   # ...and the rest below
 ```
 
-| Integration | What it adds |
-| --- | --- |
-| `citizens` | Citizens NPCs as quest givers, plus NPC-based objectives |
-| `floodgate` | Bedrock player support (Floodgate / Geyser) |
-| `vault` | Economy support |
-| `placeholderapi` | Use PlaceholderAPI placeholders in NotQuests (and expose NotQuests ones) |
-| `mythicmobs` | MythicMobs as kill targets |
-| `elitemobs` | The `KillEliteMobs` objective |
-| `worldedit` | WorldEdit support |
-| `slimefun` | The `SlimefunResearch` objective |
-| `luckperms` | LuckPerms-based conditions |
-| `ultimateclans` | UltimateClans support |
-| `towny` | The `TownyNationReachTownCount` & `TownyReachResidentCount` objectives |
-| `jobs-reborn` | The `JobsRebornReachJobLevel` objective |
-| `ecoMobs` | eco / EcoMobs spawn actions and kill detection |
-| `betonQuest` | BetonQuest 3 actions, conditions, objective-state objectives, variables, and the `notquests` conversation interceptor |
+| Integration      | What it adds                                                                                                          |
+| ---------------- | --------------------------------------------------------------------------------------------------------------------- |
+| `citizens`       | Citizens NPCs as quest givers, plus NPC-based objectives                                                              |
+| `floodgate`      | Bedrock player support (Floodgate / Geyser)                                                                           |
+| `vault`          | Economy support                                                                                                       |
+| `placeholderapi` | Use PlaceholderAPI placeholders in NotQuests (and expose NotQuests ones)                                              |
+| `mythicmobs`     | MythicMobs as kill targets                                                                                            |
+| `elitemobs`      | The `KillEliteMobs` objective                                                                                         |
+| `worldedit`      | WorldEdit support                                                                                                     |
+| `slimefun`       | The `SlimefunResearch` objective                                                                                      |
+| `luckperms`      | LuckPerms-based conditions                                                                                            |
+| `ultimateclans`  | UltimateClans support                                                                                                 |
+| `towny`          | The `TownyNationReachTownCount` & `TownyReachResidentCount` objectives                                                |
+| `jobs-reborn`    | The `JobsRebornReachJobLevel` objective                                                                               |
+| `ecoMobs`        | eco / EcoMobs spawn actions and kill detection                                                                        |
+| `betonQuest`     | BetonQuest 3 actions, conditions, objective-state objectives, variables, and the `notquests` conversation interceptor |
 
 <Admonition type="info">
 

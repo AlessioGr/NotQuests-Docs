@@ -1,65 +1,70 @@
 ---
-title: 💻 API Usage
+title: API usage
 sidebar_position: 1
-description: This explains how you can add the NotQuests API to your project and how it works
-keywords: [notquests, api, usage]
+description: Add the NotQuests 7 API to a Paper add-on and register portable extension types.
+keywords: [notquests, api, java, paper, registry pack, addon]
 ---
 
-## Adding the API to your project
+# Using the v7 API
 
-**For Gradle Kotlin DSL (recommended):**
+NotQuests 7 extensions use the same portable registry API as NotQuests' built-in objectives, actions, conditions, triggers, and variables. Extensions register a **registry pack**; NotQuests then generates command metadata and connects its callbacks to Paper or NeoForge.
 
-Add this to your build.gradle:
+## Dependency
+
+Until the v7 artifacts are published to a Maven repository, put the matching NotQuests jar in your project's `libs/` folder and use it as a compile-only dependency:
 
 ```groovy
-repositories{
-    maven {
-        url = "https://maven.pkg.github.com/alessiogr/NotQuests"
-        content{
-            includeGroup("rocks.gravili.notquests")
-        }
-        credentials {
-            username = System.getenv("GITHUB_PACKAGES_USERID") ?: "alessiogr"
-            password = System.getenv("GITHUB_PACKAGES_IMPORT_TOKEN") ?: "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"
-        }
-    }
-}
-
 dependencies {
-    compileOnly 'rocks.gravili.notquests:paper:5.19.0'
+    compileOnly files('libs/notquests-7.0.0-beta.1-26.2-paper.jar')
+    compileOnly 'io.papermc.paper:paper-api:26.2.build.121-stable'
 }
 ```
 
-Note: Please make sure to use the latest version for the API.
+Do not bundle the NotQuests jar inside your add-on.
 
-Attention: The GitHub Packages token posted above will not work, because GitHub revokes it every time I post it. You will either have to generate your own in your GitHub profile and use it, or just add the notquests jar to your project directly.
+Declare NotQuests as a dependency in `plugin.yml` so it loads first:
 
-Done! Feel free to use your own GitHub user id / token if you have one.
+```yaml
+name: MyNotQuestsAddon
+version: 1.0.0
+main: com.example.notquestsaddon.MyAddon
+api-version: "26.2"
+depend: [NotQuests]
+```
 
-## Paper and Spigot modules
+## Registering a pack
 
-After installing the API, you will notice that we basically have two almost-identical modules: Paper and Spigot. Please, only use the Paper module. The Spigot module only exists to comply with spigot.org resource guidelines and will be removed once spigot.org is dead and has been replaced with Hangar.
-
-I will not provide feature updates for the Spigot module anymore. Please use the paper module.
-
-Why?
-
-The Spigot API is old and uses a lot of long-abandoned, legacy features. NotQuests however is a modern plugin and uses modern API features, which Spigot does not have and refuses to add. (Most importantly Kyori components, or even stupidly simple stuff like Bukkit.getTPS())
-
-## Using the API
-
-First, add `NotQuests` as `depend:` or `softdepend:` into you plugin.yml.
-
-Then, access the instance with `NotQuests.getInstance()` (use the NotQuests of the paper module) and do whatever you want with it 😄
-
-Make sure to disable your NotQuests integration, if NotQuests.getInstance() is null. Since you are hopefully use the Paper module, it would return null on Spigot servers.
-
-## Registering your own Objectives
-
-You can easily add your own Objectives to NotQuests (either directly or via the API) with, for example,
+Register packs from your Paper plugin's `onLoad()`. This lets NotQuests see the extra types before it compiles commands and loads quest configuration.
 
 ```java
-NotQuests.getInstance().getObjectiveManager().registerObjective("jumpobjective", JumpObjective.class);
+import com.notquests.Main;
+import org.bukkit.plugin.java.JavaPlugin;
+
+public final class MyAddon extends JavaPlugin {
+    @Override
+    public void onLoad() {
+        Main.getInstance().getNotQuests().addRegistryPack(new MyRegistryPack());
+    }
+}
 ```
 
-with JumpObjective extending "Objective" and being similar to all the other objective classes. Just copy the structure.
+The pack receives the Paper NotQuests host and gets its portable adapter:
+
+```java
+import com.notquests.core.platform.NotQuestsAdapter;
+import com.notquests.core.registry.NotQuestsRegistry.Pack;
+import com.notquests.paper.NotQuests;
+
+public final class MyRegistryPack implements Pack<NotQuests> {
+    @Override
+    public void register(final NotQuests notQuests) {
+        final NotQuestsAdapter adapter = notQuests.getRegistryAdapter();
+        CustomJumpObjective.register(adapter);
+        CustomFoodLevelVariable.register(adapter);
+    }
+}
+```
+
+Registry callbacks use portable types such as `PlatformPlayer`, `NQLocation`, and `ItemSelection`. This keeps type behavior independent from Bukkit and gives Paper and NeoForge the same command and runtime behavior. If an extension truly depends on a Paper-only plugin or Bukkit event, keep that small integration part in the Paper add-on and register the generic NotQuests type through the same registry API.
+
+See the [complete tutorial](./api-tutorial) for working objective and variable examples.

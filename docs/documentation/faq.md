@@ -17,7 +17,7 @@ This gives you the benefit that you can better specify what the reward is (for e
 <details>
 <summary>Do I need a MySQL database?</summary>
 
-Nope! The standard SQLite database (will be created in your `plugins/NotQuests` folder) will work just fine. However, MySQL is faster and thus recommended. The database queries were also designed with MySQL in mind.
+Nope! The standard SQLite database (`database_sqlite.db` in the NotQuests data folder) works fine for most servers. MySQL is available when you need a shared external database.
 
 </details>
 
@@ -30,7 +30,7 @@ I recommend you to do that manually via DBEaver or something like that. Shouldn'
 2. Start server with old database
 3. Add new database to the general.yml
 4. Do /qa reload (might not be necessary)
-5. Do /qa debug loadDataManagerUnsafe
+5. Run `/qa debug loadDataUnsafe`
 6. Shut down the server
 7. Revert what you did in step 1
 

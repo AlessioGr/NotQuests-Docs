@@ -9,7 +9,7 @@ const commandPlugin = require('./src/remarkplugins/command')
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'NotQuests',
-  tagline: 'The best, most flexible & powerful Minecraft Quest & Conversation Plugin for Paper and Spigot servers',
+  tagline: 'A flexible Minecraft quest and conversation system for Paper and NeoForge',
   url: 'https://www.notquests.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -60,7 +60,7 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      metadata: [{name: 'keywords', content: 'notquests, notquest, minecraft, quest, quests, quest plugin, paper, spigot'}],
+      metadata: [{name: 'keywords', content: 'notquests, notquest, minecraft, quest, quests, quest plugin, paper, neoforge'}],
       docsearch: {
         // The application ID provided by Algolia
         appId: 'ILVXA82547',

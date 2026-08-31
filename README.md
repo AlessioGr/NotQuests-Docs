@@ -3,7 +3,7 @@ Simply edit the relevant markdown files at https://github.com/AlessioGr/NotQuest
 
 # Website
 
-This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
+This website is built using [Docusaurus 3](https://docusaurus.io/), a modern static website generator.
 
 ### Installation
 
@@ -31,10 +31,11 @@ This command generates static content into the `build` directory and can be serv
 
 ### Command examples
 
-Inline code and command code blocks that start with `/q`, `/qa`, `/notquests`, or `/notquestsadmin` are enriched at build time from NotQuests' exported Brigadier command schema. Run this after exporting a fresh schema from the plugin:
+Inline code and command code blocks that start with `/q`, `/qa`, `/notquests`, or `/notquestsadmin` are enriched at build time from NotQuests' exported command schema. Run the normal Paper E2E sweep in the sibling `notquests` checkout, then regenerate the reference:
 
 ```
-$ pnpm update-commands
+$ cd ../notquests && ./e2e/run-sweep.sh
+$ cd ../NotQuests-Docs && pnpm update-commands
 ```
 
 For partial examples, write the full command first, then the shorter display form:

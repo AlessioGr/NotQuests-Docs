@@ -12,13 +12,13 @@ This page explains the conversation file format. If you are creating your first 
 A conversation is one YAML file in a category's `conversations` folder:
 
 ```text
-plugins/NotQuests/<category>/conversations/<conversation>.yml
+<category>/conversations/<conversation>.yml
 ```
 
 For the default category:
 
 ```text
-plugins/NotQuests/default/conversations/intro.yml
+default/conversations/intro.yml
 ```
 
 The file controls:
@@ -269,7 +269,7 @@ Prefer attaching conversations with commands:
 
 `/qa conversations edit intro npcs add rightClickSelect`
 
-`rightClickSelect` gives a selector item. Right-click a Citizens NPC, FancyNPCs NPC, or armor stand to attach the conversation.
+`rightClickSelect` gives a selector item. On Paper, right-click a Citizens NPC, FancyNPCs NPC, or armor stand. On NeoForge, use an armor stand.
 
 Useful NPC commands:
 

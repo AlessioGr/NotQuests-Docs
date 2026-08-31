@@ -13,6 +13,7 @@ Welcome! This is the **reference** section — the place to look things up once 
 
 ## Start here
 
+- **[⬇️ Installing NotQuests](/download)** — choose the Paper or NeoForge build for Minecraft 26.2.
 - **[⌨️ Commands](/docs/documentation/commands)** — every `/q` and `/qa` command, what it does and how to use it.
 - **[⚙️ Configuration](/docs/documentation/configuration)** — a friendly tour of `general.yml`: database, effects, GUIs, integrations.
 
@@ -31,7 +32,8 @@ Every quest is assembled from these. Each page lists every available type with i
 - **[💬 Conversation System](/docs/documentation/conversation-system)** — give your NPCs branching dialogue.
 - **[📄 Placeholders](/docs/documentation/placeholders)** — PlaceholderAPI placeholders NotQuests exposes.
 - **[🔒 Permissions](/docs/documentation/permissions)** — every permission node.
-- **[🆙 Updating from v3 or older](/docs/documentation/updating-from-v3-or-older)** — migration notes.
+- **[🆙 Updating from 6.3 to v7](/docs/documentation/updating-to-v7)** — platform requirements and automatic data conversion.
+- **[🗃️ Updating from v3 or older](/docs/documentation/updating-from-v3-or-older)** — older migration notes.
 - **[❓ FAQ](/docs/documentation/faq)** — quick answers to common questions.
 
 <Admonition type="tip" title="Prefer learning by doing?">

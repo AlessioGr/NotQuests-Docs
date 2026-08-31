@@ -7,6 +7,8 @@ keywords: [notquests, tutorial, conversation, conversations, chat, speak, talk]
 
 Conversations let an NPC talk to a player, show clickable answers, branch into different paths, and run quest actions or checks during the dialogue.
 
+Armor-stand conversations work on Paper and NeoForge. Citizens and FancyNPCs conversation attachments are Paper-only integrations.
+
 You do not need to understand the whole system before making your first one. Start with a tiny file, test it in-game, then add choices and logic one piece at a time.
 
 ## The fastest working conversation
@@ -18,7 +20,7 @@ Create a conversation file:
 Open:
 
 ```text
-plugins/NotQuests/default/conversations/intro.yml
+default/conversations/intro.yml
 ```
 
 Replace the file with this:

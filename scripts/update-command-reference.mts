@@ -42,7 +42,8 @@ const defaultSource = path.resolve(
   docsRoot,
   '..',
   'notquests',
-  'plugin',
+  'src',
+  'paper',
   'run',
   'plugins',
   'NotQuests',
@@ -126,6 +127,12 @@ Hover an argument or flag to see the description exported by the plugin. Require
 :::tip
 In game, tab-completion is still the best way to discover context-sensitive values like quest names,
 tags, categories, players, worlds, materials, and custom items.
+:::
+
+:::info Platform capabilities
+This reference reflects the platform capabilities present when the schema was exported. Shared
+commands are the same on Paper and NeoForge. Integration-only or platform-capability commands are
+registered only where that feature is available.
 :::
 
 `;
@@ -311,7 +318,8 @@ function escapeHtml(value: string): string {
   return String(value)
     .replaceAll('&', '&amp;')
     .replaceAll('<', '&lt;')
-    .replaceAll('>', '&gt;');
+    .replaceAll('>', '&gt;')
+    .replaceAll('`', '&#96;');
 }
 
 function escapeAttribute(value: string): string {

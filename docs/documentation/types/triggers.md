@@ -43,7 +43,7 @@ This is what makes triggers flexible. Say objective 2 is hidden until objective 
 | `DISCONNECT` | the player logs off | `<amount>` |
 | `WORLDENTER` | the player enters a world | `<world>` `<amount>` |
 | `WORLDLEAVE` | the player leaves a world | `<world>` `<amount>` |
-| `NPCDEATH` | a Citizens NPC dies | `<npcID>` `<amount>` |
+| `NPCDEATH` | a Citizens NPC dies (Paper only) | `<npcID>` `<amount>` |
 
 For the counted types (`DEATH`, `DISCONNECT`, `WORLDENTER`, `WORLDLEAVE`, `NPCDEATH`), the `<amount>` is how many times it has to happen before the trigger fires. `1` means "fire on the first one".
 

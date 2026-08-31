@@ -12,7 +12,7 @@ const features = [
   },
   {
     title: 'Use NPC quest givers',
-    text: 'Attach quests and conversations to Citizens, FancyNPCs, or armor stands, with preview GUIs before players accept.',
+    text: 'Use armor stands on Paper and NeoForge, plus Citizens and FancyNPCs integrations on Paper, with preview GUIs before players accept.',
     to: '/docs/tutorials/npc-quest-givers',
   },
   {
@@ -27,7 +27,7 @@ function HomepageHeader() {
     <header className={styles.hero}>
       <div className="container">
         <div className={styles.heroContent}>
-          <p className={styles.eyebrow}>Minecraft quest plugin for Paper servers</p>
+          <p className={styles.eyebrow}>Minecraft quests for Paper and NeoForge</p>
           <h1 className={styles.heroTitle}>NotQuests</h1>
           <p className={styles.heroText}>
             Build quests, NPC stories, daily tasks, rewards, conversations, and
@@ -87,7 +87,7 @@ export default function Home(): React.JSX.Element {
   return (
     <Layout
       title={siteConfig.title}
-      description="NotQuests is a Minecraft quest plugin for Paper servers with quests, NPCs, conversations, rewards, tags, reputation, and progression systems.">
+      description="NotQuests is a Minecraft quest system for Paper and NeoForge with quests, NPCs, conversations, rewards, tags, reputation, and progression systems.">
       <HomepageHeader />
       <main>
         <HomepageFeatures />

@@ -1,245 +1,128 @@
 ---
-title: 💻 API Example Project Tutorial
+title: API example tutorial
 sidebar_position: 2
-description: This explains how you can use the NotQuests API to create your own conditions, variables, action & objective using an example
-keywords: [notquests, api, tutorial]
+description: Create a NotQuests 7 registry pack with a custom objective and variable.
+keywords: [notquests, api, tutorial, objective, variable, registry]
 ---
 
-import Admonition from '@theme/Admonition';
+# Creating a v7 registry pack
 
-<Admonition type="danger" title="Before you read">
+This example targets **NotQuests 7.0.0-beta.1**, **Minecraft 26.2**, **Java 25**, and Paper. The objective and variable themselves use the portable API and can also live in a shared module for NeoForge.
 
-This guide was designed with version **6.3.0** and **[Paper 26.1.2](https://papermc.io/)** in mind.
+Start with the dependency and `plugin.yml` setup from [API usage](./api-usage).
 
-</Admonition>
+## 1. Create the registry pack
 
-Let's create our first Project using the NotQuests API!
-
-## First Step: Adding the NotQuests API to your Project
-
-First, create a libs folder in your project and add the NotQuests jar to it. *You can also use our GitHub packages repository, but it doesn't work that well because you'll need to generate your own GitHub secret key and can't publish it. As for JitPack, they don't support Java 25.*
-
-![Libs folder](/img/api-tutorial/libsfolder.png)
-
-Assuming you are using gradle as your build tool (you should), then head to your `build.gradle` file and add the following to your dependencies:
-
-```groovy
-dependencies {
-    compileOnly 'io.papermc.paper:paper-api:26.1.2-R0.1-SNAPSHOT'
-    compileOnly files('libs/notquests-5.19.0.jar')
-}
-```
-
-Next, open your plugin.yml and add NotQuests as a depend or softdepend. In our case, we'll add it as a depend:
-![plugin.yml](/img/api-tutorial/pluginyml.png)
-
-## Step 2: getting the NotQuests instance
-
-NotQuests has one module for Spigot and one module for Paper. They're both very different and the Spigot module is much older. In this Tutorial, we'll be creating our own Objectives, Conditions and Actions using the Paper module only. They will only work if the Server who is using your plugin uses Paper. On spigot, the NotQuests.getInstance() of the paper module will return null. Please check that before registering anything.
-
-Since noone should be using Spigot anyways, that's fine. Don't worry, your plugin should still be able to load up on Spigot.
-
-Make sure you only use the classes from the paper module:
-![Paper and Spigot module](/img/api-tutorial/paperspigot.png)
-
-Well, let's start by creating the (proper) NotQuests instance in our Main:
+A pack keeps all of your registrations in one obvious place:
 
 ```java
-public final class NotQuestsAPIExample extends JavaPlugin {
+package com.example.notquestsaddon;
 
-    private NotQuests notQuestsInstance;
-    
-    @Override
-    public void onEnable() {
-        // Plugin startup logic
-        notQuestsInstance = NotQuests.getInstance();
-    }
+import com.notquests.core.platform.NotQuestsAdapter;
+import com.notquests.core.registry.NotQuestsRegistry.Pack;
+import com.notquests.paper.NotQuests;
 
+public final class MyRegistryPack implements Pack<NotQuests> {
     @Override
-    public void onDisable() {
-        // Plugin shutdown logic
+    public void register(final NotQuests notQuests) {
+        final NotQuestsAdapter adapter = notQuests.getRegistryAdapter();
+        CustomJumpObjective.register(adapter);
+        CustomFoodLevelVariable.register(adapter);
     }
 }
 ```
 
-Cool. NotQuests barely uses any static stuff, so we'll be using the instance for basically everything.
-
-## Let's create an action and a condition (= requirement) via variables
-
-In NotQuests you can create Conditions and Actions separately. However, it's also possible to create both at the same time using Variables!
-
-If it's possible to use Variables, you should always use them. Only register Conditions and Actions directly if you can't do what you wanna do with Variables.
-
-Let's create a variable for the player's food level. Create a new class called `FoodLevelVariable` and make it extend `Variable<Integer>`. The food level is an integer and the Variable class uses generics.
-
-Then, implement all necessary methods using your IDE. It should look like this:
+Register it from your add-on's `onLoad()`:
 
 ```java
-public class FoodLevelVariable extends Variable<Integer> {
-    private final NotQuests main;
-    
-    public FoodLevelVariable(NotQuests main) {
-        super(main);
-        this.main = main;
-    }
+package com.example.notquestsaddon;
 
-    @Override
-    public Integer getValue(QuestPlayer questPlayer, Object... objects) {
-        return null;
-    }
+import com.notquests.Main;
+import org.bukkit.plugin.java.JavaPlugin;
 
+public final class MyAddon extends JavaPlugin {
     @Override
-    public boolean setValueInternally(Integer newValue, QuestPlayer questPlayer, Object... objects) {
-        return false;
-    }
-
-    @Override
-    public List<String> getPossibleValues(QuestPlayer questPlayer, Object... objects) {
-        return null;
-    }
-
-    @Override
-    public String getPlural() {
-        return null;
-    }
-
-    @Override
-    public String getSingular() {
-        return null;
+    public void onLoad() {
+        Main.getInstance().getNotQuests().addRegistryPack(new MyRegistryPack());
     }
 }
 ```
 
-All we need to do is fill out the each and every method. Let's start with getValue. This method will be used for the Condition which is generated from this variable. Here, we need to return the player's current food level. Pretty simple:
+## 2. Add an objective
+
+This objective exposes one `amount` argument. Every registered field becomes part of command parsing, suggestions, YAML loading, and generated command documentation.
 
 ```java
-@Override
-public Integer getValue(QuestPlayer questPlayer, Object... objects) {
-    return questPlayer.getPlayer().getFoodLevel();
-}
-```
+package com.example.notquestsaddon;
 
-Next, in setValueInternally, that's what's used internally for the action. By default, a variable only needs the getValue method filled out. Only SOME variables can also change the value. It works here, so let's fill it out:
+import com.notquests.core.platform.NotQuestsAdapter;
 
-```java
-@Override
-public boolean setValueInternally(Integer newValue, QuestPlayer questPlayer, Object... objects) {
-    questPlayer.getPlayer().setFoodLevel(newValue);
-    return true;
-}
-```
+public final class CustomJumpObjective {
+    private CustomJumpObjective() {}
 
-Always return true there if the setting-of-the-value is successful. Now we need to enable setting the value in the constructor. Otherwise, the corresponding action will not be generated:
-
-```java
-public FoodLevelVariable(NotQuests main) {
-    super(main);
-    this.main = main;
-    setCanSetValue(true);
-}
-```
-
-As for getPossibleValues, let's leave it at null. NotQuests will just use the default integer auto-completion there. For getSingular and getPlural, use this:
-
-```java
-    @Override
-    public String getPlural() {
-        return "Food level";
-    }
-
-    @Override
-    public String getSingular() {
-        return "Food levels";
-    }
-```
-
-And we're done! Now just register this variable in the onEnable method in your Main:
-
-```java
-@Override
-public void onEnable() {
-    // Plugin startup logic
-    notQuestsInstance = NotQuests.getInstance();
-    if(notQuestsInstance != null){ //For Spigot compatibility
-        notQuestsInstance.getVariablesManager().registerVariable("FoodLevel", FoodLevelVariable.class);
+    public static void register(final NotQuestsAdapter adapter) {
+        adapter.objectives().objective("CustomJump")
+                .displayName("Custom Jump")
+                .description("Counts player jumps for this add-on.")
+                .field(
+                        "amount",
+                        adapter.fields().numberExpression().progressNeeded(),
+                        "Number of jumps required.")
+                .taskDescription((objective, player, activeObjective) ->
+                        "Jump " + (activeObjective != null
+                                ? activeObjective.progressNeeded()
+                                : objective.text("amount")) + " times.")
+                .onPlayerJump(activeObjective -> activeObjective.addProgress(1))
+                .register();
     }
 }
 ```
 
-Done! Let's see how it looks in-game. During startup, you should be able to see this "Registering Variable" line in the console:
+After startup, create it like every built-in objective:
 
-![Registering the variable in the console](/img/api-tutorial/consoleregistering.png)
+```text
+@optional-integration /qa edit ExampleQuest objectives add CustomJump 20
+```
 
-That'd be how you create the condition:
+There is no Paper event listener in this class. NotQuests translates the platform jump event and calls the portable `onPlayerJump` callback.
 
-![In-game command](/img/api-tutorial/foodlevelconditioncommand.png)
+## 3. Add a number variable
 
-And the action:
-
-![In-game command](/img/api-tutorial/foodlevelactioncommand.png)
-
-And if we execute it via `/qa actions edit actionname4 execute`:
-
-![FoodLevel action executes](/img/api-tutorial/actionexecuted.png)
-
-For many simple values you can use the variable system. Not only is it easier, it also gives you access to the advanced comparison operators (like being able to use Math and other variables in the expression for Integer variables).
-
-## Let's create an Objective
-
-Create the class called `TakeDamageObjective` and make it extend `Objective`. Then implement everything. It should look like this:
+Variables can provide a value for conditions and, when a setter is registered, generate matching actions that change the value.
 
 ```java
-public class TakeDamageObjective extends Objective {
-    private final NotQuests main;
+package com.example.notquestsaddon;
 
-    public TakeDamageObjective(NotQuests main) {
-        super(main);
-        this.main = main;
-    }
+import com.notquests.core.platform.NotQuestsAdapter;
 
-    @Override
-    public String getObjectiveTaskDescription(QuestPlayer questPlayer) {
-        return null;
-    }
+public final class CustomFoodLevelVariable {
+    private CustomFoodLevelVariable() {}
 
-    @Override
-    public void save(FileConfiguration fileConfiguration, String initialPath) {
-
-    }
-
-    @Override
-    public void load(FileConfiguration fileConfiguration, String initialPath) {
-
-    }
-
-    @Override
-    public void onObjectiveUnlock(ActiveObjective activeObjective, boolean unlockedDuringPluginStartupQuestLoadingProcess) {
-
-    }
-
-    @Override
-    public void onObjectiveCompleteOrLock(ActiveObjective activeObjective, boolean lockedOrCompletedDuringPluginStartupQuestLoadingProcess, boolean completed) {
-
+    public static void register(final NotQuestsAdapter adapter) {
+        adapter.variables().numberVariable("AddonFoodLevel")
+                .displayName("Add-on Food Level")
+                .description("Reads or changes a player's hunger value from 0 to 20.")
+                .singular("Food level")
+                .plural("Food levels")
+                .get((player, objects) -> player == null ? 0 : player.foodLevel())
+                .set((newValue, player, objects) -> player != null
+                        && player.setFoodLevel(Math.max(0, Math.min(20, newValue.intValue()))))
+                .register();
     }
 }
 ```
 
-Let's already register it in our onEnable in our Main:
+The generated condition can read the value, and the generated action can set, add, remove, multiply, or divide it using NotQuests' normal variable commands.
 
-```java
-@Override
-public void onEnable() {
-    // Plugin startup logic
-    notQuestsInstance = NotQuests.getInstance();
-    if(notQuestsInstance != null){ //For Spigot compatibility
-        notQuestsInstance.getVariablesManager().registerVariable("FoodLevel", FoodLevelVariable.class);
-        notQuestsInstance.getObjectiveManager().registerObjective("TakeDamage", TakeDamageObjective.class);
-    }
-}
+## 4. Test the registration
+
+Start the server and check the console for registry errors. Then use tab completion under:
+
+```text
+@optional-integration /qa edit ExampleQuest objectives add CustomJump
+@optional-integration /qa variables check AddonFoodLevel
 ```
 
-Now back to our `TakeDamageObjective`, just fill out each method. You can see how other Objectives do it [here](https://github.com/AlessioGr/NotQuests/tree/main/paper/src/main/java/rocks/gravili/notquests/paper/structs/objectives).
+Use a unique identifier for every registered type. Registering a duplicate identifier replaces the existing type, which is useful for deliberate overrides but surprising when accidental.
 
-Then, you'll need to register and handle your own Bukkit events to add Progress (and eventually complete) your objective. For the internal objectives, I'm doing that [here](https://github.com/AlessioGr/NotQuests/blob/main/paper/src/main/java/rocks/gravili/notquests/paper/events/QuestEvents.java). Feel free to copy the boilerplate code.
-
-I'll add a more explanatory tutorial on Objective Creation later, feel free to ask for help on our Discord. You can find the API example project [on GitHub](https://github.com/AlessioGr/NotQuestsAPIExample). Not that it might not have been updated to the latest NotQuests API yet.
+For more examples, see the built-in registrations in the NotQuests source under `src/builtin/src/main/java/com/notquests/builtin/`.

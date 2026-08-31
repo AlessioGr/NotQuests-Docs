@@ -7,7 +7,7 @@ keywords: [notquests, conditions, quest conditions]
 
 import Admonition from '@theme/Admonition';
 
-Raw conditions can be created using `/qa conditions`. Those will be saved in the `plugins/notquests/categoryname/conditions.yml`. Conditions are also Quest requirements, Objective conditions and Action conditions, which can be created with the respective other commands.
+Raw conditions can be created using `/qa conditions`. They are saved in `<category>/conditions.yml` inside the NotQuests data folder. Conditions are also quest requirements, objective conditions, and action conditions, which can be created with their respective commands.
 
 To "test" a condition created via `/qa conditions`, you can use `/qa conditions edit conditionname check Steve => /qa conditions edit <condition> check [player]`.
 
@@ -95,8 +95,8 @@ Please consult the [Variables Section](/docs/documentation/types/variables) for 
 - **`<expression>`** - What the result of the variable should be. This expression is cool, because it can contain any kind of math expression. And it can even contain other number variables.
 
 **Example command:** `/qa conditions add conditionname Health moreOrEqualThan 9.0` - Checks if the player's health is higher or equal than 9. Health would be a Number variable.
-**Example command with math expression + other variables**: `/qa conditions add conditionname Money moreThan QuestPoints*Money+500-30/2` - This checks if you money is more than your quest points multiplied by your current money plus 500 minus 30/2
-**Example command with very advanced expression:** `/qa conditions add conditionname Money moreThan 10+TagInteger(TagName:reputation)*TagInteger(TagName:level)` - Checks if the player's money is more than 10 + the value of the "reputation" tag multiplied by the value of the "level" tag.
+**Example command with math expression + other variables**: `@optional-integration /qa conditions add conditionname Money moreThan QuestPoints*Money+500-30/2` - This checks if your money is more than your quest points multiplied by your current money plus 500 minus 30/2.
+**Example command with very advanced expression:** `@optional-integration /qa conditions add conditionname Money moreThan 10+TagInteger(TagName:reputation)*TagInteger(TagName:level)` - Checks if the player's money is more than 10 + the value of the "reputation" tag multiplied by the value of the "level" tag.
 
 </Admonition>
 

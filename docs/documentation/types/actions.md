@@ -7,7 +7,7 @@ keywords: [notquests, actions, quest actions, rewards, quest rewards]
 
 import Admonition from '@theme/Admonition';
 
-Raw actions can be created using `/qa actions`. Those will be saved in the `plugins/notquests/categoryname/actions.yml`. Actions are also Quest rewards or Objective rewards. An action is, as the name says, an action. Any action. Something "happens".
+Raw actions can be created using `/qa actions`. They are saved in `<category>/actions.yml` inside the NotQuests data folder. Actions are also quest rewards or objective rewards. An action is, as the name says, something that happens.
 
 To "test" an action created via `/qa actions`, you can use `/qa actions edit actionname execute Steve => /qa actions edit <action> execute [player]`. It can have the optional flag `--ignoreConditions` if you want to ignore any conditions attached to this action.
 
@@ -43,7 +43,7 @@ Please consult the [Variables Section](/docs/documentation/types/variables) for 
 **Example commands:**
 
 - `/qa actions add actionname Flying set true` - Flying would be a Boolean variable type. This action would make the player fly.
-- `/qa actions add pp3 Money add ((TagInteger(TagName:points)>=4)*(10+30))+(!(TagInteger(TagName:points)>=4)*5)` - This is just to show that very complex actions are also possible with NotQuests expression system. This action does the following: If your "points" (from the Integer tag) are bigger or equal 4, this action will give you 40$. Otherwise, it will give you 5$.
+- `@optional-integration /qa actions add pp3 Money add ((TagInteger(TagName:points)>=4)*(10+30))+(!(TagInteger(TagName:points)>=4)*5)` - This is just to show that very complex actions are also possible with NotQuests expression system. This action does the following: If your "points" (from the Integer tag) are bigger or equal 4, this action will give you 40$. Otherwise, it will give you 5$.
 
 </Admonition>
 
@@ -94,9 +94,9 @@ Please consult the [Variables Section](/docs/documentation/types/variables) for 
 - **`<operator>`** - Valid operators are `add`, `deduct`, `divide`, `multiply` and `set`
 - **`<expression>`** - What the result of the variable should be. This expression is cool, because it can contain any kind of math expression. And it can even contain other number variables.
 
-**Example command:** `/qa actions add actionname Money multiply 2` - Flying would be a Number variable type. This action would make the player fly.
-**Example command with math expression + other variables**: `/qa actions add actionname Money set QuestPoints*Money+500-30/2`
-**Example command with very advanced expression:** `/qa actions add actionname Money set 10+TagInteger(TagName:reputation)*TagInteger(TagName:level)`
+**Example command:** `@optional-integration /qa actions add actionname Money multiply 2` - Money is a number variable. This action doubles the player's balance.
+**Example command with math expression + other variables**: `@optional-integration /qa actions add actionname Money set QuestPoints*Money+500-30/2`
+**Example command with very advanced expression:** `@optional-integration /qa actions add actionname Money set 10+TagInteger(TagName:reputation)*TagInteger(TagName:level)`
 
 </Admonition>
 
@@ -333,7 +333,7 @@ For these commands, I have pre-created the actions sm1, sm2, sm3 ... sm10 which 
 
 **What happens:** Spawns a visual particle effect at the player's location or at fixed coordinates.
 
-Only particles that do not need extra Bukkit data are supported by this action. Examples include `happy_villager`, `flame`, `heart`, `cloud`, and `end_rod`.
+Only simple particles that do not require extra particle data are supported on both platforms. Examples include `happy_villager`, `flame`, `heart`, `cloud`, and `end_rod`.
 
 **Command Arguments:**
 

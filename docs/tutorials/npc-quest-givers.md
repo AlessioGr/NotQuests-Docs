@@ -11,15 +11,17 @@ Letting players run `/q take <quest>` is fine, but it's way more immersive when 
 
 NotQuests supports three kinds of quest givers out of the box:
 
-| Backend | Reference format | ID type |
-| --- | --- | --- |
-| [Citizens](https://www.spigotmc.org/resources/citizens.13811/) | `citizens:<id>` | a number (e.g. `5`) |
-| [FancyNPCs](https://modrinth.com/plugin/fancynpcs) | `fancynpcs:<id>` | a text id |
-| Armor stands | — (right-click them) | built right into vanilla |
+| Backend | Platforms | Reference format | ID type |
+| --- | --- | --- | --- |
+| [Citizens](https://www.spigotmc.org/resources/citizens.13811/) | Paper | `citizens:<id>` | a number (e.g. `5`) |
+| [FancyNPCs](https://modrinth.com/plugin/fancynpcs) | Paper | `fancynpcs:<id>` | a text id |
+| Armor stands | Paper and NeoForge | — (right-click them) | built right into vanilla |
 
-You don't need a separate NPC plugin for armor stands — they work on any server.
+You don't need a separate NPC plugin for armor stands — they work on both supported platforms. Citizens and FancyNPCs are Paper plugin integrations and are not registered on NeoForge.
 
 ## Attaching a quest to a Citizens / FancyNPCs NPC
+
+This section applies to Paper servers with the matching NPC plugin installed.
 
 Grab your NPC's id, then:
 
@@ -73,11 +75,11 @@ By default, armor stands with quests attached are protected from accidental edit
 
 ## Using NPCs inside objectives
 
-The same NPC reference works for objectives that point at an NPC — like [`TalkToNPC`](/docs/documentation/types/objectives), delivering items to an NPC, or finishing a quest by talking to one. Whenever an objective asks for an NPC, you give it the same `citizens:<id>` / `fancynpcs:<id>` reference (or `rightClickSelect`).
+The same NPC reference works for objectives that point at an NPC — like [`TalkToNPC`](/docs/documentation/types/objectives), delivering items to an NPC, or finishing a quest by talking to one. On Paper, use the same `citizens:<id>` / `fancynpcs:<id>` reference (or `rightClickSelect`). On NeoForge, use an armor stand.
 
 ## Giving an NPC a conversation
 
-Quest givers get a lot more lively when they actually *talk*. You can bind a [conversation](/docs/tutorials/conversations) to an NPC so right-clicking them starts a dialogue:
+Quest givers get a lot more lively when they actually *talk*. On Paper, you can bind a [conversation](/docs/tutorials/conversations) to a Citizens or FancyNPCs NPC so right-clicking it starts a dialogue:
 
 `/qa conversations edit myConversation npcs add citizens:5`
 

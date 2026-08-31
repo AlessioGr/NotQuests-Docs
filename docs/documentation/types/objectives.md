@@ -9,6 +9,8 @@ import Admonition from '@theme/Admonition';
 
 Objectives are tasks the player has to complete in order to finish the Quest. Some objectives are integrations with other plugins and are only available if you have that plugin installed.
 
+Armor-stand targets work on Paper and NeoForge. Citizens and FancyNPCs targets, including Citizens integration objectives, are available only on Paper with the matching plugin installed.
+
 ## Objective locations and guiding beams
 
 NotQuests can show a Wynncraft-style guiding marker for an objective. This is useful for objectives where the player should go to a certain place, click a certain block, find an NPC, or return to a quest area.

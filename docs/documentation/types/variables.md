@@ -401,7 +401,7 @@ Use a mob type like `zombie`, `villager`, or `wolf`, or use `any` to count all n
 
 <Admonition type="info" title="Description">
 
-**Condition:** ✅ **Action:** ✅ (only if LuckPerms is installed)
+**Paper only. Condition:** ✅ **Action:** ✅ (setting requires LuckPerms)
 
 **Type:** Boolean
 
@@ -667,7 +667,7 @@ Reads or changes the weather in the player's current world. Possible values are 
 
 **Type:** Number
 
-**Required argument:** the [Bukkit statistic](https://jd.papermc.io/paper/1.21/org/bukkit/Statistic.html) to read or change (e.g. `MOB_KILLS`, `JUMP`, `DAMAGE_DEALT`).
+**Required argument:** the Minecraft statistic id to read or change (for example `MOB_KILLS`, `JUMP`, or `DAMAGE_DEALT`). Tab completion shows the ids supported by the current platform.
 
 **Example:** `/qa conditions add killedEnough Statistic MOB_KILLS moreOrEqualThan 100` - true once the player has 100+ mob kills.
 

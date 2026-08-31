@@ -64,12 +64,14 @@ A profile is a self-contained save of a player's quest progress (active/complete
 Everything about a single quest lives under `/qa edit <quest>`.
 
 **Basics**
+
 - **`/qa edit TheVirus description set Quest text => description set <text>`** / **`/qa edit TheVirus description show => show`** / **`/qa edit TheVirus description remove => remove`** - The quest's description (supports MiniMessage).
 - **`/qa edit TheVirus displayName set A Deadly Virus => displayName set <text>`** / **`/qa edit TheVirus displayName show => show`** / **`/qa edit TheVirus displayName remove => remove`** - The quest's display name.
 - **`/qa edit TheVirus guiItem hand --glow => guiItem <material> --glow`** - The item shown for this quest in GUIs.
 - **`/qa edit TheVirus category set default => category set <category>`** / **`/qa edit TheVirus category show => show`** - Move the quest to a category.
 
 **Limits & cooldowns**
+
 - **`/qa edit TheVirus limits accepts 3 => limits accepts <amount>`** - Max times a player can accept this quest (`-1` = unlimited).
 - **`/qa edit TheVirus limits completions 3 => limits completions <amount>`** - Max times a player can complete it (`-1` = unlimited).
 - **`/qa edit TheVirus limits fails 3 => limits fails <amount>`** - Max times a player can fail it (`-1` = unlimited).
@@ -78,28 +80,34 @@ Everything about a single quest lives under `/qa edit <quest>`.
 - **`/qa edit TheVirus abortEnabled true => abortEnabled <true|false>`** - Whether players can abort it.
 
 **Objectives** — the steps of the quest. See the [Objectives reference](./types/objectives).
+
 - **`/qa edit TheVirus objectives add BreakBlocks dirt 1 => objectives add <type> ...`** - Add an objective.
 - **`/qa edit TheVirus objectives list => objectives list`** - List the objectives.
 - **`/qa edit TheVirus objectives clear => objectives clear`** - Remove all objectives.
 - **`/qa edit TheVirus objectives edit 1 description show => objectives edit <id> ...`** - Edit one objective (see below).
 
 Inside `objectives edit <id>` you can set a `description`, `displayName`, `taskDescription`, a `location` (`set`/`enable`/`disable`), a `completionNPC`, add `rewards`, and add **objective conditions** in three slots:
+
 - **`/qa edit TheVirus objectives edit 1 conditions unlock add Flying equals true => conditions unlock add <type> ...`** - must be met for the objective to unlock.
 - **`/qa edit TheVirus objectives edit 1 conditions progress add Flying equals true => conditions progress add <type> ...`** - must be met for progress to count.
 - **`/qa edit TheVirus objectives edit 1 conditions complete add Flying equals true => conditions complete add <type> ...`** - must be met for the objective to finish.
 
-**Requirements** — conditions to *accept* the quest. See the [Conditions reference](./types/conditions).
+**Requirements** — conditions to _accept_ the quest. See the [Conditions reference](./types/conditions).
+
 - **`/qa edit TheVirus requirements add Flying equals true => requirements add <type> ...`** · **`/qa edit TheVirus requirements list => list`** · **`/qa edit TheVirus requirements clear => clear`** · **`/qa edit TheVirus requirements edit 1 delete => edit <id> delete`**
 
 **Rewards** — actions that run when the quest is completed. See the [Actions reference](./types/actions).
+
 - **`/qa edit TheVirus rewards add GiveItem stone 1 => rewards add <type> ...`** · **`/qa edit TheVirus rewards list => list`** · **`/qa edit TheVirus rewards clear => clear`** · **`/qa edit TheVirus rewards edit 1 remove => edit <id> remove`**
 
 **Triggers** — run actions on quest events (begin/complete/fail/death/etc.). See the [Triggers reference](./types/triggers).
+
 - **`/qa edit TheVirus triggers add MyAction BEGIN --applyOn O1 --world_name ALL => triggers add <action> <event> ...`**
 - **`/qa edit TheVirus triggers list => triggers list`** · **`/qa edit TheVirus triggers clear => clear`** · **`/qa edit TheVirus triggers remove 1 => remove <id>`**
 
 **Quest givers**
-- **`/qa edit TheVirus npcs add rightClickSelect --hideInNPC => npcs add <npc> --hideInNPC`** - Attach the quest to a Citizens or FancyNPCs NPC. Use `rightClickSelect` to get an item you can click an NPC with.
+
+- **`/qa edit TheVirus npcs add rightClickSelect --hideInNPC => npcs add <npc> --hideInNPC`** - Attach the quest to an NPC. Citizens and FancyNPCs selectors are available on Paper; armor stands are available on both platforms. `rightClickSelect` gives you a selector item.
 - **`/qa edit TheVirus npcs list => npcs list`** · **`/qa edit TheVirus npcs clear => npcs clear`**
 - **`/qa edit TheVirus armorstands add => armorstands add`** - Get an item, then right-click an armor stand to attach the quest to it.
 - **`/qa edit TheVirus armorstands list => armorstands list`** · **`/qa edit TheVirus armorstands clear => armorstands clear`**
@@ -142,7 +150,7 @@ Reusable actions and conditions you can refer to by name from anywhere.
 - **`/qa debug`** - Toggle debug mode (lots of extra info in chat).
 - **`/qa debug showErrorsAndWarnings --printToConsole => /qa debug showErrorsAndWarnings --printToConsole`** - Show collected errors/warnings.
 - **`/qa debug worldInfo`** · **`/qa debug clearOwnChat => clearOwnChat`** · **`/qa debug beaconBeam Steve spawn world,0,64,0 => beaconBeam <player> <name> <location>`** - Misc debug helpers.
-- **`/qa debug loadDataManagerUnsafe`** · **`/qa debug disablePluginAndSaving maintenance => disablePluginAndSaving <reason>`** · **`/qa debug enablePluginAndSaving maintenance => enablePluginAndSaving <reason>`** - Advanced/risky (used for things like database migrations). Back up first!
+- **`/qa debug loadDataUnsafe`** · **`/qa debug disablePluginAndSaving maintenance => disablePluginAndSaving <reason>`** · **`/qa debug enablePluginAndSaving maintenance => enablePluginAndSaving <reason>`** - Advanced/risky (used for things like database migrations). Back up first!
 
 <Admonition type="tip" title="Lost? Use the in-game help">
 

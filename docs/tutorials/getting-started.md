@@ -9,7 +9,7 @@ import Admonition from '@theme/Admonition';
 
 <Admonition type="note" title="Before you start">
 
-This guide is written for **NotQuests 6.3.0** on **[Paper 26.1.2](https://papermc.io/)**. Older versions and Spigot have fewer features and some different commands, so a few things might not line up there.
+This guide is written for **NotQuests 7.0.0-beta.1** on **Minecraft 26.2**. The commands and quest format are the same on Paper and NeoForge. Use Java 25 and install the jar that matches your platform; Spigot is not supported.
 
 </Admonition>
 
@@ -188,7 +188,7 @@ Your players will murder you if they waste their time on this super hard Quest w
 - +2 Quest Points: `/qa edit TheVirus rewards add QuestPoints add 2`
 - 2 Swords: `/qa edit TheVirus rewards add GiveItem hand 2`
   - For this reward, you have to hold the item in your hand while running that command. Otherwise, you can also run `/qa edit TheVirus rewards add GiveItem wooden_sword 2`
-- +300 Money (if you have Vault installed): `/qa edit TheVirus rewards add Money add 300`
+- +300 Money (if you have Vault installed): `@optional-integration /qa edit TheVirus rewards add Money add 300`
 - Want to give a reward from some other plugin via commands? You can use the `{PLAYER}` placeholder there. Example: `/qa edit TheVirus rewards add ConsoleCommand cr give to {PLAYER} DailyCrate 2`
 
 #### Reward Display Names
@@ -231,9 +231,9 @@ This will make it, so the player cannot take the Quest using the `/q take TheVir
 
 ### 7. Taking the Quest
 
-Use `/q take TheVirus` to take the Quest! You can also bind it to Citizens or FancyNPCs NPCs, or Armor stands using `/qa edit TheVirus npcs add citizens:5 => /qa edit <quest> npcs add citizens:<id>` (or `fancynpcs:<id>`) or `/qa edit TheVirus armorstands add`.
+Use `/q take TheVirus` to take the quest! You can also bind it to an armor stand on either platform with `/qa edit TheVirus armorstands add`. Paper servers can additionally use Citizens or FancyNPCs, for example `/qa edit TheVirus npcs add citizens:5 => /qa edit <quest> npcs add citizens:<id>`.
 
-The quest is saved in the `plugins/NotQuests/default/quests.yml` and `plugins/NotQuests/default/actions.yml` files.
+The quest is saved in `default/quests.yml` and `default/actions.yml` inside the NotQuests data folder. That folder is `plugins/NotQuests` on Paper and `<world>/notquests` on NeoForge.
 
 ## Advanced concepts
 
@@ -353,13 +353,13 @@ You can also use | (or) operators or ! (negation) when using conditions in an ex
 
 Or:
 
-`/qa conditions add moneyCondition Money moreThan 10+TagInteger(TagName:reputation)*TagInteger(TagName:level)`
+`@optional-integration /qa conditions add moneyCondition Money moreThan 10+TagInteger(TagName:reputation)*TagInteger(TagName:level)`
 
 This condition makes it so you need more than 10 + the value of the "reputation" tag multiplied by the value of the "level" tag money.
 
 And now a very complex one:
 
-`/qa actions add pp3 Money add ((TagInteger(TagName:points)>=4)*(10+30))+(!(TagInteger(TagName:points)>=4)*5)`
+`@optional-integration /qa actions add pp3 Money add ((TagInteger(TagName:points)>=4)*(10+30))+(!(TagInteger(TagName:points)>=4)*5)`
 
 If your "points" (from the Integer tag) are bigger or equal 4, this action will give you 40$. Otherwise, it will give you 5$. If you want to learn more about the tag system, head to the [tag system guide](/docs/tutorials/creating-a-reputation-system-with-tags).
 
