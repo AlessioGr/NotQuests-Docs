@@ -14,7 +14,7 @@ NotQuests supports three kinds of quest givers out of the box:
 | Backend | Platforms | Reference format | ID type |
 | --- | --- | --- | --- |
 | [Citizens](https://www.spigotmc.org/resources/citizens.13811/) | Paper | `citizens:<id>` | a number (e.g. `5`) |
-| [FancyNPCs](https://modrinth.com/plugin/fancynpcs) | Paper | `fancynpcs:<id>` | a text id |
+| [FancyNPCs](https://modrinth.com/plugin/fancynpcs) | Paper | `fancynpcs:<uuid>` | a UUID (for example `6ab312dd-ddce-42a6-8965-e45605a05321`) |
 | Armor stands | Paper and NeoForge | — (right-click them) | built right into vanilla |
 
 You don't need a separate NPC plugin for armor stands — they work on both supported platforms. Citizens and FancyNPCs are Paper plugin integrations and are not registered on NeoForge.
@@ -29,7 +29,7 @@ Grab your NPC's id, then:
 
 …or for a FancyNPC:
 
-`/qa edit TheVirus npcs add fancynpcs:myNpcId`
+`/qa edit TheVirus npcs add fancynpcs:6ab312dd-ddce-42a6-8965-e45605a05321`
 
 That's it — now players can right-click that NPC to preview and take the quest.
 
@@ -75,7 +75,7 @@ By default, armor stands with quests attached are protected from accidental edit
 
 ## Using NPCs inside objectives
 
-The same NPC reference works for objectives that point at an NPC — like [`TalkToNPC`](/docs/documentation/types/objectives), delivering items to an NPC, or finishing a quest by talking to one. On Paper, use the same `citizens:<id>` / `fancynpcs:<id>` reference (or `rightClickSelect`). On NeoForge, use an armor stand.
+The same NPC reference works for objectives that point at an NPC — like [`TalkToNPC`](/docs/documentation/types/objectives), delivering items to an NPC, or finishing a quest by talking to one. On Paper, use the same `citizens:<id>` / `fancynpcs:<uuid>` reference (or `rightClickSelect`). On NeoForge, use an armor stand.
 
 ## Giving an NPC a conversation
 

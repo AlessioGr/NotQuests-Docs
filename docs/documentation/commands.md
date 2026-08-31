@@ -9,8 +9,8 @@ import Admonition from '@theme/Admonition';
 
 Every NotQuests command lives under one of two roots:
 
-- **`/q`** — the **player** command (needs the `notquests.use` permission, which everyone has by default). Aliases: `/nq`, `/quest`, `/quests`, `/notquests`.
-- **`/qa`** — the **admin** command for building and managing quests (needs `notquests.admin`, OP by default). Aliases: `/nqa`, `/questadmin`, `/notquestsadmin`.
+- **`/q`** — the **player** command (needs the `notquests.use` permission, which everyone has by default). Aliases: `/nq`, `/notquests`, `/nquests`, `/nquest`, `/notquest`, `/quest`, `/quests`, `/qg`.
+- **`/qa`** — the **admin** command for building and managing quests (needs `notquests.admin`, OP by default). Aliases: `/nqa`, `/nquestsadmin`, `/nquestadmin`, `/notquestadmin`, `/qadmin`, `/questadmin`, `/qag`, `/notquestsadmin`.
 
 <Admonition type="tip">
 
@@ -112,7 +112,7 @@ Inside `objectives edit <id>` you can set a `description`, `displayName`, `taskD
 - **`/qa edit TheVirus armorstands add => armorstands add`** - Get an item, then right-click an armor stand to attach the quest to it.
 - **`/qa edit TheVirus armorstands list => armorstands list`** · **`/qa edit TheVirus armorstands clear => armorstands clear`**
 
-### Conversations — `/qa conversations` (alias `c`)
+### Conversations — `/qa conversations`
 
 See the [Conversation System](./conversation-system) for the full picture.
 

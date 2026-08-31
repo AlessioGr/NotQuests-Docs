@@ -73,7 +73,7 @@ For a Citizens NPC:
 
 For a FancyNPCs NPC:
 
-`/qa conversations edit intro npcs add fancynpcs:guard`
+`/qa conversations edit intro npcs add fancynpcs:6ab312dd-ddce-42a6-8965-e45605a05321`
 
 If you do not want to type an id, use the selector item:
 
@@ -290,4 +290,4 @@ Do not write a huge conversation before testing it. Small changes are much easie
 - `/qa conversations list` - list loaded conversations and their attached NPCs.
 - `/qa conversations edit intro npcs add rightClickSelect` - attach the conversation by clicking an NPC or armor stand.
 - `/qa conversations edit intro npcs add citizens:5` - attach to a Citizens NPC.
-- `/qa conversations edit intro npcs add fancynpcs:guard` - attach to a FancyNPCs NPC.
+- `/qa conversations edit intro npcs add fancynpcs:6ab312dd-ddce-42a6-8965-e45605a05321` - attach to a FancyNPCs NPC by UUID.

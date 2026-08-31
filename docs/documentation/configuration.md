@@ -178,6 +178,7 @@ integrations:
 | Integration      | What it adds                                                                                                          |
 | ---------------- | --------------------------------------------------------------------------------------------------------------------- |
 | `citizens`       | Citizens NPCs as quest givers, plus NPC-based objectives                                                              |
+| `fancynpcs`      | FancyNPCs NPCs as quest givers and conversation starters (automatically detected; no config toggle is needed)         |
 | `floodgate`      | Bedrock player support (Floodgate / Geyser)                                                                           |
 | `vault`          | Economy support                                                                                                       |
 | `placeholderapi` | Use PlaceholderAPI placeholders in NotQuests (and expose NotQuests ones)                                              |
@@ -186,7 +187,6 @@ integrations:
 | `worldedit`      | WorldEdit support                                                                                                     |
 | `slimefun`       | The `SlimefunResearch` objective                                                                                      |
 | `luckperms`      | LuckPerms-based conditions                                                                                            |
-| `ultimateclans`  | UltimateClans support                                                                                                 |
 | `towny`          | The `TownyNationReachTownCount` & `TownyReachResidentCount` objectives                                                |
 | `jobs-reborn`    | The `JobsRebornReachJobLevel` objective                                                                               |
 | `ecoMobs`        | eco / EcoMobs spawn actions and kill detection                                                                        |

@@ -265,7 +265,7 @@ Prefer attaching conversations with commands:
 
 `/qa conversations edit intro npcs add citizens:5`
 
-`/qa conversations edit intro npcs add fancynpcs:guard`
+`/qa conversations edit intro npcs add fancynpcs:6ab312dd-ddce-42a6-8965-e45605a05321`
 
 `/qa conversations edit intro npcs add rightClickSelect`
 
