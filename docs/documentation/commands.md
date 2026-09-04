@@ -53,11 +53,18 @@ A profile is a self-contained save of a player's quest progress (active/complete
 
 - **`/qa create TheVirus --category default => /qa create <quest> --category <category>`** - Create a new quest, optionally in a category.
 - **`/qa delete <quest>`** - Delete a quest.
+- **`/qa clone TheVirus TheVirusHard => /qa clone <sourceQuest> <newQuestName>`** - Copy an existing quest under a new, unused name.
 - **`/qa list AllQuests`** - List every quest you've made.
 - **`/qa list ObjectiveTypes`** / **`RequirementTypes`** / **`ActionTypes`** / **`TriggerTypes`** / **`Placeholders`** - List the available building blocks.
 - **`/qa reload`** - Reload all config and quest files.
 - **`/qa save`** - Save everything to disk.
 - **`/qa version`** - Show the plugin version.
+
+Cloning keeps the source quest's category, display name, settings, objectives (including sub-objectives),
+requirements, rewards, triggers and configured NPC links. You can edit the copy without changing the
+original. Player progress and completion history are **not** copied. References to saved items, actions
+and other quests still point to the same things; cloning doesn't duplicate those or place new NPCs or
+armor stands in the world.
 
 ### Editing a quest — `/qa edit <quest>`
 
@@ -131,11 +138,38 @@ Reusable actions and conditions you can refer to by name from anywhere.
 - **`/qa conditions add MyCondition Flying equals true --category default => /qa conditions add <name> <type> ...`** - Create a named condition.
 - **`/qa conditions list`** · **`/qa conditions edit MyCondition check Steve => /qa conditions edit <name> check [player]`** · **`/qa conditions edit MyCondition category show => /qa conditions edit <name> ...`**
 
-### Categories, Tags & Items
+### Categories & Tags
 
 - **`/qa categories create ExampleCategory => /qa categories create <name>`** · **`/qa categories list => list`** · **`/qa categories edit ExampleCategory displayName show => edit <category> ...`** - Organise quests into (nestable) categories.
 - **`/qa tags create INTEGER ExampleTag => /qa tags create <type> <name>`** · **`/qa tags list => list`** · **`/qa tags delete ExampleTag => delete <name>`** - Custom per-player data you can read/write with conditions, actions and placeholders. See the [reputation tutorial](../tutorials/creating-a-reputation-system-with-tags).
-- **`/qa items items create ExampleItem stone => /qa items items create <name> <material>`** · **`/qa items items list => list`** · **`/qa items items edit ExampleItem give Steve 1 => give <player> <amount>`** · **`/qa items items edit ExampleItem displayName show => edit <name> ...`** · **`/qa items items edit ExampleItem remove => remove <name>`** - Reusable custom items.
+
+### Saved items — `/qa items`
+
+Save an item once, then use its name in quest rewards, item objectives and actions such as `GiveItem`.
+The saved name (for example, `quest_token`) is its ID in commands. Its **display name** is the name
+players see on the actual item, not just an internal label.
+
+| Command | What it does |
+| --- | --- |
+| `/qa items create quest_token gold_nugget --category default => /qa items create <name> <material> [--category <category>]` | Saves an item from a material. Use `hand` instead of the material to save the item you're holding, including its custom data. |
+| `/qa items list` | Lists saved items. |
+| `/qa items edit quest_token give Steve 4 => /qa items edit <item> give <player> <amount>` | Gives an online player the saved item, including its display name. |
+| `/qa items edit quest_token displayName set Super => /qa items edit <item> displayName set <text>` | Sets the actual item's display name. Spaces and MiniMessage formatting work here. |
+| `/qa items edit quest_token displayName show => /qa items edit <item> displayName show` | Shows the configured display name. |
+| `/qa items edit quest_token displayName remove => /qa items edit <item> displayName remove` | Removes the display-name override. |
+| `/qa items edit quest_token remove => /qa items edit <item> remove` | Deletes the saved item definition. Update any quests or actions that reference it first. |
+
+For example:
+
+```text
+/qa items create quest_token gold_nugget
+/qa items edit quest_token displayName set <gold>Quest Token
+/qa items edit quest_token give Steve 4
+```
+
+You can also give that same item with `/qa actions execute GiveItem quest_token 4`.
+Both routes use the saved display name. Choose a unique saved name, not a vanilla material name such
+as `stone`. The command is `/qa items`, with **items only once**.
 
 ### Managing players
 
