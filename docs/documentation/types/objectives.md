@@ -143,12 +143,11 @@ This is safer than using `BreakBlocks` or `PickupItems` for farming quests. NotQ
 
 </Admonition>
 
-
 ### ❓ Condition
 
 <Admonition type="info" title="Description">
 
-**Completed when:** Player fulfills a certain condition (Created using `/qa conditions`). The plugin checks if the condition has been fulfilled every second or if the corresponding action to that condition has been executed (for example the *Money* action for the *Money* condition). This basically adds countless more objectives. For example, you can even use PlaceholderAPI Placeholders to create objectives.
+**Completed when:** Player fulfills a certain condition (Created using `/qa conditions`). The plugin checks if the condition has been fulfilled every second or if the corresponding action to that condition has been executed (for example the _Money_ action for the _Money_ condition). This basically adds countless more objectives. For example, you can even use PlaceholderAPI Placeholders to create objectives.
 
 **Command Arguments:**
 
@@ -166,6 +165,8 @@ This is safer than using `BreakBlocks` or `PickupItems` for farming quests. NotQ
 
 **Completed when:** Player consumes an item. Consuming usually means eating or drinking - for example an apple.
 
+Each item eaten or drunk counts as one, regardless of the size of the stack in the player's hand.
+
 **Command Arguments:**
 
 - **`<material>`** The material of the item which the player has to consume. Use 'hand' to specify the item which you are currently holding in your hand. Use 'any' so any item counts. You can also specify items made in the NotQuests item system.
@@ -179,7 +180,7 @@ This is safer than using `BreakBlocks` or `PickupItems` for farming quests. NotQ
 
 <Admonition type="info" title="Description">
 
-**Completed when:** Player consumes an item. Consuming usually means eating or drinking - for example an apple.
+**Completed when:** Player crafts the requested number of matching items.
 
 **Command Arguments:**
 
@@ -194,7 +195,7 @@ This is safer than using `BreakBlocks` or `PickupItems` for farming quests. NotQ
 
 <Admonition type="info" title="Description">
 
-**Completed when:** Player delivers an Item to an NPC (Both Citizen NPCs and Armorstands work). Delivering means that the item will be removed from the player's inventory.
+**Completed when:** Player delivers the requested items to an NPC. Citizens and FancyNPCs work on Paper; armor stands work on both Paper and NeoForge. Delivered items are removed from the player's inventory.
 
 **Command Arguments:**
 
@@ -713,7 +714,7 @@ Use this when part of a quest is managed by BetonQuest, but you still want the p
 - **`<Job Name>`** - The name of the job (e.g. `Miner`).
 - **`<level>`** - The level the player needs to reach. This can be a number expression.
 - **`(flags)`** - Optional flags
-  - `--doNotCountPreviousLevels` - Only count levels gained *after* the objective unlocks, instead of the player's current level.
+  - `--doNotCountPreviousLevels` - Only count levels gained _after_ the objective unlocks, instead of the player's current level.
 
 **Example command:** `@optional-integration /qa edit questname objectives add JobsRebornReachJobLevel Miner 10`
 
@@ -747,7 +748,7 @@ Use this when part of a quest is managed by BetonQuest, but you still want the p
 
 - **`<amount>`** - The minimum number of towns the nation needs. This can be a number expression.
 - **`(flags)`** - Optional flags
-  - `--doNotCountPreviousTowns` - Only count towns added *after* the objective unlocks.
+  - `--doNotCountPreviousTowns` - Only count towns added _after_ the objective unlocks.
 
 **Example command:** `@optional-integration /qa edit questname objectives add TownyNationReachTownCount 5`
 
@@ -763,7 +764,7 @@ Use this when part of a quest is managed by BetonQuest, but you still want the p
 
 - **`<amount>`** - The minimum number of residents the town needs. This can be a number expression.
 - **`(flags)`** - Optional flags
-  - `--doNotCountPreviousResidents` - Only count residents added *after* the objective unlocks.
+  - `--doNotCountPreviousResidents` - Only count residents added _after_ the objective unlocks.
 
 **Example command:** `@optional-integration /qa edit questname objectives add TownyReachResidentCount 20`
 

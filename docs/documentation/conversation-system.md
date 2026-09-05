@@ -50,11 +50,12 @@ Lines:
 
 ## Top-level keys
 
-| Key | Required | Meaning |
-| --- | --- | --- |
-| `start` | yes | First line, or comma-separated fallback lines, for the conversation. |
-| `Lines` | yes | Speakers and their lines. |
-| `npcs` | no | NPC attachment data. Prefer managing this with commands instead of editing it manually. |
+| Key     | Required | Meaning                                                                                 |
+| ------- | -------- | --------------------------------------------------------------------------------------- |
+| `start` | yes      | First line, or comma-separated fallback lines, for the conversation.                    |
+| `Lines` | yes      | Speakers and their lines.                                                               |
+| `delay` | no       | Default pause before each line, in milliseconds. Defaults to `0`.                       |
+| `npcs`  | no       | NPC attachment data. Prefer managing this with commands instead of editing it manually. |
 
 ## Speakers
 
@@ -76,10 +77,11 @@ Robert.greeting
 
 Speaker keys:
 
-| Key | Meaning |
-| --- | --- |
-| `color` | MiniMessage tag used for the speaker name. |
-| any other key | A conversation line owned by that speaker. |
+| Key           | Meaning                                                                                               |
+| ------------- | ----------------------------------------------------------------------------------------------------- |
+| `color`       | MiniMessage tag used for the speaker name.                                                            |
+| `delay`       | Pause before this speaker's lines, in milliseconds. Inherits the conversation's `delay` when omitted. |
+| any other key | A conversation line owned by that speaker.                                                            |
 
 Use speaker names that are easy to read and stable, such as `Guard`, `Player`, `King`, or `Merchant`.
 
@@ -95,14 +97,46 @@ greeting:
 
 Line keys:
 
-| Key | Meaning |
-| --- | --- |
-| `text` | Message shown when the line plays. |
-| `texts` | List of possible messages; one is chosen randomly. Use this instead of `text`. |
-| `next` | Next line, or comma-separated fallback lines. If omitted, the conversation ends. |
-| `conditions` | Conditions that must pass before this line can play. |
-| `actions` | Actions executed when the line is reached. |
-| `shout` | `true` makes the line visually stand out in bold. |
+| Key          | Meaning                                                                             |
+| ------------ | ----------------------------------------------------------------------------------- |
+| `text`       | Message shown when the line plays.                                                  |
+| `texts`      | List of possible messages; one is chosen randomly. Use this instead of `text`.      |
+| `next`       | Next line, or comma-separated fallback lines. If omitted, the conversation ends.    |
+| `conditions` | Conditions that must pass before this line can play.                                |
+| `actions`    | Actions executed when the line is reached.                                          |
+| `shout`      | `true` makes the line visually stand out in bold.                                   |
+| `delay`      | A positive pause before this line, in milliseconds, overriding the speaker's delay. |
+
+## Pauses between lines
+
+Use `delay` to give players time to read. Values are whole milliseconds: `1000` is one second, not `1s` or a number of ticks.
+
+```yaml
+start: Guard.greeting
+delay: 1000
+
+Lines:
+  Guard:
+    color: "<gold>"
+    greeting:
+      text: "Welcome to town!"
+      next: Guard.offer
+    offer:
+      delay: 1500
+      text: "Can you help us?"
+      next: Player.accept,Player.decline
+
+  Player:
+    delay: 500
+    accept:
+      text: "Of course."
+    decline:
+      text: "Not right now."
+```
+
+Here, the greeting appears after one second. The offer follows 1.5 seconds later, then the choices appear after another half-second. NotQuests waits for each step instead of showing the next line or choices early. A group of choices uses the delay of its first available option; setting the `Player` speaker's delay keeps that consistent.
+
+After changing delays, run `/qa reload conversations` and start the conversation again. If a player leaves or the conversation is replaced, its pending lines will not play in the next session.
 
 ## Line references
 

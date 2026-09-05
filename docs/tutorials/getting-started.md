@@ -9,11 +9,11 @@ import Admonition from '@theme/Admonition';
 
 <Admonition type="note" title="Before you start">
 
-This guide is written for **NotQuests 7.0.0-beta.2** on **Minecraft 26.2**. The commands and quest format are the same on Paper and NeoForge. Use Java 25 and install the jar that matches your platform; Spigot is not supported.
+This guide is written for **NotQuests 7.0.0-beta.3** on **Minecraft 26.2**. The commands and quest format are the same on Paper and NeoForge. Use Java 25 and install the jar that matches your platform; Spigot is not supported.
 
 </Admonition>
 
-Let's discover **NotQuests!** The best way to learn it is to actually *build* something — so that's what we'll do. In the next few minutes we'll make a complete little quest from scratch: a display name and description, a requirement, two objectives, a trigger that spawns mobs, and some rewards. All with commands — no config files to wrestle with.
+Let's discover **NotQuests!** The best way to learn it is to actually _build_ something — so that's what we'll do. In the next few minutes we'll make a complete little quest from scratch: a display name and description, a requirement, two objectives, a trigger that spawns mobs, and some rewards. All with commands — no config files to wrestle with.
 
 By the end you'll know your way around, and everything after that is just remixing these same building blocks.
 
@@ -24,14 +24,14 @@ A Quest in NotQuests can have different properties. Examples:
 - **displayName**: the Quest name which players will actually see
 - **description**: the Quest description
 - **limits**: the maximum amount of times a player can accept, complete or fail the Quest
-- *and much more...*
+- _and much more..._
 
 Additionally, we can attach the following to a Quest:
 
 - **Objectives**: An objective is basically "something the player needs to do". Once all objectives the Quest has are completed, the Quest itself is completed.
-- **Requirements**: These determine if the player can accept the Quest. If the player does not fulfill all requirements, they can not start the Quest. Internally, they are called *conditions*.
+- **Requirements**: These determine if the player can accept the Quest. If the player does not fulfill all requirements, they can not start the Quest. Internally, they are called _conditions_.
 - **Rewards**: Should be self-explanatory! Rewards are actions which will be "executed" once the Player completes the Quest.
-- **Triggers**: Triggers are a bit more complicated to understand. Basically, they "execute" an action once *something happens*.
+- **Triggers**: Triggers are a bit more complicated to understand. Basically, they "execute" an action once _something happens_.
 
 ## The Commands
 
@@ -44,7 +44,7 @@ In NotQuests, we create all our Quests with commands. No need to edit complicate
 
 ### Command Completions
 
-Each thing you write, separated by a space, is called an *argument*. In the following pictures, *edit*, and *questname* are the two arguments:
+Each thing you write, separated by a space, is called an _argument_. In the following pictures, _edit_, and _questname_ are the two arguments:
 
 ![Command Completions](/img/getting-started/command-completions.png)
 
@@ -177,7 +177,7 @@ Now, let's add the **trigger with this action** to our Quest:
 
 `/qa edit TheVirus triggers add Spawn15ZombieVillagers BEGIN --applyOn O2 --world_name ALL`
 
-This runs the action "*Spawn15ZombieVillagers*" once we BEGIN O2 (objective 2) in ALL worlds (not limited to any world). Feel free to test it out — it will work 👍
+This runs the action "_Spawn15ZombieVillagers_" once we BEGIN O2 (objective 2) in ALL worlds (not limited to any world). Feel free to test it out — it will work 👍
 
 ![When you complete the first objective, zombie villagers will spawn](/img/getting-started/trigger-after-completing-first-objective.png)
 
@@ -273,7 +273,7 @@ Now players have to finish the quests in this category from the first to the las
 - `set none` - removes the order again.
 - `show` - shows the current order.
 
-Super useful, and it can save you a *ton* of time.
+Super useful, and it can save you a _ton_ of time.
 
 ### Sub-Objectives
 

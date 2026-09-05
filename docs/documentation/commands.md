@@ -149,15 +149,15 @@ Save an item once, then use its name in quest rewards, item objectives and actio
 The saved name (for example, `quest_token`) is its ID in commands. Its **display name** is the name
 players see on the actual item, not just an internal label.
 
-| Command | What it does |
-| --- | --- |
+| Command                                                                                                                     | What it does                                                                                                                  |
+| --------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
 | `/qa items create quest_token gold_nugget --category default => /qa items create <name> <material> [--category <category>]` | Saves an item from a material. Use `hand` instead of the material to save the item you're holding, including its custom data. |
-| `/qa items list` | Lists saved items. |
-| `/qa items edit quest_token give Steve 4 => /qa items edit <item> give <player> <amount>` | Gives an online player the saved item, including its display name. |
-| `/qa items edit quest_token displayName set Super => /qa items edit <item> displayName set <text>` | Sets the actual item's display name. Spaces and MiniMessage formatting work here. |
-| `/qa items edit quest_token displayName show => /qa items edit <item> displayName show` | Shows the configured display name. |
-| `/qa items edit quest_token displayName remove => /qa items edit <item> displayName remove` | Removes the display-name override. |
-| `/qa items edit quest_token remove => /qa items edit <item> remove` | Deletes the saved item definition. Update any quests or actions that reference it first. |
+| `/qa items list`                                                                                                            | Lists saved items.                                                                                                            |
+| `/qa items edit quest_token give Steve 4 => /qa items edit <item> give <player> <amount>`                                   | Gives an online player the saved item, including its display name.                                                            |
+| `/qa items edit quest_token displayName set Super => /qa items edit <item> displayName set <text>`                          | Sets the actual item's display name. Spaces and MiniMessage formatting work here.                                             |
+| `/qa items edit quest_token displayName show => /qa items edit <item> displayName show`                                     | Shows the configured display name.                                                                                            |
+| `/qa items edit quest_token displayName remove => /qa items edit <item> displayName remove`                                 | Removes the display-name override.                                                                                            |
+| `/qa items edit quest_token remove => /qa items edit <item> remove`                                                         | Deletes the saved item definition. Update any quests or actions that reference it first.                                      |
 
 For example:
 

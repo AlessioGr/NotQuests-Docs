@@ -55,7 +55,7 @@ general:
   enable-move-event: true
   packet-magic:
     enabled: true
-    mode: "internal"
+    unsafe-disregard-version: false
     conversations:
       delete-previous: true
       history-size: 20
@@ -66,11 +66,15 @@ general:
 - **`max-active-quests-per-player`** - How many quests a player can have going at once. `-1` means unlimited.
 - **`enable-move-event`** - Needed for the `ReachLocation` objective and objective location markers. If you don't use location objectives or guiding markers, setting this to `false` is a tiny performance win.
 - **`journal-item`** - Optionally turn a slot of the player's inventory into a clickable quest journal book. Set `enabled-worlds` to the worlds you want it in (or `'*'` for all), and pick the `inventory-slot`.
-- **`packet-magic`** - Powers the smooth conversation experience.
-  - **`mode`** - `internal` or `packetevents`. Leave it on `internal` unless you have a reason not to.
+- **`packet-magic`** - Lets conversations clear their previous lines and replay recent chat.
+  - **`enabled`** - Enables chat recording for conversation replay.
+  - **`unsafe-disregard-version`** - Leave this `false`. It bypasses the version safety check for native packet handling.
   - **`conversations.delete-previous`** - Clears previous conversation lines so the chat stays tidy.
-  - **`conversations.history-size`** - How many old chat lines to restore after a conversation ends.
+  - **`conversations.history-size`** - Maximum number of recent chat messages to keep for replay when conversation lines are cleared. History is cleared when the player leaves
+
 - **`update-checker.notify-ops-in-chat`** - Pings ops in chat when a new NotQuests version is out.
+
+Set `conversations.delete-previous` to `false` if you want conversation lines to stay in normal chat instead. See [chat restoration](./conversation-system#chat-restoration-packet-magic) for details.
 
 ## ✨ Visual & effects
 
